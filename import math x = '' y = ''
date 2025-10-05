@@ -1,0 +1,42 @@
+import math
+x = ''
+y = ''
+z  = (x + (2 + x)/(x ** 2))/(y + (1)/(math.sqrt(x ** 2 + 10)))
+q = 7.25 * math.asin(x - abs(y))
+print(z, q)
+# задание 32
+import math
+a = ''
+b = ''
+x = ((2)/(a ** 2 + 25) + b)/(math.sqrt(b) + (a + b)/(2))
+y = (abs(a) + 2 * math.asin * b)/5,5 * a
+print(x, y)
+# задание 33
+import math
+e = ''
+f = ''
+g = ''
+h = ''
+a = math.sqrt(abs(e = (3)/(f)) ** 3) + g
+b = math.asin * e + math.acos ** 2 
+c = (33 * g)/(e * f - 3)
+print(a, b, c)
+# задание 34
+import math
+e = ''
+f = ''
+g = ''
+h = ''
+a = (e + (f)/(2))/(3)
+b = abs(h ** 2 - g)
+c = math.sqrt((g - h) ** 2 - 3 * math.asin * e)
+print(a, b, c)
+# задание 35
+import math
+a = float(input())
+b = float(input())
+sa = (abs(a) * abs(b))/(2)
+sg = math.sqrt(abs(a) * abs(b))
+print(f'среднее арифметическое')
+print(f'среднее геометрическое')
+# задание 36
