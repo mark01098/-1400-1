@@ -1,0 +1,111 @@
+import math
+r = float(input())
+c = 2 * math.pi * r
+a = math.pi * r ** 2 
+print(f'длина окружности')
+print(f'площадь круга')
+# задание 22 
+r = float(input())
+x = a ** 3
+y = 4 * a ** 2
+print(f'обьем куба')
+print(f'площадь поверхности куба')
+# задание 24 
+import math
+r = float(input())
+x = 2 * math.pi * r
+y = math.pi * r ** 2
+print(f'длина окружности')
+print(f'площадь круга')
+# заданеие 25 
+x = ''
+y = ''
+z = 2 * x ** 3 - 3,44* x * y + 2,3* x ** 2 - 7,1*y
+print(x, y)
+# задание 26 
+x = float(input())
+y = float(input())
+z = 3,14 * (a + b) * 3 + 2,75 * b ** 2 - 12,7 * a - 4,1 
+print(x, y)
+# задание 27
+import math
+a = float(input())
+b = float(input())
+sa = ((a + b))/(2)
+import math 
+sg = math.sqrt(a * b)
+print(f'среднее арифметическое')
+print(f'среднее геометрическое')
+# задание 28 
+m = float(input())
+v = float(input())
+p = (m)/(v)
+print(f'плотность материала')
+# задание 29 
+s = float(input())
+k = float(input())
+p = (s)/(k)
+print(f'плотность населения')
+# задания 30
+a = ''
+b = ''
+c = a * x + b
+if a !=  0:
+    if a == 0 and b == 0:
+        print(x)
+# задание 31import math
+r = float(input())
+c = 2 * math.pi * r
+a = math.pi * r ** 2 
+print(f'длина окружности')
+print(f'площадь круга')
+# задание 22 
+r = float(input())
+x = a ** 3
+y = 4 * a ** 2
+print(f'обьем куба')
+print(f'площадь поверхности куба')
+# задание 24 
+import math
+r = float(input())
+x = 2 * math.pi * r
+y = math.pi * r ** 2
+print(f'длина окружности')
+print(f'площадь круга')
+# заданеие 25 
+x = ''
+y = ''
+z = 2 * x ** 3 - 3,44* x * y + 2,3* x ** 2 - 7,1*y
+print(x, y)
+# задание 26 
+x = float(input())
+y = float(input())
+z = 3,14 * (a + b) * 3 + 2,75 * b ** 2 - 12,7 * a - 4,1 
+print(x, y)
+# задание 27
+import math
+a = float(input())
+b = float(input())
+sa = ((a + b))/(2)
+import math 
+sg = math.sqrt(a * b)
+print(f'среднее арифметическое')
+print(f'среднее геометрическое')
+# задание 28 
+m = float(input())
+v = float(input())
+p = (m)/(v)
+print(f'плотность материала')
+# задание 29 
+s = float(input())
+k = float(input())
+p = (s)/(k)
+print(f'плотность населения')
+# задания 30
+a = ''
+b = ''
+c = a * x + b
+if a !=  0:
+    if a == 0 and b == 0:
+        print(x)
+# задание 31
