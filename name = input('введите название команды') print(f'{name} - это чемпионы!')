@@ -1,0 +1,65 @@
+name = input('введите название команды')
+print(f'{name} - это чемпионы!')
+# задание 11 
+name = input('введите имя')
+print(f'{name} - ,привет!')
+# задание 12 
+num1 = input('введите первое число')
+num2 = input('введите второе число')
+num3 = input('введите третье число')
+print(num1, num2, num3, sep = '')
+# задание 13
+num = int(input('введите целое число'))
+x = num - 1
+y = num + 1
+print(f"предыдущее число:{x}")
+print(f"предыдущее число:{y}")
+# задание 14
+num1 = input('введите первое число')
+num2 = input('введите второе число')
+num3 = input('введите третье число')
+num4 = input('введите четвертое число')
+print(num1, num2, num3, num4, sep = '')
+# задание 15 
+x = 5
+y = 10 
+z = 7
+print(x, y, z)
+t = 100 
+v = 1949 
+print(t, v)
+x1 = 25
+x2 = y
+print(x1, x2, y)
+# задание 16 
+x = 2
+y = 13 
+z = 17
+print(x, y, z)
+a = 1
+b = 19
+print(a, b)
+x = y
+y = 5
+print(x, y)
+# задание 17 
+x = int(input())
+y = 17 * x ** 2 - 6 * x + 13 
+print(y)
+x = int(input())
+y = 3 * a ** 2 + 5 * a - 21
+print(y)
+# задание 18 
+a = int(input())
+y = (a ** 2 + 10)/(math.sqrt(a ** 2 +   1))
+print(y)
+# задание 19 
+a = int(input())
+y = math.sqrt((2 * a + math.sin('модуль 3a'))/(3.56))
+print(y)
+x = int(input())
+y = math.sin((3.2 + math.sqrt(1 + x))/('модуль 5x'))
+print(y)
+# задание 20 
+print(int(input()) * 4)
+# задание 21
