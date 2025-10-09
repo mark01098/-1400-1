@@ -4,3 +4,34 @@ h = float(input())
 s = (a * b)/(2) * h
 print(s)
 # задание 41
+a = float(input())
+b = float(input())
+c = float(input())
+h = float(input())
+p = a + b + c
+s = (1)/(2) * a * h
+print(f'периметр треугольника')
+print(f'площадь треугольника')
+# задание 42
+a = float(input())
+b = float(input())
+c = float(input())
+d = float(input())
+s = a * h
+p = s1 + s2 + s3 + s4
+print(p)
+# задание 43
+candies = 1 
+cookes = 1 
+apples = 1
+x = float(input())
+y = float(input())
+z = float(input())
+print(candies * x + cookes * y + apples * z)
+# задание 44
+Tany = x 
+Mity = y
+n = float(input())
+s = (a + b)/(n)
+print(f'средний возраст')
+# задание 45
