@@ -1,0 +1,6 @@
+x = float(input())
+y = float(input())
+h = float(input())
+s = (a * b)/(2) * h
+print(s)
+# задание 41
