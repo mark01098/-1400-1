@@ -40,3 +40,37 @@ sg = math.sqrt(abs(a) * abs(b))
 print(f'среднее арифметическое')
 print(f'среднее геометрическое')
 # задание 36
+a = ''
+b = ''
+c = ''
+p = a + b + c
+c = a ** 2 + b ** 2
+print(p,c)
+# задание 37
+x = ''
+y = ''
+s1 = x + y
+s2 = x * y
+s3 = (x)/(y)
+s4 = x - y
+print(f'сумма чисел')
+print(f'умножение')
+print(f'деление')
+print(f'разность')
+# задание 38
+a = float(input())
+b = float(input())
+c = float(input())
+h = float(input())
+v = a * b * h
+s = 2 * c * (a - b)
+print(f'обьем прямоугольного прямоугольного параллелепипида')
+print(f'площадь боковой поверхности прямоуголбного параллелепипида')
+# задание 39
+x1 = float(input())
+y1 = float(input())
+x2 = float(input())
+y2 = float(input())
+distance = math.sqrt(((x2 - x1) ** 2 - (y2 - y1) ** 2))
+print(distance)
+# задание 40
