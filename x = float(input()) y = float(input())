@@ -35,3 +35,45 @@ n = float(input())
 s = (a + b)/(n)
 print(f'средний возраст')
 # задание 45
+v1 = float(input())
+v2 = float(input())
+s = float(input())
+t1 = (v1)/(s)
+t2 = (v2)/(s)
+t = t1 + t2 
+print(f'время через которое встретяться автомобили')
+# задание 46 
+v1 = float(input())
+v2 = float(input())
+t = 30
+if v1 > v2 :
+    s1 = (v1)/(30)
+    s2 = (v2)/(30)
+    s = s1 + s2
+print(s)
+# задание 47 
+Tf = float(input())
+Tc = float(input())
+Tf = 1,8 * Tc + 32
+Tk = Tc + 273,15
+print(f'значение температуры по шкале фрейма')
+print(f'значение температуры по шкале кельвина')
+# задача 48
+f = 450 
+c = (f - 32)/(1,8)
+c = float(input())
+f = c * 1,8 + 32
+k = c + 273,15
+print(f, k)
+# задача 49
+a = float(input())
+a1 = float(input())
+a2 = float(input())
+an = float(input())
+n = float(input())
+b = float(input())
+sum1 = (a1 + a2 + an)/(n)
+sum2 = (a)/(b)
+print(f'среднее арифметическое')
+print(f'частное арифмитическое')
+# задаяа 50 
