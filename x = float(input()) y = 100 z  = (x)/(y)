@@ -1,0 +1,69 @@
+x = float(input())
+y = 100
+z  = (x)/(y)
+print(z)
+# задача 51 
+x = float(input())
+y = 100 
+z = (x)/(y)
+print(z)
+# задача 52 
+x = 234 
+y = 7 
+z = (234)/(7)
+print(z)
+# задача 53
+k = float(input())
+n = float(input())
+z = (k)/(n)
+print(f'каждому по n яблок')
+w = k % n
+print(f'n яблок осталось в корзине')
+# задача 54 
+x = 543
+y = 130
+z = 130
+w1 = (130)/(130)
+w2 = (543)/(130)
+n = 1 * w2
+print(n)
+# задание 55
+x = 9
+y = 4
+n = float(input())
+if n == 1:
+    n = (1)/(4)
+    print(1)
+if n == 4:
+    n = (4)/(4)
+    print(1)
+if n == 5:
+    n = (5)/(4)
+    print(2)
+if n == 36:
+    n = (36)/(4)
+    print(4) 
+print(n)
+# задание 56
+x = 15
+y = 5 
+n = float(input())
+y = (n)/(3)
+print(y)
+# задание 57 
+x = 20 
+y = 15 
+k = 300 
+nb = float(input())
+nr = ((nb - 1)/(15)) + 1
+r1 = (nb - 1) % 15 + 1
+r2 = (nb - 1)/(15) + 1 
+if nb == 01643:
+    r = (1643 - 1)/(15) + 1 
+    r = 110 
+if r < 20:
+    print(True)
+if r > 20:
+    print(False)
+print(r)
+# задание 58 
