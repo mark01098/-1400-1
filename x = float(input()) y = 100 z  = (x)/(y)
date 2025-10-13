@@ -67,3 +67,24 @@ if r > 20:
     print(False)
 print(r)
 # задание 58 
+import math 
+n = float(input())
+x1 = 3600
+x2 = 60 
+k1 = [(n)/(3600)]
+k2 = [(n * math.mod * 3600)/(60)]
+if n == 18070:
+    k3 = [(18070)/(3600)]
+print(k1, k2, k3)
+# задание 59 
+k = 10
+d = 2 
+temp = (30 + 2 - 1) 
+math.mod * 7 == 31
+math.mod * 7 == 3
+if ((k + d - 1) * math.mod * 7) > 0:
+    n = ((k + d - 1) * math.mod * 7)
+if ((k + d - 1) * math.mod * 7) == 0:
+    n == 0
+print(n)
+# задание 60 
