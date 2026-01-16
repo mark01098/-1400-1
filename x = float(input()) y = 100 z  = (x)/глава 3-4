@@ -1,0 +1,2246 @@
+
+#1
+A = True 
+B = False 
+C = False
+
+print ("A=", A)
+print ("B=", B)
+print ("C=", C)
+
+result_a = A or B 
+print(f"a) A or B = {result_a}")
+result_b = A and B 
+print (f"a) A and = {result_b}")
+result_c = B or C 
+print (f"a) B or C = {result_c}")
+#2 
+X = False 
+Y = True 
+Z = False 
+
+print("X=", X)
+print("Y=", Y)
+print("Z=", Z)
+
+result_x = X or Y 
+print(f"x) X or Y = {result_x}")
+result_y = X and Y
+print(f"y) X and Y = {result_y}")
+result_z = X and Z
+print(f"z) X and Z = {result_z}")
+#3
+A = True 
+B = False 
+C = False
+
+print("A=", A)
+print("B=", B)
+print("C=", C)
+
+result_a = (not A) and B
+print(f"a) (not A) and B = {result_a}")
+result_b = A or (not B)
+print(f"b) A or (not B) = {result_b}")
+result_c = A and B or (not C)
+print(f"c) A and B or (not C) = {result_c}")
+#4
+X = True 
+Y = True 
+Z = False 
+
+print("X=", X)
+print("Y=", Y)
+print("Z=", Z)
+
+result_x = (not X) and Y 
+print(f"x) (not X) and Y = {result_x}")
+result_y = X or (not Y)
+print(f"y) X or (not Y) = {result_y}")
+result_z = X or Y and Z
+print(f"z) X or Y and Z = {result_z}")
+#5
+A = True 
+B = False 
+C = False 
+
+print("A=", A)
+print("B=", B)
+print("C=", C)
+
+result_a = A or B and (not C)
+print(f"a) A or B and (not C) = {result_a}")
+result_b = (not A) and (not B)
+print(f"b) (not A) and (not B) = {result_b}")
+result_c = (not (A and B)) or B 
+print(f"c) (not (A and B)) or B = {result_c}")
+result_d = X and (not Y or Z)
+print(f"d) X and (not Y or Z) = {result_d}")
+result_e = A and ((not B or C))
+print(f"e) A and ((not B or C)) = {result_d}")
+result_f = A or ((not (B and C)))
+print(f"f) A or ((not (B and C))) = {result_f}")
+#6
+X = False 
+Y = False 
+Z = True 
+
+print("X=", X)
+print("Y=", Y)
+print("Z=", Z)
+
+result_x = X or Y and (not Z)
+print(f"x) X or Y and (not Z) = {result_x}")
+result_y = (not X) and (not Y) 
+print(f"y) (not X) and (not Y) = {result_y}")
+result_z = (not(X and Z)) or Y
+print(f"z) (not (X and Z)) and Y = {result_z}")
+result_e = X and (not Y or Z)
+print(f"e) X and (not Y or Z) = {result_e}")
+result_d = X and ((not Y or Z))
+print(f"d) X and ((not Y or Z)) = {result_d}")
+result_f = X or ((not (Y or Z)))
+print(f"f) = X or ((not (Y or Z))) = {result_f}")
+#7
+A = True 
+B = False 
+C = False
+
+print("A=", A)
+print("B=", B)
+print("C=", C)
+
+result_a =  A or (not (A and B)) or C
+print(f"a) A or (not (A and B)) or C = {result_a}")
+result_b = (not A) or A and (B or C)
+print(f"b) (not A) or A and (B or C) = {result_b}")
+result_c = (A or B and (not Z)) and Z
+print(f"c) (A or B and (not Z) and Z = {result_c}")
+#8
+X = False 
+Y = True 
+Z = False 
+
+print("X=", X)
+print("Y=", Y)
+print("Z=", Z)
+
+result_x = X and (not (Z or Y)) or (not Z)
+print(f"x) X and (not (Z or Y)) or (not Z) = {result_x}")
+result_y = (not X) or X and (Y or Z)
+print(f"y) (not X) or X and (Y or Z) = {result_y}")
+result_c = (X or Y and (not Z)) and Z
+print(f"c) (X or Y and (not Z)) and Z = {result_c}")
+#9
+X = True 
+Y = False 
+Z = False 
+
+print("X=", X)
+print("Y=", Y)
+print("Z=", Z)
+
+result_x = (not X) or (not Y) or (not Z)
+print(f"x) (not X) or (not Y) or (not Z) = {result_x}")
+result_y = ((not X) or (not Y)) and (X or Y)
+print(f"y) ((not X) or (not Y)) and (X or Y) = {result_y}")
+result_c = X and Y or X and Z or (not Z)
+print(f"c) X and Y or X and Z or (not Z) = {result_c}")
+#10 
+A = False 
+B = False 
+C = True 
+
+print("A=", A)
+print("B=", B)
+print("C=", C)
+
+result_a = ((not A) or (not B)) and (not C)
+print(f"a) ((not A) or (not B)) and (not C) = {result_a}")
+result_b = ((not A) or (not B)) and (A or B)
+print(f"b) ((not A) or (not B)) and (A or B) = {result_b}")
+result_c = A and B or A and C or (not C)
+print(f"c) A and B A and C or (not C) = {result_c}")
+#11 
+x,y = 1, 1
+result_x = (x ** 2 + y ** 2) <= 4
+print(f"x) x ** 2 + y ** 2 == 4 при x = {x} y = {y} --> {result_x}")
+
+x,y = 1, 2
+result_y = (x >= 0) or (y ** 2 != 4) 
+print(f"y) (x >= 0) or (y ** 2 != 4) при x = {x} y = {y} --> {result_y}")
+
+x,y = 1, 2
+result_z = (x >= 0) and (y ** 2 != 4) 
+print(f"z) (x >= 0) and (y ** 2 != 4) при x = {x} y = {y} --> {result_z}")
+
+x,y = 2,1 
+result_d = (x * y != 0) and (y > x)
+print(f"d) (x * y != 0) and (y > x) при x = {x} y = {y} --> {result_d}")
+
+x, y = 2, 1 
+result_e = (x * y != 0) or (y < x)
+print(f"e) (x * y != 0) or (y < z) при x = {x} y = {y} --> {result_e}")
+
+x, y = 2, 1 
+result_s = ((not (x * y < 0))) and (y > x) 
+print(f"s) ((not (x * y < 0))) and (y > x) при x = {x} y = {y} --> {result_s}")
+
+x, y = 1, 2
+result_f = ((not (x * y < 0))) or (y > x) 
+print(f"f) ((not (x * y < 0))) or (y > x) при x = {x} y = {y} --> {result_f}")
+
+
+print("Задание 3.16")
+for X in [True, False]:
+    for Y in [True, False]:
+        result_a = (not X) and (not Y)
+        result_b = X or ((not X) and Y)
+        result_c = ((not X) and Y) or Y
+        print(f"X={X}, Y={Y}: a) {result_a}, б) {result_b}, в) {result_c}")
+
+print("\nЗадание 3.17")
+for A in [True, False]:
+    for B in [True, False]:
+        result_a = ((not A) and (not B)) or A
+        result_b = B or ((not A) and (not B))
+        result_c = B and (not (A and (not B)))
+        print(f"A={A}, B={B}: a) {result_a}, б) {result_b}, в) {result_c}")
+
+print("\nЗадание 3.18")
+for X in [True, False]:
+    for Y in [True, False]:
+        result_a = (not (X and (not Y))) or X
+        result_b = (Y and (not X)) or (not Y)
+        result_c = ((not Y) and (not X)) or (not Y)  
+        print(f"X={X}, Y={Y}: a) {result_a}, б) {result_b}, в) {result_c}")
+print("Задание 3.19")
+for A in [True, False]:
+    for B in [True, False]:
+        result_a = (not ((not A) and (not B))) and A
+        result_b = (not ((not A) or (not B))) or A  
+        result_c = (not ((not A) or (not B))) and B  
+        print(f"A={A}, B={B}: a) {result_a}, б) {result_b}, в) {result_c}")
+
+print("\nЗадание 3.20")
+for X in [True, False]:
+    for Y in [True, False]:
+        result_a = (not ((not X) or Y)) or (not X)
+        result_b = (not ((not X) and (not Y))) and X
+        result_c = (not (X or (not Y))) or (not Y)
+        print(f"X={X}, Y={Y}: a) {result_a}, б) {result_b}, в) {result_c}")
+for X in [True, False]:
+    for Y in [True, False]:
+        for Z in [True, False]:
+            result_a = not (X or ((not Y) and Z))
+            result_b = Y or ((X and (not Y)) or Z)
+            result_c = not ((X and Y) or Z)  
+            print(f"X={X}, Y={Y}, Z={Z}: a) {result_a}, б) {result_b}, в) {result_c}")
+for A in [True, False]:
+    for B in [True, False]:  
+        for C in [True, False]:
+            result_a = (not (A or ((not B) and C))) or C
+            result_b = (not ((A and (not B)) or C)) and B
+            result_c = (not (A or ((not B) and C))) or A
+            print(f"A={A}, B={B}, C={C}: a) {result_a}, б) {result_b}, в) {result_c}")
+print("Задание 3.16")
+for X in [True, False]:
+    for Y in [True, False]:
+        result_a = (not X) and (not Y)
+        result_b = X or ((not X) and Y)
+        result_c = ((not X) and Y) or Y
+        print(f"X={X}, Y={Y}: a) {result_a}, б) {result_b}, в) {result_c}")
+
+print("\nЗадание 3.17")
+for A in [True, False]:
+    for B in [True, False]:
+        result_a = ((not A) and (not B)) or A
+        result_b = B or ((not A) and (not B))
+        result_c = B and (not (A and (not B)))
+        print(f"A={A}, B={B}: a) {result_a}, б) {result_b}, в) {result_c}")
+
+print("\nЗадание 3.18")
+for X in [True, False]:
+    for Y in [True, False]:
+        result_a = (not (X and (not Y))) or X
+        result_b = (Y and (not X)) or (not Y)
+        result_c = ((not Y) and (not X)) or (not Y)  
+        print(f"X={X}, Y={Y}: a) {result_a}, б) {result_b}, в) {result_c}")
+
+print("Задание 3.19")
+for A in [True, False]:
+    for B in [True, False]:
+        result_a = (not ((not A) and (not B))) and A
+        result_b = (not ((not A) or (not B))) or A  
+        result_c = (not ((not A) or (not B))) and B  
+        print(f"A={A}, B={B}: a) {result_a}, б) {result_b}, в) {result_c}")
+
+print("\nЗадание 3.20")
+for X in [True, False]:
+    for Y in [True, False]:
+        result_a = (not ((not X) or Y)) or (not X)
+        result_b = (not ((not X) and (not Y))) and X
+        result_c = (not (X or (not Y))) or (not Y)
+        print(f"X={X}, Y={Y}: a) {result_a}, б) {result_b}, в) {result_c}")
+
+print("\nЗадание 3.21")
+for A in [True, False]:
+    for B in [True, False]:
+        for C in [True, False]:
+            result_a = not (A or ((not B) and C))
+            result_b = A and (not (B and (not C)))  
+            result_c = (not (A or (not B))) and C
+            print(f"A={A}, B={B}, C={C}: a) {result_a}, б) {result_b}, в) {result_c}")
+
+print("\nЗадание 3.22")
+for X in [True, False]:
+    for Y in [True, False]:
+        for Z in [True, False]:
+            result_a = not (X or ((not Y) and Z))
+            result_b = Y or ((X and (not Y)) or Z)
+            result_c = not ((X and Y) or Z)  
+            print(f"X={X}, Y={Y}, Z={Z}: a) {result_a}, б) {result_b}, в) {result_c}")
+
+print("\nЗадание 3.23")
+for A in [True, False]:
+    for B in [True, False]:
+        for C in [True, False]:
+            result_a = (not (A or ((not B) and C))) or C
+            result_b = (not ((A and (not B)) or C)) and B
+            result_c = (not (A or ((not B) and C))) or A
+            print(f"A={A}, B={B}, C={C}: a) {result_a}, б) {result_b}, в) {result_c}")
+
+print("\nЗадание 3.24")
+for X in [True, False]:
+    for Y in [True, False]:
+        for Z in [True, False]:
+            result_a = (not (Y or ((not X) and Z))) or Z
+            result_b = (X and (not (Y or Z))) or Y
+            result_c = (not (X or (Y and Z))) or (not X)
+            print(f"X={X}, Y={Y}, Z={Z}: a) {result_a}, б) {result_b}, в) {result_c}")
+
+print("\nЗадание 3.25")
+for A in [True, False]:
+    for B in [True, False]:
+        for C in [True, False]:
+            result_a = (not (A and B)) and ((not A) or (not C))
+            result_b = (not (A and (not B))) or (A or (not C))
+            result_c = (not (A and (not B))) and ((not A) or (not C))
+            print(f"A={A}, B={B}, C={C}: a) {result_a}, б) {result_b}, в) {result_c}")
+
+print("\nЗадание 3.26")
+for X in [True, False]:
+    for Y in [True, False]:
+        for Z in [True, False]:
+            result_a = (not (X or Y)) and ((not X) or (not Z))
+            result_b = (not (X and (not Y))) or (X or (not Z))
+            print(f"X={X}, Y={Y}, Z={Z}: a) {result_a}, б) {result_b}")
+
+x, y, z = 5, 10, 15
+A, B, C = 120, 25, 60
+X, Y, Z = 7, 20, 0
+
+print("\nЗадание 3.27")
+print(f"x={x}, y={y}")
+print(f"a) x>2 и y>3: {x>2 and y>3}")
+print(f"б) x>1 или y>-2: {x>1 or y>-2}")
+print(f"в) x>=0 и y<5: {x>=0 and y<5}")
+print(f"г) x==3 или x<-1: {x==3 or x<-1}")
+print(f"д) x>3 и x<10: {x>3 and x<10}")
+print(f"е) неверно, что x>2: {not (x>2)}")
+print(f"ж) неверно, что x>0 и x<5: {not (x>0 and x<5)}")
+print(f"з) 10<x≤20: {10<x and x<=20}")
+print(f"и) 0<y≤4 и x<5: {0<y and y<=4 and x<5}")
+
+print("\nЗадание 3.28")
+print(f"A={A}, B={B}, C={C}")
+print(f"а) A>100 и B>100: {A>100 and B>100}")
+print(f"б) только одно четное: {(A%2==0 and B%2!=0) or (A%2!=0 and B%2==0)}")
+print(f"в) хотя бы одно положительное: {A>0 or B>0}")
+print(f"г) все кратны 3: {A%3==0 and B%3==0 and C%3==0}")
+print(f"д) только одно <50: {(A<50 and B>=50 and C>=50) or (A>=50 and B<50 and C>=50) or (A>=50 and B>=50 and C<50)}")
+print(f"е) хотя бы одно отрицательное: {A<0 or B<0 or C<0}")
+
+print("\nЗадание 3.29")
+print(f"X={X}, Y={Y}, Z={Z}")
+print(f"а) оба нечетные: {X%2!=0 and Y%2!=0}")
+print(f"б) только одно <20: {(X<20 and Y>=20) or (X>=20 and Y<20)}")
+print(f"в) хотя бы одно равно 0: {X==0 or Y==0}")
+print(f"г) все отрицательные: {X<0 and Y<0 and Z<0}")
+print(f"д) только одно кратно 5: {(X%5==0 and Y%5!=0 and Z%5!=0) or (X%5!=0 and Y%5==0 and Z%5!=0) or (X%5!=0 and Y%5!=0 and Z%5==0)}")
+print(f"е) хотя бы одно >100: {X>100 or Y>100 or Z>100}")
+
+A = 30  
+N = 28  
+
+print("\nЗадание 3.30")
+print(f"A={A}")
+print(f"а) кратно 2 или 3: {A%2==0 or A%3==0}")
+print(f"б) не кратно 3 и оканчивается 0: {A%3!=0 and A%10==0}")
+
+print("\nЗадание 3.31")
+print(f"N={N}")
+print(f"а) кратно 5 или 7: {N%5==0 or N%7==0}")
+print(f"б) кратно 4 и не оканчивается 0: {N%4==0 and N%10!=0}")
+
+print("\nЗадание 3.32")
+x, y = 0.5, 0.5  
+
+in_area_a = (-2 <= x <= 1)
+in_area_b = (0 <= x <= 2) and (0 <= y <= 1)  
+
+print(f"Точка ({x}, {y}):")
+print(f"Попадает в область а): {in_area_a}")
+print(f"Попадает в область b): {in_area_b}")
+
+print("\nЗадание 3.34")
+a, b = 4, 4  
+c, d = 4, 6  
+
+print(f"Фигура на ({a},{b}), цель ({c},{d})")
+print(f"а) Ладья угрожает: {a == c or b == d}")
+print(f"б) Слон угрожает: {abs(a - c) == abs(b - d)}")
+print(f"в) Король может пойти: {abs(a - c) <= 1 and abs(b - d) <= 1}")
+print(f"г) Ферзь угрожает: {(a == c or b == d) or (abs(a - c) == abs(b - d))}")
+
+print(f"д) Белая пешка:")
+print(f"   Обычный ход: {a == c and (d - b == 1 or (b == 2 and d - b == 2))}")
+print(f"   Бьёт: {abs(a - c) == 1 and d - b == 1}")
+
+print(f"е) Черная пешка:")
+print(f"   Обычный ход: {a == c and (b - d == 1 or (b == 7 and b - d == 2))}")
+print(f"   Бьёт: {abs(a - c) == 1 and b - d == 1}")
+
+print(f"ж) Конь угрожает: {(abs(a - c) == 2 and abs(b - d) == 1) or (abs(a - c) == 1 and abs(b - d) == 2)}")
+
+print("\nЗадание 3.35")
+a, b = 4, 4  
+c, d = 4, 6  
+e, f = 4, 5  
+
+def ладья_угрожает(x1, y1, x2, y2):
+    return x1 == x2 or y1 == y2
+
+def слон_угрожает(x1, y1, x2, y2):
+    return abs(x1 - x2) == abs(y1 - y2)
+
+def ферзь_угрожает(x1, y1, x2, y2):
+    return ладья_угрожает(x1, y1, x2, y2) or слон_угрожает(x1, y1, x2, y2)
+
+def конь_угрожает(x1, y1, x2, y2):
+    return (abs(x1 - x2) == 2 and abs(y1 - y2) == 1) or (abs(x1 - x2) == 1 and abs(y1 - y2) == 2)
+
+def король_угрожает(x1, y1, x2, y2):
+    return abs(x1 - x2) <= 1 and abs(y1 - y2) <= 1
+
+print(f"Белая на ({a},{b}), черная на ({c},{d}), цель ({e},{f})")
+print(f"а) Ладья -> ладья: {ладья_угрожает(a, b, e, f) and not ладья_угрожает(c, d, e, f)}")
+print(f"б) Ладья -> ферзь: {ладья_угрожает(a, b, e, f) and not ферзь_угрожает(c, d, e, f)}")
+print(f"в) Ладья -> конь: {ладья_угрожает(a, b, e, f) and not конь_угрожает(c, d, e, f)}")
+print(f"г) Ладья -> слон: {ладья_угрожает(a, b, e, f) and not слон_угрожает(c, d, e, f)}")
+print(f"д) Ферзь -> ферзь: {ферзь_угрожает(a, b, e, f) and not ферзь_угрожает(c, d, e, f)}")
+print(f"е) Ферзь -> ладья: {ферзь_угрожает(a, b, e, f) and not ладья_угрожает(c, d, e, f)}")
+print(f"ж) Ферзь -> конь: {ферзь_угрожает(a, b, e, f) and not конь_угрожает(c, d, e, f)}")
+print(f"з) Ферзь -> слон: {ферзь_угрожает(a, b, e, f) and not слон_угрожает(c, d, e, f)}")
+print(f"и) Конь -> конь: {конь_угрожает(a, b, e, f) and not конь_угрожает(c, d, e, f)}")
+print(f"к) Конь -> ладья: {конь_угрожает(a, b, e, f) and not ладья_угрожает(c, d, e, f)}")
+print(f"л) Конь -> ферзь: {конь_угрожает(a, b, e, f) and not ферзь_угрожает(c, d, e, f)}")
+print(f"м) Конь -> слон: {конь_угрожает(a, b, e, f) and not слон_угрожает(c, d, e, f)}")
+print(f"н) Слон -> слон: {слон_угрожает(a, b, e, f) and not слон_угрожает(c, d, e, f)}")
+print(f"о) Слон -> ферзь: {слон_угрожает(a, b, e, f) and not ферзь_угрожает(c, d, e, f)}")
+print(f"п) Слон -> конь: {слон_угрожает(a, b, e, f) and not конь_угрожает(c, d, e, f)}")
+print(f"р) Слон -> ладья: {слон_угрожает(a, b, e, f) and not ладья_угрожает(c, d, e, f)}")
+print(f"с) Король -> слон: {король_угрожает(a, b, e, f) and not слон_угрожает(c, d, e, f)}")
+print(f"т) Король -> ферзь: {король_угрожает(a, b, e, f) and not ферзь_угрожает(c, d, e, f)}")
+print(f"у) Король -> конь: {король_угрожает(a, b, e, f) and not конь_угрожает(c, d, e, f)}")
+print(f"ф) Король -> ладья: {король_угрожает(a, b, e, f) and not ладья_угрожает(c, d, e, f)}")
+
+import math
+
+print("\nЗадание 4.1")
+x = 1.5
+if x > 0:
+    y = math.sin(x)**2
+else:
+    y = 1 - 2 * math.sin(x)**2
+print(f"x={x}, y={y}")
+
+print("\nЗадание 4.2")
+x = -0.5
+if x > 0:
+    y = math.sin(x**2)
+else:
+    y = 1 + 2 * math.sin(x)**2
+print(f"x={x}, y={y}")
+
+print("\nЗадание 4.6")
+num1 = 5.3
+num2 = 7.1
+print(f"Числа: {num1} и {num2}")
+print(f"а) Большее: {max(num1, num2)}")
+print(f"б) Меньшее: {min(num1, num2)}")
+
+print("\nЗадание 4.7")
+print(f"Максимальное: {max(num1, num2)}")
+print(f"Минимальное: {min(num1, num2)}")
+
+print("\nЗадание 4.8")
+km = 2.5  
+feet = 8000  
+meters_from_feet = feet * 0.305
+km_from_feet = meters_from_feet / 1000
+print(f"Расстояния: {km} км и {feet} футов ({km_from_feet:.3f} км)")
+if km < km_from_feet:
+    print("Первое расстояние меньше")
+else:
+    print("Второе расстояние меньше")
+
+print("\nЗадание 4.9")
+kmh = 60
+ms = 15
+kmh_from_ms = ms * 3.6
+print(f"Скорости: {kmh} км/ч и {ms} м/с ({kmh_from_ms} км/ч)")
+if kmh > kmh_from_ms:
+    print("Первая скорость больше")
+else:
+    print("Вторая скорость больше")
+
+print("\nЗадание 4.10")
+radius = 5
+square_side = 8
+circle_area = math.pi * radius**2
+square_area = square_side**2
+print(f"Круг: радиус {radius}, площадь {circle_area:.2f}")
+print(f"Квадрат: сторона {square_side}, площадь {square_area}")
+if circle_area > square_area:
+    print("Площадь круга больше")
+else:
+    print("Площадь квадрата больше")
+
+print("\nЗадание 4.11")
+mass1, volume1 = 10, 2 
+mass2, volume2 = 15, 3 
+density1 = mass1 / volume1
+density2 = mass2 / volume2
+print(f"Тело 1: масса={mass1}, объем={volume1}, плотность={density1}")
+print(f"Тело 2: масса={mass2}, объем={volume2}, плотность={density2}")
+if density1 > density2:
+    print("Первое тело имеет большую плотность")
+else:
+    print("Второе тело имеет большую плотность")
+
+print("\nЗадание 4.12")
+R1, U1 = 100, 12 
+R2, U2 = 200, 24 
+I1 = U1 / R1
+I2 = U2 / R2
+print(f"Участок 1: R={R1}, U={U1}, I={I1}")
+print(f"Участок 2: R={R2}, U={U2}, I={I2}")
+if I1 < I2:
+    print("Меньший ток на первом участке")
+else:
+    print("Меньший ток на втором участке")
+
+print("\nЗадание 4.13")
+a, b, c = 1, -3, 2
+discriminant = b**2 - 4*a*c
+print(f"Уравнение: {a}x² + {b}x + {c} = 0")
+print(f"Дискриминант: {discriminant}")
+if discriminant >= 0:
+    print("Есть вещественные корни")
+else:
+    print("Нет вещественных корней")
+
+print("\nЗадание 4.14")
+if discriminant >= 0:
+    x1 = (-b + math.sqrt(discriminant)) / (2*a)
+    x2 = (-b - math.sqrt(discriminant)) / (2*a)
+    print(f"Корни: x1={x1}, x2={x2}")
+else:
+    print("Вещественных корней нет")
+    
+print("\nЗадание 4.15")
+birth_year = 1990
+birth_month = 6
+current_year = 2024
+current_month = 3
+
+age = current_year - birth_year
+if current_month < birth_month:
+    age -= 1
+print(f"Родился: {birth_month}.{birth_year}")
+print(f"Сегодня: {current_month}.{current_year}")
+print(f"Возраст: {age} полных лет")
+
+print("\nЗадание 4.16")
+circle_area = 50
+square_area = 64
+square_side = math.sqrt(square_area)
+circle_radius = math.sqrt(circle_area / math.pi)
+circle_diameter = 2 * circle_radius
+print(f"Площадь круга: {circle_area}, радиус: {circle_radius:.2f}, диаметр: {circle_diameter:.2f}")
+print(f"Площадь квадрата: {square_area}, сторона: {square_side:.2f}")
+print(f"а) Круг в квадрате: {circle_diameter <= square_side}")
+print(f"б) Квадрат в круге: {square_side * math.sqrt(2) <= circle_diameter}")
+
+print("\nЗадание 4.20")
+m, n = 15, 3
+print(f"m={m}, n={n}")
+if m % n == 0:
+    print(f"Частное: {m // n}")
+else:
+    print(f"{m} на {n} нацело не делится")
+
+print("\nЗадание 4.22")
+number = 127
+print(f"Число: {number}")
+print(f"а) Четное: {number % 2 == 0}")
+print(f"б) Оканчивается на 7: {number % 10 == 7}")
+
+print ("\nЗадание 4.23")
+
+n = int(input("Введите двузначное число: "))
+
+
+d1 = n // 10
+d2 = n % 10
+
+
+print(f"а) Первая цифра: {d1}, вторая цифра: {d2}")
+if d1 > d2:
+    print("   Первая цифра больше")
+elif d2 > d1:
+    print("   Вторая цифра больше")
+else:
+    print("   Цифры равны")
+
+
+print(f"б) Цифры одинаковы: {d1 == d2}")
+
+print("\nЗадание 4.24")
+number =  48 
+
+d1 = number // 10 
+d2 = number * 10 
+
+print(f" Число: {number}")
+print(f"Квадрат числа равен учетверенной сумме кубовего цифр :" 
+      f"{number ** 2 == 4 * (d1 ** 3 + d2 ** 3)} ")
+
+print("\nЗадание 4.25")
+number = 45 
+a = 6
+
+d1 = number // 10
+d2 = number % 10
+d3 = d1 + d2
+
+print(f"Число: {number}")
+print(f"а) Сумма цифр является двузначным числом: {10 <= d3 <= 99}")
+print(f"б) Сумма цифр больше числа a={a}: {d3 > a}")
+
+print("\nЗадание 4.26")
+number = 57  
+a = 4  
+
+d1 = number // 10
+d2 = number % 10
+d3 = d1 + d2 
+
+print(f"Число: {number}")
+print(f"Квадрат числа равен учетверенной сумме кубовего цифр :" 
+      f"{number ** 2 == 4 * (d1 ** 3 + d2 ** 3)} ")
+print(f"а) Сумма цифр кратна 3: {d3 % 3 == 0}")
+print(f"б) Сумма цифр кратна числу a={a}: {d3 % a == 0}")
+
+print("\nЗадача 4.27")
+number = 121  
+
+d1  = number // 100
+d2 = number % 10
+
+print(f"Число: {number}")
+print(f"Первая цифра: {d1}, последняя цифра: {d2}")
+print(f"Является палиндромом: {d1 == d2}")
+
+print("\nЗадание 4.28")
+number = 475  
+
+d1 = number // 100
+d2 = (number // 10) % 10
+d3 = number % 10
+
+print(f"Число: {number}")
+print(f"Цифры: {d1}, {d2}, {d3}")
+print(f"а) Первая цифра больше последней: {d1 > d3}")
+print(f"б) Первая цифра больше второй: {d1  > d2 }")
+print(f"в) Вторая цифра больше последней: {d2 > d3}")
+
+print("\nЗадание 4.29")
+number = 153  
+
+d1  = number // 100
+d2 = (number // 10) % 10
+d3 = number % 10
+
+d4 = d1**3 + d2**3 + d3**3
+
+print(f"Число: {number}")
+print(f"Цифры: {d1}, {d2}, {d3}")
+print(f"Квадрат числа: {number**2}")
+print(f"Сумма кубов цифр: {d4}")
+print(f"Квадрат числа равен сумме кубов цифр: {number**2 == d4}")
+
+print("\nЗадание 4.30: Трехзначное число - различные проверки")
+number = 234 
+a = 10  
+
+d1 = number // 100
+d2 = (number // 10) % 10
+d3 = number % 10
+
+d4 = d1 + d2 + d3 
+d5= d1 + d2 + d3
+
+print(f"Число: {number}")
+print(f"Цифры: {d1}, {d2}, {d3}")
+print(f"Сумма цифр: {d4}")
+print(f"Произведение цифр: {d5}")
+print(f"а) Сумма цифр - двузначное число: {10 <= d4 <= 99}")
+print(f"б) Произведение цифр - трехзначное число: {100 <= d5 <= 999}")
+print(f"в) Произведение цифр > числа a={a}: {d4 > a}")
+print(f"г) Сумма цифр кратна 5: {d4 % 5 == 0}")
+print(f"д) Сумма цифр кратна числу a={a}: {d4 % a == 0}")
+
+
+print("\nЗадание 4.31: Трехзначное число")
+number = 333  
+
+first = number // 100
+second = (number // 10) % 10
+third = number % 10
+
+print(f"Число: {number}")
+print(f"Цифры: {first}, {second}, {third}")
+print(f"а) Все цифры одинаковые: {first == second == third}")
+print(f"б) Есть одинаковые цифры: {first == second or first == third or second == third}")
+
+
+print("\nЗадание 4.32: Четырехзначное число")
+number = 1234  
+a = 24  
+
+d1 = number // 1000
+d2 = (number // 100) % 10
+d3 = (number // 10) % 10
+d4 = number % 10
+
+sum_first_two = d1 + d2
+sum_last_two = d3 + d4
+digit_sum = d1 + d2 + d3 + d4
+digit_product = d1 * d2 * d3 * d4
+
+print(f"Число: {number}")
+print(f"Цифры: {d1}, {d2}, {d3}, {d4}")
+print(f"а) Сумма первых двух цифр равна сумме последних двух: {sum_first_two == sum_last_two}")
+print(f"б) Сумма цифр кратна 3: {digit_sum % 3 == 0}")
+print(f"в) Произведение цифр кратно 4: {digit_product % 4 == 0}")
+print(f"г) Произведение цифр кратно числу a={a}: {digit_product % a == 0}")
+
+
+print("\nЗадание 4.33")
+number = 12345  
+
+last_digit = number % 10
+
+print(f"Число: {number}")
+print(f"Последняя цифра: {last_digit}")
+print(f"а) Заканчивается четной цифрой: {last_digit % 2 == 0}")
+print(f"б) Заканчивается нечетной цифрой: {last_digit % 2 == 1}")
+
+
+print("\nЗадание 4.34")
+a = 12
+b = 36
+
+print(f"Числа: a={a}, b={b}")
+print(f"а) Является ли a делителем b: {b % a == 0}")
+print(f"б) Является ли b делителем a: {a % b == 0}")
+
+
+print("\nЗадание 4.35")
+a, b = 10, 8  
+c, d = 3, 2   
+
+
+count1 = (a // c) * (b // d)
+
+
+count2 = (a // d) * (b // c)
+
+print(f"Размеры стола: {a}×{b}")
+print(f"Размеры картонного прямоугольника: {c}×{d}")
+print(f"Количество при размещении длинной стороной вдоль длинной стороны стола: {count1}")
+print(f"Количество при размещении длинной стороной вдоль короткой стороны стола: {count2}")
+print(f"Первый способ размещения дает больше прямоугольников: {count1 > count2}")
+print(f"Второй способ размещения дает больше прямоугольников: {count2 > count1}")
+
+print("\nЗадание 4.36")
+t = 4.5  
+
+cycle_time = t % 5  
+
+print(f"Время: {t} минут")
+print(f"Остаток от деления на 5: {cycle_time} минут")
+print(f"Горит зеленый сигнал: {cycle_time < 3}")
+print(f"Горит красный сигнал: {cycle_time >= 3}")
+
+
+import math
+
+print("=" * 50)
+print("ЗАДАНИЯ 4.37-4.41")
+print("=" * 50)
+
+# 4.37
+
+x_val = 2.5
+interval_start = -5
+interval_end = 3
+print(f"Число: {x_val}")
+print(f"Принадлежит интервалу (-5, 3): {-5 < x_val < 3}")
+
+# 4.38
+
+x, y = 1.5, 1.0
+print(f"Точка: ({x}, {y})")
+print(f"Попадает в область I (0<x<3, 0<y<2): {0 < x < 3 and 0 < y < 2}")
+
+# 4.39
+
+x, y = -0.5, 1.0
+in_1 = 0 < x < 5 and 0 < y < 2
+in_3 = -1 < x < 0 and 0 < y < 2
+print(f"Точка: ({x}, {y})")
+print(f"Попадает в область I: {in_1}")
+print(f"Попадает в область III: {in_3}")
+print(f"Попадает в I или III: {in_1 or in_3}")
+
+# 4.40
+
+x = 3.0
+if 2.4 <= x <= 5.7:
+    f = x**2
+else:
+    f = 4
+print(f"x = {x}")
+print(f"f(x) = {f}")
+
+# 4.41
+
+x = 0.5
+if 0.2 <= x <= 0.9:
+    f = math.sin(x)
+else:
+    f = 1
+print(f"x = {x}")
+print(f"f(x) = {f}")
+
+# Задание 4.42
+a, b, c = 1.5, 2.0, 3.5
+
+print(f"  a < b < c: {a < b < c}")
+print(f"  b > a > c: {b > a > c}")
+
+# Задание 4.43
+a, b = 12, 4
+
+print(f"  Делитель: {'Да' if a % b == 0 or b % a == 0 else 'Нет'}")
+
+# Задание 4.44
+a, b, c, d = 17, 5, 2, 3
+r = a % b
+print("\n4.44:")
+print(f"  Остаток равен {c} или {d}: {r == c or r == d}")
+
+# Задание 4.45
+a, b, c = 2.5, 3.0, 2.5
+
+print(f"  Есть равные: {a == b or a == c or b == c}")
+
+# Задание 4.46
+a, b, c = 5.0, 5.0, 5.0
+
+print(f"  Равносторонний: {a == b == c}")
+
+# Задание 4.47
+a, b, c = 5.0, 5.0, 3.0
+
+print(f"  Равнобедренный: {a == b or a == c or b == c}")
+
+# Задание 4.48
+h1, h2, h3 = 175.5, 180.0, 175.5
+
+print(f"  Рост одинаков: {h1 == h2 == h3}")
+
+# Задание 4.49
+from math import sqrt
+a, b, c = 1, -3, 2
+D = b*b - 4*a*c
+
+if D > 0:
+    x1 = (-b + sqrt(D))/(2*a)
+    x2 = (-b - sqrt(D))/(2*a)
+    print(f"  x1 = {x1:.2f}, x2 = {x2:.2f}")
+elif D == 0:
+    x = -b/(2*a)
+    print(f"  x = {x:.2f}")
+else:
+    print("  Нет действительных корней")
+
+# Задание 4.50
+a, b, c, d = 3, 4, 5, 6
+
+print(f"  Помещается: {(a <= c and b <= d) or (a <= d and b <= c)}")
+
+# Задание 4.51
+a, b, c, d = 110, 220, 100, 210
+
+print(f"  Открытка влезает: {(c <= a-2 and d <= b-2) or (d <= a-2 and c <= b-2)}")
+
+# Задание 4.52
+a, b, d = 40, 60, 35
+
+print(f"  Голова пролезет: {d <= a-2 and d <= b-2}")
+
+# Задание 4.53
+a, b, c, x, y = 10, 20, 30, 25, 35
+
+print(f"  Кирпич пройдёт: {(a <= x and b <= y) or (a <= y and b <= x) or (a <= x and c <= y) or (a <= y and c <= x) or (b <= x and c <= y) or (b <= y and c <= x)}")
+
+# Задание 4.54
+a1, a2, a3 = 50, 40, 30
+b1, b2, b3 = 45, 35, 25
+case = sorted([a1, a2, a3])
+box = sorted([b1, b2, b3])
+
+print(f"  Коробка влезает: {box[0] <= case[0] and box[1] <= case[1] and box[2] <= case[2]}")
+
+# Задание 4.55
+n = 53
+a = 3
+d1, d2 = n//10, n%10
+
+print(f"  Есть цифра 3: {d1 == 3 or d2 == 3}")
+print(f"  Есть цифра {a}: {d1 == a or d2 == a}")
+
+# 4.56
+n = 47
+d1, d2 = n // 10, n % 10
+print(f"4.56: а) {4 in (d1,d2) or 7 in (d1,d2)}")
+print(f"      б) {3 in (d1,d2) or 6 in (d1,d2) or 9 in (d1,d2)}")
+
+# 4.57
+n = 163
+d1, d2, d3 = n // 100, (n // 10) % 10, n % 10
+print(f"4.57: а) {6 in (d1,d2,d3)}")
+print(f"      б) {6 in (d1,d2,d3)}")
+
+# 4.58
+n = 347
+d1, d2, d3 = n // 100, (n // 10) % 10, n % 10
+print(f"4.58: а) {4 in (d1,d2,d3) or 7 in (d1,d2,d3)}")
+print(f"      б) {3 in (d1,d2,d3) or 6 in (d1,d2,d3) or 9 in (d1,d2,d3)}")
+
+# 4.59
+n = 1423
+d1, d2, d3, d4 = n // 1000, (n // 100) % 10, (n // 10) % 10, n % 10
+print(f"4.59: а) {4 in (d1,d2,d3,d4)}")
+print(f"      б) {4 in (d1,d2,d3,d4)}")
+
+# 4.60
+n = 2739
+d1, d2, d3, d4 = n // 1000, (n // 100) % 10, (n // 10) % 10, n % 10
+print(f"4.60: а) {2 in (d1,d2,d3,d4) or 7 in (d1,d2,d3,d4)}")
+print(f"      б) {3 in (d1,d2,d3,d4) or 6 in (d1,d2,d3,d4) or 9 in (d1,d2,d3,d4)}")
+
+# 4.61
+n = 8338
+s = str(n).zfill(4)
+print(f"4.61: {s == s[::-1]}")
+
+# 4.62
+n = 4844
+s = str(n).zfill(4)
+print(f"4.62: {any(s.count(d) == 3 for d in s)}")
+
+# 4.63
+n = 3678
+s = str(n).zfill(4)
+print(f"4.63: {len(set(s)) == 4}")
+
+# 4.64
+n = 123420
+s = str(n).zfill(6)
+print(f"4.64: {sum(int(d) for d in s[:3]) == sum(int(d) for d in s[3:])}")
+
+# 4.65
+year = 2000
+print(f"4.65: {year % 400 == 0 or (year % 4 == 0 and year % 100 != 0)}")
+
+# 4.66
+a, b = 10, 8
+c, d, e = 3, 2, 1
+m = 0
+for f in [(c,d), (c,e), (d,e)]:
+    x, y = f
+    m = max(m, (a//x)*(b//y), (a//y)*(b//x))
+print(f"4.66: {m}")
+
+# 4.67
+k = 10
+w = (k-1)%7
+print(f"4.67: {w>=5}")
+
+# 4.68
+import math
+v, r = 50, math.radians(45)
+R, H, P = 100, 20, 5
+g = 9.8
+t = R/(v*math.cos(r))
+y = v*t*math.sin(r) - g*t*t/2
+print(f"4.68: {H<=y<=H+P}")
+
+# 4.69
+x1, y1, w1, h1 = 0, 0, 5, 3
+x2, y2, w2, h2 = 2, 1, 4, 4
+a = x1>=x2 and y1>=y2 and x1+w1<=x2+w2 and y1+h1<=y2+h2
+b = x2>=x1 and y2>=y1 and x2+w2<=x1+w1 and y2+h2<=y1+h1
+c = x1<x2+w2 and x2<x1+w1 and y1<y2+h2 and y2<y1+h1
+print(f"4.69: а) {a}")
+print(f"       б) {a or b}")
+print(f"       в) {c}")
+
+# 4.70
+x, y = 7, 12
+
+m = x
+if y > m:
+    m = y
+print(f"4.70 а) {m}")
+
+m = x
+if y > x:
+    m = y
+print(f"4.70 б) {m}")
+
+# 4.71
+a, b = 5.5, 3.2
+
+
+m = a
+n = a
+if b > m:
+    m = b
+if b < n:
+    n = b
+print(f"4.71 а) max={m}, min={n}")
+
+m = a
+n = a
+if b > a:
+    m = b
+if b < a:
+    n = b
+print(f"4.71 б) max={m}, min={n}")
+
+# 4.72
+a, b, c = 2.5, 4.1, 3.0
+
+
+m = a
+if b > m:
+    m = b
+if c > m:
+    m = c
+print(f"4.72 а) max={m}")
+
+n = a
+if b < n:
+    n = b
+if c < n:
+    n = c
+print(f"4.72 б) min={n}")
+
+# 4.73
+a, b, c, d = 1.2, 3.4, 2.3, 4.1
+
+
+m = a
+if b > m:
+    m = b
+if c > m:
+    m = c
+if d > m:
+    m = d
+print(f"4.73 а) max={m}")
+
+
+n = a
+if b < n:
+    n = b
+if c < n:
+    n = c
+if d < n:
+    n = d
+print(f"4.73 б) min={n}")
+
+# 4.74
+x = -7.5
+y = x
+if x < 0:
+    y = -x
+print(f"4.74: |{x}| = {y}")
+
+# 4.75
+a, b = -4.0, 3.0
+
+c = a
+if a < 0:
+    c = -a
+
+d = b
+if b < 0:
+    d = -b
+
+
+e = (c + d) / 2
+print(f"4.75 а) {e}")
+
+
+import math
+f = math.sqrt(c * d)
+print(f"4.75 б) {f}")
+
+# 4.76
+a, b = 8.0, 3.0
+c = a
+if a < 0:
+    c = -a
+d = b
+if b < 0:
+    d = -b
+if c > d:
+    a = a / 2
+print(f"4.76: {a}")
+
+# 4.77
+a, b = 4.0, 9.0
+import math
+if math.sqrt(b) < a:
+    b = b * 5
+print(f"4.77: {b}")
+
+# 4.78
+a, b, c = 2, 7, 4
+print(f"4.78: ", end="")
+if a % 2 == 0:
+    print(a, end=" ")
+if b % 2 == 0:
+    print(b, end=" ")
+if c % 2 == 0:
+    print(c, end=" ")
+print()
+
+# 4.79
+a, b, c = 2.5, -1.0, 3.0
+print(f"4.79: ", end="")
+if a >= 0:
+    print(f"{a**2}", end=" ")
+if b >= 0:
+    print(f"{b**2}", end=" ")
+if c >= 0:
+    print(f"{c**2}", end=" ")
+print()
+
+# 4.80
+a, b, c = 2.0, 1.0, 3.5
+print(f"4.80 а) ", end="")
+if 1.6 < a < 3.8:
+    print(a, end=" ")
+if 1.6 < b < 3.8:
+    print(b, end=" ")
+if 1.6 < c < 3.8:
+    print(c, end=" ")
+print()
+
+print(f"4.80 б) ", end="")
+if 0.7 < a < 5.1:
+    print(a, end=" ")
+if 0.7 < b < 5.1:
+    print(b, end=" ")
+if 0.7 < c < 5.1:
+    print(c, end=" ")
+print()
+
+# 4.81
+a, b, c, d = 2.5, -1.0, 3.0, -4.5
+e = 0
+if a < 0:
+    e += 1
+if b < 0:
+    e += 1
+if c < 0:
+    e += 1
+if d < 0:
+    e += 1
+print(f"4.81: {e}")
+
+# 4.82
+a, b, c, d = 2, 7, 4, 9
+e = 0
+if a % 2 == 0:
+    e += 1
+if b % 2 == 0:
+    e += 1
+if c % 2 == 0:
+    e += 1
+if d % 2 == 0:
+    e += 1
+print(f"4.82: {e}")
+
+# 4.83
+a, b, c, d = 2.5, 7.0, 4.0, 6.5
+e = 0
+if a > 5:
+    e += a
+if b > 5:
+    e += b
+if c > 5:
+    e += c
+if d > 5:
+    e += d
+print(f"4.83: {e}")
+
+# 4.84
+a, b, c, d = 6, 8, 9, 10
+e = 0
+if a % 3 == 0:
+    e += a
+if b % 3 == 0:
+    e += b
+if c % 3 == 0:
+    e += c
+if d % 3 == 0:
+    e += d
+print(f"4.84: {e}")
+
+# 4.85: 
+x = 2
+y = 0
+if x <= -1:
+    y = 1
+if -1 < x <= 1:
+    y = -x
+if x > 1:
+    y = -1
+print(f"4.85: x={x}, y={y}")
+
+# 4.86
+a = -5
+z = 0
+if a > 0:
+    z = 1
+if a < 0:
+    z = -1
+print(f"4.86: a={a}, z={z}")
+
+# 4.87
+x = 1.5
+f = 0
+if x <= 0:
+    f = 0
+if 0 < x <= 1:
+    f = x
+if x > 1:
+    f = x**2
+print(f"4.87: x={x}, f={f}")
+
+# 4.88
+y = 1.5
+f = 0
+if y <= 0:
+    f = 2
+if 0 < y < 2:
+    f = 0
+if y >= 2:
+    f = 3*y
+print(f"4.88: y={y}, f={f}")
+
+# 4.89
+import math
+x = 0.5
+k = 0
+
+
+if math.sin(x) > 0:
+    k = x**2
+if math.sin(x) <= 0:
+    k = x
+
+
+f = 0
+if k < x:
+    f = k * x
+if k >= x:
+    f = k - x
+print(f"4.89: x={x}, k={k}, f={f}")
+
+# 4.90
+import math
+x = 0.5
+k = 0
+
+
+if math.sin(x) > 0:
+    k = x**2
+if math.sin(x) <= 0:
+    k = x
+
+f = 0
+if x < k:
+    f = x
+if x >= k:
+    f = k * x
+print(f"4.90: x={x}, k={k}, f={f}")              
+# 4.90
+import math
+x = 0.5
+k = 0
+
+
+if math.sin(x) > 0:
+    k = x**2
+if math.sin(x) <= 0:
+    k = x
+
+f = 0
+if x < k:
+    f = x
+if x >= k:
+    f = k * x
+print(f"4.90: x={x}, k={k}, f={f}")
+
+# 4.91
+
+x = 0.5
+y_a = 0
+if -1 <= x < 0:
+    y_a = x + 1
+if 0 <= x <= 1:
+    y_a = -x + 1
+print(f"4.91а) x={x}, y={y_a}")
+
+y_b = 0
+if -1 <= x < 0:
+    y_b = -1
+if 0 < x <= 1:
+    y_b = 1
+print(f"4.91б) x={x}, y={y_b}")
+
+y_c = 0
+if -1 <= x < 0:
+    y_c = -x - 1
+if 0 <= x <= 1:
+    y_c = x - 1
+print(f"4.91в) x={x}, y={y_c}")
+
+# 4.92
+x, y = 3, 2
+
+f = ""
+if 0 < x < 1 and y > 0:
+    f = "1"
+if 1 < x < 5 and y > 0:
+    f = "2"
+if 0 < x < 5 and y < 0:
+    f = "3"
+
+print(f"4.92: точка ({x},{y}) -> область {f}")
+
+# 4.93 
+x, y = 2, -1
+f = ""
+if x > 0 and y > 0:
+    f = "1"
+if x < 0 and y > 0:
+    f = "2"
+if x < 0 and y < 0:
+    f = "3"
+print(f"4.93: ({x},{y}) -> область {f}")
+
+# 4.94 
+n = 3
+result = ""
+if n == 3:
+    result = "выигрыш"
+if n == 1:
+    result = "ничья"
+if n  == 0:
+    result = "проигрыш"
+print(f"4.94: {n} очков -> {result}")
+
+#4.95 
+m = 65 
+cat = ""
+if m < 68:
+    cat = "small m"
+if 60 <= m < 64:
+    cat  = "first middle m"
+if 64 <= m < 69:
+    cat = "middle m"
+print(f"4.95: {m} kg -> {cat}")
+
+# 4.96
+import math 
+
+a,b,c = 1, -3, 2
+d = b * b - 4 * a * c
+if d >= 0: 
+    x1 = (-b + math.sqrt(d)) / (2 * a)
+    x2 = (-b - math.sqrt(d)) / (2 * a)
+    print(f"4.96: x1 = {x1}, x2 = {x2}")
+
+# 4.97
+
+a, b, c  = 5, 2, 8 
+
+max1 = a 
+if b > max1: 
+    max1 = b
+if c > max1:
+    max1 = c
+
+min1 = a 
+if b < min1:
+    min1 = b  
+if c < min1:
+    min1 = c
+
+mid1 = a 
+if (b < max1 and b > min1 ):
+    mid1 = b 
+if (c < max1 and c > min1):
+    mid1 = c 
+
+print(f"4.97: a = {a}, b = {b}, c = {c}")
+print(f"{max1}")
+print(f"{min1}")
+print(f"{mid1}")
+
+# 4.98
+a, b, c = 5.2, 3.1 , 7.8
+
+max1 = a 
+min1 = b 
+
+if b > max1: 
+    max1 = b 
+if c > max1: 
+    max = c 
+
+if b < min1: 
+    min1 = b
+if c < min1: 
+    min1 = c 
+
+print(f"4.98 : max = {max1}, min = {min1}")
+
+# 4.99
+
+a, b, c = 5, 2, 8
+
+max1 = a 
+if b > max1: 
+    max1 = b 
+if c > max1:
+    max1 = c 
+
+if a == max1:
+    max2 = b if b > c else c 
+if b == max1:
+    max2 = a if a > c else c  
+if c == max1:
+    max2 = b if a > b else b   
+
+sum = max1 + max2 
+print(f"4.99 : {a}, {b}, {c} -> {sum}")
+
+# 4.100 
+a, b, c = 5, 2, 8
+
+min1 = a 
+if b < min1:
+    min1 = b 
+if c < min1:
+    min1 = c 
+
+if a == min1:
+    min2 = b if b < c else c 
+if b == min1:
+    min2 = a if a < c else c 
+if c == min1:
+    min2 = a if a < b else b 
+
+d = min1 + min2 
+print(f"4.100: a = {a}, b = {b}, c = {c} -> {d}")
+
+# 4.101 
+a1, b1, c1 = 1.0, 5.0, 3.0 
+a2, b2, c2 = 4.0, 2.0, 6.0
+
+def mid(x, y, z):
+    if (x > y and x > z) or (x > z and x < y):
+        return x 
+    if (y > x and y < z ) or ( y > z and y < x):
+        return y 
+    return z 
+
+mid1 = mid(a1, b1, c1)
+mid2 = mid(a2, b2, c2)
+d = (mid1 + mid2) / (2)
+print(f"4.101: {d}")
+
+# 4.102 
+x, y  = 2,-3 
+q = 0 
+if x > 0 and y > 0 :
+    q = 1 
+if y < 0 and y > 0 :
+    q = 2 
+if x < y and y < 0 :
+    q = 3 
+if x > y and y < 0 :
+    q = 4
+print(f"4.102 : x = {x}, y = {y} = {q}" )
+# 4.103 
+a, b ,c = 5.2, 3.1, 7.8
+
+max1 = a 
+if b > max1 :
+    max1 = b 
+if c > max1 :
+    max1 = c 
+print(f"max = {max1}")
+
+min1 = b 
+if b < min1 :
+    min1 = b 
+if c < min1 :
+    min1 = c 
+print(f"4.103:min = {min1}")
+
+# 4.104
+n = 3 
+name = ""
+
+if n == 1 :
+    name = "понедельник"
+if n == 2 :
+    name = "вторник"
+if n == 3 :
+    name = "среда" 
+if n == 4 : 
+    name = "четверг"
+if n == 5 :
+    name = "пятница"
+if n == 6 :
+    name = "суббота"
+if n == 7 :
+    name = "воскресенье"
+print(f"4.104: {n} -> {name}")
+
+# 4.105
+n = 11 
+name = "" 
+
+if n == 1:
+    name = "январь"
+if n == 2 :
+    name = "февраль"
+if n == 3 :
+    name = "март"
+if n == 4 :
+    name = "апрель"
+if n == 5 :
+    name = "май"
+if n == 6 :
+    name = "июнь"
+if n == 7 :
+    name = "июль"
+if n == 8 :
+    name = "август"
+if n == 9:
+    name = "сентябрь"
+if n == 10 :
+    name = "октябрь"
+if n == 11:
+    name = "ноябрь"
+if n == 12 :
+    name = "декабрь"
+print(f"4.105 : {n} -> {name}")
+
+#4.106
+
+n = 4
+s = ""
+if n in [12, 1, 2]:
+    s = "зима"
+if n in [3, 4, 5]:
+    s = "весна"
+if n in [6, 7, 8]:
+    s = "лето"
+if n in [9, 10, 11]:
+    s = "осень"
+print(f"4.106: месяц {n} -> {s}")
+
+# 4.107
+n = 2
+leap = False  
+days = 0
+if n in [1, 3, 5, 7, 8, 10, 12]:
+    days = 31
+if n in [4, 6, 9, 11]:
+    days = 30
+if n == 2:
+    if leap:
+        days = 29
+    else:
+        days = 28
+print(f"4.107: месяц {n} -> {days} дней")
+
+# 4.108
+m = 3
+suit = ""
+if m == 1:
+    suit = "пики"
+if m == 2:
+    suit = "трефы"
+if m == 3:
+    suit = "бубны"
+if m == 4:
+    suit = "червы"
+print(f"4.108: масть {m} -> {suit}")
+
+# 4.109
+k = 11
+card = ""
+if k == 6:
+    card = "шестерка"
+if k == 7:
+    card = "семерка"
+if k == 8:
+    card = "восьмерка"
+if k == 9:
+    card = "девятка"
+if k == 10:
+    card = "десятка"
+if k == 11:
+    card = "валет"
+if k == 12:
+    card = "дама"
+if k == 13:
+    card = "король"
+if k == 14:
+    card = "туз"
+print(f"4.109: карта {k} -> {card}")
+
+# 4.110
+m = 3  
+k = 11  
+
+suit = ""
+if m == 1:
+    suit = "пик"
+if m == 2:
+    suit = "треф"
+if m == 3:
+    suit = "бубен"
+if m == 4:
+    suit = "червей"
+
+rank = ""
+if k == 6:
+    rank = "Шестерка"
+if k == 7:
+    rank = "Семерка"
+if k == 8:
+    rank = "Восьмерка"
+if k == 9:
+    rank = "Девятка"
+if k == 10:
+    rank = "Десятка"
+if k == 11:
+    rank = "Валет"
+if k == 12:
+    rank = "Дама"
+if k == 13:
+    rank = "Король"
+if k == 14:
+    rank = "Туз"
+
+print(f"4.110: {rank} {suit}")
+
+# 4.111
+k = 100  
+
+
+n = (k - 1) % 7  
+name = ""
+if n == 0:
+   name = "понедельник"
+if n == 1:
+    name = "вторник"
+if n == 2:
+    name = "среда"
+if n == 3:
+    name= "четверг"
+if n == 4:
+    name = "пятница"
+if n == 5:
+    name = "суббота"
+if n == 6:
+    name = "воскресенье"
+
+print(f"4.111 а) День {k} -> {name}")
+
+
+d = 3  
+n2 = (k - 1 + d - 1) % 7  
+name2 = ""
+if n2 == 0:
+    name2 = "понедельник"
+if n2 == 1:
+    name2 = "вторник"
+if n2 == 2:
+    name2 = "среда"
+if n2 == 3:
+    name2 = "четверг"
+if n2 == 4:
+   name2 = "пятница"
+if n2 == 5:
+    name2 = "суббота"
+if n2 == 6:
+    name2 = "воскресенье"
+
+print(f"4.111 б) День {k} (1 января - {d}-й день недели) -> {name2}")
+
+# 4.112
+n = 14  
+
+months = ["январь", "февраль", "март", "апрель", "май", "июнь",
+          "июль", "август", "сентябрь", "октябрь", "ноябрь", "декабрь"]
+
+n = (n) % 12  
+if n == 0:
+    n = 12 
+name = months[n - 1]
+
+print(f"4.112: Через {n} месяцев и 2 дня -> {name}")
+
+# 4.113
+m = 3  
+d = 15  
+
+
+dm = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+
+
+pd = d - 1
+pm = m
+py = 1  
+
+if pd == 0:
+    pm -= 1
+    if pm == 0:
+        pm = 12
+        py -= 1
+    pd = dm[pm - 1]
+
+print(f"4.113 а) {pd}.{pm}.{py}")
+
+nd = d + 1
+nm = m
+ny = 1
+
+if nd > dm[nm - 1]:
+    nd = 1
+    nm += 1
+    if nm > 12:
+        nm = 1
+        ny += 1
+
+print(f"4.113 б) {nd}.{nm}.{ny}")
+
+# 4.114
+y = 2020  
+m = 2  
+d = 28  
+
+
+leap = (y % 400 == 0) or (y % 4 == 0 and y % 100 != 0)
+
+
+if leap:
+    dm = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+else:
+    dm = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+
+
+pd = d - 1
+pm = m
+py = y
+
+if pd == 0:
+    pm -= 1
+    if pm == 0:
+        pm = 12
+        py -= 1
+    pd = dm[pm - 1]
+
+print(f"4.114 а) {pd}.{pm}.{py}")
+
+
+nd = d + 1
+nm = m
+ny = y
+
+if nd > dm[nm - 1]:
+    nd = 1
+    nm += 1
+    if nm > 12:
+        nm = 1
+        ny += 1
+
+print(f"4.114 б) {nd}.{nm}.{ny}")
+
+# 4.115
+# 4.115
+a = ["Крыса", "Корова", "Тигр", "Заяц", "Дракон", "Змея", 
+     "Лошадь", "Овца", "Обезьяна", "Петух", "Собака", "Свинья"]
+c = ["Зеленый", "Красный", "Желтый", "Белый", "Черный"]
+
+# а)
+n = 2024
+if n >= 1984:
+    s = n - 1984
+    an = a[s % 12]
+    co = c[(s // 2) % 5]
+    print(f"4.115 а) {co} {an}")
+
+# б)
+n = 1900
+s = (n - 1984) % 60
+an = a[s % 12]
+co = c[(s // 2) % 5]
+print(f"4.115 б) {co} {an}")
+
+# 4.116
+a2, a1, b = 5, 3, 7
+if a1 >= b:
+    d1 = a1 - b
+    d2 = a2
+else:
+    d1 = a1 + 10 - b
+    d2 = a2 - 1
+print(f"4.116: {d2}{d1}")
+
+# 4.117
+a2, a1, b2, b1 = 7, 4, 2, 9
+if a1 >= b1:
+    r1 = a1 - b1
+    br = 0
+else:
+    r1 = a1 + 10 - b1
+    br = 1
+r2 = a2 - b2 - br
+print(f"4.117: {r2}{r1}")
+
+# 4.118
+a3, a2, a1, b2, b1 = 3, 4, 7, 5, 8
+s1 = a1 + b1
+c1 = s1 // 10
+r1 = s1 % 10
+s2 = a2 + b2 + c1
+c2 = s2 // 10
+r2 = s2 % 10
+r3 = a3 + c2
+print(f"4.118: {r3}{r2}{r1}")
+# 4.119 
+x, y = 4, 4
+u, v = 4, 6
+print(f"4.119 а) {x == u or y == v}")
+print(f"4.119 б) {abs(x - u) == abs(y - v)}")
+km = (max(abs(x - u), abs(y - v)) == 1) and (x != u or y != v)
+print(f"4.119 в) с max: {km}")
+km2 = (abs(x - u) <= 1 and abs(y - v) <= 1) and (x != u or y != v)
+print(f"4.119 в) без max: {km2}")
+print(f"4.119 г) {x == u or y == v or abs(x - u) == abs(y - v)}")
+wp = (x == u and v - y == 1) or (y == 2 and x == u and v - y == 2) or (abs(x - u) == 1 and v - y == 1)
+print(f"4.119 д) {wp}")
+bp = (x == u and y - v == 1) or (y == 7 and x == u and y - v == 2) or (abs(x - u) == 1 and y - v == 1)
+print(f"4.119 е) {bp}")
+print(f"4.119 ж) {(abs(x - u) == 2 and abs(y - v) == 1) or (abs(x - u) == 1 and abs(y - v) == 2)}")
+# 4.120 
+def rook_move(x1, y1, x2, y2):
+    return x1 == x2 or y1 == y2 
+def bishop_move(x1, y1, x2, y2):
+    return abs(x1 - x2) == abs(y1 - y2)
+def queen_move(x1,y1,x2,y2):
+    return rook_move(x1, y1 ,x2, y2) or bishop_move(x1 ,y1, x2 ,y2)
+def knight_move(x1, y1, x2, y2):
+    x = abs(x1 -x2)
+    y = abs(y1 - y2)
+    return (x == 1 and y == 2 ) or (x == 2 and y == 1)
+def king_move(x1, y1, x2 ,y2):
+    x = abs(x1 - x2)
+    y = abs(y1 - y2)
+    return max(x, y) == 1
+def clear_path_move(x1, y1, x2, y2 ):
+    if x1 == x2 :
+        min(y), max(y)  = min(y1, y2), max(y1, y2)
+        for y in range(min(y) + 1, max(y)):
+            if x == black_x and y == black_y:
+                return False 
+    elif y1 == y2:
+        min(x), max(x) = min(x1 , x2), max(x1, x2)
+        for x in range(min(x) + 1, max):
+            if x == black_x and y == black_y:
+                return False
+    return True
+
+def white_piece_move(white_x, white_y, black_x, black_y, target_x, target_y,white_type, black_type):
+    if white_type == "rook":
+        move = rook_move(white_x, white_y, target_x, target_y) and path_rook(white_x, white_y, target_x, target_y, black_x, black_y)
+    if not move:
+        return False
+    if black_x == target_x and black_y == target_y:
+        return True 
+    target_under_attack = rook_move(black_x, black_y, target_x, target_y)
+    return target_under_attack
+# 4.121
+def same_color(x1, x2, y1, y2):
+    sum1 = x1 + y1
+    sum2 = y1 + y2 
+    return sum1 % 2 == sum2 % 2
+# 4.122
+def triangle_exists(side1, side2, side3):
+    return (side1 > 0 and side2 > 0 and side3 > 0 and
+            side1 + side2 > side3 and
+            side1 + side3 > side2 and
+            side2 + side3 > side1)
+# 4.123
+def right_triangle(side1, side2, side3):
+    if not triangle_exists(side1, side2, side3):
+        return False
+    sides = sorted([side1, side2, side3])
+    leg1 = sides[0] ** 2
+    leg2 = sides[1] ** 2
+    hypotenuse = sides[2] ** 2
+    
+    return abs(leg1 + leg2 - hypotenuse) < 0.000001
+# 4.124
+def triangle_type(side1, side2, side3):
+    if not triangle_exists(side1, side2, side3):
+        return "Triangle does not exist"
+    
+    sides = sorted([side1, side2, side3])
+    a2, b2, c2 = sides[0]**2, sides[1]**2, sides[2]**2
+    
+    # Determine by angles
+    if abs(a2 + b2 - c2) < 0.000001:
+        angles = "right"
+    elif a2 + b2 > c2:
+        angles = "acute"
+    else:
+        angles = "obtuse"
+    
+    # Determine by sides
+    if side1 == side2 == side3:
+        sides = "equilateral"
+    elif side1 == side2 or side1 == side3 or side2 == side3:
+        sides = "isosceles"
+    else:
+        sides = "scalene"
+    
+    return f"{angles}, {sides}"
+
+# 4.125
+def age_phrase(age):
+    if 1 <= age <= 99:
+        last_digits = age % 100
+        last_digit = age % 10
+        
+        if 11 <= last_digits <= 19:
+            word = "years"
+        elif last_digit == 1:
+            word = "year"
+        elif 2 <= last_digit <= 4:
+            word = "years"
+        else:
+            word = "years"
+            
+        return f"I am {age} {word} old"
+    else:
+        return "invalid age"
+
+# 4.126
+def mushroom_phrase(mushroom_count):
+    if mushroom_count < 0:
+        return "invalid count"
+    
+    last_digits = mushroom_count % 100
+    last_digit = mushroom_count % 10
+    
+    if 11 <= last_digits <= 19:
+        word = "mushrooms"
+    elif last_digit == 1:
+        word = "mushroom"
+    elif 2 <= last_digit <= 4:
+        word = "mushrooms"
+    else:
+        word = "mushrooms"
+    
+    return f"we found {mushroom_count} {word} in the forest"
+
+# 4.128
+def price_in_rubles(price_in_kopeks):
+    if 1 <= price_in_kopeks <= 9999:
+        rubles = price_in_kopeks // 100
+        kopeks = price_in_kopeks % 100
+        
+        if rubles == 1 or (rubles % 10 == 1 and rubles % 100 != 11):
+            ruble_word = "ruble"
+        elif 2 <= rubles % 10 <= 4 and not (11 <= rubles % 100 <= 19):
+            ruble_word = "rubles"
+        else:
+            ruble_word = "rubles"
+        
+        if kopeks == 0:
+            return f"{rubles} {ruble_word} exactly"
+        else:
+       
+            if kopeks == 1 or (kopeks % 10 == 1 and kopeks % 100 != 11):
+                kopeks_word = "kopek"
+            elif 2 <= kopeks % 10 <= 4 and not (11 <= kopeks % 100 <= 19):
+                kopeks_word = "kopeks"
+            else:
+                kopeks_word = "kopeks"
+            
+            return f"{rubles} {ruble_word} {kopeks} {kopeks_word}"
+    else:
+        return "invalid amount"
+
+# 4.129
+def full_years(birth_year, birth_month, birth_day,
+                        current_year, current_month, current_day):
+    
+    full_years = current_year - birth_year
+    
+    if current_month < birth_month:
+        full_years -= 1
+    elif current_month == birth_month and current_day < birth_day:
+        full_years -= 1
+    
+    return full_years
+
+# 4.130
+def who_is_older(year1, month1, day1, year2, month2, day2):
+    if year1 < year2:
+        return "First person is older"
+    elif year1 > year2:
+        return "Second person is older"
+    else:
+        if month1 < month2:
+            return "First person is older"
+        elif month1 > month2:
+            return "Second person is older"
+        else:
+            if day1 < day2:
+                return "First person is older"
+            elif day1 > day2:
+                return "Second person is older"
+            else:
+                return "Same age"
+def calculate_age_in_years_months(birth_year, birth_month,
+                                 current_year, current_month):
+    
+    years = current_year - birth_year
+    months = current_month - birth_month
+    
+    if months < 0:
+        years -= 1
+        months += 12
+    
+    return years, months
+
+# 4.131
+def calculate_age_in_years_months(birth_year, birth_month,
+                                 current_year, current_month):
+    
+    years = current_year - birth_year
+    months = current_month - birth_month
+    
+    if months < 0:
+        years -= 1
+        months += 12
+    
+    return years, months
+
+# 4.132
+def train_at_platform(arrival_hour, arrival_minute,
+                     departure_hour, departure_minute,
+                     passenger_hour, passenger_minute):
+    
+    arrival_time = arrival_hour * 60 + arrival_minute
+    departure_time = departure_hour * 60 + departure_minute
+    passenger_time = passenger_hour * 60 + passenger_minute
+    
+    return arrival_time <= passenger_time < departure_time
+
+# 4.133
+def days_in_month(month, year=2023):
+    if month == 2:
+        return 28
+    elif month in [4, 6, 9, 11]:
+        return 30
+    else:
+        return 31
+
+def previous_day(day, month):
+    if day > 1:
+        return day - 1, month
+    else:
+        if month == 1:
+            return 31, 12
+        else:
+            previous_month = month - 1
+            days_in_previous_month = days_in_month(previous_month)
+            return days_in_previous_month, previous_month
+
+def next_day(day, month):
+    days_in_current_month = days_in_month(month)
+    
+    if day < days_in_current_month:
+        return day + 1, month
+    else:
+        if month == 12:
+            return 1, 1
+        else:
+            return 1, month + 1
+ # 4.134      
+def is_leap(y):
+    return (y % 4 == 0 and y % 100 != 0) or (y % 400 == 0)
+def days_in(m, y):
+    if m == 2:
+        return 29 if is_leap(y) else 28
+    elif m in [4, 6, 9, 11]:
+        return 30
+    else:
+        return 31
+
+def prev_day(y, m, d):
+    if d > 1:
+        return y, m, d - 1
+    else:
+        if m == 1:
+            return y - 1, 12, 31
+        else:
+            return y, m - 1, days_in(m - 1, y)
+
+def next_day(y, m, d):
+    if d < days_in(m, y):
+        return y, m, d + 1
+    else:
+        if m == 12:
+            return y + 1, 1, 1
+        else:
+            return y, m + 1, 1
+# 4.135
+def light(t):
+    p = t % 6
+    if p < 3:
+        return "green"
+    elif p < 4:
+        return "yellow"
+    else:
+        return "red"
+# 4.136
+def day_type(k, first=1):
+    d = (k + first - 2) % 7 + 1
+    if d == 6:
+        return "Saturday"
+    elif d == 7:
+        return "Sunday"
+    else:
+        return "working day"
+# 4.137
+def digit_k(k):
+    n = (k - 1) // 2
+    pos = (k - 1) % 2
+    num = 10 + n
+    return num // 10 if pos == 0 else num % 10
+# 4.138
+def digit_n(n):
+    if n == 1:
+        return 0
+    elif n <= 10:
+        return n - 1
+    else:
+        p = n - 10
+        num = 10 + (p - 1) // 2
+        pos = (p - 1) % 2
+        return num // 10 if pos == 0 else num % 10
+# 4.139
+def digit_k_large(k):
+    if k <= 100:
+        num = 50 + (k - 1) // 2
+        pos = (k - 1) % 2
+        return num // 10 if pos == 0 else num % 10
+    else:
+        p = k - 100
+        num = 100 + (p - 1) // 3
+        pos = (p - 1) % 3
+        if pos == 0:
+            return num // 100
+        elif pos == 1:
+            return (num // 10) % 10
+        else:
+            return num % 10
+# 4.140
+def digit_1_to_110(k):
+    if k <= 9:
+        return k
+    elif k <= 189:
+        p = k - 9
+        num = 10 + (p - 1) // 2
+        pos = (p - 1) % 2
+        return num // 10 if pos == 0 else num % 10
+    else:
+        p = k - 189
+        num = 100 + (p - 1) // 3
+        pos = (p - 1) % 3
+        if pos == 0:
+            return num // 100
+        elif pos == 1:
+            return (num // 10) % 10
+        else:
+            return num % 10
+# 4.141 
+def is_sum_even(n, a):
+    if a % 2 == 0:
+        odd_count = n // 2
+    else:
+        odd_count = (n + 1) // 2
+    return odd_count % 2 == 0
+
