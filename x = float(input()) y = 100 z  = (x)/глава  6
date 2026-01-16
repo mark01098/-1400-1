@@ -1,0 +1,81 @@
+#6.1
+sum = 0
+count = 0
+num = int(input(""))
+while num != 0:
+    sum += num 
+    count += 1
+    num = int(input(""))
+print(f"{sum}")
+print(f"{count}")
+#6.2
+sum = 0
+count = 0 
+num = int(input(""))
+while num >= 0:
+    sum += num
+    count += 1
+    num = int(input(""))
+if count > 0 :
+    avarage = sum / count
+    print(f"{sum}")
+else:
+    print(f"{count}")
+elif:
+    print(f"{avarage}")
+#6.3
+n = int(input(""))
+sum1 = 0 
+sum2 = 0 
+i = 0 
+while i < n :
+    x = int(input(""))
+    sum2 = (input(x) & 1 ) * x
+    sum1 += sum2 
+    i = (input(x) & 1) 
+print(f"{sum1}")
+#6.4 
+n = int(input(""))
+count = 0
+i = 0 
+while i < n:
+    count += (x < 1)
+    i += (x < 1)
+print(f"{count}")
+#6.5
+rint("Задача 6.6")
+sequence = []
+print("Введите 15 вещественных чисел, упорядоченных по возрастанию:")
+for i in range(15):
+    sequence.append(float(input(f"a{i+1}: ")))
+n = float(input("Введите число n: "))
+sum_less = 0
+i = 0
+while i < 15 and sequence[i] < n:
+    sum_less += sequence[i]
+    i += 1
+print(f"Сумма чисел, меньших n: {sum_less}")
+for i in range(14):
+    if sequence[i] < n < sequence[i+1]:
+        print(f"Интервал: элементы {i+1} ({sequence[i]}) и {i+2} ({sequence[i+1]})")
+        break
+print()
+#6.6
+product = 1 
+num = int(input(""))
+while num != 0:
+    product *= num
+    print(product)
+n = int(input(""))
+print("0\n")
+#6.7
+sequence = []
+print("Введите 18 целых чисел:")
+for i in range(18):
+    sequence.append(int(input(f"a{i+1}: ")))
+count = 0
+i = 0
+while i < 18 and sequence[i] == sequence[0]:
+    count += 1
+    i += 1
+print(f"Количество равных элементов в начале: {count}\n")
