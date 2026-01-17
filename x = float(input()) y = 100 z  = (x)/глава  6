@@ -68,14 +68,1793 @@ while num != 0:
     print(product)
 n = int(input(""))
 print("0\n")
-#6.7
-sequence = []
-print("Введите 18 целых чисел:")
-for i in range(18):
-    sequence.append(int(input(f"a{i+1}: ")))
+# 6.1
+s = 0
 count = 0
-i = 0
-while i < 18 and sequence[i] == sequence[0]:
+n = int(input())
+while n != 0:
+    s += n
     count += 1
+    n = int(input())
+print("Сумма:", s, "Количество:", count)
+
+# 6.2
+s = 0
+count = 0
+n = int(input())
+while n >= 0:
+    s += n
+    count += 1
+    n = int(input())
+if count > 0:
+    print("Среднее арифметическое:", s / count)
+
+# 6.3
+n = int(input())
+sum_odd = 0
+while n % 2 != 0:
+    sum_odd += n
+    n = int(input())
+print("Сумма нечётных:", sum_odd)
+
+# 6.4
+n = int(input())
+count_neg = 0
+while n < 0:
+    count_neg += 1
+    n = int(input())
+print("Количество отрицательных:", count_neg)
+
+# 6.5
+first = int(input())
+count = 1
+n = int(input())
+while n == first:
+    count += 1
+    n = int(input())
+print("Количество равных в начале:", count)
+
+# 6.6
+nums = []
+for _ in range(15):
+    nums.append(int(input()))
+n = int(input())
+s = 0
+for num in nums:
+    if num < n:
+        s += num
+    else:
+        break
+print("Сумма меньших n:", s)
+for i in range(14):
+    if nums[i] < n < nums[i+1]:
+        print("Между:", nums[i], "и", nums[i+1])
+        break
+
+# 6.7
+prod = 1
+n = int(input())
+while n != 0:
+    prod *= n
+    print(prod)
+    n = int(input())
+
+# 6.8
+n = int(input())
+k = 1
+while k*k <= n:
+    print(k*k, end=' ')
+    k += 1
+
+# 6.9
+n = int(input())
+k = 1
+while k*k <= n:
+    k += 1
+print("Первое число > n:", k*k)
+
+# 6.10
+n = int(input())
+k = 1
+while k*k <= n:
+    print(k, end=' ')
+    k += 1
+print()
+print("Первое число, квадрат > n:", k)
+
+# 6.11
+a = float(input())
+k = 2
+while True:
+    val = 1 + 1/k
+    if val >= a:
+        print(val)
+    else:
+        break
+    k += 1
+
+# 6.12
+a = float(input())
+k = 2
+while True:
+    val = 1 + 1/k
+    if val < a:
+        print("Найдено:", val)
+        break
+    k += 1
+
+# 6.13
+a = float(input())
+k = 2
+while True:
+    if 1 + 1/k >= a:
+        print(k, end=' ')
+    else:
+        break
+    k += 1
+
+# 6.14
+a = float(input())
+k = 2
+while True:
+    if 1 + 1/k < a:
+        print("Наименьшее n:", k)
+        break
+    k += 1
+
+# 6.15
+a = float(input())
+k = 1
+while True:
+    val = 1 + 1/k if k > 1 else 1
+    if val < a:
+        print(val)
+    else:
+        break
+    k += 1
+
+# 6.16
+n = float(input())
+k = 1
+while True:
+    val = 1 + 1/k if k > 1 else 1
+    if val > n:
+        print("Первое > n:", val)
+        break
+    k += 1
+
+# 6.17
+a = float(input())
+s = 0
+n = 1
+while s <= a:
+    s += 1/n
+    if s > a:
+        print(n, end=' ')
+    n += 1
+
+# 6.18
+a = float(input())
+s = 0
+n = 1
+while s <= a:
+    s += 1/n
+    n += 1
+print("Наименьшее n:", n-1)
+
+# 6.19
+num1, den1 = 1, 1
+num2, den2 = 2, 1
+n = 3
+while True:
+    num = num1 + num2
+    den = den1 + den2
+    val = num / den
+    prev = num2 / den2
+    if abs(val - prev) <= 0.001:
+        print("Найдено:", val)
+        break
+    num1, den1 = num2, den2
+    num2, den2 = num, den
+    n += 1
+
+# 6.20
+a = float(input())
+x = float(input())
+eps = float(input())
+y_prev = a
+y = 0.5 * (y_prev + x / (y_prev - 1))
+n = 1
+while abs(y2 - y_prev2) >= eps:
+    y_prev = y
+    y = 0.5 * (y_prev + x / (y_prev - 1))
+    n += 1
+print("y_n:", y, "при n =", n)
+
+# 6.21 а)
+n = int(input())
+a, b = 1, 1
+while a <= n:
+    a, b = b, a + b
+print("Первое > n:", a)
+# 6.21 б)
+a, b = 1, 1
+s = 0
+while a <= 1000:
+    s += a
+    a, b = b, a + b
+print("Сумма <= 1000:", s)
+
+# 6.22
+n = int(input())
+last = n % 10
+count_3 = 0
+count_last = 0
+count_even = 0
+sum_g5 = 0
+prod_g7 = 1
+count_0_5 = 0
+while n > 0:
+    d = n % 10
+    if d == 3:
+        count_3 += 1
+    if d == last:
+        count_last += 1
+    if d % 2 == 0:
+        count_even += 1
+    if d > 5:
+        sum_g5 += d
+    if d > 7:
+        prod_g7 *= d
+    if d == 0 or d == 5:
+        count_0_5 += 1
+    n //= 10
+print("Цифр 3:", count_3)
+print("Последняя цифра встречается:", count_last)
+print("Чётных цифр:", count_even)
+print("Сумма цифр > 5:", sum_g5)
+print("Произведение цифр > 7:", prod_g7)
+print("Цифр 0 и 5:", count_0_5)
+
+# 6.23
+n = int(input())
+a = int(input())
+z = int(input())
+x = int(input())
+y = int(input())
+count_a = 0
+count_z = 0
+sum_ga = 0
+count_xy = 0
+while n > 0:
+    d = n % 10
+    if d == a:
+        count_a += 1
+    if d % z == 0:
+        count_z += 1
+    if d > a:
+        sum_ga += d
+    if d == x or d == y:
+        count_xy += 1
+    n //= 10
+print("Цифр a:", count_a)
+print("Цифр, кратных z:", count_z)
+print("Сумма цифр > a:", sum_ga)
+print("Цифр x и y:", count_xy)
+
+# 6.24
+x = int(input())
+s = 0
+count_even = 0
+n = int(input())
+while n != 0:
+    if n > x:
+        s += n
+    if n % 2 == 0:
+        count_even += 1
+    n = int(input())
+print("Сумма > x:", s)
+print("Чётных чисел:", count_even)
+
+# 6.25
+prev = int(input())
+count_changes = 0
+n = int(input())
+while n != 0:
+    if prev * n < 0:
+        count_changes += 1
+    prev = n
+    n = int(input())
+print("Смен знака:", count_changes)
+
+# 6.26
+n = int(input())
+max_d = -1
+min_d = 10
+while n > 0:
+    d = n % 10
+    if d > max_d:
+        max_d = d
+    if d < min_d:
+        min_d = d
+    n //= 10
+print("Максимальная цифра:", max_d)
+print("Минимальная цифра:", min_d)
+
+# 6.27
+n = int(input())
+max_d = -1
+min_d = 10
+while n > 0:
+    d = n % 10
+    if d > max_d:
+        max_d = d
+    if d < min_d:
+        min_d = d
+    n //= 10
+print("Максимальная:", max_d)
+print("Минимальная:", min_d)
+print("Разница:", max_d - min_d)
+print("Сумма:", max_d + min_d)
+
+# 6.28
+n = int(input("Введите натуральное число с различными цифрами: "))
+max_d = -1
+min_d = 10
+pos_max_end = -1
+pos_min_end = -1
+pos_max_start = -1
+pos_min_start = -1
+temp = n
+pos = 0
+while temp > 0:
+    d = temp % 10
+    if d > max_d:
+        max_d = d
+        pos_max_end = pos
+    if d < min_d:
+        min_d = d
+        pos_min_end = pos
+    temp //= 10
+    pos += 1
+length = pos
+temp = n
+pos = 0
+while temp > 0:
+    d = temp % 10
+    if d == max_d:
+        pos_max_start = length - pos - 1
+    if d == min_d:
+        pos_min_start = length - pos - 1
+    temp //= 10
+    pos += 1
+print("Максимальная цифра:", max_d)
+print("Её номер от конца:", pos_max_end)
+print("Её номер от начала:", pos_max_start)
+print("Минимальная цифра:", min_d)
+print("Её номер от конца:", pos_min_end)
+print("Её номер от начала:", pos_min_start)
+
+# 6.29 
+
+# 6.30
+n = int(input("Введите натуральное число: "))
+pos = 0
+last_pos_8 = 0
+while n > 0:
+    d = n % 10
+    pos += 1
+    if d == 8:
+        last_pos_8 = pos
+    n //= 10
+print("Номер цифры 8 от конца:", last_pos_8)
+
+# 6.31
+n = int(input("Введите натуральное число: "))
+max_d = -1
+count_max = 0
+temp = n
+while temp > 0:
+    d = temp % 10
+    if d > max_d:
+        max_d = d
+        count_max = 1
+    elif d == max_d:
+        count_max += 1
+    temp //= 10
+print("Максимальная цифра", max_d, "встречается", count_max, "раз")
+
+# 6.32
+n = int(input("Введите натуральное число: "))
+min_d = 10
+count_min = 0
+temp = n
+while temp > 0:
+    d = temp % 10
+    if d < min_d:
+        min_d = d
+        count_min = 1
+    elif d == min_d:
+        count_min += 1
+    temp //= 10
+print("Минимальная цифра", min_d, "встречается", count_min, "раз")
+
+# 6.33
+for i in range(13, 100, 13):
+    print(i, end=' ')
+print()
+i = 13
+while i < 100:
+    print(i, end=' ')
+    i += 13
+
+# 6.34
+count = 0
+n = 100
+while count < 15:
+    if n % 19 == 0:
+        print(n, end=' ')
+        count += 1
+    n += 1
+
+# 6.35
+count = 0
+n = 500
+while count < 20:
+    if n % 13 == 0 or n % 17 == 0:
+        print(n, end=' ')
+        count += 1
+    n += 1
+
+# 6.36
+count = 0
+n = 100
+while count < 10:
+    if n % 9 == 0 and n % 10 == 7:
+        print(n, end=' ')
+        count += 1
+    n += 1
+
+# 6.37
+print("Вводите длительности удалений (2, 5, 10). Окончание — 0")
+team1_pen = 0
+team2_pen = 0
+team1_count = 0
+team2_count = 0
+while True:
+    t = int(input("Длительность удаления (или 0): "))
+    if t == 0:
+        break
+    team = int(input("Номер команды (1 или 2): "))
+    if team == 1:
+        team1_pen += t
+        team1_count += 1
+    else:
+        team2_pen += t
+        team2_count += 1
+print("Команда 1: удалений", team1_count, "штраф", team1_pen, "мин")
+print("Команда 2: удалений", team2_count, "штраф", team2_pen, "мин")
+
+# 6.38
+n = int(input("Введите натуральное число: "))
+first = int(str(n)[0])
+count = 0
+temp = n
+while temp > 0:
+    if temp % 10 == first:
+        count += 1
+    temp //= 10
+print("Первая цифра", first, "встречается", count, "раз")
+
+# 6.39 а)
+n = int(input("Введите натуральное число (n > 9): "))
+temp = n
+length = 0
+while temp > 0:
+    length += 1
+    temp //= 10
+temp = n
+for i in range(length - 2):
+    temp //= 10
+second = temp % 10
+print("Вторая цифра (способ а):", second)
+# 6.39 б)
+temp = n
+while temp >= 100:
+    temp //= 10
+second = temp % 10
+print("Вторая цифра (способ б):", second)
+
+# 6.40 а)
+n = int(input("Введите натуральное число (n > 99): "))
+temp = n
+length = 0
+while temp > 0:
+    length += 1
+    temp //= 10
+temp = n
+for i in range(length - 3):
+    temp //= 10
+third = temp % 10
+print("Третья цифра (способ а):", third)
+# 6.40 б)
+temp = n
+while temp >= 1000:
+    temp //= 10
+third = temp % 10
+print("Третья цифра (способ б):", third)
+
+# 6.41
+n = int(input("Введите натуральное число: "))
+max1 = -1
+max2 = -1
+min1 = 10
+min2 = 10
+temp = n
+while temp > 0:
+    d = temp % 10
+    if d > max1:
+        max2 = max1
+        max1 = d
+    elif d > max2:
+        max2 = d
+    if d < min1:
+        min2 = min1
+        min1 = d
+    elif d < min2:
+        min2 = d
+    temp //= 10
+print("Две максимальные цифры:", max1, max2)
+print("Две минимальные цифры:", min1, min2)
+
+
+#  6.38 
+
+n = int(input("Введите число: "))
+first = int(str(n)[0])
+count = 0
+temp = n
+while temp > 0:
+    if temp % 10 == first:
+        count += 1
+    temp //= 10
+print("Первая цифра", first, "встречается", count, "раз")
+
+#  6.39 
+
+n = int(input("Введите число >9: "))
+# Способ а
+temp = n
+length = 0
+while temp > 0:
+    length += 1
+    temp //= 10
+temp = n
+for i in range(length - 2):
+    temp //= 10
+second = temp % 10
+print("Вторая цифра (а):", second)
+# Способ б
+temp = n
+while temp >= 100:
+    temp //= 10
+second = temp % 10
+print("Вторая цифра (б):", second)
+
+#   6.40 
+
+n = int(input("Введите число >99: "))
+# Способ а
+temp = n
+length = 0
+while temp > 0:
+    length += 1
+    temp //= 10
+temp = n
+for i in range(length - 3):
+    temp //= 10
+third = temp % 10
+print("Третья цифра (а):", third)
+# Способ б
+temp = n
+while temp >= 1000:
+    temp //= 10
+third = temp % 10
+print("Третья цифра (б):", third)
+
+#  ЗАДАЧА 6.41 
+
+n = int(input("Введите число: "))
+max1 = max2 = -1
+min1 = min2 = 10
+temp = n
+while temp > 0:
+    d = temp % 10
+    if d > max1:
+        max2 = max1
+        max1 = d
+    elif d > max2:
+        max2 = d
+    if d < min1:
+        min2 = min1
+        min1 = d
+    elif d < min2:
+        min2 = d
+    temp //= 10
+print("Две максимальные:", max1, max2)
+print("Две минимальные:", min1, min2)
+
+# 6.42 
+
+n = int(input("Введите число (все цифры разные): "))
+max1 = -1
+max2 = -1
+temp = n
+while temp > 0:
+    d = temp % 10
+    if d > max1:
+        max2 = max1
+        max1 = d
+    elif d > max2:
+        max2 = d
+    temp //= 10
+temp = n
+pos = 1
+pos1_end = pos2_end = -1
+while temp > 0:
+    d = temp % 10
+    if d == max1:
+        pos1_end = pos
+    elif d == max2:
+        pos2_end = pos
+    temp //= 10
+    pos += 1
+length = len(str(n))
+temp = n
+pos = 1
+pos1_start = pos2_start = -1
+while temp > 0:
+    d = temp % 10
+    if d == max1:
+        pos1_start = length - pos + 1
+    elif d == max2:
+        pos2_start = length - pos + 1
+    temp //= 10
+    pos += 1
+print("Две максимальные цифры:", max1, max2)
+print("Их номера от конца:", pos1_end, pos2_end)
+print("Их номера от начала:", pos1_start, pos2_start)
+
+# 6.43 
+
+print("Вводите числа в порядке неубывания, конец — 1000:")
+prev = None
+count_equal = 1
+total_equal = 0
+different = 0
+while True:
+    x = int(input())
+    if x == 1000:
+        break
+    if prev is None:
+        prev = x
+        different = 1
+    else:
+        if x == prev:
+            count_equal += 1
+        else:
+            if count_equal > 1:
+                total_equal += count_equal
+            count_equal = 1
+            different += 1
+            prev = x
+if count_equal > 1:
+    total_equal += count_equal
+print("Равных подряд:", total_equal)
+print("Разных чисел:", different)
+
+#  6.44 
+
+print("Вводите числа в порядке невозрастания, конец — 0:")
+prev = None
+different = 0
+while True:
+    x = int(input())
+    if x == 0:
+        break
+    if prev is None or x != prev:
+        different += 1
+        prev = x
+print("Разных чисел:", different)
+
+#  6.45
+def nod(a, b):
+    while b != 0:
+        a, b = b, a % b
+    return a
+a = int(input("a: "))
+b = int(input("b: "))
+c = int(input("c: "))
+nod_ab = nod(a, b)
+nod_abc = nod(nod_ab, c)
+print("НОД трёх чисел:", nod_abc)
+
+
+# 6.46 
+n = int(input("Введите число: "))
+# а) Сумма цифр >10
+s = 0
+temp = n
+while temp > 0:
+    s += temp % 10
+    temp //= 10
+print("Сумма цифр >10:", "ДА" if s > 10 else "НЕТ")
+# б) Произведение <50
+temp = n
+p = 1
+while temp > 0:
+    p *= temp % 10
+    temp //= 10
+print("Произведение <50:", "ДА" if p < 50 else "НЕТ")
+# в) Чётное количество цифр
+temp = n
+count = 0
+while temp > 0:
+    count += 1
+    temp //= 10
+print("Чётное количество цифр:", "ДА" if count % 2 == 0 else "НЕТ")
+# г) Четырёхзначное
+print("Четырёхзначное:", "ДА" if 1000 <= n <= 9999 else "НЕТ")
+# д) Первая цифра ≤6
+first = int(str(n)[0])
+print("Первая цифра ≤6:", "ДА" if first <= 6 else "НЕТ")
+# е) Начинается и заканчивается одинаково
+last = n % 10
+print("Начинается и заканчивается одинаково:", "ДА" if first == last else "НЕТ")
+# ж) Какая цифра больше: первая или последняя
+if first > last:
+    print("Первая цифра больше последней")
+elif first < last:
+    print("Последняя цифра больше первой")
+else:
+    print("Первая и последняя цифры равны")
+
+#  6.47 
+# Ещё проверки про число
+n = int(input("Введите число: "))
+a = int(input("Введите a: "))
+b = int(input("Введите b: "))
+k = int(input("Введите k: "))
+m = int(input("Введите m: "))
+# а) Сумма цифр < a
+s = 0
+temp = n
+while temp > 0:
+    s += temp % 10
+    temp //= 10
+print("Сумма цифр < a:", "ДА" if s < a else "НЕТ")
+# б) Произведение > b
+temp = n
+p = 1
+while temp > 0:
+    p *= temp % 10
+    temp //= 10
+print("Произведение > b:", "ДА" if p > b else "НЕТ")
+# в) k-значное
+print("k-значное:", "ДА" if len(str(n)) == k else "НЕТ")
+# г) Первая цифра > m
+first = int(str(n)[0])
+print("Первая цифра > m:", "ДА" if first > m else "НЕТ")
+
+# 6.48 
+n = int(input("Введите число: "))
+k = int(input("k: "))
+b = int(input("b: "))
+x = int(input("x: "))
+y = int(input("y: "))
+a = int(input("a: "))
+b_num = int(input("b_num: "))
+m = int(input("m: "))
+n_num = int(input("n_num: "))
+# а)
+s = sum(int(d) for d in str(n))
+print("Сумма цифр > k и чётное число:", "ДА" if s > k and n % 2 == 0 else "НЕТ")
+# б)
+count_d = len(str(n))
+print("Чётное количество цифр и число ≤ b:", "ДА" if count_d % 2 == 0 and n <= b else "НЕТ")
+# в)
+first = int(str(n)[0])
+last = n % 10
+print("Начинается на x и заканчивается на y:", "ДА" if first == x and last == y else "НЕТ")
+# г)
+p = 1
+temp = n
+while temp > 0:
+    p *= temp % 10
+    temp //= 10
+print("Произведение цифр < a и делится на b_num:", "ДА" if p < a and n % b_num == 0 else "НЕТ")
+# д)
+print("Сумма цифр > m и делится на n_num:", "ДА" if s > m and n % n_num == 0 else "НЕТ")
+
+#  6.49 
+
+n = int(input("Введите число: "))
+has_3 = has_2 = has_5 = False
+temp = n
+while temp > 0:
+    d = temp % 10
+    if d == 3:
+        has_3 = True
+    if d == 2:
+        has_2 = True
+    if d == 5:
+        has_5 = True
+    temp //= 10
+print("Есть цифра 3:", "ДА" if has_3 else "НЕТ")
+print("Есть цифры 2 и 5:", "ДА" if has_2 and has_5 else "НЕТ")
+
+#  6.50 
+
+n = int(input("Введите число: "))
+a = int(input("a: "))
+b = int(input("b: "))
+k = int(input("k: "))
+count_a = 0
+has_a = has_b = False
+temp = n
+while temp > 0:
+    d = temp % 10
+    if d == a:
+        count_a += 1
+        has_a = True
+    if d == b:
+        has_b = True
+    temp //= 10
+print("Есть цифра a:", "ДА" if has_a else "НЕТ")
+print("Нет цифры b:", "ДА" if not has_b else "НЕТ")
+print("Цифра a встречается > k раз:", "ДА" if count_a > k else "НЕТ")
+print("Есть цифры a и b:", "ДА" if has_a and has_b else "НЕТ")
+
+
+n = int(input("Введите число: "))
+original = n
+reverse = 0
+while n > 0:
+    reverse = reverse * 10 + n % 10
+    n //= 10
+print("Палиндром:", "ДА" if original == reverse else "НЕТ")
+
+
+# 6.52
+n = int(input("Введите число: "))
+is_prime = True
+if n <= 1:
+    is_prime = False
+else:
+    i = 2
+    while i * i <= n:
+        if n % i == 0:
+            is_prime = False
+            break
+        i += 1
+print("Простое число:", "ДА" if is_prime else "НЕТ")
+
+
+n = int(input("Введите число: "))
+prev = -1
+ordered = True
+while n > 0:
+    d = n % 10
+    if d <= prev:
+        ordered = False
+        break
+    prev = d
+    n //= 10
+print("Цифры справа налево по возрастанию:", "ДА" if ordered else "НЕТ")
+
+
+n = int(input("Введите число: "))
+prev = -1
+ordered = True
+while n > 0:
+    d = n % 10
+    if d < prev:
+        ordered = False
+        break
+    prev = d
+    n //= 10
+print("Цифры справа налево по неубыванию:", "ДА" if ordered else "НЕТ")
+
+
+n = input("Введите число: ")
+ordered = True
+for i in range(len(n) - 1):
+    if int(n[i]) >= int(n[i + 1]):
+        ordered = False
+        break
+print("Цифры слева направо по возрастанию:", "ДА" if ordered else "НЕТ")
+
+
+n = input("Введите число: ")
+ordered = True
+for i in range(len(n) - 1):
+    if int(n[i]) > int(n[i + 1]):
+        ordered = False
+        break
+print("Цифры слева направо по неубыванию:", "ДА" if ordered else "НЕТ")
+
+print("Введите 15 чисел в порядке возрастания:")
+nums = [int(input()) for _ in range(15)]
+n = int(input("Введите n: "))
+closest = nums[0]
+closest_index = 0
+for i in range(15):
+    if abs(nums[i] - n) < abs(closest - n):
+        closest = nums[i]
+        closest_index = i + 1
+print("Ближайший элемент:", closest, "номер:", closest_index)
+
+print("Введите 15 чисел:")
+first_neg_index = -1
+for i in range(15):
+    x = int(input())
+    if x < 0 and first_neg_index == -1:
+        first_neg_index = i + 1
+print("Первое отрицательное номер:", first_neg_index if first_neg_index != -1 else "нет")
+
+
+#  6.60 
+
+print("Введите 20 натуральных чисел:")
+found_index = -1
+for i in range(1, 21):
+    x = int(input(f"Число {i}: "))
+    if x % 10 == 7 and found_index == -1:
+        found_index = i
+if found_index != -1:
+    print(f"Первое число, оканчивающееся на 7, имеет номер: {found_index}")
+else:
+    print("Таких чисел нет")
+
+#  6.61 
+
+print("Вводите числа, конец — -1:")
+found_index = -1
+count = 0
+while True:
+    x = int(input())
+    count += 1
+    if x == -1:
+        break
+    if x % 7 == 0 and found_index == -1:
+        found_index = count
+if found_index != -1:
+    print(f"Первое число, кратное 7, имеет номер: {found_index}")
+else:
+    print("Таких чисел нет")
+
+# ЗАДАЧА 6.62 
+
+print("Вводите числа в порядке возрастания, конец — 10000:")
+n = int(input("Введите n: "))
+found_index = -1
+count = 0
+while True:
+    x = int(input())
+    count += 1
+    if x == 10000:
+        break
+    if x > n and found_index == -1:
+        found_index = count
+if found_index != -1:
+    print(f"Первый элемент больше n имеет номер: {found_index}")
+else:
+    print("Таких элементов нет")
+
+#  6.63 
+print("Введите 28 оценок (от 2 до 5):")
+has_two = False
+for i in range(28):
+    grade = int(input(f"Оценка {i+1}: "))
+    if grade == 2:
+        has_two = True
+print("Среди оценок есть двойки:", "ДА" if has_two else "НЕТ")
+
+# ====================== ЗАДАЧА 6.64 ======================
+# Есть ли модель с мощностью >200 л.с.
+print("Введите мощность 30 моделей автомобилей:")
+has_powerful = False
+for i in range(30):
+    power = int(input(f"Мощность {i+1}: "))
+    if power > 200:
+        has_powerful = True
+print("Есть модель мощнее 200 л.с.:", "ДА" if has_powerful else "НЕТ")
+
+# ====================== ЗАДАЧА 6.65 ======================
+# Есть ли пара одинаковых соседних чисел
+print("Введите 15 натуральных чисел:")
+prev = None
+found_index = -1
+for i in range(1, 16):
+    x = int(input(f"Число {i}: "))
+    if prev is not None and x == prev and found_index == -1:
+        found_index = i-1  # номер первого числа пары
+    prev = x
+if found_index != -1:
+    print(f"Первая пара одинаковых соседних чисел начинается с номера: {found_index}")
+else:
+    print("Таких пар нет")
+
+# ====================== ЗАДАЧА 6.66 ======================
+# Пара одинаковых соседних чисел (последовательность до -1)
+print("Вводите числа, конец — -1:")
+prev = None
+found_index = -1
+count = 0
+while True:
+    x = int(input())
+    count += 1
+    if x == -1:
+        break
+    if prev is not None and x == prev and found_index == -1:
+        found_index = count-1
+    prev = x
+if found_index != -1:
+    print(f"Первая пара одинаковых соседних чисел с номера: {found_index}")
+else:
+    print("Таких пар нет")
+
+# ====================== ЗАДАЧА 6.67 ======================
+# Пара соседних нечётных чисел
+print("Введите 20 натуральных чисел:")
+prev = None
+found_index = -1
+for i in range(1, 21):
+    x = int(input(f"Число {i}: "))
+    if prev is not None and prev % 2 == 1 and x % 2 == 1 and found_index == -1:
+        found_index = i-1
+    prev = x
+if found_index != -1:
+    print(f"Первая пара соседних нечётных чисел с номера: {found_index}")
+else:
+    print("Таких пар нет")
+
+# ====================== ЗАДАЧА 6.68 ======================
+# Пара соседних чётных чисел (последовательность до 9999)
+print("Вводите числа, конец — 9999:")
+prev = None
+found_index = -1
+count = 0
+while True:
+    x = int(input())
+    count += 1
+    if x == 9999:
+        break
+    if prev is not None and prev % 2 == 0 and x % 2 == 0 and found_index == -1:
+        found_index = count-1
+    prev = x
+if found_index != -1:
+    print(f"Первая пара соседних чётных чисел с номера: {found_index}")
+else:
+    print("Таких пар нет")
+
+ # 6.69 
+
+print("Введите 15 вещественных чисел:")
+prev = None
+ordered = True
+break_index = -1
+for i in range(1, 16):
+    x = float(input(f"Число {i}: "))
+    if prev is not None and x <= prev:
+        ordered = False
+        break_index = i
+        break
+    prev = x
+if ordered:
+    print("Последовательность упорядочена по возрастанию")
+else:
+    print(f"Последовательность не упорядочена, нарушение на номере: {break_index}")
+
+#  6.70 
+
+print("Вводите числа, конец — 10000:")
+prev = None
+ordered = True
+break_index = -1
+count = 0
+while True:
+    x = float(input())
+    count += 1
+    if x == 10000:
+        break
+    if prev is not None and x <= prev:
+        ordered = False
+        break_index = count
+        break
+    prev = x
+if ordered:
+    print("Последовательность упорядочена по возрастанию")
+else:
+    print(f"Нарушение упорядоченности на номере: {break_index}")
+
+# 6.71 
+
+prev = None
+ordered = True
+for i in range(1, 31): 
+    height = int(input(f"Рост ученика {i}: "))
+    if prev is not None and height > prev:
+        ordered = False
+        break
+    prev = height
+print("Ученики перечислены в порядке убывания роста:", "ДА" if ordered else "НЕТ")
+
+# 6.72 
+
+print("Введите очки каждой команды:")
+prev = None
+ordered = True
+for i in range(1, 21):  
+    points = int(input(f"Очки команды {i}: "))
+    if prev is not None and points > prev:
+        ordered = False
+        break
+    prev = points
+print("Команды перечислены по убыванию очков:", "ДА" if ordered else "НЕТ")
+
+#  6.73 
+
+print("Введите 15 целых чисел:")
+first = None
+all_equal = True
+for i in range(15):
+    x = int(input(f"Число {i+1}: "))
+    if first is None:
+        first = x
+    elif x != first:
+        all_equal = False
+print("Все элементы равны:", "ДА" if all_equal else "НЕТ")
+
+# 6.74 
+
+print("Вводите числа, конец — отрицательное число:")
+first = None
+all_equal = True
+while True:
+    x = int(input())
+    if x < 0:
+        break
+    if first is None:
+        first = x
+    elif x != first:
+        all_equal = False
+print("Все элементы равны:", "ДА" if all_equal else "НЕТ")
+
+# 6.75 
+
+print("Введите 20 чисел от 0 до 66:")
+prev = None
+is_domino = True
+for i in range(20):
+    num = int(input(f"Число {i+1}: "))
+    d1 = num // 10
+    d2 = num % 10
+    if prev is not None and d1 != prev:
+        is_domino = False
+        break
+    prev = d2
+print("Последовательность соответствует костям домино:", "ДА" if is_domino else "НЕТ")
+
+#  6.76
+
+n = int(input("Введите число: "))
+
+temp = n
+is_power_of_3 = True
+if temp <= 0:
+    is_power_of_3 = False
+else:
+    while temp > 1:
+        if temp % 3 != 0:
+            is_power_of_3 = False
+            break
+        temp //= 3
+print("Число является степенью 3:", "ДА" if is_power_of_3 else "НЕТ")
+
+temp = n
+is_power_of_5 = True
+if temp <= 0:
+    is_power_of_5 = False
+else:
+    while temp > 1:
+        if temp % 5 != 0:
+            is_power_of_5 = False
+            break
+        temp //= 5
+print("Число является степенью 5:", "ДА" if is_power_of_5 else "НЕТ")
+
+#  6.77 
+
+n = int(input("Введите число: "))
+a, b = 1, 1
+is_fibonacci = False
+while a <= n:
+    if a == n:
+        is_fibonacci = True
+        break
+    a, b = b, a + b
+print("Число является членом Фибоначчи:", "ДА" if is_fibonacci else "НЕТ")
+
+#  6.78 
+# Является ли число членом арифметической прогрессии
+n = int(input("Введите число n: "))
+f = int(input("Введите первый член прогрессии f: "))
+s = int(input("Введите шаг прогрессии s: "))
+if s == 0:
+    print("Шаг не может быть 0")
+else:
+    if (n - f) % s == 0 and (n - f) // s >= 0:
+        print("Число является членом арифметической прогрессии: ДА")
+    else:
+        print("Число является членом арифметической прогрессии: НЕТ")
+
+#  6.79
+
+n = int(input("Введите число m: "))
+g = int(input("Введите первый член g: "))
+z = int(input("Введите знаменатель z: "))
+if z == 0 or g == 0:
+    print("Неверные данные")
+else:
+    temp = n
+    is_geometric = False
+    if temp % g == 0:
+        temp //= g
+        while temp >= z:
+            if temp == 1:
+                is_geometric = True
+                break
+            if temp % z != 0:
+                break
+            temp //= z
+        if temp == 1:
+            is_geometric = True
+    print("Число является членом геометрической прогрессии:", "ДА" if is_geometric else "НЕТ")
+
+# 6.80 
+
+n = int(input("Введите натуральное число: "))
+count_0 = 0
+count_9 = 0
+temp = n
+while temp > 0:
+    d = temp % 10
+    if d == 0:
+        count_0 += 1
+    elif d == 9:
+        count_9 += 1
+    temp //= 10
+if count_0 > count_9:
+    print("Цифра 0 встречается чаще")
+elif count_9 > count_0:
+    print("Цифра 9 встречается чаще")
+else:
+    print("Цифры 0 и 9 встречаются одинаково часто")
+
+#   6.81
+
+n = int(input("Введите натуральное число: "))
+a = int(input("Введите цифру a: "))
+b = int(input("Введите цифру b: "))
+count_a = 0
+count_b = 0
+temp = n
+while temp > 0:
+    d = temp % 10
+    if d == a:
+        count_a += 1
+    if d == b:
+        count_b += 1
+    temp //= 10
+print(f"Цифра {a} встречается реже, чем {b}:", "ДА" if count_a < count_b else "НЕТ")
+
+# 6.82
+
+n = int(input("Введите натуральное число: "))
+max_d = -1
+min_d = 10
+temp = n
+while temp > 0:
+    d = temp % 10
+    if d > max_d:
+        max_d = d
+    if d < min_d:
+        min_d = d
+    temp //= 10
+diff = max_d - min_d
+print("Разность максимальной и минимальной цифр чётная:", "ДА" if diff % 2 == 0 else "НЕТ")
+
+# 6.83
+n = int(input("Введите натуральное число: "))
+a = int(input("Введите a: "))
+max_d = -1
+min_d = 10
+temp = n
+while temp > 0:
+    d = temp % 10
+    if d > max_d:
+        max_d = d
+    if d < min_d:
+        min_d = d
+    temp //= 10
+sum_d = max_d + min_d
+print(f"Сумма max и min цифр кратна {a}:", "ДА" if sum_d % a == 0 else "НЕТ")
+
+#  6.84
+
+n = int(input("Введите число (все цифры разные): "))
+digits = list(str(n))
+max_d = max(digits)
+min_d = min(digits)
+pos_max = digits.index(max_d)
+pos_min = digits.index(min_d)
+if pos_max < pos_min:
+    print("Максимальная цифра левее минимальной")
+else:
+    print("Минимальная цифра левее максимальной")
+
+#  6.85 
+
+n = int(input("Введите натуральное число: "))
+digits = list(str(n))
+pos_2 = -1
+pos_5 = -1
+for i, d in enumerate(digits):
+    if d == '2' and pos_2 == -1:
+        pos_2 = i
+    if d == '5' and pos_5 == -1:
+        pos_5 = i
+if pos_2 == -1 and pos_5 == -1:
+    print("Ни цифры 2, ни цифры 5 нет")
+elif pos_2 == -1:
+    print("Цифры 2 нет, есть только 5")
+elif pos_5 == -1:
+    print("Цифры 5 нет, есть только 2")
+elif pos_2 < pos_5:
+    print("Цифра 2 левее цифры 5")
+else:
+    print("Цифра 5 левее цифры 2")
+
+#  6.86 
+
+n = int(input("Введите натуральное число: "))
+a = input("Введите цифру a: ")
+b = input("Введите цифру b: ")
+digits = list(str(n))
+pos_a = -1
+pos_b = -1
+for i in range(len(digits)-1, -1, -1):  
+    if digits[i] == a and pos_a == -1:
+        pos_a = i
+    if digits[i] == b and pos_b == -1:
+        pos_b = i
+if pos_a == -1 and pos_b == -1:
+    print(f"Ни цифры {a}, ни цифры {b} нет")
+elif pos_a == -1:
+    print(f"Цифры {a} нет, есть только {b}")
+elif pos_b == -1:
+    print(f"Цифры {b} нет, есть только {a}")
+elif pos_a > pos_b:  
+    print(f"Цифра {a} правее цифры {b}")
+else:
+    print(f"Цифра {b} правее цифры {a}")
+
+# 6.87 
+
+score1 = 0
+score2 = 0
+print("Вводите очки (1,2,3) или 0 для окончания игры")
+while True:
+    points = int(input("Очки: "))
+    if points == 0:
+        break
+    team = int(input("Команда (1/2): "))
+    if team == 1:
+        score1 += points
+    else:
+        score2 += points
+    print(f"Счёт: Команда 1 - {score1}, Команда 2 - {score2}")
+print("Игра окончена!")
+print(f"Итоговый счёт: Команда 1 - {score1}, Команда 2 - {score2}")
+if score1 > score2:
+    print("Победила команда 1")
+elif score2 > score1:
+    print("Победила команда 2")
+else:
+    print("Ничья")
+
+#  6.88
+
+i = 10
+while i <= 30:
+    print(i)
     i += 1
-print(f"Количество равных элементов в начале: {count}\n")
+i = 10
+while True:
+    print(i)
+    i += 1
+    if i > 30:
+        break
+
+# 6.89 
+i = 100
+while i >= 80:
+    print(i)
+    i -= 1
+i = 100
+while True:
+    print(i)
+    i -= 1
+    if i < 80:
+        break
+
+# 6.90 
+a = int(input("Введите a: "))
+b = int(input("Введите b (b < a): "))
+i = a
+while i >= b:
+    print(i**0.5)
+    i -= 1
+i = a
+while True:
+    print(i**0.5)
+    i -= 1
+    if i < b:
+        break
+
+#  6.91 
+
+n = int(input("Введите натуральное число: "))
+digits = list(map(int, str(n)))
+count = len(digits)
+sum_d = sum(digits)
+prod = 1
+for d in digits:
+    prod *= d
+avg = sum_d / count
+sum_sq = sum(d*d for d in digits)
+sum_cube = sum(d*d*d for d in digits)
+first = digits[0]
+last = digits[-1]
+sum_first_last = first + last
+
+print(f"Количество цифр: {count}")
+print(f"Сумма цифр: {sum_d}")
+print(f"Произведение цифр: {prod}")
+print(f"Среднее арифметическое цифр: {avg}")
+print(f"Сумма квадратов цифр: {sum_sq}")
+print(f"Сумма кубов цифр: {sum_cube}")
+print(f"Первая цифра: {first}")
+print(f"Сумма первой и последней цифры: {sum_first_last}")
+
+#  6.92 
+
+print("Введите 20 оценок по информатике (2-5):")
+count_5 = 0
+for i in range(20):
+    grade = int(input(f"Оценка ученика {i+1}: "))
+    if grade == 5:
+        count_5 += 1
+print(f"Количество учеников с оценкой '5': {count_5}")
+
+
+#  6.93
+
+count_no_rain = 0
+for day in range(1, 32):
+    rain = int(input(f"День {day}: "))
+    if rain == 0:
+        count_no_rain += 1
+    else:
+        break  
+print(f"Количество первых дней без осадков: {count_no_rain}")
+
+
+#  6.94 
+n = 201
+while n % 17 != 0:
+    n += 1
+print(f"Наименьшее число >200, кратное 17: {n}")
+
+# 6.95 
+n = 5000
+while n % 39 != 0:
+    n -= 1
+print(f"Максимальное число ≤5000, кратное 39: {n}")
+
+#  6.96 
+print("Введите рост 15 учеников в порядке убывания:")
+heights = []
+for i in range(15):
+    height = int(input(f"Рост ученика {i+1}: "))
+    heights.append(height)
+new_height = int(input("Рост нового ученика: "))
+position = 1
+for h in heights:
+    if new_height < h:
+        position += 1
+    else:
+        break
+print(f"Новый ученик займёт место: {position}")
+
+# 6.97 
+print("Введите очки 20 команд в порядке убывания:")
+scores = []
+for i in range(20):
+    score = int(input(f"Очки команды {i+1}: "))
+    scores.append(score)
+my_score = int(input("Очки вашей команды: "))
+position = 1
+for s in scores:
+    if my_score < s:
+        position += 1
+    else:
+        break
+print(f"Ваша команда на месте: {position}")
+
+# 6.98 
+deposit = 1000
+month = 1
+decrease = 0
+while True:
+    decrease = deposit * 0.02
+    if decrease > 30:
+        print(f"Уменьшение превысило 30 руб в месяц {month}")
+        break
+    deposit -= decrease
+    month += 1
+deposit = 1000
+month = 1
+while deposit <= 1200:
+    deposit -= deposit * 0.02
+    month += 1
+print(f"Размер вклада превысит 1200 руб через {month-1} месяцев")
+
+#  6.99 
+distance = 10
+day = 1
+while distance <= 20:
+    day += 1
+    distance += distance * 0.1
+print(f"Пробег превысит 20 км в день {day}")
+total = 10
+day = 1
+while total <= 100:
+    day += 1
+    daily = total * 0.1
+    total += daily
+print(f"Суммарный пробег превысит 100 км в день {day}")
+
+#  6.100 
+
+area = 100
+yield_per_ha = 20
+year = 1
+while yield_per_ha <= 22:
+    year += 1
+    yield_per_ha *= 1.02
+print(f"Урожайность превысит 22 ц/га в год {year}")
+area = 100
+year = 1
+while area <= 120:
+    year += 1
+    area *= 1.05
+print(f"Площадь превысит 120 га в год {year}")
+
+area = 100
+yield_per_ha = 20
+total_yield = 0
+year = 1
+while total_yield <= 800:
+    total_yield += area * yield_per_ha
+    year += 1
+    area *= 1.05
+    yield_per_ha *= 1.02
+print(f"Общий урожай превысит 800 ц в год {year-1}")
+
+#  6.101
+a = int(input("Введите первое число: "))
+b = int(input("Введите второе число: "))
+while b != 0:
+    a, b = b, a % b
+print(f"НОД: {a}")
+
+#  6.102 
+a = int(input("Введите первое число: "))
+b = int(input("Введите второе число: "))
+x, y = a, b
+while y != 0:
+    x, y = y, x % y
+gcd = x
+lcm = a * b // gcd
+print(f"НОК: {lcm}")
+
+#  6.103 
+
+a = int(input("Введите числитель: "))
+b = int(input("Введите знаменатель: "))
+x, y = a, b
+while y != 0:
+    x, y = y, x % y
+p = a // x
+q = b // x
+print(f"Сокращённая дробь: {p}/{q}")
+
+#  6.104 
+a = 425
+b = 131
+print(f"Прямоугольник {a}x{b}:")
+while b != 0:
+    count = a // b
+    print(f"Квадратов со стороной {b}: {count}")
+    a, b = b, a % b
+
+# 6.105 
+a = int(input("Введите длину прямоугольника: "))
+b = int(input("Введите ширину прямоугольника: "))
+print(f"Прямоугольник {a}x{b}:")
+while b != 0:
+    count = a // b
+    print(f"Квадратов {b}x{b}: {count}")
+    a, b = b, a % b
+
+#  6.106 
+a = int(input("Введите a: "))
+b = int(input("Введите b (b > 0): "))
+quotient = 0
+temp = a
+while temp >= b:
+    temp -= b
+    quotient += 1
+print(f"Целочисленное деление {a} на {b}: {quotient}")
+remainder = a
+while remainder >= b:
+    remainder -= b
+print(f"Остаток от деления {a} на {b}: {remainder}")
+
+#  6.107 =
+m = int(input("Введите m: "))
+n = int(input("Введите n: "))
+limit = m * n
+print("Числа, кратные m и n:")
+for i in range(1, limit + 1):
+    if i % m == 0 and i % n == 0:
+        print(i, end=' ')
+print()
+
+print("Числа, кратные m и n (способ 2):")
+k = 1
+while True:
+    multiple = m * n * k
+    if multiple <= limit:
+        print(multiple, end=' ')
+        k += 1
+    else:
+        break
+print()
+
+# 6.108 
+n = int(input("Введите сумму: "))
+denominations = [64, 32, 16, 8, 4, 2, 1]
+print(f"Сумма {n} руб. выплачивается:")
+for d in denominations:
+    count = n // d
+    if count > 0:
+        print(f"Купюр по {d} руб.: {count}")
+        n %= d
+
+#  6.109 
+n = int(input("Введите натуральное число: "))
+temp = n
+sign = 1
+sum1 = 0
+while temp > 0:
+    digit = temp % 10
+    sum1 += sign * digit
+    sign *= -1
+    temp //= 10
+print(f"Знакочередующаяся сумма (от младших): {sum1}")
+
+digits = list(map(int, str(n)))
+sign = 1
+sum2 = 0
+for digit in digits:
+    sum2 += sign * digit
+    sign *= -1
+print(f"Знакочередующаяся сумма (от старших): {sum2}")
+
+#  6.110 =
+n = input("Введите натуральное число: ")
+reverse_n = n[::-1]
+print(f"Число наоборот: {reverse_n}")
+with_two = '2' + n + '2'
+print(f"С двойкой в начале и конце: {with_two}")
+a = input("Введите цифру для удаления: ")
+without_a = n.replace(a, '')
+print(f"Без цифры {a}: {without_a}")
+if len(n) > 1:
+    swapped = n[-1] + n[1:-1] + n[0]
+    print(f"Первая и последняя цифры поменяны: {swapped}")
+else:
+    print("Число однозначное, перестановка невозможна")
+doubled = n + n
+print(f"Приписали такое же число: {doubled}")
+
+#  6.111 
+factorial = int(input("Введите факториал: "))
+n = 1
+prod = 1
+while prod < factorial:
+    n += 1
+    prod *= n
+if prod == factorial:
+    print(f"Число: {n}")
+else:
+    print("Это не факториал натурального числа")
+
+#  6.112 
+n = int(input("Введите натуральное число: "))
+temp = n
+pos = 0
+rightmost_3_pos = 0
+while temp > 0:
+    pos += 1
+    if temp % 10 == 3:
+        rightmost_3_pos = pos
+    temp //= 10
+print(f"Номер самой правой цифры 3 от конца: {rightmost_3_pos}")
+
+#  6.113 
+n = int(input("Введите натуральное число: "))
+m = int(input("Введите m: "))
+temp = n
+sum_last = 0
+for _ in range(m):
+    if temp == 0:
+        break
+    sum_last += temp % 10
+    temp //= 10
+print(f"Сумма {m} последних цифр: {sum_last}")
+
+#  6.114
+n = int(input("Введите натуральное число: "))
+divisor = 2
+while n % divisor != 0:
+    divisor += 1
+print(f"Наименьший делитель (кроме 1): {divisor}")
+
+#  6.115
+import math
+
+
+def f1(x):
+    return x4 + 2*x3 - x - 1
+def f2(x):
+    return x3 - 0.2*x2 - 0.2*x - 1.2
+def bisection(f, a, b, eps=0.001):
+    if f(a) * f(b) > 0:
+        return None
+    while b - a > eps:
+        c = (a + b) / 2
+        if f(c) == 0:
+            return c
+        if f(a) * f(c) < 0:
+            b = c
+        else:
+            a = c
+    return (a + b) / 2
+root1 = bisection(f1, 0, 1)
+print(f"Корень уравнения x^4+2x^3-x-1=0 на [0,1]: {root1:.3f}")
+root2 = bisection(f2, 1, 1.5)
+print(f"Корень уравнения x^3-0.2x^2-0.2x-1.2=0 на [1,1.5]: {root2:.3f}")
