@@ -1,0 +1,2233 @@
+# 7.1
+print("Четырёхзначные числа, которые при делении на 133 дают остаток 125,")
+print("а при делении на 134 дают остаток 111:")
+for num in range(1000, 10000):
+    if num % 133 == 125 and num % 134 == 111:
+        print(num, end=' ')
+
+# 7.2
+count = 0
+for num in range(100, 501):
+    s = 0
+    temp = num
+    while temp > 0:
+        s += temp % 10
+        temp //= 10
+    if s == 15:
+        count += 1
+print(f"\nКоличество чисел от 100 до 500 с суммой цифр 15: {count}")
+
+# 7.3
+n = int(input("Введите n (0 < n ≤ 27): "))
+count = 0
+for num in range(100, 1000):
+    s = num//100 + (num//10)%10 + num%10
+    if s == n:
+        count += 1
+print(f"Количество трёхзначных чисел с суммой цифр {n}: {count}")
+
+# 7.4
+print("Двузначные числа, сумма квадратов цифр делится на 13:")
+for num in range(10, 100):
+    d1 = num // 10
+    d2 = num % 10
+    if (d1*d1 + d2*d2) % 13 == 0:
+        print(num, end=' ')
+
+print("\nДвузначные числа с особым свойством:")
+for num in range(10, 100):
+    s = num//10 + num%10
+    if s + s*s == num:
+        print(num, end=' ')
+
+# 7.5
+n = int(input("Введите цифру n (0-9): "))
+print(f"Двузначные числа, делящиеся на {n} или содержащие цифру {n}:")
+for num in range(10, 100):
+    if num % n == 0 or num//10 == n or num%10 == n:
+        print(num, end=' ')
+
+# 7.6
+print("Трёхзначные числа, квадрат оканчивается на те же цифры:")
+for num in range(100, 1000):
+    square = num * num
+    if square % 1000 == num:
+        print(num, end=' ')
+
+print("\nТрёхзначные числа, кратные 7, сумма цифр кратна 7:")
+for num in range(100, 1000):
+    if num % 7 == 0:
+        s = num//100 + (num//10)%10 + num%10
+        if s % 7 == 0:
+            print(num, end=' ')
+
+# 7.7
+sum_num = 0
+for num in range(30, 100):
+    if num % 3 == 0 and (num % 10 in [2, 4, 8]):
+        sum_num += num
+print(f"Сумма чисел от 30 до 100, кратных 3 и оканчивающихся на 2,4,8: {sum_num}")
+
+# 7.8
+n = int(input("Введите натуральное число: "))
+print("Делители числа:", end=' ')
+for i in range(1, n+1):
+    if n % i == 0:
+        print(i, end=' ')
+
+sum_div = 0
+for i in range(1, n+1):
+    if n % i == 0:
+        sum_div += i
+print(f"\nСумма делителей: {sum_div}")
+
+sum_even = 0
+for i in range(1, n+1):
+    if n % i == 0 and i % 2 == 0:
+        sum_even += i
+print(f"Сумма чётных делителей: {sum_even}")
+
+count_div = 0
+for i in range(1, n+1):
+    if n % i == 0:
+        count_div += 1
+print(f"Количество делителей: {count_div}")
+
+count_odd = 0
+for i in range(1, n+1):
+    if n % i == 0 and i % 2 == 1:
+        count_odd += 1
+print(f"Количество нечётных делителей: {count_odd}")
+
+count_even_div = 0
+for i in range(1, n+1):
+    if n % i == 0:
+        if i % 2 == 0:
+            count_even_div += 1
+print(f"Всего делителей: {count_div}, из них чётных: {count_even_div}")
+
+d = int(input("Введите d: "))
+count_greater = 0
+for i in range(1, n+1):
+    if n % i == 0 and i > d:
+        count_greater += 1
+print(f"Количество делителей > {d}: {count_greater}")
+
+# 7.9
+print("В этой задаче требуется организовать вычисления во время ввода данных")
+
+# 7.10
+sum_num = 0
+print("Введите 8 вещественных чисел:")
+for i in range(8):
+    num = float(input(f"Число {i+1}: "))
+    if num > 10.75:
+        sum_num += num
+print(f"Сумма чисел >10.75: {sum_num}")
+
+# 7.11
+n = int(input("Введите количество чисел: "))
+p = float(input("Введите p: "))
+sum_num = 0
+print(f"Введите {n} вещественных чисел:")
+for i in range(n):
+    num = float(input(f"Число {i+1}: "))
+    if num > p:
+        sum_num += num
+print(f"Сумма чисел >{p}: {sum_num}")
+
+# 7.12
+sum_even = 0
+print("Введите 10 целых чисел:")
+for i in range(10):
+    num = int(input(f"Число {i+1}: "))
+    if num % 2 == 0:
+        sum_even += num
+print(f"Сумма чётных чисел: {sum_even}")
+
+# 7.13
+m = int(input("Введите количество чисел m: "))
+n = int(input("Введите n: "))
+sum_mult = 0
+print(f"Введите {m} целых чисел:")
+for i in range(m):
+    num = int(input(f"Число {i+1}: "))
+    if num % n == 0:
+        sum_mult += num
+print(f"Сумма чисел, кратных {n}: {sum_mult}")
+
+# 7.14
+sum_even_pos = 0
+print("Введите 20 целых чисел:")
+for i in range(1, 21):
+    num = int(input(f"Число {i}: "))
+    if i % 2 == 0:  
+        sum_even_pos += num
+print(f"Сумма чисел на чётных позициях: {sum_even_pos}")
+
+# 7.15
+sum_odd_pos = 0
+print("Введите 15 вещественных чисел:")
+for i in range(1, 16):
+    num = float(input(f"Число {i}: "))
+    if i % 2 == 1: 
+        sum_odd_pos -= num
+print(f"Сумма -c1 - c3 - c5 - ...: {sum_odd_pos}")
+
+# 7.16
+n = int(input("Введите количество чисел n: "))
+print(f"Введите {n} целых чисел:")
+sum_alt = 0
+sign = 1
+for i in range(n):
+    num = int(input(f"Число {i+1}: "))
+    sum_alt += sign * num
+    sign *= -1
+print(f"a1 - a2 + a3 - ...: {sum_alt}")
+print("Введите те же числа ещё раз:")
+first = int(input("Первое число: "))
+for i in range(n-1):
+    num = int(input(f"Число {i+2}: "))
+last = num 
+print(f"a1 + an: {first + last}")
+
+
+print(f"a1 - a2: {first - last}")  
+# 7.17
+total = 0
+print("Вводите стоимости товаров (0 для окончания):")
+while True:
+    price = float(input("Стоимость: "))
+    if price == 0:
+        break
+    if price > 1000:
+        total += price
+print(f"Общая стоимость товаров дороже 1000 руб: {total}")
+
+# 7.18
+total_pages = 0
+print("Вводите количество страниц (0 для окончания):")
+while True:
+    pages = int(input("Страниц: "))
+    if pages == 0:
+        break
+    if pages > 16:  
+        total_pages += pages
+print(f"Общее число страниц во всех журналах: {total_pages}")
+
+# 7.19
+
+rain_even_days = 0
+print("Введите количество осадков за каждый день месяца:")
+for day in range(1, 32):
+    rain = int(input(f"День {day}: "))
+    if day % 2 == 0: 
+        rain_even_days += rain
+print(f"Общее количество осадков в чётные дни: {rain_even_days}")
+
+# 7.20
+total_children = 0
+print("Введите число детей в каждом классе (1-11):")
+for class_num in range(1, 12):
+    children = int(input(f"Класс {class_num}: "))
+    if class_num % 2 == 1: 
+        total_children += children
+print(f"Общее число детей в нечётных классах: {total_children}")
+
+# 7.21
+count_5 = 0
+print("Введите оценки по информатике для класса:")
+for i in range(30):  
+    grade = int(input(f"Оценка ученика {i+1}: "))
+    if grade == 5:
+        count_5 += 1
+print(f"Количество пятёрок: {count_5}")
+
+# 7.22
+count_below_zero = 0
+print("Введите температуру за каждый день месяца:")
+for day in range(1, 32):
+    temp = float(input(f"День {day}: "))
+    if temp < 0:
+        count_below_zero += 1
+print(f"Температура опускалась ниже 0: {count_below_zero} раз")
+
+# 7.23
+count_less_100 = 0
+print("Введите 8 вещественных чисел:")
+for i in range(8):
+    num = float(input(f"Число {i+1}: "))
+    if num < 100:
+        count_less_100 += 1
+print(f"Количество чисел <100: {count_less_100}")
+
+# 7.24
+n = int(input("Введите количество чисел n: "))
+print(f"Введите {n} целых чисел:")
+p = int(input("Введите p: "))
+count_gt_p = 0
+count_ends_5 = 0
+k = int(input("Введите k: "))
+count_mult_k = 0
+
+for i in range(n):
+    num = int(input(f"Число {i+1}: "))
+    if num > p:
+        count_gt_p += 1
+    if num % 10 == 5:
+        count_ends_5 += 1
+    if num % k == 0:
+        count_mult_k += 1
+
+print(f"Чисел >{p}: {count_gt_p}")
+print(f"Чисел, оканчивающихся на 5: {count_ends_5}")
+print(f"Чисел, кратных {k}: {count_mult_k}")
+
+# 7.25
+count_5 = 0
+count_2 = 0
+print("Введите оценки по химии для класса:")
+for i in range(30):  
+    grade = int(input(f"Оценка ученика {i+1}: "))
+    if grade == 5:
+        count_5 += 1
+    elif grade == 2:
+        count_2 += 1
+print(f"Пятёрок: {count_5}, двоек: {count_2}")
+
+# 7.26
+
+count_before_1985 = 0
+count_after_1990 = 0
+print("Вводите годы рождения (0 для окончания):")
+while True:
+    year = int(input("Год рождения: "))
+    if year == 0:
+        break
+    if year < 1985:
+        count_before_1985 += 1
+    elif year > 1990:
+        count_after_1990 += 1
+print(f"Родившихся до 1985: {count_before_1985}")
+print(f"Родившихся после 1990: {count_after_1990}")
+
+# 7.27
+count_teams = 0
+print("Вводите данные команд (выигрыши и проигрыши):")
+for i in range(20): 
+    wins = int(input(f"Команда {i+1}, выигрыши: "))
+    losses = int(input(f"Команда {i+1}, проигрыши: "))
+    if wins > losses:
+        count_teams += 1
+print(f"Команд с выигрышами > проигрышей: {count_teams}")
+
+# 7.28
+count_2 = 0
+print("Введите оценки по двум экзаменам для каждого студента:")
+for i in range(25):
+    grade1 = int(input(f"Студент {i+1}, экзамен 1: "))
+    grade2 = int(input(f"Студент {i+1}, экзамен 2: "))
+    if grade1 == 2 or grade2 == 2:
+        count_2 += 1
+print(f"Студентов, получивших двойку: {count_2}")
+
+# 7.29
+n = int(input("Введите количество чисел n: "))
+count_neg = 0
+count_pos = 0
+print(f"Введите {n} вещественных чисел:")
+for i in range(n):
+    num = float(input(f"Число {i+1}: "))
+    if num < 0:
+        count_neg += 1
+    elif num > 0:
+        count_pos += 1
+print(f"Отрицательных: {count_neg}, положительных: {count_pos}")
+
+# 7.30
+m = int(input("Введите количество чисел m: "))
+count_3 = 0
+count_7 = 0
+print(f"Введите {m} целых чисел:")
+for i in range(m):
+    num = int(input(f"Число {i+1}: "))
+    if num % 3 == 0:
+        count_3 += 1
+    if num % 7 == 0:
+        count_7 += 1
+print(f"Кратных 3: {count_3}, кратных 7: {count_7}")
+
+# 7.31
+n = int(input("Введите количество чисел n: "))
+print(f"Введите {n} целых чисел:")
+count_equal_pairs = 0
+count_zero_pairs = 0
+count_even_pairs = 0
+count_ends5_pairs = 0
+
+prev = None
+for i in range(n):
+    num = int(input(f"Число {i+1}: "))
+    if prev is not None:
+        if num == prev:
+            count_equal_pairs += 1
+        if num == 0 and prev == 0:
+            count_zero_pairs += 1
+        if num % 2 == 0 and prev % 2 == 0:
+            count_even_pairs += 1
+        if num % 10 == 5 and prev % 10 == 5:
+            count_ends5_pairs += 1
+    prev = num
+
+print(f"Пар равных соседних чисел: {count_equal_pairs}")
+print(f"Пар нулевых соседних чисел: {count_zero_pairs}")
+print(f"Пар чётных соседних чисел: {count_even_pairs}")
+print(f"Пар, оканчивающихся на 5: {count_ends5_pairs}")
+
+# 7.32
+
+n = int(input("Введите количество чисел n: "))
+print(f"Введите {n} вещественных чисел:")
+count_greater_than_neighbors = 0
+nums = []
+for i in range(n):
+    num = float(input(f"Число {i+1}: "))
+    nums.append(num)
+
+for i in range(1, n-1):  
+    if nums[i] > nums[i-1] and nums[i] > nums[i+1]:
+        count_greater_than_neighbors += 1
+
+print(f"Чисел, больших своих соседей: {count_greater_than_neighbors}")
+
+# 7.33
+
+print("Вводите ненулевые целые числа (0 для окончания):")
+prev = None
+count_changes = 0
+while True:
+    num = int(input("Число: "))
+    if num == 0:
+        break
+    if prev is not None:
+        if (prev > 0 and num < 0) or (prev < 0 and num > 0):
+            count_changes += 1
+    prev = num
+print(f"Знак менялся {count_changes} раз")
+
+# 7.34
+n = int(input("Введите количество троек n: "))
+count_triangles = 0
+print(f"Введите {n} троек чисел (a ≤ b ≤ c):")
+for i in range(n):
+    a = int(input(f"Тройка {i+1}, a: "))
+    b = int(input(f"Тройка {i+1}, b: "))
+    c = int(input(f"Тройка {i+1}, c: "))
+    if a + b > c:
+        count_triangles += 1
+print(f"Троек, из которых можно построить треугольник: {count_triangles}")
+
+# 7.35
+import math
+n = int(input("Введите количество пар (α, v0) n: "))
+count_hits = 0
+print("Введите данные цели:")
+P = float(input("Высота цели P: "))
+R = float(input("Расстояние R: "))
+H = float(input("Высота расположения цели H: "))
+g = 9.8
+
+print(f"Введите {n} пар значений α (в градусах) и v0:")
+for i in range(n):
+    alpha = float(input(f"α {i+1} (град): "))
+    v0 = float(input(f"v0 {i+1}: "))
+    
+    alpha_rad = math.radians(alpha)
+    
+    t = R / (v0 * math.cos(alpha_rad))
+    
+    y = v0 * t * math.sin(alpha_rad) - g * t * t / 2
+    
+    if H <= y <= H + P:
+        count_hits += 1
+
+percentage = (count_hits / n) * 100
+print(f"Процент попаданий: {percentage:.1f}%")
+
+#  7.36
+
+print("В хоккейном матче было 24 удаления.")
+team1_total_time = 0
+team2_total_time = 0
+team1_count = 0
+team2_count = 0
+
+for i in range(24):
+    team = int(input(f"Удаление {i+1}, команда (1/2): "))
+    time = int(input("Длительность (2,5,10): "))
+    
+    if team == 1:
+        team1_total_time += time
+        team1_count += 1
+    else:
+        team2_total_time += time
+        team2_count += 1
+
+print(f"Команда 1: {team1_count} удалений, {team1_total_time} минут")
+print(f"Команда 2: {team2_count} удалений, {team2_total_time} минут")
+
+#  7.37 
+
+print("Введите оценки по физике для класса:")
+count_5 = count_4 = count_3 = count_2 = 0
+for i in range(30):  
+    grade = int(input(f"Ученик {i+1}: "))
+    if grade == 5:
+        count_5 += 1
+    elif grade == 4:
+        count_4 += 1
+    elif grade == 3:
+        count_3 += 1
+    elif grade == 2:
+        count_2 += 1
+
+print(f"Пятёрок: {count_5}")
+print(f"Четвёрок: {count_4}")
+print(f"Троек: {count_3}")
+print(f"Двоек: {count_2}")
+
+#  7.38 
+
+print("Введите результаты матчей (очки за матч):")
+wins = draws = losses = 0
+for i in range(30):  
+    points = int(input(f"Матч {i+1}: "))
+    if points == 3:
+        wins += 1
+    elif points == 1:
+        draws += 1
+    else:  
+        losses += 1
+
+print(f"Выигрышей: {wins}")
+print(f"Ничьих: {draws}")
+print(f"Проигрышей: {losses}")
+
+#  7.39 
+
+print("Введите 9 вещественных чисел:")
+sum_greater_10 = 0
+count_greater_10 = 0
+for i in range(9):
+    num = float(input(f"Число {i+1}: "))
+    if num > 10:
+        sum_greater_10 += num
+        count_greater_10 += 1
+
+if count_greater_10 > 0:
+    avg = sum_greater_10 / count_greater_10
+    print(f"Среднее чисел >10: {avg:.2f}")
+else:
+    print("Чисел >10 нет")
+
+#  7.40 
+
+x = int(input("Введите количество чисел x: "))
+n = int(input("Введите число n: "))
+print(f"Введите {x} целых чисел:")
+sum_greater_n = 0
+count_greater_n = 0
+
+for i in range(x):
+    num = int(input(f"Число {i+1}: "))
+    if num > n:
+        sum_greater_n += num
+        count_greater_n += 1
+
+if count_greater_n > 0:
+    avg = sum_greater_n / count_greater_n
+    print(f"Среднее чисел >{n}: {avg:.2f}")
+else:
+    print(f"Чисел >{n} нет")
+
+#  7.41 
+print("Введите 12 целых чисел:")
+sum_even = 0
+count_even = 0
+
+for i in range(12):
+    num = int(input(f"Число {i+1}: "))
+    if num % 2 == 0:
+        sum_even += num
+        count_even += 1
+
+if count_even > 0:
+    avg = sum_even / count_even
+    print(f"Среднее чётных чисел: {avg:.2f}")
+else:
+    print("Чётных чисел нет")
+
+# 7.42 
+
+m = int(input("Введите количество чисел m: "))
+n = int(input("Введите n: "))
+print(f"Введите {m} целых чисел:")
+sum_mult = 0
+count_mult = 0
+
+for i in range(m):
+    num = int(input(f"Число {i+1}: "))
+    if num % n == 0:
+        sum_mult += num
+        count_mult += 1
+
+if count_mult > 0:
+    avg = sum_mult / count_mult
+    print(f"Среднее чисел, кратных {n}: {avg:.2f}")
+else:
+    print(f"Чисел, кратных {n}, нет")
+
+#  7.43
+
+print("Введите массу людей в группе:")
+sum_full = 0
+count_full = 0
+sum_others = 0
+count_others = 0
+
+while True:
+    weight = float(input("Масса (0 для окончания): "))
+    if weight == 0:
+        break
+    if weight > 100:
+        sum_full += weight
+        count_full += 1
+    else:
+        sum_others += weight
+        count_others += 1
+
+if count_full > 0:
+    avg_full = sum_full / count_full
+    print(f"Средняя масса полных людей: {avg_full:.1f} кг")
+else:
+    print("Полных людей нет")
+
+if count_others > 0:
+    avg_others = sum_others / count_others
+    print(f"Средняя масса остальных: {avg_others:.1f} кг")
+else:
+    print("Остальных людей нет")
+
+#  7.44 
+
+n = int(input("Введите количество чисел n: "))
+print(f"Введите {n} вещественных чисел:")
+
+
+
+first = True
+max_num = 0
+min_num = 0
+
+for i in range(n):
+    num = float(input(f"Число {i+1}: "))
+    if first:
+        max_num = num
+        min_num = num
+        first = False
+    else:
+        if num > max_num:
+            max_num = num
+        if num < min_num:
+            min_num = num
+
+print(f"Максимальное: {max_num}")
+print(f"Минимальное: {min_num}")
+
+#  7.45 
+
+n = int(input("Введите количество чисел n: "))
+print(f"Введите {n} целых чисел:")
+
+first = True
+max_num = 0
+min_num = 0
+max_index = 0
+min_index = 0
+
+for i in range(n):
+    num = int(input(f"Число {i+1}: "))
+    if first:
+        max_num = num
+        min_num = num
+        max_index = i + 1
+        min_index = i + 1
+        first = False
+    else:
+        if num >= max_num: 
+            max_num = num
+            max_index = i + 1
+        if num < min_num:  
+            min_num = num
+            min_index = i + 1
+
+print(f"Номер последнего максимального: {max_index}")
+print(f"Номер первого минимального: {min_index}")
+
+#  7.46 
+
+print("Введите результаты спортсменов (время в минутах):")
+best_time = float('inf')  
+while True:
+    time = float(input("Результат (0 для окончания): "))
+    if time == 0:
+        break
+    if time < best_time:
+        best_time = time
+        print(f"Новый лучший результат: {best_time} мин")
+
+print(f"Окончательный лучший результат: {best_time} мин")
+
+#  7.47
+
+print("Введите расстояния от Москвы до городов:")
+max_distance = 0
+
+while True:
+    distance = float(input("Расстояние (0 для окончания): "))
+    if distance == 0:
+        break
+    if distance > max_distance:
+        max_distance = distance
+
+print(f"Самый удалённый город: {max_distance} км")
+
+#  7.48 
+
+print("Введите максимальные скорости 20 марок автомобилей:")
+max_speed = 0
+
+for i in range(20):
+    speed = int(input(f"Автомобиль {i+1}: "))
+    if speed > max_speed:
+        max_speed = speed
+
+print(f"Максимальная скорость: {max_speed} км/ч")
+
+#  7.49 
+
+print("Введите площади нескольких кругов:")
+min_radius = float('inf')
+
+while True:
+    area = float(input("Площадь (0 для окончания): "))
+    if area == 0:
+        break
+    
+    import math
+    radius = math.sqrt(area / math.pi)
+    if radius < min_radius:
+        min_radius = radius
+
+print(f"Радиус самого маленького круга: {min_radius:.2f}")
+
+#  7.50 
+
+print("Введите площади нескольких квадратов:")
+max_diagonal = 0
+
+while True:
+    area = float(input("Площадь (0 для окончания): "))
+    if area == 0:
+        break
+    
+    import math
+    side = math.sqrt(area)
+    diagonal = side * math.sqrt(2)
+    if diagonal > max_diagonal:
+        max_diagonal = diagonal
+
+print(f"Диагональ самого большого квадрата: {max_diagonal:.2f}")
+
+#  7.51 
+
+print("Введите количество жильцов в каждой квартире:")
+max_residents = 0
+max_apartment = 0
+apartment_num = 1
+
+while True:
+    residents = int(input(f"Квартира {apartment_num} (0 для окончания): "))
+    if residents == 0:
+        break
+    if residents >= max_residents: 
+        max_residents = residents
+        max_apartment = apartment_num
+    apartment_num += 1
+
+print(f"Больше всего жильцов в квартире №{max_apartment}: {max_residents}")
+
+#  7.52 
+
+print("Введите результаты лыжников в порядке старта:")
+best_time = float('inf')
+best_number = 0
+current_number = 1
+
+while True:
+    time = float(input(f"Лыжник {current_number} (0 для окончания): "))
+    if time == 0:
+        break
+    if time < best_time:
+        best_time = time
+        best_number = current_number
+    current_number += 1
+
+print(f"Лучший результат у лыжника №{best_number}: {best_time} мин")
+
+# 7.53 
+
+print("Введите очки футбольных команд:")
+min_points = float('inf')
+min_team = 0
+team_num = 1
+
+while True:
+    points = int(input(f"Команда {team_num} (0 для окончания): "))
+    if points == 0:
+        break
+    if points < min_points:
+        min_points = points
+        min_team = team_num
+    team_num += 1
+
+print(f"Наименьшее количество очков у команды №{min_team}: {min_points}")
+
+#  7.54 
+
+print("Введите количество осадков за каждый день:")
+max_rain = 0
+max_day = 0
+day = 1
+
+while True:
+    rain = float(input(f"День {day} (-1 для окончания): "))
+    if rain == -1:
+        break
+    if rain >= max_rain:  
+        max_rain = rain
+        max_day = day
+    day += 1
+
+print(f"Самое большое количество осадков было в день {max_day}: {max_rain} мм")
+
+#  7.55 
+
+print("Введите оценки судей (от 0 до 10):")
+scores = []
+for i in range(7):  
+    score = float(input(f"Судья {i+1}: "))
+    scores.append(score)
+ю
+max_score = max(scores)
+min_score = min(scores)
+
+
+scores.remove(max_score)
+scores.remove(min_score)
+
+average = sum(scores) / len(scores)
+print(f"Оценка спортсмена: {average:.2f}")
+
+#  7.56
+
+print("Введите рост людей в группе:")
+first = True
+max_height = 0
+min_height = 0
+
+while True:
+    height = float(input("Рост (0 для окончания): "))
+    if height == 0:
+        break
+    if first:
+        max_height = height
+        min_height = height
+        first = False
+    else:
+        if height > max_height:
+            max_height = height
+        if height < min_height:
+            min_height = height
+
+difference = max_height - min_height
+print(f"Разница между самым высоким и самым низким: {difference:.1f} см")
+
+#  7.57 
+
+print("Введите количество учеников в каждом классе:")
+max_students = 0
+min_students = float('inf')
+
+for i in range(20):  
+    students = int(input(f"Класс {i+1}: "))
+    if students > max_students:
+        max_students = students
+    if students < min_students:
+        min_students = students
+
+difference = max_students - min_students
+print(f"Разница: {difference} учеников")
+
+#  7.58 
+
+n = int(input("Введите количество пар n: "))
+print(f"Введите {n} пар чисел:")
+
+first = True
+max_sum = 0
+min_product = 0
+
+for i in range(n):
+    a = int(input(f"Пара {i+1}, первое число: "))
+    b = int(input(f"Пара {i+1}, второе число: "))
+    
+    pair_sum = a + b
+    pair_product = a * b
+    
+    if first:
+        max_sum = pair_sum
+        min_product = pair_product
+        first = False
+    else:
+        if pair_sum > max_sum:
+            max_sum = pair_sum
+        if pair_product < min_product:
+            min_product = pair_product
+
+print(f"Максимальная сумма в паре: {max_sum}")
+print(f"Минимальное произведение в паре: {min_product}")
+
+#  7.59 
+n = int(input("Введите количество пар n: "))
+print(f"Введите {n} пар положительных чисел:")
+
+first = True
+max_avg = 0
+max_avg_index = 0
+min_geom = float('inf')
+min_geom_index = 0
+
+for i in range(1, n + 1):
+    a = float(input(f"Пара {i}, первое число: "))
+    b = float(input(f"Пара {i}, второе число: "))
+    
+    avg = (a + b) / 2
+    geom = (a * b) ** 0.5  
+    
+    if first:
+        max_avg = avg
+        max_avg_index = i
+        min_geom = geom
+        min_geom_index = i
+        first = False
+    else:
+        if avg >= max_avg:  
+            max_avg = avg
+            max_avg_index = i
+        if geom < min_geom: 
+            min_geom = geom
+            min_geom_index = i
+
+print(f"Пара {max_avg_index} имеет максимальное среднее арифметическое: {max_avg:.2f}")
+print(f"Пара {min_geom_index} имеет минимальное среднее геометрическое: {min_geom:.2f}")
+
+# 7.60
+
+print("Введите данные о 30 телах:")
+max_density = 0
+
+for i in range(30):
+    mass = float(input(f"Тело {i+1}, масса (кг): "))
+    volume = float(input(f"Тело {i+1}, объем (см³): "))
+    
+    
+    volume_m3 = volume / 1000000
+    density = mass / volume_m3
+    
+    if density > max_density:
+        max_density = density
+
+print(f"Максимальная плотность: {max_density:.2f} кг/м³")
+
+#  7.61 
+print("Введите данные о 28 государствах:")
+min_density = float('inf')
+
+for i in range(28):
+    population = float(input(f"Государство {i+1}, население (млн): "))
+    area = float(input(f"Государство {i+1}, площадь (тыс. км²): "))
+    
+    
+    density = population / area
+    
+    if density < min_density:
+        min_density = density
+
+print(f"Минимальная плотность населения: {min_density:.2f} млн/тыс.км²")
+
+#  7.62 
+
+print("Введите данные о 25 автомобилях:")
+max_avg_speed = 0
+max_car_number = 0
+
+for i in range(1, 26):
+    distance = float(input(f"Автомобиль {i}, путь (км): "))
+    time = float(input(f"Автомобиль {i}, время (ч): "))
+    
+    avg_speed = distance / time
+    
+    if avg_speed > max_avg_speed:
+        max_avg_speed = avg_speed
+        max_car_number = i
+
+print(f"Автомобиль №{max_car_number} имеет максимальную среднюю скорость: {max_avg_speed:.1f} км/ч")
+
+#  7.63
+
+print("Введите данные о 20 сопротивлениях:")
+min_current = float('inf')
+min_resistor_number = 0
+
+for i in range(1, 21):
+    voltage = float(input(f"Сопротивление {i}, напряжение (В): "))
+    resistance = float(input(f"Сопротивление {i}, сопротивление (Ом): "))
+    
+    # I = U/R
+    current = voltage / resistance
+    
+    if current < min_current:
+        min_current = current
+        min_resistor_number = i
+
+print(f"Сопротивление №{min_resistor_number} имеет минимальный ток: {min_current:.3f} А")
+
+# 7.64 
+
+n = int(input("Введите количество чисел n (n ≥ 3): "))
+print(f"Введите {n} целых чисел:")
+
+
+first = int(input("Число 1: "))
+second = int(input("Число 2: "))
+third = int(input("Число 3: "))
+
+
+if first >= second and first >= third:
+    max1 = first
+    if second >= third:
+        max2 = second
+        min1 = third
+        min2 = second
+    else:
+        max2 = third
+        min1 = second
+        min2 = third
+elif second >= first and second >= third:
+    max1 = second
+    if first >= third:
+        max2 = first
+        min1 = third
+        min2 = first
+    else:
+        max2 = third
+        min1 = first
+        min2 = third
+else: 
+    max1 = third
+    if first >= second:
+        max2 = first
+        min1 = second
+        min2 = first
+    else:
+        max2 = second
+        min1 = first
+        min2 = second
+
+
+for i in range(4, n + 1):
+    num = int(input(f"Число {i}: "))
+    
+    if num > max1:
+        max2 = max1
+        max1 = num
+    elif num > max2:
+        max2 = num
+    
+    if num < min1:
+        min2 = min1
+        min1 = num
+    elif num < min2:
+        min2 = num
+
+print(f"Два максимальных: {max1}, {max2}")
+print(f"Два минимальных: {min1}, {min2}")
+
+# 7.65 
+
+n = int(input("Введите количество чисел n: "))
+print(f"Введите {n} целых чисел:")
+
+first = True
+max_num = 0
+min_num = 0
+count_max = 0
+count_min = 0
+
+for i in range(n):
+    num = int(input(f"Число {i+1}: "))
+    
+    if first:
+        max_num = num
+        min_num = num
+        count_max = 1
+        count_min = 1
+        first = False
+    else:
+        if num > max_num:
+            max_num = num
+            count_max = 1
+        elif num == max_num:
+            count_max += 1
+            
+        if num < min_num:
+            min_num = num
+            count_min = 1
+        elif num == min_num:
+            count_min += 1
+
+print(f"Максимальное {max_num} встречается {count_max} раз")
+print(f"Минимальное {min_num} встречается {count_min} раз")
+
+#  7.66 
+
+print("Введите количество жильцов в каждой квартире:")
+max_residents = 0
+count_max = 0
+apartment = 1
+
+while True:
+    residents = int(input(f"Квартира {apartment} (0 для окончания): "))
+    if residents == 0:
+        break
+    
+    if residents > max_residents:
+        max_residents = residents
+        count_max = 1
+    elif residents == max_residents:
+        count_max += 1
+    
+    apartment += 1
+
+print(f"В {count_max} квартирах проживает максимальное число жильцов: {max_residents}")
+
+# 7.67 
+
+print("Введите температуру за каждый день:")
+min_temp = float('inf')
+count_min = 0
+day = 1
+
+while True:
+    temp = float(input(f"День {day} (999 для окончания): "))
+    if temp == 999:
+        break
+    
+    if temp < min_temp:
+        min_temp = temp
+        count_min = 1
+    elif temp == min_temp:
+        count_min += 1
+    
+    day += 1
+
+print(f"Самая низкая температура {min_temp}°C была {count_min} дней")
+
+#  7.68 
+
+print("Исходная последовательность: максимальный элемент = 8, таких элементов 4")
+A = int(input("Введите число A: "))
+
+if A == 0:
+    print("Максимальных элементов осталось: 4")
+elif A == 8:
+    print("Максимальных элементов стало: 5")
+else:
+    if A > 8:
+        print("Максимальных элементов стало: 1 (это число A)")
+    else:
+        print("Максимальных элементов осталось: 4")
+
+#  7.69 
+
+n = int(input("Введите количество чисел n: "))
+print(f"Введите {n} целых чисел:")
+
+max_length = 0
+current_length = 0
+
+for i in range(n):
+    num = int(input(f"Число {i+1}: "))
+    
+    if num % 2 == 0: 
+        current_length += 1
+        if current_length > max_length:
+            max_length = current_length
+    else:  
+        current_length = 0
+
+print(f"Наибольшая длина отрезка из чётных чисел: {max_length}")
+
+#  7.70 
+
+m = int(input("Введите количество чисел m: "))
+print(f"Введите {m} чисел (0 или 1):")
+
+min_length = float('inf')
+current_length = 0
+in_zero_segment = False
+
+for i in range(m):
+    num = int(input(f"Число {i+1} (0 или 1): "))
+    
+    if num == 0:
+        current_length += 1
+        in_zero_segment = True
+    else:  
+        if in_zero_segment:
+            if current_length < min_length:
+                min_length = current_length
+            current_length = 0
+            in_zero_segment = False
+
+if in_zero_segment and current_length < min_length:
+    min_length = current_length
+
+if min_length == float('inf'):
+    print("Нулевых отрезков нет")
+else:
+    print(f"Наименьшая длина отрезка из нулей: {min_length}")
+
+#  7.71
+
+n = int(input("Введите количество покупателей n: "))
+print(f"Введите время обслуживания каждого покупателя:")
+
+waiting_times = []
+service_times = []
+min_service_time = float('inf')
+min_service_customer = 0
+
+for i in range(1, n + 1):
+    t = float(input(f"Покупатель {i}: "))
+    service_times.append(t)
+    
+    if t < min_service_time:
+        min_service_time = t
+        min_service_customer = i
+    
+    
+    waiting_time = sum(service_times) - t  
+    waiting_times.append(waiting_time)
+
+print("\nВремя пребывания в очереди:")
+for i in range(n):
+    print(f"Покупатель {i+1}: {waiting_times[i]:.1f} мин")
+
+print(f"\nМеньше всего времени потребовалось для обслуживания покупателя {min_service_customer}: {min_service_time:.1f} мин")
+
+#  7.72
+
+n = int(input("Введите количество чисел n (n ≥ 3): "))
+print(f"Введите {n} целых чисел:")
+
+prev = int(input("Число 1: "))
+current = int(input("Число 2: "))
+
+max_sum = prev + current
+min_sum = prev + current
+max_pair = (1, 2)  
+min_pair = (1, 2)
+
+for i in range(3, n + 1):
+    next_num = int(input(f"Число {i}: "))
+    current_sum = current + next_num
+    
+    if current_sum > max_sum:
+        max_sum = current_sum
+        max_pair = (i-1, i)
+    
+    if current_sum < min_sum:
+        min_sum = current_sum
+        min_pair = (i-1, i)
+    
+    current = next_num
+
+print(f"Максимальная сумма двух соседних: {max_sum} (числа {max_pair[0]} и {max_pair[1]})")
+print(f"Минимальная сумма двух соседних: {min_sum} (числа {min_pair[0]} и {min_pair[1]})")
+
+#  7.73
+
+print("Введите очки 20 команд:")
+scores = []
+for i in range(20):
+    score = int(input(f"Команда {i+1}: "))
+    scores.append(score)
+
+if scores[0] >= scores[1]:
+    max1 = scores[0]
+    max2 = scores[1]
+else:
+    max1 = scores[1]
+    max2 = scores[0]
+
+for i in range(2, 20):
+    if scores[i] > max1:
+        max2 = max1
+        max1 = scores[i]
+    elif scores[i] > max2:
+        max2 = scores[i]
+
+print(f"Сумма очков команд, занявших первые два места: {max1 + max2}")
+
+#  7.74 
+
+n = int(input("Введите количество спортсменов n (n ≥ 4): "))
+print("Введите результаты в сотых долях секунды:")
+
+results = []
+for i in range(n):
+    time = float(input(f"Спортсмен {i+1}: "))
+    results.append(time)
+
+indexed_results = list(enumerate(results))
+indexed_results.sort(key=lambda x: x[1])  
+best_four = indexed_results[:4]
+best_indices = [idx + 1 for idx, _ in best_four]  
+best_times = [time for _, time in best_four]
+
+print(f"Лучшая команда из спортсменов: {best_indices}")
+print(f"Сумма их результатов: {sum(best_times):.2f}")
+
+#  7.75
+
+print("Введите результаты 20 игр в формате 'забито-пропущено':")
+
+wins = draws = losses = 0
+total_points = 0
+big_difference_games = 0
+
+for i in range(1, 21):
+    result = input(f"Игра {i}: ")
+    scored, conceded = map(int, result.split('-'))
+    
+    if scored > conceded:
+        wins += 1
+        total_points += 3
+        print(f"Игра {i}: выигрыш")
+    elif scored == conceded:
+        draws += 1
+        total_points += 1
+        print(f"Игра {i}: ничья")
+    else:
+        losses += 1
+        print(f"Игра {i}: проигрыш")
+    
+    difference = abs(scored - conceded)
+    if difference >= 3:
+        big_difference_games += 1
+
+print(f"\nВыигрышей: {wins}")
+print(f"Ничьих: {draws}")
+print(f"Проигрышей: {losses}")
+print(f"Всего очков: {total_points}")
+print(f"Игр с разницей ≥3 мячей: {big_difference_games}")
+
+#  7.76 
+
+print("Введите 10 вещественных чисел:")
+total = 0
+for i in range(10):
+    num = float(input(f"Число {i+1}: "))
+    total += num
+
+if total > 100.78:
+    print(f"Сумма {total:.2f} превышает 100.78: ДА")
+else:
+    print(f"Сумма {total:.2f} не превышает 100.78: НЕТ")
+
+#  7.77 
+n = int(input("Введите количество чисел n: "))
+p = int(input("Введите число p: "))
+print(f"Введите {n} целых чисел:")
+
+total = 0
+for i in range(n):
+    num = int(input(f"Число {i+1}: "))
+    total += num
+
+if total < p:
+    print(f"Сумма {total} меньше {p}: ДА")
+else:
+    print(f"Сумма {total} не меньше {p}: НЕТ")
+
+#  7.78 
+
+print("Введите 10 целых чисел:")
+total = 0
+for i in range(10):
+    num = int(input(f"Число {i+1}: "))
+    total += num
+
+if total % 2 == 0:
+    print(f"Сумма {total} чётная: ДА")
+else:
+    print(f"Сумма {total} нечётная: НЕТ")
+
+# 7.79
+n = int(input("Введите количество чисел n: "))
+b = int(input("Введите число b: "))
+print(f"Введите {n} целых чисел:")
+
+total = 0
+for i in range(n):
+    num = int(input(f"Число {i+1}: "))
+    total += num
+
+if total % b == 0:
+    print(f"Сумма {total} кратна {b}: ДА")
+else:
+    print(f"Сумма {total} не кратна {b}: НЕТ")
+
+# 7.80 
+print("Введите количество осадков за каждый день февраля:")
+total_this_year = 0
+for day in range(1, 29):  
+    rain = float(input(f"День {day}: "))
+    total_this_year += rain
+
+last_year = float(input("Введите общее количество осадков за прошлый год: "))
+
+if total_this_year > last_year:
+    print(f"В этом году выпало больше осадков ({total_this_year} > {last_year}): ДА")
+else:
+    print(f"В этом году выпало не больше осадков ({total_this_year} ≤ {last_year}): НЕТ")
+
+#  7.81 
+print("Введите массу каждого груза:")
+total_mass = 0
+while True:
+    mass = float(input("Масса груза (0 для окончания): "))
+    if mass == 0:
+        break
+    total_mass += mass
+
+capacity = float(input("Введите грузоподъёмность автомобиля: "))
+
+if total_mass > capacity:
+    print(f"Общая масса {total_mass} превышает грузоподъёмность {capacity}: ДА")
+else:
+    print(f"Общая масса {total_mass} не превышает грузоподъёмность {capacity}: НЕТ")
+
+# 7.82 
+print("Введите результаты первого десятиборца (10 видов):")
+athlete1_total = 0
+for i in range(1, 11):
+    points = int(input(f"Вид {i}: "))
+    athlete1_total += points
+
+print("Введите результаты второго десятиборца (10 видов):")
+athlete2_total = 0
+for i in range(1, 11):
+    points = int(input(f"Вид {i}: "))
+    athlete2_total += points
+
+if athlete1_total > athlete2_total:
+    print(f"Первый спортсмен показал лучший результат: {athlete1_total} > {athlete2_total}")
+elif athlete2_total > athlete1_total:
+    print(f"Второй спортсмен показал лучший результат: {athlete2_total} > {athlete1_total}")
+else:
+    print(f"Результаты равны: {athlete1_total} = {athlete2_total}")
+
+# 7.83
+
+print("Введите стоимость 8 предметов первого набора:")
+set1_total = 0
+for i in range(8):
+    price = float(input(f"Предмет {i+1}: "))
+    set1_total += price
+
+print("Введите стоимость 8 предметов второго набора:")
+set2_total = 0
+for i in range(8):
+    price = float(input(f"Предмет {i+1}: "))
+    set2_total += price
+
+if set1_total < set2_total:
+    print(f"Первый набор дешевле: {set1_total} < {set2_total}")
+elif set2_total < set1_total:
+    print(f"Второй набор дешевле: {set2_total} < {set1_total}")
+else:
+    print(f"Наборы стоят одинаково: {set1_total} = {set2_total}")
+
+#  7.84 
+print("Введите 8 чисел:")
+product = 1
+for i in range(8):
+    num = float(input(f"Число {i+1}: "))
+    product *= num
+
+if product < 10000:
+    print(f"Произведение {product} меньше 10000: ДА")
+else:
+    print(f"Произведение {product} не меньше 10000: НЕТ")
+
+# 7.85 
+n = int(input("Введите количество чисел n: "))
+s = float(input("Введите s: "))
+print(f"Введите {n} вещественных чисел:")
+
+product = 1
+for i in range(n):
+    num = float(input(f"Число {i+1}: "))
+    product *= num
+
+if product > s:
+    print(f"Произведение {product} больше {s}: ДА")
+else:
+    print(f"Произведение {product} не больше {s}: НЕТ")
+
+# 7.86 
+("Введите 10 целых чисел:")
+sum_gt_20 = 0
+sum_lt_50 = 0
+
+for i in range(10):
+    num = int(input(f"Число {i+1}: "))
+    if num > 20:
+        sum_gt_20 += num
+    if num < 50:
+        sum_lt_50 += num
+
+
+if sum_gt_20 > 100:
+    print(f"Сумма чисел >20 ({sum_gt_20}) превышает 100: ДА")
+else:
+    print(f"Сумма чисел >20 ({sum_gt_20}) не превышает 100: НЕТ")
+
+
+if sum_lt_50 % 2 == 0:
+    print(f"Сумма чисел <50 ({sum_lt_50}) чётная: ДА")
+else:
+    print(f"Сумма чисел <50 ({sum_lt_50}) нечётная: НЕТ")
+
+# 7.87 
+
+n = int(input("Введите количество чисел n: "))
+print(f"Введите {n} целых чисел:")
+
+sum_lt_20_5 = 0
+sum_le_10 = 0
+
+for i in range(n):
+    num = int(input(f"Число {i+1}: "))
+    if num < 20.5:
+        sum_lt_20_5 += num
+    if num <= 10:
+        sum_le_10 += num
+
+if sum_lt_20_5 <= 50:
+    print(f"Сумма чисел <20.5 ({sum_lt_20_5}) не превышает 50: ДА")
+else:
+    print(f"Сумма чисел <20.5 ({sum_lt_20_5}) превышает 50: НЕТ")
+
+
+if sum_le_10 % 3 == 0:
+    print(f"Сумма чисел ≤10 ({sum_le_10}) кратна 3: ДА")
+else:
+    print(f"Сумма чисел ≤10 ({sum_le_10}) не кратна 3: НЕТ")
+
+#  7.88
+
+n = int(input("Введите количество чисел n: "))
+p = float(input("Введите p: "))
+print(f"Введите {n} вещественных чисел:")
+
+sum_gt_20_5 = 0
+for i in range(n):
+    num = float(input(f"Число {i+1}: "))
+    if num > 20.5:
+        sum_gt_20_5 += num
+
+if sum_gt_20_5 < p:
+    print(f"Сумма чисел >20.5 ({sum_gt_20_5}) меньше {p}: ДА")
+else:
+    print(f"Сумма чисел >20.5 ({sum_gt_20_5}) не меньше {p}: НЕТ")
+
+#  7.89
+n = int(input("Введите количество чисел n: "))
+m = int(input("Введите m: "))
+q = float(input("Введите q: "))
+print(f"Введите {n} целых чисел:")
+
+sum_le_m = 0
+for i in range(n):
+    num = int(input(f"Число {i+1}: "))
+    if num <= m:
+        sum_le_m += num
+
+if sum_le_m > q:
+    print(f"Сумма чисел ≤{m} ({sum_le_m}) превышает {q}: ДА")
+else:
+    print(f"Сумма чисел ≤{m} ({sum_le_m}) не превышает {q}: НЕТ")
+
+#  7.90 
+
+n = int(input("Введите количество чисел n: "))
+m = int(input("Введите m: "))
+p = int(input("Введите p: "))
+print(f"Введите {n} целых чисел:")
+
+sum_le_m = 0
+for i in range(n):
+    num = int(input(f"Число {i+1}: "))
+    if num <= m:
+        sum_le_m += num
+
+if sum_le_m % p == 0:
+    print(f"Сумма чисел ≤{m} ({sum_le_m}) кратна {p}: ДА")
+else:
+    print(f"Сумма чисел ≤{m} ({sum_le_m}) не кратна {p}: НЕТ")
+
+#  7.91
+
+print("Введите количество осадков за каждый день февраля:")
+sum_even_days = 0
+sum_odd_days = 0
+
+for day in range(1, 29):  
+    rain = float(input(f"День {day}: "))
+    if day % 2 == 0: 
+        sum_even_days += rain
+    else:  
+        sum_odd_days += rain
+
+if sum_even_days > sum_odd_days:
+    print(f"По чётным дням выпало больше осадков ({sum_even_days} > {sum_odd_days}): ДА")
+else:
+    print(f"По чётным дням выпало не больше осадков ({sum_even_days} ≤ {sum_odd_days}): НЕТ")
+
+#  7.92 
+
+print("Введите количество жителей в каждом доме:")
+sum_even_houses = 0  
+sum_odd_houses = 0   
+house = 1
+
+while True:
+    residents = int(input(f"Дом {house} (0 для окончания): "))
+    if residents == 0:
+        break
+    
+    if house % 2 == 0:
+        sum_even_houses += residents
+    else:
+        sum_odd_houses += residents
+    
+    house += 1
+
+if sum_even_houses > sum_odd_houses:
+    print(f"На стороне с чётными номерами живёт больше жителей: ДА")
+elif sum_odd_houses > sum_even_houses:
+    print(f"На стороне с нечётными номерами живёт больше жителей: ДА")
+else:
+    print(f"На обеих сторонах живёт одинаковое количество жителей")
+
+#  7.93 
+
+print("Введите 10 целых чисел:")
+count_pos = 0
+
+for i in range(10):
+    num = int(input(f"Число {i+1}: "))
+    if num > 0:
+        count_pos += 1
+
+if count_pos <= 5:
+    print(f"Количество положительных чисел ({count_pos}) ≤5: ДА")
+else:
+    print(f"Количество положительных чисел ({count_pos}) >5: НЕТ")
+
+# 7.94 
+
+print("Введите 10 вещественных чисел:")
+count_le_50_55 = 0
+
+for i in range(10):
+    num = float(input(f"Число {i+1}: "))
+    if num <= 50.55:
+        count_le_50_55 += 1
+
+if count_le_50_55 % 4 == 0:
+    print(f"Количество чисел ≤50.55 ({count_le_50_55}) кратно 4: ДА")
+else:
+    print(f"Количество чисел ≤50.55 ({count_le_50_55}) не кратно 4: НЕТ")
+
+# 7.95 
+n = int(input("Введите количество чисел n: "))
+print(f"Введите {n} целых чисел:")
+
+count_lt_20 = 0
+for i in range(n):
+    num = int(input(f"Число {i+1}: "))
+    if num < 20:
+        count_lt_20 += 1
+
+if count_lt_20 == 5:
+    print(f"Количество чисел <20 равно 5: ДА")
+else:
+    print(f"Количество чисел <20 ({count_lt_20}) не равно 5: НЕТ")
+
+# 7.96 
+
+m = int(input("Введите количество чисел m: "))
+print(f"Введите {m} целых чисел:")
+
+count_pos = 0
+for i in range(m):
+    num = int(input(f"Число {i+1}: "))
+    if num > 0:
+        count_pos += 1
+
+if count_pos % 3 == 0:
+    print(f"Количество положительных чисел ({count_pos}) кратно 3: ДА")
+else:
+    print(f"Количество положительных чисел ({count_pos}) не кратно 3: НЕТ")
+
+#  7.97 
+n = int(input("Введите количество чисел n: "))
+x = int(input("Введите x: "))
+print(f"Введите {n} целых чисел:")
+
+count_neg = 0
+for i in range(n):
+    num = int(input(f"Число {i+1}: "))
+    if num < 0:
+        count_neg += 1
+
+if count_neg > x:
+    print(f"Количество отрицательных чисел ({count_neg}) превышает {x}: ДА")
+else:
+    print(f"Количество отрицательных чисел ({count_neg}) не превышает {x}: НЕТ")
+
+#  7.98 
+m = int(input("Введите количество чисел m: "))
+p_num = int(input("Введите число для сравнения: "))
+p_div = int(input("Введите делитель p: "))
+print(f"Введите {m} целых чисел:")
+
+count_gt_p = 0
+for i in range(m):
+    num = int(input(f"Число {i+1}: "))
+    if num > p_num:
+        count_gt_p += 1
+
+if count_gt_p % p_div == 0:
+    print(f"Количество чисел >{p_num} ({count_gt_p}) кратно {p_div}: ДА")
+else:
+    print(f"Количество чисел >{p_num} ({count_gt_p}) не кратно {p_div}: НЕТ")
+
+#  7.99 
+print("Введите 12 оценок (2-5):")
+has_3 = False
+
+for i in range(12):
+    grade = int(input(f"Оценка {i+1}: "))
+    if grade == 3:
+        has_3 = True
+
+if not has_3:
+    print("Среди оценок нет троек: ДА")
+else:
+    print("Среди оценок есть тройки: НЕТ")
+
+print("Проверка с циклом while:")
+i = 0
+has_3 = False
+while i < 12 and not has_3:
+    grade = int(input(f"Оценка {i+1}: "))
+    if grade == 3:
+        has_3 = True
+    i += 1
+
+if not has_3:
+    print("Среди оценок нет троек: ДА")
+else:
+    print("Среди оценок есть тройки: НЕТ")
+
+#  7.100 
+print("Введите количество осадков за каждый день марта:")
+count_no_rain = 0
+
+for day in range(1, 32):
+    rain = float(input(f"День {day}: "))
+    if rain == 0:
+        count_no_rain += 1
+
+if count_no_rain == 10:
+    print(f"Было ровно 10 дней без осадков: ДА")
+else:
+    print(f"Дней без осадков было {count_no_rain}, не 10: НЕТ")
+
+#  7.101
+print("Введите стоимости автомобилей (0 для окончания):")
+car_prices = []
+while True:
+    price = float(input("Стоимость автомобиля: "))
+    if price == 0:
+        break
+    car_prices.append(price)
+
+print("Введите стоимости мотоциклов (0 для окончания):")
+motorcycle_prices = []
+while True:
+    price = float(input("Стоимость мотоцикла: "))
+    if price == 0:
+        break
+    motorcycle_prices.append(price)
+
+if car_prices and motorcycle_prices:
+    avg_car = sum(car_prices) / len(car_prices)
+    avg_motorcycle = sum(motorcycle_prices) / len(motorcycle_prices)
+    
+    if avg_car > avg_motorcycle * 3:
+        print(f"Средняя стоимость автомобилей ({avg_car:.2f}) превышает среднюю стоимость мотоциклов ({avg_motorcycle:.2f}) более чем в 3 раза: ДА")
+    else:
+        print(f"Средняя стоимость автомобилей ({avg_car:.2f}) не превышает среднюю стоимость мотоциклов ({avg_motorcycle:.2f}) более чем в 3 раза: НЕТ")
+else:
+    print("Недостаточно данных")
+
+# 7.102
+
+print("Введите рост каждого ученика (отрицательные - мальчики, положительные - девочки):")
+boys_heights = []
+girls_heights = []
+
+for i in range(30):  
+    height = float(input(f"Ученик {i+1}: "))
+    if height < 0:
+        boys_heights.append(-height)  
+    else:
+        girls_heights.append(height)
+
+if boys_heights and girls_heights:
+    avg_boy = sum(boys_heights) / len(boys_heights)
+    avg_girl = sum(girls_heights) / len(girls_heights)
+    
+    if avg_boy > avg_girl + 10:
+        print(f"Средний рост мальчиков ({avg_boy:.1f}) превышает средний рост девочек ({avg_girl:.1f}) более чем на 10 см: ДА")
+    else:
+        print(f"Средний рост мальчиков ({avg_boy:.1f}) не превышает средний рост девочек ({avg_girl:.1f}) более чем на 10 см: НЕТ")
+else:
+    print("Недостаточно данных")
+
+#  7.103
+print("Введите 9 вещественных чисел:")
+sum_gt_10 = 0
+count_gt_10 = 0
+
+for i in range(9):
+    num = float(input(f"Число {i+1}: "))
+    if num > 10:
+        sum_gt_10 += num
+        count_gt_10 += 1
+
+if count_gt_10 > 0:
+    avg = sum_gt_10 / count_gt_10
+    print(f"Среднее чисел >10: {avg:.2f}")
+else:
+    print("Чисел >10 нет")
+
+#  7.104 
+
+x = int(input("Введите количество чисел x: "))
+n = int(input("Введите n: "))
+print(f"Введите {x} целых чисел:")
+
+sum_gt_n = 0
+count_gt_n = 0
+
+for i in range(x):
+    num = int(input(f"Число {i+1}: "))
+    if num > n:
+        sum_gt_n += num
+        count_gt_n += 1
+
+if count_gt_n > 0:
+    avg = sum_gt_n / count_gt_n
+    print(f"Среднее чисел >{n}: {avg:.2f}")
+else:
+    print(f"Чисел >{n} нет")
+
+#  7.105
+
+print("Введите 12 целых чисел:")
+sum_even = 0
+count_even = 0
+
+for i in range(12):
+    num = int(input(f"Число {i+1}: "))
+    if num % 2 == 0:
+        sum_even += num
+        count_even += 1
+
+if count_even > 0:
+    avg = sum_even / count_even
+    print(f"Среднее чётных чисел: {avg:.2f}")
+else:
+    print("Чётных чисел нет")
+
+#  7.106
+
+m = int(input("Введите количество чисел m: "))
+n = int(input("Введите n: "))
+print(f"Введите {m} целых чисел:")
+
+sum_mult = 0
+count_mult = 0
+
+for i in range(m):
+    num = int(input(f"Число {i+1}: "))
+    if num % n == 0:
+        sum_mult += num
+        count_mult += 1
+
+if count_mult > 0:
+    avg = sum_mult / count_mult
+    print(f"Среднее чисел, кратных {n}: {avg:.2f}")
+else:
+    print(f"Чисел, кратных {n}, нет")
+
+# 7.107 
+
+n = int(input("Введите количество чисел n: "))
+print(f"Введите {n} целых чисел:")
+
+last_100_index = 0
+for i in range(1, n + 1):
+    num = int(input(f"Число {i}: "))
+    if num == 100:
+        last_100_index = i
+
+if last_100_index > 0:
+    print(f"Номер последнего числа, равного 100: {last_100_index}")
+else:
+    print("Чисел, равных 100, нет")
+
+#  7.108
+
+k = int(input("Введите количество чисел k: "))
+print(f"Введите {k} целых чисел:")
+
+last_neg_index = 0
+for i in range(1, k + 1):
+    num = int(input(f"Число {i}: "))
+    if num < 0:
+        last_neg_index = i
+
+if last_neg_index > 0:
+    print(f"Номер последнего отрицательного числа: {last_neg_index}")
+else:
+    print("Отрицательных чисел нет")
+
+#  7.109 
+
+n = int(input("Введите количество чисел n: "))
+print(f"Введите {n} целых чисел:")
+
+first = True
+max_num = 0
+min_num = 0
+
+for i in range(n):
+    num = int(input(f"Число {i+1}: "))
+    if first:
+        max_num = num
+        min_num = num
+        first = False
+    else:
+        if num > max_num:
+            max_num = num
+        if num < min_num:
+            min_num = num
+
+difference = max_num - min_num
+if difference <= 25:
+    print(f"Максимальное ({max_num}) превышает минимальное ({min_num}) на {difference} ≤25: ДА")
+else:
+    print(f"Максимальное ({max_num}) превышает минимальное ({min_num}) на {difference} >25: НЕТ")
+
+# 7.110
+
+print("Введите массу каждого человека (0 для окончания):")
+first = True
+max_weight = 0
+min_weight = 0
+
+while True:
+    weight = float(input("Масса: "))
+    if weight == 0:
+        break
+    
+    if first:
+        max_weight = weight
+        min_weight = weight
+        first = False
+    else:
+        if weight > max_weight:
+            max_weight = weight
+        if weight < min_weight:
+            min_weight = weight
+
+if min_weight > 0:  
+    ratio = max_weight / min_weight
+    if ratio > 2:
+        print(f"Самый тяжелый ({max_weight}) тяжелее самого лёгкого ({min_weight}) в {ratio:.1f} раз >2: ДА")
+    else:
+        print(f"Самый тяжелый ({max_weight}) не тяжелее самого лёгкого ({min_weight}) в 2 раза: НЕТ")
+else:
+    print("Ошибка: минимальный вес 0")
+
+#  7.111 
+
+n = int(input("Введите количество чисел n: "))
+print(f"Введите {n} целых чисел:")
+
+first = True
+max_num = 0
+min_num = 0
+max_first_index = 0
+min_first_index = 0
+
+for i in range(1, n + 1):
+    num = int(input(f"Число {i}: "))
+    
+    if first:
+        max_num = num
+        min_num = num
+        max_first_index = i
+        min_first_index = i
+        first = False
+    else:
+        if num > max_num:
+            max_num = num
+            max_first_index = i
+        if num < min_num:
+            min_num = num
+            min_first_index = i
+
+if max_first_index < min_first_index:
+    print(f"Максимальное число встретилось раньше (номер {max_first_index})")
+elif min_first_index < max_first_index:
+    print(f"Минимальное число встретилось раньше (номер {min_first_index})")
+else:
+    print(f"Максимальное и минимальное число - одно и то же (номер {max_first_index})")
+
+#  7.112 
+
+print("Введите возраст людей (0 для окончания):")
+first = True
+max_age = 0
+min_age = 0
+max_first_index = 0
+min_first_index = 0
+person = 1
+
+while True:
+    age = int(input(f"Человек {person}: "))
+    if age == 0:
+        break
+    
+    if first:
+        max_age = age
+        min_age = age
+        max_first_index = person
+        min_first_index = person
+        first = False
+    else:
+        if age > max_age:
+            max_age = age
+            max_first_index = person
+        if age < min_age:
+            min_age = age
+            min_first_index = person
+    
+    person += 1
+
+if max_first_index < min_first_index:
+    print(f"Самый старший указан раньше (номер {max_first_index})")
+elif min_first_index < max_first_index:
+    print(f"Самый молодой указан раньше (номер {min_first_index})")
+else:
+    print(f"Самый старший и самый молодой - один человек (номер {max_first_index})")
+
+# 7.113 
+print("Введите результаты на этапах (время в минутах, 0 для окончания):")
+best_time = float('inf')
+worst_time = 0
+best_stage = 0
+worst_stage = 0
+stage = 1
+
+while True:
+    time = float(input(f"Этап {stage}: "))
+    if time == 0:
+        break
+    
+    if time < best_time:
+        best_time = time
+        best_stage = stage
+    
+    if time > worst_time:
+        worst_time = time
+        worst_stage = stage
+    
+    stage += 1
+
+if best_stage < worst_stage:
+    print(f"Этап с первым местом (№{best_stage}) был раньше этапа с последним местом (№{worst_stage}): ДА")
+else:
+    print(f"Этап с первым местом (№{best_stage}) был не раньше этапа с последним местом (№{worst_stage}): НЕТ")
+
+#  7.114
+
+print("Введите 20 чисел в неубывающем порядке:")
+prev = None
+count_equal = 1
+total_equal = 0
+different = 0
+
+for i in range(20):
+    num = int(input(f"Число {i+1}: "))
+    
+    if prev is None:
+        prev = num
+        different = 1
+    else:
+        if num == prev:
+            count_equal += 1
+        else:
+            if count_equal > 1:
+                total_equal += count_equal
+            count_equal = 1
+            different += 1
+            prev = num
+
+
+if count_equal > 1:
+    total_equal += count_equal
+
+print(f"Чисел, равных подряд: {total_equal}")
+print(f"Разных чисел: {different}")
+
+#  7.115 
+
+print("Введите 30 чисел в неубывающем порядке:")
+prev = None
+different = 0
+
+for i in range(30):
+    num = int(input(f"Число {i+1}: "))
+    
+    if prev is None or num != prev:
+        different += 1
+        prev = num
+
+print(f"Разных чисел: {different}")
+
+#  7.116 
+
+print("Введите 20 чисел от 0 до 66:")
+prev_right = None  
+is_domino = True
+
+
+print("Случай а) последняя цифра = правая половина:")
+for i in range(20):
+    num = int(input(f"Число {i+1}: "))
+    right = num % 10  
+    
+    if prev_right is not None and right != prev_right:
+        is_domino = False
+    
+    prev_right = num // 10 
+
+if is_domino:
+    print("Последовательность соответствует костям домино: ДА")
+else:
+    print("Последовательность не соответствует костям домино: НЕТ")
+
+
+print("\nСлучай б) любая цифра может соответствовать любой половине:")
+prev_digits = None
+is_domino = True
+
+for i in range(20):
+    num = int(input(f"Число {i+1}: "))
+    d1 = num // 10
+    d2 = num % 10
+    
+    if prev_digits is not None:
+        if not (d1 in prev_digits or d2 in prev_digits):
+            is_domino = False
+    
+    prev_digits = (d1, d2)
+
+if is_domino:
+    print("Последовательность соответствует костям домино: ДА")
+else:
+    print("Последовательность не соответствует костям домино: НЕТ")
+
+#  7.117
+
+n = int(input("Введите натуральное число: "))
+is_prime = True
+
+if n <= 1:
+    is_prime = False
+else:
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            is_prime = False
+            break
+
+if is_prime:
+    print("Число простое: ДА")
+else:
+    print("Число простое: НЕТ")
+
+#  7.118 
+n = int(input("Введите натуральное число: "))
+sum_divisors = 0
+
+for i in range(1, n):
+    if n % i == 0:
+        sum_divisors += i
+
+if sum_divisors == n:
+    print(f"Число {n} совершенное: ДА")
+else:
+    print(f"Число {n} не совершенное: НЕТ (сумма делителей = {sum_divisors})")
+
+
