@@ -1,0 +1,1679 @@
+
+def task_9_1():
+    print("\n=== 9.1 Ввод и вывод имени ===")
+    name = input("Введите ваше имя: ")
+    print(f"Ваше имя: {name}")
+    print(f"Привет, {name}!")
+
+def task_9_2():
+    print("\n=== 9.2 Футбольная команда ===")
+    team = input("Введите название футбольной команды: ")
+    print(f"{team} — это чемпион!")
+
+def task_9_3():
+    print("\n=== 9.3 Имя и фамилия как одна строка ===")
+    first_name = input("Введите имя: ")
+    last_name = input("Введите фамилию: ")
+    print(f"Полное имя: {first_name} {last_name}")
+
+def task_9_4():
+    print("\n=== 9.4 Страна и столица ===")
+    country = input("Введите название государства: ")
+    capital = input("Введите столицу: ")
+    print(f"Столица государства {country} — город {capital}.")
+
+def task_9_5():
+    print("\n=== 9.5 Роман и автор ===")
+    novel = input("Введите название романа: ")
+    author = input("Введите фамилию автора: ")
+    print(f"Писатель {author} — автор романа {novel}.")
+
+def task_9_6():
+    print("\n=== 9.6 Обмен названий стран ===")
+    s1 = "Россия"
+    s2 = "Франция"
+    print(f"Исходно: s1 = {s1}, s2 = {s2}")
+    t1 = s2
+    t2 = s1
+    print(f"После обмена: t1 = {t1}, t2 = {t2}")
+
+def task_9_7():
+    print("\n=== 9.7 Количество символов ===")
+    club = input("Введите название футбольного клуба: ")
+    print(f"Количество символов: {len(club)}")
+
+def task_9_8():
+    print("\n=== 9.8 Чётность длины названия города ===")
+    city = input("Введите название города: ")
+    length = len(city)
+    if length % 2 == 0:
+        print("Количество символов чётное.")
+    else:
+        print("Количество символов нечётное.")
+
+def task_9_9():
+    print("\n=== 9.9 Какая фамилия длиннее ===")
+    surname1 = input("Введите первую фамилию: ")
+    surname2 = input("Введите вторую фамилию: ")
+    if len(surname1) > len(surname2):
+        print(f"Фамилия '{surname1}' длиннее.")
+    elif len(surname2) > len(surname1):
+        print(f"Фамилия '{surname2}' длиннее.")
+    else:
+        print("Фамилии одинаковой длины.")
+
+def task_9_10():
+    print("\n=== 9.10 Самое длинное и короткое название ===")
+    city1 = input("Введите первый город: ")
+    city2 = input("Введите второй город: ")
+    city3 = input("Введите третий город: ")
+    cities = [city1, city2, city3]
+    longest = max(cities, key=len)
+    shortest = min(cities, key=len)
+    print(f"Самое длинное: {longest}")
+    print(f"Самое короткое: {shortest}")
+
+def task_9_11():
+    print("\n=== 9.11 Обмен значений строковых переменных ===")
+    s1 = "Испания"
+    s2 = "Италия"
+    print(f"До обмена: s1 = {s1}, s2 = {s2}")
+    s1, s2 = s2, s1
+    print(f"После обмена: s1 = {s1}, s2 = {s2}")
+
+def task_9_12():
+    print("\n=== 9.12 Обмен значений трёх строковых переменных ===")
+    a, b, c = "первая", "вторая", "третья"
+    print(f"Исходно: a = {a}, b = {b}, c = {c}")
+    
+    # Схема а
+    temp = b
+    b = c
+    c = temp
+    temp = a
+    a = b
+    b = temp
+    print(f"Схема а: a = {a}, b = {b}, c = {c}")
+    
+    # Схема б
+    a, b, c = "первая", "вторая", "третья"
+    b, c, a = a, b, c
+    print(f"Схема б: a = {a}, b = {b}, c = {c}")
+
+def task_9_13():
+    print("\n=== 9.13 Третий символ слова ===")
+    word = input("Введите слово: ")
+    if len(word) >= 3:
+        print(f"Третий символ: '{word[2]}'")
+    else:
+        print("Слово слишком короткое.")
+
+def task_9_14():
+    print("\n=== 9.14 Последний символ слова ===")
+    word = input("Введите слово: ")
+    print(f"Последний символ: '{word[-1]}'")
+
+def task_9_15():
+    print("\n=== 9.15 k-й символ слова ===")
+    word = input("Введите слово: ")
+    k = int(input("Введите номер символа k: "))
+    if 0 <= k < len(word):
+        print(f"Символ под номером {k}: '{word[k]}'")
+    else:
+        print("Такого номера в слове нет.")
+
+def task_9_16():
+    print("\n=== 9.16 Сравнение второго и четвёртого символов ===")
+    word = input("Введите слово: ")
+    if len(word) >= 4:
+        if word[1] == word[3]:
+            print("Второй и четвёртый символы одинаковы.")
+        else:
+            print("Второй и четвёртый символы разные.")
+    else:
+        print("Слово слишком короткое.")
+
+def task_9_17():
+    print("\n=== 9.17 Проверка первой и последней буквы ===")
+    word = input("Введите слово: ")
+    if word[0] == word[-1]:
+        print("Слово начинается и заканчивается на одну букву.")
+    else:
+        print("Первая и последняя буквы разные.")
+
+def task_9_18():
+    print("\n=== 9.18 Сравнение начала первого и конца второго слова ===")
+    word1 = input("Введите первое слово: ")
+    word2 = input("Введите второе слово: ")
+    if word1[0] == word2[-1]:
+        print("Совпадает!")
+    else:
+        print("Не совпадает.")
+
+def task_9_19():
+    print("\n=== 9.19 Буквосочетание из второго и четвёртого символов ===")
+    word = input("Введите слово: ")
+    if len(word) >= 4:
+        print(f"Буквосочетание: '{word[1] + word[3]}'")
+    else:
+        print("Слово слишком короткое.")
+
+def task_9_20():
+    print("\n=== 9.20 Буквосочетание из третьего и последнего символов ===")
+    word = input("Введите слово: ")
+    if len(word) >= 3:
+        print(f"Буквосочетание: '{word[2] + word[-1]}'")
+    else:
+        print("Слово слишком короткое.")
+
+def task_9_21():
+    print("\n=== 9.21 Часть слова: 2-я, 3-я, 4-я буквы ===")
+    word = input("Введите слово: ")
+    if len(word) >= 4:
+        print(f"Часть слова: '{word[1:4]}'")
+    else:
+        print("Слово слишком короткое.")
+
+def task_9_22():
+    print("\n=== 9.22 Первая половина слова ===")
+    word = input("Введите слово (чётной длины): ")
+    if len(word) % 2 == 0:
+        half = len(word) // 2
+        print(f"Первая половина: '{word[:half]}'")
+    else:
+        print("Слово должно быть чётной длины.")
+
+def task_9_23():
+    print("\n=== 9.23 Срез слова с m-й по n-ю буквы ===")
+    word = input("Введите слово: ")
+    m = int(input("Начало среза (m): "))
+    n = int(input("Конец среза (n): "))
+    if 0 <= m <= n < len(word):
+        print(f"Срез: '{word[m:n+1]}'")
+    else:
+        print("Некорректные значения.")
+
+def task_9_24():
+    print("\n=== 9.24 Из 'яблоко' получить 'блок' и 'око' ===")
+    word = "яблоко"
+    print(f"Исходное слово: {word}")
+    print(f"'блок' = '{word[1:5]}'")
+    print(f"'око' = '{word[3:]}'")
+
+def task_9_25():
+    print("\n=== 9.25 Из 'информатика' получить 'форма' и 'тик' ===")
+    word = "информатика"
+    print(f"Исходное слово: {word}")
+    print(f"'форма' = '{word[2:7]}'")
+    print(f"'тик' = '{word[7:10]}'")
+
+def task_9_26():
+    print("\n=== 9.26 Из 'вертикаль' получить 'тир' и 'ветка' ===")
+    word = "вертикаль"
+    print(f"Исходное слово: {word}")
+    print(f"'тир' = '{word[3:6]}'")
+    print(f"'ветка' = '{word[0] + word[4:7] + word[1]}'")
+
+def task_9_27():
+    print("\n=== 9.27 Из 'программа' получить 'ром' и 'рампа' ===")
+    word = "программа"
+    print(f"Исходное слово: {word}")
+    print(f"'ром' = '{word[3:6]}'")
+    print(f"'рампа' = '{word[5:]}'")
+
+def task_9_28():
+    print("\n=== 9.28 Из 'трос' получить 'сорт', 'рост', 'торс' ===")
+    word = "трос"
+    print(f"Исходное слово: {word}")
+    print(f"'сорт' = '{word[3] + word[0] + word[2] + word[1]}'")
+    print(f"'рост' = '{word[2] + word[0] + word[1] + word[3]}'")
+    print(f"'торс' = '{word[1] + word[0] + word[2] + word[3]}'")
+
+def task_9_29():
+    print("\n=== 9.29 Из 'клоун' получить 'уклон', 'кулон', 'колун' ===")
+    word = "клоун"
+    print(f"Исходное слово: {word}")
+    print(f"'уклон' = '{word[4] + word[0:2] + word[3] + word[2]}'")
+    print(f"'кулон' = '{word[0] + word[4] + word[1:4]}'")
+    print(f"'колун' = '{word[0] + word[2] + word[1] + word[4] + word[3]}'")
+
+def task_9_30():
+    print("\n=== 9.30 Из 'апельсин' получить 'спаниель' ===")
+    word = "апельсин"
+    print(f"Исходное слово: {word}")
+    # спаниель = с + п + а + н + и + е + л + ь
+    new_word = word[5] + word[2] + word[0] + word[4] + word[6] + word[3] + word[1] + word[7]
+    print(f"'спаниель' = '{new_word}'")
+
+def task_9_31():
+    print("\n=== 9.31 Из 'вирус' получить 'фокус' ===")
+    word = "вирус"
+    print(f"Исходное слово: {word}")
+    new_word = "ф" + word[1:4] + "с"
+    print(f"'фокус' = '{new_word}'")
+
+def task_9_32():
+    print("\n=== 9.32 Из 'курсор' получить 'танцор' ===")
+    word = "курсор"
+    print(f"Исходное слово: {word}")
+    new_word = "тан" + word[4:6]
+    print(f"'танцор' = '{new_word}'")
+
+def task_9_33():
+    print("\n=== 9.33 Из 'пробел' получить 'продел' ===")
+    word = "пробел"
+    print(f"Исходное слово: {word}")
+    new_word = word[:2] + "од" + word[4:]
+    print(f"'продел' = '{new_word}'")
+
+def task_9_34():
+    print("\n=== 9.34 Из 'строка' получить 'строфа' ===")
+    word = "строка"
+    print(f"Исходное слово: {word}")
+    new_word = word[:4] + "ф" + word[5]
+    print(f"'строфа' = '{new_word}'")
+
+def task_9_35():
+    print("\n=== 9.35 Из 'муха' получить 'слон' ===")
+    word = "муха"
+    print(f"Исходное слово: {word}")
+    new_word = "слон"
+    print(f"'слон' = '{new_word}' (просто замена всех букв)")
+
+def task_9_36():
+    print("\n=== 9.36 Из 'тетрадь' получить 'дневник' ===")
+    word = "тетрадь"
+    print(f"Исходное слово: {word}")
+    new_word = "дневник"
+    print(f"'дневник' = '{new_word}' (полная замена слова)")
+
+def task_9_37():
+    print("\n=== 9.37 Поменять половины слова ===")
+    word = input("Введите слово (чётной длины): ")
+    if len(word) % 2 == 0:
+        half = len(word) // 2
+        # Способ 1: без цикла
+        result1 = word[half:] + word[:half]
+        print(f"Без цикла: {result1}")
+        # Способ 2: с циклом
+        first_half = word[:half]
+        second_half = word[half:]
+        result2 = ""
+        for char in second_half:
+            result2 += char
+        for char in first_half:
+            result2 += char
+        print(f"С циклом: {result2}")
+    else:
+        print("Слово должно быть чётной длины.")
+
+def task_9_38():
+    print("\n=== 9.38 Перестановка третей слова ===")
+    word = input("Введите слово из 12 букв: ")
+    if len(word) == 12:
+        third = len(word) // 3
+        part1 = word[:third]
+        part2 = word[third:2*third]
+        part3 = word[2*third:]
+        
+        result_a = part2 + part3 + part1
+        result_b = part3 + part1 + part2
+        
+        print(f"Схема а: {result_a}")
+        print(f"Схема б: {result_b}")
+    else:
+        print("Слово должно содержать ровно 12 букв.")
+
+def task_9_39():
+    print("\n=== 9.39 Перестановка первых и последних трёх букв ===")
+    word = input("Введите слово (длиной >= 6): ")
+    if len(word) >= 6:
+        # Способ 1: без цикла
+        result1 = word[-3:] + word[3:-3] + word[:3]
+        # Способ 2: с циклом
+        first_three = word[:3]
+        middle = word[3:-3]
+        last_three = word[-3:]
+        result2 = ""
+        for char in last_three:
+            result2 += char
+        for char in middle:
+            result2 += char
+        for char in first_three:
+            result2 += char
+        print(f"Без цикла: {result1}")
+        print(f"С циклом: {result2}")
+    else:
+        print("Слово слишком короткое.")
+
+def task_9_40():
+    print("\n=== 9.40 Перенос первых k букв в конец ===")
+    word = input("Введите слово: ")
+    k = int(input("Введите количество букв k: "))
+    if 0 < k < len(word):
+        # Способ 1: без цикла
+        result1 = word[k:] + word[:k]
+        # Способ 2: с циклом
+        first_k = word[:k]
+        rest = word[k:]
+        result2 = ""
+        for char in rest:
+            result2 += char
+        for char in first_k:
+            result2 += char
+        print(f"Без цикла: {result1}")
+        print(f"С циклом: {result2}")
+    else:
+        print("Некорректное значение k.")
+
+
+def task_9_41():
+    print("\n=== 9.41 Вывод слова столбиком ===")
+    club = input("Введите название футбольного клуба: ")
+    for char in club:
+        print(char)
+
+def task_9_42():
+    print("\n=== 9.42 Слово с последней буквы ===")
+    word = input("Введите слово: ")
+    for i in range(len(word)-1, -1, -1):
+        print(word[i])
+
+def task_9_43():
+    print("\n=== 9.43 Слово из нечетных букв ===")
+    s1 = input("Введите слово: ")
+    s2 = ""
+    for i in range(len(s1)):
+        if i % 2 == 0:  
+            s2 += s1[i]
+    print(f"Слово из нечетных букв: {s2}")
+
+def task_9_44():
+    print("\n=== 9.44 Слово в обратном порядке ===")
+    s = input("Введите слово: ")
+    t = ""
+    for i in range(len(s)-1, -1, -1):
+        t += s[i]
+    print(f"Слово наоборот: {t}")
+
+def task_9_45():
+    print("\n=== 9.45 Пять звездочек ===")
+    stars = ""
+    for _ in range(5):
+        stars += "*"
+    print(stars)
+
+def task_9_46():
+    print("\n=== 9.46 Восемь подчеркиваний ===")
+    underscores = ""
+    for _ in range(8):
+        underscores += "_"
+    print(underscores)
+
+def task_9_47():
+    print("\n=== 9.47 Строка из одинаковых символов ===")
+    symbol = input("Введите символ: ")
+    count = int(input("Введите количество: "))
+    result = ""
+    for _ in range(count):
+        result += symbol
+    print(f"Результат: {result}")
+
+def task_9_48():
+    print("\n=== 9.48 Добавление символов в начало и конец ===")
+    word = input("Введите слово: ")
+    new_word = "++++" + word + "-----"
+    print(f"Результат: {new_word}")
+
+def task_9_49():
+    print("\n=== 9.49 Добавление звездочек по количеству букв ===")
+    word = input("Введите слово: ")
+    stars = ""
+    for _ in range(len(word)):
+        stars += "*"
+    new_word = stars + word + stars
+    print(f"Результат: {new_word}")
+
+def task_9_50():
+    print("\n=== 9.50 Замена символов во втором слове ===")
+    word1 = input("Введите первое слово: ")
+    word2 = input("Введите второе слово (короче первого): ")
+    
+    if len(word1) > len(word2):
+        result = word1[:len(word2)] + word2[len(word1):]
+    else:
+        result = word2
+    
+    print(f"Результат: {result}")
+
+def task_9_51():
+    print("\n=== 9.51 Все буквы 'и' в предложении ===")
+    sentence = input("Введите предложение: ")
+    print("Буквы 'и':")
+    for char in sentence:
+        if char.lower() == 'и':
+            print(char)
+
+def task_9_52():
+    print("\n=== 9.52 Все вхождения символа столбиком ===")
+    sentence = input("Введите предложение: ")
+    symbol = input("Введите символ для поиска: ")
+    print(f"Символы '{symbol}':")
+    for char in sentence:
+        if char == symbol:
+            print(char)
+
+def task_9_53():
+    print("\n=== 9.53 Каждый третий символ ===")
+    sentence = input("Введите предложение: ")
+    print("Третий, шестой и т.д. символы:")
+    for i in range(2, len(sentence), 3):  
+        print(sentence[i])
+
+def task_9_54():
+    print("\n=== 9.54 Все буквы 'м' и 'н' ===")
+    sentence = input("Введите предложение: ")
+    print("Буквы 'м' и 'н':")
+    for char in sentence:
+        if char.lower() in ['м', 'н']:
+            print(char)
+
+def task_9_55():
+    print("\n=== 9.55 Все вхождения двух символов ===")
+    sentence = input("Введите предложение: ")
+    char1 = input("Введите первый символ: ")
+    char2 = input("Введите второй символ: ")
+    print(f"Символы '{char1}' и '{char2}':")
+    for char in sentence:
+        if char in [char1, char2]:
+            print(char)
+
+def task_9_56():
+    print("\n=== 9.56 Все буквосочетания 'нн' ===")
+    sentence = input("Введите предложение: ")
+    print("Буквосочетания 'нн':")
+    for i in range(len(sentence)-1):
+        if sentence[i:i+2].lower() == 'нн':
+            print(f"нн (позиции {i+1}-{i+2})")
+
+def task_9_57():
+    print("\n=== 9.57 Буквы 'и' на четных позициях ===")
+    sentence = input("Введите предложение: ")
+    print("Буквы 'и' на четных позициях:")
+    for i in range(len(sentence)):
+        if (i+1) % 2 == 0 and sentence[i].lower() == 'и':  
+            print(sentence[i])
+
+def task_9_58():
+    print("\n=== 9.58 Символы по особому шаблону ===")
+    sentence = input("Введите предложение: ")
+    print("Символы по шаблону (1,2,5,6,9,10...):")
+    pattern = [0, 1, 4, 5, 8, 9]  
+    i = 0
+    while i < len(sentence):
+        if i % 4 == 0 or i % 4 == 1:
+            print(sentence[i])
+        i += 1
+
+def task_9_59():
+    print("\n=== 9.59 Количество букв 'о' ===")
+    sentence = input("Введите предложение: ")
+    count = 0
+    for char in sentence:
+        if char.lower() == 'о':
+            count += 1
+    print(f"Количество букв 'о': {count}")
+
+def task_9_60():
+    print("\n=== 9.60 Количество пробелов ===")
+    sentence = input("Введите предложение: ")
+    count = 0
+    for char in sentence:
+        if char == ' ':
+            count += 1
+    print(f"Количество пробелов: {count}")
+
+def task_9_61():
+    print("\n=== 9.61 Число вхождений символа ===")
+    sentence = input("Введите предложение: ")
+    symbol = input("Введите символ для поиска: ")
+    count = 0
+    for char in sentence:
+        if char == symbol:
+            count += 1
+    print(f"Символ '{symbol}' встречается {count} раз(а)")
+
+def task_9_62():
+    print("\n=== 9.62 Доля букв 'а' в % ===")
+    sentence = input("Введите предложение: ")
+    count_a = 0
+    letters = 0
+    
+    for char in sentence:
+        if char.isalpha():  
+            letters += 1
+            if char.lower() == 'а':
+                count_a += 1
+    
+    if letters > 0:
+        percentage = (count_a / letters) * 100
+        print(f"Доля букв 'а': {percentage:.1f}%")
+    else:
+        print("В предложении нет букв")
+
+def task_9_63():
+    print("\n=== 9.63 Количество '+' и '*' ===")
+    text = input("Введите текст: ")
+    count_plus = 0
+    count_star = 0
+    
+    for char in text:
+        if char == '+':
+            count_plus += 1
+        elif char == '*':
+            count_star += 1
+    
+    print(f"Символ '+' встречается {count_plus} раз(а)")
+    print(f"Символ '*' встречается {count_star} раз(а)")
+
+def task_9_64():
+    print("\n=== 9.64 Одинаковые соседние буквы ===")
+    sentence = input("Введите предложение: ")
+    count = 0
+    
+    for i in range(len(sentence)-1):
+        if sentence[i] == sentence[i+1]:
+            count += 1
+    
+    print(f"Одинаковых соседних букв: {count}")
+
+def task_9_65():
+    print("\n=== 9.65 Число вхождений буквосочетания ===")
+    sentence = input("Введите предложение: ")
+
+    combination = "ро"
+    count = 0
+    for i in range(len(sentence)-1):
+        if sentence[i:i+2].lower() == combination:
+            count += 1
+    print(f"а) Буквосочетание '{combination}' встречается {count} раз(а)")
+    
+    combination2 = input("б) Введите буквосочетание из двух букв: ")
+    count2 = 0
+    for i in range(len(sentence)-1):
+        if sentence[i:i+2].lower() == combination2.lower():
+            count2 += 1
+    print(f"   Буквосочетание '{combination2}' встречается {count2} раз(а)")
+    
+    combination3 = input("в) Введите любое буквосочетание: ")
+    count3 = 0
+    for i in range(len(sentence)-len(combination3)+1):
+        if sentence[i:i+len(combination3)].lower() == combination3.lower():
+            count3 += 1
+    print(f"   Буквосочетание '{combination3}' встречается {count3} раз(а)")
+
+def task_9_66():
+    print("\n=== 9.66 Количество слов (один пробел) ===")
+    sentence = input("Введите предложение (слова через один пробел): ").strip()
+    count = 1 if sentence else 0  # Если строка не пустая - минимум 1 слово
+    
+    for char in sentence:
+        if char == ' ':
+            count += 1
+    
+    print(f"Количество слов: {count}")
+
+def task_9_67():
+    print("\n=== 9.67 Количество слов (несколько пробелов) ===")
+    sentence = input("Введите предложение: ")
+    
+    sentence_trimmed = sentence.strip()
+    
+    words1 = 0
+    in_word = False
+    
+    for char in sentence_trimmed:
+        if char != ' ':
+            if not in_word:
+                words1 += 1
+                in_word = True
+        else:
+            in_word = False
+    
+    print(f"1) Без начальных/конечных пробелов: {words1} слов")
+    
+    words2 = 0
+    in_word = False
+    
+    for char in sentence:
+        if char != ' ':
+            if not in_word:
+                words2 += 1
+                in_word = True
+        else:
+            in_word = False
+    
+    print(f"2) С начальными/конечными пробелами: {words2} слов")
+
+def task_9_68():
+    print("\n=== 9.68 Общее число '+' и '-' ===")
+    text = input("Введите текст: ")
+    count = 0
+    
+    for char in text:
+        if char in ['+', '-']:
+            count += 1
+    
+    print(f"Общее число '+' и '-': {count}")
+
+def task_9_69():
+    print("\n=== 9.69 Количество предложений ===")
+    text = input("Введите текст: ")
+    count = 0
+    
+    for char in text:
+        if char in ['.', '!', '?']:
+            count += 1
+    
+    print(f"Количество предложений: {count}")
+
+def task_9_70():
+    print("\n=== 9.70 Количество гласных букв ===")
+    sentence = input("Введите предложение: ")
+    vowels = 'аеёиоуыэюяaeiouy'
+    count = 0
+    
+    for char in sentence.lower():
+        if char in vowels:
+            count += 1
+    
+    print(f"Количество гласных букв: {count}")
+
+def task_9_71():
+    print("\n=== 9.71 Сравнение букв 'м' и 'н' ===")
+    sentence = input("Введите предложение: ")
+    count_m = 0
+    count_n = 0
+    
+    for char in sentence.lower():
+        if char == 'м':
+            count_m += 1
+        elif char == 'н':
+            count_n += 1
+    
+    print(f"Букв 'м': {count_m}, букв 'н': {count_n}")
+    if count_m > count_n:
+        print("Букв 'м' больше")
+    elif count_n > count_m:
+        print("Букв 'н' больше")
+    else:
+        print("Букв 'м' и 'н' одинаковое количество")
+
+def task_9_72():
+    print("\n=== 9.72 Проверка количества слов > 3 ===")
+    sentence = input("Введите предложение (слова через один пробел): ").strip()
+    count = 1 if sentence else 0
+    for char in sentence:
+        if char == ' ':
+            count += 1
+    if count > 3:
+        print(f"Да, слов больше трех ({count})")
+    else:
+        print(f"Нет, слов не больше трех ({count})")
+
+def task_9_73():
+    print("\n=== 9.73 Какая буква встречается позже: 'с' или 'т' ===")
+    sentence = input("Введите предложение: ")
+    last_c = -1
+    last_t = -1
+    
+    for i in range(len(sentence)):
+        if sentence[i].lower() == 'с':
+            last_c = i
+        elif sentence[i].lower() == 'т':
+            last_t = i
+    
+    if last_c == -1 and last_t == -1:
+        print("В предложении нет ни 'с', ни 'т'")
+    elif last_c == -1:
+        print("Буква 'т' встречается позже (буквы 'с' нет)")
+    elif last_t == -1:
+        print("Буква 'с' встречается позже (буквы 'т' нет)")
+    elif last_c > last_t:
+        print(f"Буква 'с' встречается позже (позиция {last_c+1})")
+    else:
+        print(f"Буква 'т' встречается позже (позиция {last_t+1})")
+
+def task_9_74():
+    print("\n=== 9.74 Пять одинаковых символов подряд ===")
+    text = input("Введите текст: ")
+    found = False
+    for i in range(len(text)-4):
+        if text[i] == text[i+1] == text[i+2] == text[i+3] == text[i+4]:
+            found = True
+            print(f"Найдены 5 одинаковых символов '{text[i]}' на позициях {i+1}-{i+5}")
+            break
+    if not found:
+        print("Нет пяти одинаковых символов подряд")
+# ===== ГЛАВА 9. СТРОКИ СИМВОЛОВ (продолжение) =====
+
+print("=== 9.75-9.89. РАБОТА СО СТРОКАМИ ===")
+
+# 9.75.
+print("9.75:")
+text1 = "Привет, как дела, друзья?"
+text2 = "Привет как дела друзья"
+
+def before_first_comma1(text):
+    for i in range(len(text)):
+        if text[i] == ',':
+            return text[:i]
+    return text  # если запятых нет
+
+def before_first_comma2(text):
+    for i in range(len(text)):
+        if text[i] == ',':
+            return text[:i]
+    return text
+
+print(f"Текст: '{text1}'")
+print(f"До первой запятой: '{before_first_comma1(text1)}'")
+print(f"Текст: '{text2}'") 
+print(f"До первой запятой: '{before_first_comma2(text2)}'")
+
+print("\n9.76:")
+text = "Ребята, где здесь буквы е?"
+first_e = -1
+for i in range(len(text)):
+    if text[i] == 'е':
+        first_e = i + 1  
+        break
+
+# б) порядковый номер последней 'е'
+last_e = -1
+for i in range(len(text)-1, -1, -1):
+    if text[i] == 'е':
+        last_e = i + 1
+        break
+
+print(f"Текст: '{text}'")
+print(f"Первая 'е' на позиции: {first_e}")
+print(f"Последняя 'е' на позиции: {last_e}")
+
+# 9.77. Проверить, есть ли буква 'а'
+print("\n9.77:")
+text1 = "Этот текст содержит букву а"
+text2 = "Этот текст без нужной буквы"
+
+def find_first_a(text):
+    for i in range(len(text)):
+        if text[i] == 'а':
+            return True, i + 1
+    return False, -1
+
+has_a1, pos1 = find_first_a(text1)
+has_a2, pos2 = find_first_a(text2)
+
+print(f"Текст: '{text1}'")
+print(f"Есть буква 'а'? {has_a1}")
+if has_a1:
+    print(f"Первая 'а' на позиции: {pos1}")
+
+print(f"\nТекст: '{text2}'")
+print(f"Есть буква 'а'? {has_a2}")
+
+# 9.78. 
+print("\n9.78:")
+words = ["топот", "казак", "мадам", "привет", "ротор"]
+
+def is_palindrome(word):
+    n = len(word)
+    for i in range(n // 2):
+        if word[i] != word[n - 1 - i]:
+            return False
+    return True
+
+for word in words:
+    print(f"Слово '{word}' - перевертыш? {is_palindrome(word)}")
+
+# 9.79. Количество букв 'и' в первом предложении
+print("\n9.79:")
+text = "Иван и Петр играли. Ирина и Маша пели."
+
+first_sentence = ""
+for char in text:
+    first_sentence += char
+    if char == '.':
+        break
+
+def count_i1(sentence):
+    count = 0
+    for char in sentence:
+        if char == 'и':
+            count += 1
+    return count
+
+def count_i2(sentence):
+    count = 0
+    for char in sentence:
+        if char == 'и':
+            count += 1
+    return count
+
+print(f"Первое предложение: '{first_sentence}'")
+print(f"Количество 'и' (случай 1): {count_i1(first_sentence)}")
+print(f"Количество 'и' (случай 2): {count_i2(first_sentence)}")
+
+# 9.80.
+print("\n9.80:")
+sequences = ["aaaaabbbcc", "xxxxxx", "abc", "zzzzzzzzz"]
+
+def count_same_start1(seq):
+    if len(seq) == 0:
+        return 0
+    first_char = seq[0]
+    count = 1
+    for i in range(1, len(seq)):
+        if seq[i] == first_char:
+            count += 1
+        else:
+            break
+    return count
+def count_same_start2(seq):
+    if len(seq) == 0:
+        return 0
+    first_char = seq[0]
+    count = 1
+    for i in range(1, len(seq)):
+        if seq[i] == first_char:
+            count += 1
+        else:
+            break
+    return count
+
+for seq in sequences:
+    print(f"Последовательность: '{seq}'")
+    print(f"Одинаковых символов в начале (случай 1): {count_same_start1(seq)}")
+    print(f"Одинаковых символов в начале (случай 2): {count_same_start2(seq)}")
+
+# 9.81. 
+print("\n9.81:")
+word_pairs = [("привет", "природа"), ("кот", "ковер"), ("мама", "мама")]
+
+
+def common_start1(word1, word2):
+    min_len = min(len(word1), len(word2))
+    count = 0
+    for i in range(min_len):
+        if word1[i] == word2[i]:
+            count += 1
+        else:
+            break
+    return count
+
+
+def common_start2(word1, word2):
+    min_len = min(len(word1), len(word2))
+    count = 0
+    for i in range(min_len):
+        if word1[i] == word2[i]:
+            count += 1
+        else:
+            break
+    return count
+
+for w1, w2 in word_pairs:
+    print(f"Слова: '{w1}' и '{w2}'")
+    print(f"Совпадающих начальных букв (случай 1): {common_start1(w1, w2)}")
+    print(f"Совпадающих начальных букв (случай 2): {common_start2(w1, w2)}")
+
+# 9.82. 
+print("\n9.82:")
+sentences = ["   Отлично получилось", "Хорошо сделано", "Очень хорошо"]
+
+def count_o_in_first_word(sentence):
+    
+    start = 0
+    while start < len(sentence) and sentence[start] == ' ':
+        start += 1
+    
+    end = start
+    while end < len(sentence) and sentence[end] != ' ':
+        end += 1
+    
+    first_word = sentence[start:end]   
+    count = 0
+    for char in first_word:
+        if char == 'о':
+            count += 1
+    return count
+for sentence in sentences:
+    print(f"Предложение: '{sentence}'")
+    print(f"Букв 'о' в первом слове: {count_o_in_first_word(sentence)}")
+
+# 9.83. 
+print("\n9.83:")
+texts = ["Нина, носила воду", "Нет запятых здесь", "Он, она и они"]
+def count_n_before_comma1(text):
+    count = 0
+    for char in text:
+        if char == ',':
+            break
+        if char == 'н':
+            count += 1
+    return count
+def count_n_before_comma2(text):
+    count = 0
+    for char in text:
+        if char == ',':
+            break
+        if char == 'н':
+            count += 1
+    return count
+
+for text in texts:
+    print(f"Текст: '{text}'")
+    print(f"Букв 'н' до запятой (случай 1): {count_n_before_comma1(text)}")
+    print(f"Букв 'н' до запятой (случай 2): {count_n_before_comma2(text)}")
+
+# 9.84. 
+print("\n9.84:")
+strings = ["приветт", "кот", "аабб", "программирование"]
+
+def find_first_double(text):
+    for i in range(len(text) - 1):
+        if text[i] == text[i + 1]:
+            return i + 1, i + 2  
+    return -1, -1
+
+for text in strings:
+    pos1, pos2 = find_first_double(text)
+    print(f"Текст: '{text}'")
+    if pos1 != -1:
+        print(f"Первая пара одинаковых соседей: позиции {pos1} и {pos2}")
+    else:
+        print("Нет одинаковых соседних символов")
+
+# 9.85. 
+print("\n9.85:")
+texts = ["чудесный щука", "привет мир", "щука плавает"]
+
+def find_chu_shu(text):
+    for i in range(len(text) - 1):
+        if (text[i] == 'ч' and text[i + 1] == 'у') or \
+           (text[i] == 'щ' and text[i + 1] == 'у'):
+            return True, i + 1  # позиция первой буквы
+    return False, -1
+
+for text in texts:
+    found, pos = find_chu_shu(text)
+    print(f"Текст: '{text}'")
+    if found:
+        print(f"Есть 'чу' или 'щу', первая буква на позиции: {pos}")
+    else:
+        print("Нет 'чу' или 'щу'")
+
+# 9.86. Проверить буквосочетания "жи" и "ши"
+print("\n9.86:")
+phrases = ["жить шить", "жыть шыть", "жираф шина"]
+
+def check_zhi_shi(text):
+    errors = []
+    for i in range(len(text) - 1):
+        if (text[i] == 'ж' and text[i + 1] == 'ы') or \
+           (text[i] == 'ш' and text[i + 1] == 'ы'):
+            errors.append(i)
+    return len(errors) == 0, errors
+for phrase in phrases:
+    correct, errors = check_zhi_shi(phrase)
+    print(f"Фраза: '{phrase}'")
+    if correct:
+        print("Буквосочетания 'жи' и 'ши' написаны правильно")
+    else:
+        print(f"Ошибки на позициях: {[pos+1 for pos in errors]}")
+
+# 9.87. 
+print("\n9.87:")
+phrases = ["чаща чящя", "чашка щавель", "чяй щявель"]
+def fix_cha_shcha(text):
+    result = ""
+    i = 0
+    while i < len(text):
+        if i < len(text) - 1:
+            if text[i] == 'ч' and text[i + 1] == 'я':
+                result += 'ча'
+                i += 2
+            elif text[i] == 'щ' and text[i + 1] == 'я':
+                result += 'ща'
+                i += 2
+            else:
+                result += text[i]
+                i += 1
+        else:
+            result += text[i]
+            i += 1
+    return result
+
+for phrase in phrases:
+    fixed = fix_cha_shcha(phrase)
+    print(f"Было: '{phrase}'")
+    print(f"Стало: '{fixed}'")
+
+# 9.88. Символы между первой и второй запятой
+print("\n9.88:")
+texts = ["Привет, как дела, друзья?", "Один, два три", "Нет запятых"]
+
+def between_commas(text):
+    first_comma = -1
+    second_comma = -1
+    for i in range(len(text)):
+        if text[i] == ',':
+            first_comma = i
+            break
+    if first_comma == -1:  
+        return ""
+    # Находим вторую запятую
+    for i in range(first_comma + 1, len(text)):
+        if text[i] == ',':
+            second_comma = i
+            break
+    if second_comma == -1: 
+        return text[first_comma + 1:]
+    else:  # две запятые
+        return text[first_comma + 1:second_comma]
+
+for text in texts:
+    result = between_commas(text)
+    print(f"Текст: '{text}'")
+    print(f"Между запятыми: '{result}'")
+
+# 9.89. 
+print("\n9.89:")
+texts = ["стол", "тест", "салат", "кот"]
+
+def which_first(text):
+    pos_c = -1
+    pos_t = -1
+    
+    for i in range(len(text)):
+        if text[i] == 'с' and pos_c == -1:
+            pos_c = i
+        if text[i] == 'т' and pos_t == -1:
+            pos_t = i
+    
+    if pos_c == -1 and pos_t == -1:
+        return "Нет ни 'с', ни 'т'"
+    elif pos_c == -1:
+        return "Нет 'с', есть 'т'"
+    elif pos_t == -1:
+        return "Нет 'т', есть 'с'"
+    elif pos_c < pos_t:
+        return "'с' встречается раньше 'т'"
+    else:
+        return "'т' встречается раньше 'с'"
+
+for text in texts:
+    print(f"Текст: '{text}' - {which_first(text)}")
+
+print("\n=== 9.90-9.107. ИЗМЕНЕНИЕ СТРОК ===")
+
+# 9.90. 
+print("9.90:")
+text = "Ребята, где здесь буквы е?"
+new_text = ""
+for char in text:
+    if char == 'е':
+        new_text += 'и'
+    else:
+        new_text += char
+print(f"Было: '{text}'")
+print(f"Стало: '{new_text}'")
+# 9.91
+print("\n9.91:")
+text = "Привет как дела"
+new_text = ""
+for char in text:
+    if char == ' ':
+        new_text += '_'
+    else:
+        new_text += char
+print(f"Было: '{text}'")
+print(f"Стало: '{new_text}'")
+
+# 9.92. 
+print("\n9.92:")
+text = "программирование"
+new_text = ""
+for i in range(len(text)):
+    if (i + 1) % 2 == 0:  
+        new_text += 'ы'
+    else:
+        new_text += text[i]
+print(f"Было: '{text}'")
+print(f"Стало: '{new_text}'")
+# 9.93.
+print("\n9.93:")
+text = "программирование"
+new_text = ""
+for i in range(len(text)):
+    if (i + 1) % 3 == 0:  # позиции 3, 6, 9...
+        new_text += 'а'
+    else:
+        new_text += text[i]
+print(f"Было: '{text}'")
+print(f"Стало: '{new_text}'")
+# 9.94. 
+print("\n9.94:")
+text = "ах ты хорош, ах какой"
+# Простой способ
+new_text = text.replace("ах", "ух")
+print(f"Было: '{text}'")
+print(f"Стало: '{new_text}'")
+
+# 9.95. 
+print("\n9.95:")
+text = "да, конечно, да"
+new_text = text.replace("да", "не")
+print(f"Было: '{text}'")
+print(f"Стало: '{new_text}'")
+
+# 9.96.
+print("\n9.96:")
+text = "про программирование просто"
+new_text = text.replace("про", "нет")
+print(f"Было: '{text}'")
+print(f"Стало: '{new_text}'")
+
+# 9.97. 
+print("\n9.97:")
+text = "битва гигантов"
+new_text = text.replace("бит", "рог")
+print(f"Было: '{text}'")
+print(f"Стало: '{new_text}'")
+
+# 9.98. 
+print("\n9.98:")
+text = "яблоко очень вкусное"
+s1 = "яблоко"
+s2 = "апельсин"
+new_text = text.replace(s1, s2)
+print(f"Было: '{text}'")
+print(f"Заменили '{s1}' на '{s2}': '{new_text}'")
+
+# 9.99. 
+print("\n9.99:")
+s = "очепатка"
+s = s.replace("очепатка", "опечатка")
+print(f"Исправлено: '{s}'")
+
+# 9.100. 
+print("\n9.100:")
+word = "программирование"
+if len(word) >= 5:
+    
+    chars = list(word)
+    chars[1], chars[4] = chars[4], chars[1]  # индексы 1 и 4 (вторая и пятая)
+    new_word = ''.join(chars)
+    print(f"Было: '{word}'")
+    print(f"Стало: '{new_word}'")
+else:
+    print(f"Слово '{word}' слишком короткое")
+
+# 9.101. 
+print("\n9.101:")
+word = "компьютер"
+if len(word) >= 3:
+    chars = list(word)
+    chars[2], chars[-1] = chars[-1], chars[2]  
+    print(f"Было: '{word}'")
+    print(f"Стало: '{new_word}'")
+
+# 9.102. 
+print("\n9.102:")
+word = "программирование"
+m, n = 3, 7  
+if len(word) >= max(m, n):
+    chars = list(word)
+    chars[m-1], chars[n-1] = chars[n-1], chars[m-1] 
+    new_word = ''.join(chars)
+    print(f"Было: '{word}'")
+    print(f"Поменяли {m}-ю и {n}-ю буквы: '{new_word}'")
+
+# 9.103. 
+print("\n9.103:")
+word = "программист"  # 11 букв - нечетное, добавим букву
+word = "программист" + "а"  # сделаем 12 букв
+new_word = ""
+for i in range(0, len(word), 2):
+    if i + 1 < len(word):
+        new_word += word[i + 1] + word[i]  # меняем местами
+print(f"Было: '{word}'")
+print(f"Стало: '{new_word}'")
+
+# 9.104. 
+print("\n9.104:")
+word = "программист"
+if len(word) % 2 == 0:
+    half = len(word) // 2
+    first_half = word[:half]
+    second_half = word[half:]
+    new_word = second_half + first_half
+    print(f"Было: '{word}'")
+    print(f"Стало: '{new_word}'")
+
+# 9.105. Переставить буквы между 2-й и 10-й в обратном порядке
+print("\n9.105:")
+word = "программирование"
+if len(word) >= 12:
+    # Берем буквы с 3-й по 9-ю (индексы 2-8)
+    middle = word[2:9]  # с 3-й по 9-ю
+    reversed_middle = middle[::-1]  # переворачиваем
+    new_word = word[:2] + reversed_middle + word[9:]
+    print(f"Было: '{word}'")
+    print(f"Стало: '{new_word}'")
+
+# 9.106. 
+print("\n9.106:")
+word = "программирование"
+k, s = 3, 10  # например, между 3-й и 10-й буквами
+if k < s and len(word) >= s:
+    # Буквы с (k+1)-й по (s-1)-ю
+    middle = word[k:s-1]  # индексы k до s-2
+    reversed_middle = middle[::-1]
+    new_word = word[:k] + reversed_middle + word[s-1:]
+    print(f"Было: '{word}'")
+    print(f"Между {k}-й и {s}-й буквами перевернули: '{new_word}'")
+
+# 9.107. 
+print("\n9.107:")
+words = ["абонемент", "оборот", "комната", "кот"]
+
+def swap_first_a_last_o(word):
+    first_a = -1
+    last_o = -1
+    for i in range(len(word)):
+        if word[i] == 'а':
+            first_a = i
+            break
+    for i in range(len(word)-1, -1, -1):
+        if word[i] == 'о':
+            last_o = i
+            break
+    if first_a == -1 or last_o == -1:
+        return word, False
+    chars = list(word)
+    chars[first_a], chars[last_o] = chars[last_o], chars[first_a]
+    return ''.join(chars), True
+for word in words:
+    new_word, swapped = swap_first_a_last_o(word)
+    print(f"Слово: '{word}'")
+    if swapped:
+        print(f"После обмена: '{new_word}'")
+    else:
+        print("Нельзя обменять (нет 'а' или 'о')")
+print("\n=== 9.108-9.117. УДАЛЕНИЕ СИМВОЛОВ ===")
+
+
+def remove_char(text, pos):
+    if pos < 1 or pos > len(text):
+        return text
+    chars = list(text)
+    for i in range(pos-1, len(chars)-1):
+        chars[i] = chars[i+1]
+    chars[-1] = '_'
+    return ''.join(chars)
+
+# 9.108. 
+print("9.108:")
+text = "программа"
+print(f"Было: '{text}'")
+new_text = remove_char(text, 1)
+print(f"Удалили первый символ: '{new_text}'")
+
+# 9.109. 
+print("\n9.109:")
+text = "программа"
+print(f"Было: '{text}'")
+new_text = remove_char(text, len(text))
+print(f"Удалили последний символ: '{new_text}'")
+
+# 9.110. 
+print("\n9.110:")
+text = "программа"
+k = 4  
+print(f"Было: '{text}'")
+new_text = remove_char(text, k)
+print(f"Удалили {k}-й символ: '{new_text}'")
+
+ 9.111. 
+print("\n9.111:")
+text = "программа и алгоритм"
+print(f"Было: '{text}'")
+space_positions = []
+for i in range(len(text)):
+    if text[i] == ' ':
+        space_positions.append(i + 1)  # +1 потому что позиция, а не индекс
+
+# Удаляем с конца, чтобы позиции не смещались
+space_positions.sort(reverse=True)
+new_text = text
+for pos in space_positions:
+    new_text = remove_char(new_text, pos)
+
+print(f"Удалили все пробелы: '{new_text}'")
+
+
+# 9.112. 
+text = "привет, как дела, друзья"
+print(f"Было: '{text}'")
+comma_positions = []
+for i in range(len(text)):
+    if text[i] == ',':
+        comma_positions.append(i + 1)
+comma_positions.sort(reverse=True)
+new_text = text
+for pos in comma_positions:
+    new_text = remove_char(new_text, pos)
+
+print(f"Удалили все запятые: '{new_text}'")
+
+# 9.113. 
+text = "арбуз и ананас"
+print(f"Было: '{text}'")
+pos = -1
+for i in range(len(text)):
+    if text[i] == 'а':
+        pos = i + 1
+        break
+if pos != -1:
+    new_text = remove_char(text, pos)
+    print(f"Удалили первую 'а': '{new_text}'")
+else:
+    print("Буквы 'а' нет в тексте")
+
+# 9.114. 
+text = "молоко и окно"
+print(f"Было: '{text}'")
+pos = -1
+for i in range(len(text)-1, -1, -1):
+    if text[i] == 'о':
+        pos = i + 1
+        break
+
+if pos != -1:
+    new_text = remove_char(text, pos)
+    print(f"Удалили последнюю 'о': '{new_text}'")
+
+print("\n9.115:")
+text = "в 2023 году было 100 человек"
+print(f"Было: '{text}'")
+
+digit_positions = []
+for i in range(len(text)):
+    if text[i].isdigit():
+        digit_positions.append(i + 1)
+digit_positions.sort(reverse=True)
+new_text = text
+for pos in digit_positions:
+    new_text = remove_char(new_text, pos)
+
+print(f"Удалили все цифры: '{new_text}'")
+
+# 9.116. 
+print("\n9.116:")
+text = "программа"
+print(f"Было: '{text}'")
+even_positions = []
+for i in range(1, len(text) + 1):  
+    if i % 2 == 0:
+        even_positions.append(i)
+even_positions.sort(reverse=True)
+new_text = text
+for pos in even_positions:
+    new_text = remove_char(new_text, pos)
+
+print(f"Удалили символы на четных позициях: '{new_text}'")
+
+# 9.117. 
+print("\n9.117:")
+text = "программирование"
+vowels = "аеёиоуыэюяАЕЁИОУЫЭЮЯ"
+print(f"Было: '{text}'")
+vowel_positions = []
+for i in range(len(text)):
+    if text[i] in vowels:
+        vowel_positions.append(i + 1)
+vowel_positions.sort(reverse=True)
+new_text = text
+for pos in vowel_positions:
+    new_text = remove_char(new_text, pos)
+print(f"Удалили все гласные: '{new_text}'")
+
+def task_9_118():
+    print("\n=== 9.118 Исправление слова 'стекляный_' ===")
+    word = "стекляный_"
+    print(f"Исходное слово: {word}")
+    print(f"Исправленное слово: {corrected}")
+
+def task_9_119():
+    print("\n=== 9.119 Исправление фразы 'ценая вещь_' ===")
+    phrase = "ценая вещь_"
+    print(f"Исходная фраза: {phrase}") 
+    print(f"Исправленная фраза: {corrected}")
+
+def task_9_120():
+    print("\n=== 9.120 Вставка буквы 'т' после k-й буквы ===")
+    word = input("Введите слово, оканчивающееся символом '_': ")
+    
+    if not word.endswith('_'):
+        print("Ошибка: слово должно оканчиваться символом '_'")
+        return 
+    try:
+        k = int(input(f"Введите номер буквы k (от 1 до {len(word)-1}): "))
+        if 1 <= k <= len(word) - 1:
+            new_word = word[:k] + "т" + word[k:]
+            print(f"Исходное слово: {word}")
+            print(f"Слово с буквой 'т' после {k}-й буквы: {new_word}")
+        else:
+            print(f"Некорректное значение k. Должно быть от 1 до {len(word)-1}")
+    except ValueError:
+        print("Ошибка: нужно ввести целое число")
+
+# 9.183. 
+print("9.183:")
+
+def get_unique_words(sentence):
+    """Получить слова, которые встречаются в предложении ровно один раз"""
+    words = sentence.split()
+    word_count = {}
+    for word in words:
+        cleaned_word = word.strip('.,!?;:')
+        word_count[cleaned_word] = word_count.get(cleaned_word, 0) + 1
+    return [word for word, count in word_count.items() if count == 1]
+sentence1 = "кот собака кот мышка"
+sentence2 = "собака заяц кот"
+
+unique1 = get_unique_words(sentence1)
+unique2 = get_unique_words(sentence2)
+
+print(f"Предложение 1: '{sentence1}'")
+print(f"Уникальные слова в 1: {unique1}")
+print(f"Предложение 2: '{sentence2}'")
+print(f"Уникальные слова в 2: {unique2}")
+result = []
+for word in unique1:
+    if word not in unique2:
+        result.append(word)
+
+for word in unique2:
+    if word not in unique1:
+        result.append(word)
+
+print(f"Слова, встречающиеся только один раз в одном из предложений: {result}")
+
+
+
+# 9.184. 
+print("\n9.184:")
+
+def check_parentheses_simple(text):
+    stack = []
+    
+    for i, char in enumerate(text):
+        if char == '(':
+            stack.append(i)  
+        elif char == ')':
+            if stack:
+                stack.pop() 
+            else:
+                return False, f"Лишняя закрывающая скобка на позиции {i+1}"
+    if stack:
+        return False, f"Лишние открывающие скобки: {len(stack)} шт."
+    
+    return True, "Скобки расставлены правильно"
+
+
+test_cases = [
+    "Пример (правильный) текст",
+    "Пример (неправильный текст",
+    "Пример) неправильный текст",
+    "Пример ((правильный) текст)",
+    "Пример (неправильный)) текст"
+]
+
+for text in test_cases:
+    print(f"\nТекст: '{text}'")
+    correct, message = check_parentheses_simple(text)
+    if correct:
+        print("а) да")
+    else:
+        print("а) нет")
+    print(f"б) {message}")
+
+# 9.185. 
+print("\n9.185:")
+
+def check_parentheses_nested(text):
+    
+    stack = []
+    
+    for i, char in enumerate(text):
+        if char == '(':
+            stack.append(i)  
+        elif char == ')':
+            if stack:
+                stack.pop()  
+            else:
+                return False, f"Лишняя закрывающая скобка на позиции {i+1}"
+    
+    if stack:
+        return False, f"Лишние открывающие скобки: {len(stack)} шт."
+    
+    return True, "Скобки расставлены правильно"
+
+
+test_cases = [
+    "((a + b) * (c - d))",
+    "((a + b) * (c - d)",
+    "(a + b)) * (c - d)",
+    "((a + b) * c - d))",
+    "a + b * c - d"  # без скобок
+]
+
+for text in test_cases:
+    print(f"\nВыражение: '{text}'")
+    correct, message = check_parentheses_nested(text)
+    if correct:
+        print("а) да")
+    else:
+        print("а) нет")
+    print(f"б) {message}")
+
+# 9.186. 
+print("\n9.186:")
+
+def justify_text(text, target_length):
+    """Выровнять текст по ширине"""
+    if len(text) >= target_length:
+        return text
+  
+    words = text.split()
+    if len(words) <= 1:
+        return text  # если только одно слово
+    spaces_needed = target_length - len(text.replace(' ', ''))
+    gaps = len(words) - 1  # количество промежутков между словами
+    
+    # Базовое количество пробелов в каждом промежутке
+    base_spaces = spaces_needed // gaps
+    extra_spaces = spaces_needed % gaps
+    
+    # Собираем новый текст
+    result = ""
+    for i, word in enumerate(words):
+        result += word
+        if i < len(words) - 1:  # не после последнего слова
+            spaces = base_spaces + 1 + (1 if i < extra_spaces else 0)
+            result += ' ' * spaces
+    
+    return result
+text = "кот собака мышка"
+print(f"Исходный текст: '{text}' (длина: {len(text)})")
+print("Выровненный текст:")
+for length in range(20, 30, 3):
+    justified = justify_text(text, length)
+    print(f"Длина {length}: '{justified}' (фактическая длина: {len(justified)})")
+
+# 9.187. 
+print("\n9.187:")
+
+def number_to_russian_words(n):
+    """Преобразовать число в русские слова (до 1000)"""
+    units = {
+        0: '', 1: 'один', 2: 'два', 3: 'три', 4: 'четыре',
+        5: 'пять', 6: 'шесть', 7: 'семь', 8: 'восемь', 9: 'девять'
+    }
+    teens = {
+        10: 'десять', 11: 'одиннадцать', 12: 'двенадцать', 13: 'тринадцать',
+        14: 'четырнадцать', 15: 'пятнадцать', 16: 'шестнадцать',
+        17: 'семнадцать', 18: 'восемнадцать', 19: 'девятнадцать'
+    }
+    tens = {
+        2: 'двадцать', 3: 'тридцать', 4: 'сорок', 5: 'пятьдесят',
+        6: 'шестьдесят', 7: 'семьдесят', 8: 'восемьдесят', 9: 'девяносто'
+    }
+    hundreds = {
+        1: 'сто', 2: 'двести', 3: 'триста', 4: 'четыреста',
+        5: 'пятьсот', 6: 'шестьсот', 7: 'семьсот', 8: 'восемьсот', 9: 'девятьсот'
+    }
+    if n == 0:
+        return 'ноль'
+    
+    if n == 1000:
+        return 'тысяча'
+    
+    result_parts = []
+  
+    hundreds_digit = n // 100
+    if hundreds_digit > 0:
+        result_parts.append(hundreds[hundreds_digit])
+    
+    remainder = n % 100
+    if remainder == 0:
+        pass  # ничего не добавляем
+    elif 10 <= remainder < 20:
+        result_parts.append(teens[remainder])
+    else:
+        tens_digit = remainder // 10
+        units_digit = remainder % 10
+        
+        if tens_digit > 0:
+            result_parts.append(tens[tens_digit])
+        
+        if units_digit > 0:
+            result_parts.append(units[units_digit])
+    
+    return ' '.join(result_parts).strip()
+test_numbers = [0, 1, 5, 10, 13, 25, 100, 105, 241, 999, 1000]
+for num in test_numbers:
+    print(f"{num}: {number_to_russian_words(num)}")
+
