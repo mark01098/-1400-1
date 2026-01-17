@@ -1,0 +1,1305 @@
+def task_10_1():
+    print("\n=== 10.1 Вычисление x по формулам ===")
+    
+    def f(t):
+        """Вспомогательная функция для расчета"""
+        return math.sqrt(t**2 + 13)
+    
+    # а) 
+    x_a = math.sqrt(f(6) + f(13) + f(21))
+    print(f"а) x = √(f(6) + f(13) + f(21)) = {x_a:.3f}")
+    
+    # б)
+    x_b = math.sqrt(f(5) + f(12) + f(31)) / math.sqrt(f(7) + f(8) + 2)
+    print(f"б) x = √(f(5) + f(12) + f(31)) / √(f(7) + f(8) + 2) = {x_b:.3f}")
+    
+    # в)
+    x_c = (f(15) + f(8) + f(6) + f(12) + f(7) + f(21)) / \
+          (f(8) + f(15) + f(12) + f(6) + f(21) + f(7))
+    print(f"в) x = ... = {x_c:.3f}")
+    
+    # г)
+    x_d = (f(13) + f(7) + f(15) + f(12) + f(21) + f(32)) / \
+          (f(7) + f(13) + f(15) + f(12) + f(32) + f(21))
+    print(f"г) x = ... = {x_d:.3f}")
+
+def task_10_2():
+    print("\n=== 10.2 Вычисление y по формулам ===")
+    
+    def g(t):
+        """Вспомогательная функция для расчета"""
+        return t * math.sin(t)
+    
+    # а)
+    y_a = (g(1) + g(5) + g(3)) / (3**3)
+    print(f"а) y = (g(1) + g(5) + g(3)) / 27 = {y_a:.3f}")
+    
+    # б)
+    y_b = (g(2) + g(6) + g(1)) / (g(5) + g(3) + g(4))
+    print(f"б) y = (g(2) + g(6) + g(1)) / (g(5) + g(3) + g(4)) = {y_b:.3f}")
+    
+    # в)
+    y_c = (g(1) + g(4) + g(7) + g(5) + g(3) + g(2)) / \
+          (g(4) + g(1) + g(5) + g(7) + g(2) + g(3))
+    print(f"в) y = ... = {y_c:.3f}")
+    
+    # г)
+    y_d = (g(2) + g(3) + g(1) + g(5) + g(7) + 4) / \
+          (g(3) + g(2) + g(1) + g(5) + g(3) + 7)
+    print(f"г) y = ... = {y_d:.3f}")
+
+def task_10_3():
+    print("\n=== 10.3 Вычисление z = max(a, b) + max(2a, b) ===")
+    
+    a = float(input("Введите a: "))
+    b = float(input("Введите b: "))
+    
+    # Способ 1: без функции max
+    if a > b:
+        max1 = a
+    else:
+        max1 = b
+    
+    if 2*a > b:
+        max2 = 2*a
+    else:
+        max2 = b
+    
+    z1 = max1 + max2
+    print(f"Способ 1 (без функции max): z = {z1:.3f}")
+    
+    # Способ 2: с функцией max
+    z2 = max_of_two(a, b) + max_of_two(2*a, b)
+    print(f"Способ 2 (с функцией max): z = {z2:.3f}")
+
+def task_10_4():
+    print("\n=== 10.4 Вычисление z = min(a, b) + 3*min(2a, b^2) ===")
+    
+    a = float(input("Введите a: "))
+    b = float(input("Введите b: "))
+    
+    # Способ 1: без функции min
+    if a < b:
+        min1 = a
+    else:
+        min1 = b
+    
+    if 2*a < b**2:
+        min2 = 2*a
+    else:
+        min2 = b**2
+    
+    z1 = min1 + 3 * min2
+    print(f"Способ 1 (без функции min): z = {z1:.3f}")
+    
+    # Способ 2: с функцией min
+    z2 = min_of_two(a, b) + 3 * min_of_two(2*a, b**2)
+    print(f"Способ 2 (с функцией min): z = {z2:.3f}")
+
+def task_10_5():
+    print("\n=== 10.5 Вычисление z = sign(x) + sign(y) ===")
+    
+    x = float(input("Введите x: "))
+    y = float(input("Введите y: "))
+    
+    # Способ 1: без функции sign
+    if x > 0:
+        sign_x = 1
+    elif x < 0:
+        sign_x = -1
+    else:
+        sign_x = 0
+    
+    if y > 0:
+        sign_y = 1
+    elif y < 0:
+        sign_y = -1
+    else:
+        sign_y = 0
+    
+    z1 = sign_x + sign_y
+    print(f"Способ 1 (без функции sign): z = {z1}")
+    
+    # Способ 2: с функцией sign
+    z2 = sign(x) + sign(y)
+    print(f"Способ 2 (с функцией sign): z = {z2}")
+
+def task_10_6():
+    print("\n=== 10.6 Периметр фигуры ABCD (рис. 10.1) ===")
+    
+    AB = float(input("Введите длину AB: "))
+    AD = float(input("Введите длину AD: "))
+    DC = float(input("Введите длину DC: "))
+    
+    # Находим BC по теореме Пифагора
+    BC = hypotenuse(AB, AD - DC)
+    
+    perimeter = AB + AD + DC + BC
+    print(f"Периметр фигуры ABCD: {perimeter:.3f}")
+
+def task_10_7():
+    print("\n=== 10.7 Сумма периметров двух равнобедренных трапеций ===")
+    
+    print("Первая трапеция:")
+    base1_1 = float(input("  Введите большее основание: "))
+    base2_1 = float(input("  Введите меньшее основание: "))
+    height1 = float(input("  Введите высоту: "))
+    
+    print("Вторая трапеция:")
+    base1_2 = float(input("  Введите большее основание: "))
+    base2_2 = float(input("  Введите меньшее основание: "))
+    height2 = float(input("  Введите высоту: "))
+    
+    perimeter1 = trapezoid_perimeter(base1_1, base2_1, height1)
+    perimeter2 = trapezoid_perimeter(base1_2, base2_2, height2)
+    
+    print(f"Периметр первой трапеции: {perimeter1:.3f}")
+    print(f"Периметр второй трапеции: {perimeter2:.3f}")
+    print(f"Сумма периметров: {perimeter1 + perimeter2:.3f}")
+
+def task_10_8():
+    print("\n=== 10.8 Сколько из трех квадратных уравнений имеют вещественные корни ===")
+    
+    a = float(input("Введите a: "))
+    b = float(input("Введите b: "))
+    c = float(input("Введите c: "))
+    
+    count = 0
+    if has_real_roots(a, b, c):
+        count += 1
+        print("1) Уравнение ax² + bx + c имеет вещественные корни")
+    else:
+        print("1) Уравнение ax² + bx + c НЕ имеет вещественных корней")
+    
+    if has_real_roots(b, a, c):
+        count += 1
+        print("2) Уравнение bx² + ax + c имеет вещественные корни")
+    else:
+        print("2) Уравнение bx² + ax + c НЕ имеет вещественных корней")
+    
+    if has_real_roots(c, a, b):
+        count += 1
+        print("3) Уравнение cx² + ax + b имеет вещественные корни")
+    else:
+        print("3) Уравнение cx² + ax + b НЕ имеет вещественных корни")
+    
+    print(f"\nИтого {count} уравнений имеют вещественные корни")
+
+def task_10_9():
+    print("\n=== 10.9 Периметр треугольника по координатам вершин ===")
+    
+    print("Введите координаты первой вершины:")
+    x1 = float(input("  x1: "))
+    y1 = float(input("  y1: "))
+    
+    print("Введите координаты второй вершины:")
+    x2 = float(input("  x2: "))
+    y2 = float(input("  y2: "))
+    
+    print("Введите координаты третьей вершины:")
+    x3 = float(input("  x3: "))
+    y3 = float(input("  y3: "))
+    
+    # Вычисляем длины сторон
+    side1 = distance(x1, y1, x2, y2)
+    side2 = distance(x2, y2, x3, y3)
+    side3 = distance(x3, y3, x1, y1)
+    
+    perimeter = side1 + side2 + side3
+    
+    print(f"\nДлина стороны 1 (между вершинами 1 и 2): {side1:.3f}")
+    print(f"Длина стороны 2 (между вершинами 2 и 3): {side2:.3f}")
+    print(f"Длина стороны 3 (между вершинами 3 и 1): {side3:.3f}")
+    print(f"Периметр треугольника: {perimeter:.3f}")
+
+def task_10_10():
+    print("\n=== 10.10 Площадь пятиугольника (рис. 10.2) ===")
+    
+    a = float(input("Введите длину a: "))
+    b = float(input("Введите длину b: "))
+    c = float(input("Введите длину c: "))
+    d = float(input("Введите длину d: "))
+    e = float(input("Введите длину e: "))
+    
+    # Находим недостающие стороны по теореме Пифагора
+    f_side = math.sqrt(a**2 + (b - e)**2)
+    g_side = math.sqrt(d**2 + (c - e)**2)
+    
+    # Разбиваем пятиугольник на 3 треугольника
+    area1 = triangle_area_heron(a, b, f_side)
+    area2 = triangle_area_heron(f_side, e, g_side)
+    area3 = triangle_area_heron(g_side, c, d)
+    
+    total_area = area1 + area2 + area3
+    
+    print(f"\nДополнительные стороны:")
+    print(f"  f = √(a² + (b-e)²) = {f_side:.3f}")
+    print(f"  g = √(d² + (c-e)²) = {g_side:.3f}")
+    print(f"\nПлощади треугольников:")
+    print(f"  Треугольник 1 (a, b, f): {area1:.3f}")
+    print(f"  Треугольник 2 (f, e, g): {area2:.3f}")
+    print(f"  Треугольник 3 (g, c, d): {area3:.3f}")
+    print(f"Общая площадь пятиугольника: {total_area:.3f}")
+
+def task_10_11():
+    print("\n=== 10.11 Площадь пятиугольника по координатам вершин ===")
+    
+    coords = []
+    for i in range(1, 6):
+        print(f"Введите координаты вершины {i}:")
+        x = float(input(f"  x{i}: "))
+        y = float(input(f"  y{i}: "))
+        coords.append((x, y))
+    
+    # Разбиваем пятиугольник на треугольники
+    # Например, на треугольники (1,2,3), (1,3,4) и (1,4,5)
+    
+    area = 0
+    x1, y1 = coords[0]
+    
+    # Треугольник 1: вершины 1, 2, 3
+    area += triangle_area_coords(x1, y1, coords[1][0], coords[1][1], 
+                                 coords[2][0], coords[2][1])
+    
+    # Треугольник 2: вершины 1, 3, 4
+    area += triangle_area_coords(x1, y1, coords[2][0], coords[2][1],
+                                 coords[3][0], coords[3][1])
+    
+    # Треугольник 3: вершины 1, 4, 5
+    area += triangle_area_coords(x1, y1, coords[3][0], coords[3][1],
+                                 coords[4][0], coords[4][1])
+    
+    print(f"Площадь пятиугольника: {area:.3f}")
+
+def task_10_12():
+    print("\n=== 10.12 Количество четных и нечетных чисел в двух последовательностях ===")
+    
+    print("Введите 8 целых чисел для первой последовательности:")
+    seq1 = []
+    for i in range(8):
+        num = int(input(f"  Число {i+1}: "))
+        seq1.append(num)
+    
+    print("Введите 8 целых чисел для второй последовательности:")
+    seq2 = []
+    for i in range(8):
+        num = int(input(f"  Число {i+1}: "))
+        seq2.append(num)
+    
+    even_count = sum(1 for num in seq1 if is_even(num))
+    odd_count = sum(1 for num in seq2 if not is_even(num))
+    
+    print(f"\nПервая последовательность: {seq1}")
+    print(f"Вторая последовательность: {seq2}")
+    print(f"Количество четных чисел в первой: {even_count}")
+    print(f"Количество нечетных чисел во второй: {odd_count}")
+
+def task_10_13():
+    print("\n=== 10.13 Количество полных квадратов в последовательности ===")
+    
+    n = int(input("Введите количество чисел n: "))
+    
+    numbers = []
+    for i in range(n):
+        num = int(input(f"  Число {i+1}: "))
+        numbers.append(num)
+    
+    perfect_squares = [num for num in numbers if is_perfect_square(num)]
+    
+    print(f"\nВведенные числа: {numbers}")
+    print(f"Полные квадраты: {perfect_squares}")
+    print(f"Количество полных квадратов: {len(perfect_squares)}")
+
+def task_10_14():
+    print("\n=== 10.14 Количество степеней пятерки в последовательности ===")
+    
+    n = int(input("Введите количество чисел n: "))
+    
+    numbers = []
+    for i in range(n):
+        num = int(input(f"  Число {i+1}: "))
+        numbers.append(num)
+    
+    powers_of_five = [num for num in numbers if is_power_of_five(num)]
+    
+    print(f"\nВведенные числа: {numbers}")
+    print(f"Степени пятерки: {powers_of_five}")
+    print(f"Количество степеней пятерки: {len(powers_of_five)}")
+
+def task_10_15():
+    print("\n=== 10.15 Все трехзначные простые числа ===")
+    
+    primes = [n for n in range(100, 1000) if is_prime(n)]
+    
+    print("Трехзначные простые числа:")
+    # Выводим по 10 чисел в строку для удобства чтения
+    for i in range(0, len(primes), 10):
+        print(' '.join(map(str, primes[i:i+10])))
+    
+    print(f"\nВсего найдено {len(primes)} трехзначных простых чисел")
+
+def task_10_16():
+    print("\n=== 10.16 Пары чисел-близнецов (различающихся на 2) до 200 ===")
+    
+    twins = []
+    for n in range(3, 199):  # Проверяем до 197 (197 и 199 - близнецы)
+        if is_prime(n) and is_prime(n + 2):
+            twins.append((n, n + 2))
+    
+    print("Пары чисел-близнецов (простые числа, отличающиеся на 2):")
+    for i, (p1, p2) in enumerate(twins, 1):
+        print(f"{i:2}. {p1} и {p2}")
+    
+    print(f"\nВсего найдено {len(twins)} пар чисел-близнецов")
+
+def task_10_17():
+    print("\n=== 10.17 Вычисление выражения с факториалами ===")
+    
+    result = (2 * factorial(5) + 3 * factorial(8)) / (factorial(6) + factorial(4))
+    
+    print("Вычисляем: (2*5! + 3*8!) / (6! + 4!)")
+    print(f"5! = {factorial(5)}")
+    print(f"8! = {factorial(8)}")
+    print(f"6! = {factorial(6)}")
+    print(f"4! = {factorial(4)}")
+    print(f"Результат: {result:.3f}")
+
+def task_10_18():
+    print("\n=== 10.18 Сравнение сумм цифр двух натуральных чисел ===")
+    
+    num1 = int(input("Введите первое натуральное число: "))
+    num2 = int(input("Введите второе натуральное число: "))
+    
+    sum1 = sum_of_digits(num1)
+    sum2 = sum_of_digits(num2)
+    
+    print(f"Сумма цифр числа {num1}: {sum1}")
+    print(f"Сумма цифр числа {num2}: {sum2}")
+    
+    if sum1 > sum2:
+        print(f"У числа {num1} сумма цифр больше")
+    elif sum2 > sum1:
+        print(f"У числа {num2} сумма цифр больше")
+    else:
+        print("Суммы цифр равны")
+
+def task_10_19():
+    print("\n=== 10.19 Сравнение количества цифр в двух натуральных числах ===")
+    
+    num1 = int(input("Введите первое натуральное число: "))
+    num2 = int(input("Введите второе натуральное число: "))
+    
+    count1 = count_digits(num1)
+    count2 = count_digits(num2)
+    
+    print(f"Количество цифр в числе {num1}: {count1}")
+    print(f"Количество цифр в числе {num2}: {count2}")
+    
+    if count1 > count2:
+        print(f"В числе {num1} больше цифр")
+    elif count2 > count1:
+        print(f"В числе {num2} больше цифр")
+    else:
+        print("Количество цифр одинаковое")
+
+def task_10_20():
+    print("\n=== 10.20 Все шестизначные счастливые номера ===")
+    
+    lucky_numbers = []
+    
+    for num in range(100000, 1000000):
+        # Разделяем число на первые три цифры и последние три
+        first_half = num // 1000
+        second_half = num % 1000
+        
+        if sum_of_three_digits(first_half) == sum_of_three_digits(second_half):
+            lucky_numbers.append(num)
+    
+    print(f"Найдено {len(lucky_numbers)} шестизначных счастливых номеров")
+    print("\nПервые 20 счастливых номеров:")
+    for i in range(min(20, len(lucky_numbers))):
+        print(f"{lucky_numbers[i]:6d}", end=' ')
+        if (i + 1) % 5 == 0:
+            print()
+
+def task_10_21():
+    print("\n=== 10.21 Проверка чисел на палиндромность ===")
+    
+    num1 = int(input("Введите первое натуральное число: "))
+    num2 = int(input("Введите второе натуральное число: "))
+    
+    is_pal1 = is_palindrome(num1)
+    is_pal2 = is_palindrome(num2)
+    
+    print(f"Число {num1} {'является' if is_pal1 else 'не является'} палиндромом")
+    print(f"Число {num2} {'является' if is_pal2 else 'не является'} палиндромом")
+    
+    if is_pal1 or is_pal2:
+        print("Да, хотя бы одно из чисел является палиндромом")
+    else:
+        print("Нет, ни одно из чисел не является палиндромом")
+
+def task_10_22():
+    print("\n=== 10.22 Максимум из шести различных чисел ===")
+    
+    numbers = []
+    for i in range(6):
+        num = float(input(f"Введите число {i+1}: "))
+        numbers.append(num)
+    
+    # Находим максимум с помощью функции max_of_two
+    max_num = numbers[0]
+    for num in numbers[1:]:
+        max_num = max_of_two(max_num, num)
+    
+    print(f"\nВведенные числа: {numbers}")
+    print(f"Максимальное число: {max_num}")
+
+def task_10_23():
+    print("\n=== 10.23 Определение предыдущей и следующей даты ===")
+    
+    year = int(input("Введите год: "))
+    month = int(input("Введите месяц (1-12): "))
+    day = int(input("Введите день: "))
+    
+    # Проверка високосности
+    is_leap = input("Является ли год високосным? (да/нет): ").lower() == 'да'
+    
+    print(f"\nЗаданная дата: {day:02d}.{month:02d}.{year}")
+    
+    # а) Предыдущий день
+    prev_day = day - 1
+    prev_month = month
+    prev_year = year
+    
+    if prev_day == 0:
+        prev_month -= 1
+        if prev_month == 0:
+            prev_month = 12
+            prev_year -= 1
+        
+        # Определяем количество дней в предыдущем месяце
+        if prev_month == 2 and is_leap:
+            prev_day = 29
+        else:
+            days_in_prev = days_in_month(prev_year, prev_month)
+            prev_day = days_in_prev
+    
+    print(f"а) Предыдущий день: {prev_day:02d}.{prev_month:02d}.{prev_year}")
+    
+    # б) Следующий день
+    next_day = day + 1
+    next_month = month
+    next_year = year
+    
+    days_in_current = days_in_month(year, month)
+    if is_leap and month == 2:
+        days_in_current = 29
+    
+    if next_day > days_in_current:
+        next_day = 1
+        next_month += 1
+        if next_month > 12:
+            next_month = 1
+            next_year += 1
+    
+    print(f"б) Следующий день: {next_day:02d}.{next_month:02d}.{next_year}")
+# 10.25. Сокращение дроби
+print("\n10.25. Сокращение дроби:")
+
+def sokratit_drob(chislitel, znamenatel):
+    """Сокращает дробь"""
+    d = nod(chislitel, znamenatel)
+    p = chislitel // d
+    q = znamenatel // d
+    return p, q
+
+# Примеры
+drob1 = (12, 18)  # 12/18
+drob2 = (25, 15)  # 25/15
+drob3 = (7, 13)   # 7/13
+
+for a, b in [drob1, drob2, drob3]:
+    p, q = sokratit_drob(a, b)
+    print(f"{a}/{b} = {p}/{q}")
+
+# 10.26. НОД трех чисел
+print("\n10.26. НОД трех чисел:")
+
+def nod_tri(a, b, c):
+    """Находит НОД трех чисел"""
+    return nod(nod(a, b), c)
+
+# Примеры
+print(f"НОД(12, 18, 24) = {nod_tri(12, 18, 24)}")
+print(f"НОД(15, 25, 35) = {nod_tri(15, 25, 35)}")
+print(f"НОД(7, 14, 21) = {nod_tri(7, 14, 21)}")
+
+# 10.27. НОД n чисел
+print("\n10.27. НОД n чисел:")
+
+def nod_mnogo(chisla):
+    """Находит НОД нескольких чисел"""
+    if len(chisla) == 0:
+        return 0
+    
+    result = chisla[0]
+    for i in range(1, len(chisla)):
+        result = nod(result, chisla[i])
+    return result
+
+# Примеры
+chisla1 = [12, 18, 24, 30]
+chisla2 = [15, 25, 35, 45]
+chisla3 = [7, 14, 21, 28, 35]
+
+print(f"НОД{tuple(chisla1)} = {nod_mnogo(chisla1)}")
+print(f"НОД{tuple(chisla2)} = {nod_mnogo(chisla2)}")
+print(f"НОД{tuple(chisla3)} = {nod_mnogo(chisla3)}")
+
+# 10.28. Общее количество букв 'н' в двух предложениях
+print("\n10.28. Количество букв 'н' в двух предложениях:")
+
+def count_letter_n(text):
+    """Считает количество букв 'н' в тексте"""
+    count = 0
+    for char in text:
+        if char == 'н':
+            count += 1
+    return count
+
+# Примеры
+sent1 = "Наш незнакомец написал нам"
+sent2 = "Он не знал ничего нового"
+
+count1 = count_letter_n(sent1)
+count2 = count_letter_n(sent2)
+total = count1 + count2
+
+print(f"Предложение 1: '{sent1}'")
+print(f"Букв 'н': {count1}")
+print(f"Предложение 2: '{sent2}'")
+print(f"Букв 'н': {count2}")
+print(f"Всего букв 'н': {total}")
+
+# 10.29. Общее количество заданной буквы в трех предложениях
+print("\n10.29. Общее количество заданной буквы:")
+
+def count_letter(text, letter):
+    """Считает количество заданной буквы в тексте"""
+    count = 0
+    for char in text:
+        if char == letter:
+            count += 1
+    return count
+
+# Примеры
+sentences = [
+    "Мама мыла раму",
+    "Марат моет машину",
+    "Максим молодец"
+]
+letter = 'м'  # какую букву ищем
+
+total_count = 0
+for i, sent in enumerate(sentences, 1):
+    cnt = count_letter(sent, letter)
+    print(f"Предложение {i}: '{sent}'")
+    print(f"Букв '{letter}': {cnt}")
+    total_count += cnt
+
+print(f"Всего букв '{letter}' в трех предложениях: {total_count}")
+
+# 10.30. В каком предложении доля буквы 'б' больше
+print("\n10.30. Доля буквы 'б' в предложениях:")
+
+def letter_proportion(text, letter):
+    """Находит долю буквы в тексте (в %)"""
+    if len(text) == 0:
+        return 0
+    
+    count = count_letter(text, letter)
+    total_letters = 0
+    for char in text:
+        if char.isalpha():  # считаем только буквы
+            total_letters += 1
+    
+    if total_letters == 0:
+        return 0
+    
+    return (count / total_letters) * 100
+
+# Примеры
+sent1 = "Бабушка бублики покупала"
+sent2 = "Брат бил барабан"
+
+prop1 = letter_proportion(sent1, 'б')
+prop2 = letter_proportion(sent2, 'б')
+
+print(f"Предложение 1: '{sent1}'")
+print(f"Доля буквы 'б': {prop1:.2f}%")
+print(f"Предложение 2: '{sent2}'")
+print(f"Доля буквы 'б': {prop2:.2f}%")
+
+if prop1 > prop2:
+    print("В первом предложении доля буквы 'б' больше")
+elif prop2 > prop1:
+    print("Во втором предложении доля буквы 'б' больше")
+else:
+    print("Доля буквы 'б' одинакова")
+
+# 10.31. В каком предложении буква 'ш' имеет больший порядковый номер
+print("\n10.31. Последнее вхождение буквы 'ш':")
+
+def last_letter_position(text, letter):
+    """Находит позицию последнего вхождения буквы (счет с 1)"""
+    # Ищем с конца
+    for i in range(len(text) - 1, -1, -1):
+        if text[i] == letter:
+            return i + 1  # +1 потому что позиция, а не индекс
+    return -1  # буква не найдена
+
+# Примеры
+sent1 = "Наша школа широка"
+sent2 = "Широкий шарф шуршал"
+
+pos1 = last_letter_position(sent1, 'ш')
+pos2 = last_letter_position(sent2, 'ш')
+
+print(f"Предложение 1: '{sent1}'")
+if pos1 != -1:
+    print(f"Последняя 'ш' на позиции: {pos1}")
+else:
+    print("Буквы 'ш' нет")
+
+print(f"Предложение 2: '{sent2}'")
+if pos2 != -1:
+    print(f"Последняя 'ш' на позиции: {pos2}")
+else:
+    print("Буквы 'ш' нет")
+
+if pos1 > pos2:
+    print("В первом предложении 'ш' имеет больший порядковый номер")
+elif pos2 > pos1:
+    print("Во втором предложении 'ш' имеет больший порядковый номер")
+elif pos1 == -1 and pos2 == -1:
+    print("В обоих предложениях нет буквы 'ш'")
+else:
+    print("Последние 'ш' имеют одинаковую позицию")
+
+# 10.32. Проверка слов-палиндромов
+print("\n10.32. Слова-палиндромы:")
+
+def is_palindrome(word):
+    """Проверяет, является ли слово палиндромом"""
+    word = word.lower()  # делаем все буквы маленькими
+    n = len(word)
+    
+    # Сравниваем буквы с начала и с конца
+    for i in range(n // 2):
+        if word[i] != word[n - 1 - i]:
+            return False
+    return True
+
+# Примеры
+words = ["топот", "казак", "шалаш", "привет", "ротор", "мадам"]
+
+print("Слова для проверки:", words)
+print()
+
+has_palindrome = False
+for word in words:
+    if is_palindrome(word):
+        print(f"Слово '{word}' - палиндром")
+        has_palindrome = True
+
+if not has_palindrome:
+    print("Нет слов-палиндромов")
+
+print("\n=== 10.33-10.40. ПРОЦЕДУРЫ ===")
+
+# 10.33. Горизонтальная линия из 80 звездочек
+print("10.33. Горизонтальная линия из 80 '*':")
+
+def risovat_liniju_80():
+    """Рисует горизонтальную линию из 80 звездочек"""
+    print('*' * 80)
+
+# Вызываем процедуру
+risovat_liniju_80()
+
+# 10.34. Рамка из звездочек
+print("\n10.34. Рамка из звездочек:")
+print("Способ 1 (без использования предыдущей процедуры):")
+
+def ramka_sposob1():
+    """Рисует рамку из звездочек - способ 1"""
+    # Верхняя линия
+    print('*' * 80)
+    
+    # Боковые линии
+    for _ in range(20):  # 20 строк высоты
+        print('*' + ' ' * 78 + '*')
+    
+    # Нижняя линия
+    print('*' * 80)
+
+# Вызываем процедуру
+ramka_sposob1()
+
+print("\nСпособ 2 (с использованием процедуры из 10.33):")
+
+def ramka_sposob2():
+    """Рисует рамку из звездочек - способ 2"""
+    # Верхняя линия
+    risovat_liniju_80()
+    
+    # Боковые линии
+    for _ in range(20):  # 20 строк высоты
+        print('*' + ' ' * 78 + '*')
+    
+    # Нижняя линия
+    risovat_liniju_80()
+
+# Вызываем процедуру
+ramka_sposob2()
+
+# 10.35. Горизонтальная линия из любого числа звездочек
+print("\n10.35. Горизонтальная линия из n звездочек:")
+
+def risovat_goriz_liniju(n):
+    """Рисует горизонтальную линию из n звездочек"""
+    print('*' * n)
+
+# Примеры
+print("Линия из 20 звездочек:")
+risovat_goriz_liniju(20)
+print("\nЛиния из 40 звездочек:")
+risovat_goriz_liniju(40)
+
+# 10.36. Вертикальная линия из любого числа звездочек
+print("\n10.36. Вертикальная линия из n звездочек:")
+
+def risovat_vert_liniju(n):
+    """Рисует вертикальную линию из n звездочек"""
+    for _ in range(n):
+        print('*')
+
+# Примеры
+print("Вертикальная линия из 5 звездочек:")
+risovat_vert_liniju(5)
+
+# 10.37. Прямоугольник из звездочек
+print("\n10.37. Прямоугольник из звездочек:")
+print("Способ 1 (без использования процедуры):")
+
+def priamougolnik_sposob1(shirina, vysota):
+    """Рисует прямоугольник - способ 1"""
+    # Верхняя линия
+    print('*' * shirina)
+    
+    # Боковые стороны
+    for _ in range(vysota - 2):
+        print('*' + ' ' * (shirina - 2) + '*')
+    
+    # Нижняя линия (если высота > 1)
+    if vysota > 1:
+        print('*' * shirina)
+
+# Пример
+print("Прямоугольник 20x5:")
+priamougolnik_sposob1(20, 5)
+
+print("\nСпособ 2 (с использованием процедуры):")
+
+def priamougolnik_sposob2(shirina, vysota):
+    """Рисует прямоугольник - способ 2"""
+    # Верхняя линия
+    risovat_goriz_liniju(shirina)
+    
+    # Боковые стороны
+    for _ in range(vysota - 2):
+        print('*' + ' ' * (shirina - 2) + '*')
+    
+    # Нижняя линия (если высота > 1)
+    if vysota > 1:
+        risovat_goriz_liniju(shirina)
+
+# Пример
+print("Прямоугольник 15x4:")
+priamougolnik_sposob2(15, 4)
+
+# 10.38. Обмен значениями
+print("\n10.38. Обмен значениями:")
+
+def obmen(a, b):
+    """Меняет значения двух переменных местами"""
+    return b, a
+
+# Пример
+x = 10
+y = 20
+c = 30
+d = 40
+
+print(f"До обмена: x={x}, y={y}, c={c}, d={d}")
+
+# Обмениваем значениями
+x, y = obmen(x, y)
+c, d = obmen(c, d)
+
+print(f"После обмена: x={x}, y={y}, c={c}, d={d}")
+
+# 10.39. Периметр и площадь двух треугольников
+print("\n10.39. Треугольники:")
+
+def triangle_info(a, b, c):
+    """Вычисляет периметр и площадь треугольника"""
+    # Проверяем, можно ли построить треугольник
+    if a + b > c and a + c > b and b + c > a:
+        # Периметр
+        P = a + b + c
+        
+        # Полупериметр для формулы Герона
+        p = P / 2
+        
+        # Площадь по формуле Герона
+        S = (p * (p - a) * (p - b) * (p - c)) ** 0.5
+        
+        return P, S
+    else:
+        return None, None  # треугольник нельзя построить
+
+# Примеры
+triangle1 = (3, 4, 5)  # стороны первого треугольника
+triangle2 = (5, 12, 13)  # стороны второго треугольника
+
+P1, S1 = triangle_info(*triangle1)
+P2, S2 = triangle_info(*triangle2)
+
+print(f"Треугольник 1: стороны {triangle1}")
+if P1 is not None:
+    print(f"  Периметр: {P1}, Площадь: {S1:.2f}")
+else:
+    print("  Такой треугольник нельзя построить")
+
+print(f"Треугольник 2: стороны {triangle2}")
+if P2 is not None:
+    print(f"  Периметр: {P2}, Площадь: {S2:.2f}")
+else:
+    print("  Такой треугольник нельзя построить")
+
+if P1 is not None and P2 is not None:
+    print(f"\nСумма периметров: {P1 + P2}")
+    print(f"Сумма площадей: {S1 + S2:.2f}")
+
+# 10.40. Трапеции
+print("\n10.40. Равнобедренные трапеции:")
+
+def trapezium_info(a, b, h):
+    """Вычисляет периметр и площадь равнобедренной трапеции"""
+    # a - большее основание
+    # b - меньшее основание
+    # h - высота
+    
+    # Находим боковую сторону по теореме Пифагора
+    # Разница оснований
+    diff = (a - b) / 2
+    
+    # Боковая сторона
+    side = (diff ** 2 + h ** 2) ** 0.5
+    
+    # Периметр
+    P = a + b + 2 * side
+    
+    # Площадь
+    S = (a + b) * h / 2
+    
+    return P, S
+
+P1, S1 = trapezium_info(*trap1)
+P2, S2 = trapezium_info(*trap2)
+
+print(f"Трапеция 1: большее основание={trap1[0]}, меньшее={trap1[1]}, высота={trap1[2]}")
+print(f"  Периметр: {P1:.2f}, Площадь: {S1:.2f}")
+
+print(f"Трапеция 2: большее основание={trap2[0]}, меньшее={trap2[1]}, высота={trap2[2]}")
+print(f"  Периметр: {P2:.2f}, Площадь: {S2:.2f}")
+
+# 11.71
+marks = [4, 5, 3, 4, 5, 4, 3, 5, 4, 5]
+cnt = 0
+for m in marks:
+    if m == 4 or m == 5:
+        cnt += 1
+
+# 11.72
+arr = [1.5, -2.3, 4.7, -1.2, 3.8, -0.5]
+pos = 0  # положительные
+neg = 0  # отрицательные
+for x in arr:
+    if x > 0:
+        pos += 1
+    elif x < 0:
+        neg += 1
+
+# 11.73
+arr = [15, 23, 10, 30, 5, 35, 25, 12, 45]
+even_cnt = 0
+five_cnt = 0
+for x in arr:
+    if x % 2 == 0:
+        even_cnt += 1
+    if x % 10 == 5:
+        five_cnt += 1
+
+# 11.74
+games = [3, 1, 3, 2, 1, 3, 3, 2, 1, 3, 1, 2, 3, 3, 1, 2, 1, 3, 3, 2]
+wins = 0
+draws = 0
+losses = 0
+for g in games:
+    if g == 3:
+        wins += 1
+    elif g == 1:
+        draws += 1
+    elif g == 2:
+        losses += 1
+
+# 11.75
+marks = [5, 4, 3, 2, 5, 4, 3, 5, 4, 2, 5, 3, 4, 5, 4, 3, 2, 4, 5, 3, 4, 5]
+fives = 0
+fours = 0
+threes = 0
+twos = 0
+for m in marks:
+    if m == 5:
+        fives += 1
+    elif m == 4:
+        fours += 1
+    elif m == 3:
+        threes += 1
+    elif m == 2:
+        twos += 1
+
+# 11.76
+arr = [2, 4, 3, 6, 8, 5, 10, 12, 7, 14]
+cnt = 0
+for i in range(len(arr) - 1):
+    if arr[i] % 2 == 0 and arr[i+1] % 2 == 0:
+        cnt += 1
+
+# 11.77
+arr = [10, 20, 15, 30, 25, 40, 50, 35, 60]
+cnt = 0
+for i in range(len(arr) - 1):
+    if arr[i] % 10 == 0 and arr[i+1] % 10 == 0:
+        cnt += 1
+
+# 11.78
+arr = [1, 3, 2, 4, 3, 5, 4, 6, 5, 7]
+cnt = 0
+for i in range(1, len(arr) - 1):
+    if arr[i] > arr[i-1] and arr[i] > arr[i+1]:
+        cnt += 1
+
+# 11.79
+arr = [1.5, -2.3, 4.7, -1.2, 3.8, -0.5, 2.1, -3.4, 5.6, 1.9]
+
+# а)
+pos_cnt = 0
+for x in arr:
+    if x > 0:
+        pos_cnt += 1
+res_a = pos_cnt <= 5
+
+# б)
+cnt = 0
+for x in arr:
+    if x <= 50.55:
+        cnt += 1
+res_b = cnt % 4 == 0
+
+# 11.80
+heights = [165, 172, 168, 175, 180, 169, 158, 182, 170, 166,
+           178, 171, 167, 173, 179, 168, 174, 169, 176, 172,
+           163, 177, 170, 165, 174, 168, 171, 180, 166, 173]
+tall_cnt = 0
+for h in heights:
+    if h > 170:
+        tall_cnt += 1
+team_possible = tall_cnt >= 5
+
+# 11.81
+march = [3, 0, 2, 0, 0, 5, 0, 4, 0, 0,
+         1, 0, 0, 6, 0, 2, 0, 0, 3, 0,
+         0, 4, 0, 0, 5, 0, 1, 0, 0, 2, 0]
+zero_cnt = 0
+for x in march:
+    if x == 0:
+        zero_cnt += 1
+res = zero_cnt == 10
+
+# 11.82
+arr = [15, 5, 25, 8, 30, 12, 18, 7, 22]
+sum_val = 0
+cnt = 0
+for x in arr:
+    if x > 10:
+        sum_val += x
+        cnt += 1
+if cnt > 0:
+    avg = sum_val / cnt
+
+# 11.83
+arr = [15, 5, 25, 8, 30, 12, 18, 7, 22]
+m = 20
+sum_val = 0
+cnt = 0
+for x in arr:
+    if x < m:
+        sum_val += x
+        cnt += 1
+if cnt > 0:
+    avg = sum_val / cnt
+
+# 11.84
+august = [0, 5, 0, 8, 10, 0, 3, 0, 12, 0,
+          0, 7, 0, 0, 9, 0, 4, 0, 0, 6,
+          0, 8, 0, 0, 11, 0, 2, 0, 0, 5, 0]
+sum_rain = 0
+rain_days = 0
+for x in august:
+    if x > 0:
+        sum_rain += x
+        rain_days += 1
+if rain_days > 0:
+    avg_rain = sum_rain / rain_days
+
+# 11.85
+arr = [1.5, -2.3, 4.7, -1.2, 3.8, -0.5]
+pos_sum = 0
+pos_cnt = 0
+neg_sum = 0
+neg_cnt = 0
+for x in arr:
+    if x > 0:
+        pos_sum += x
+        pos_cnt += 1
+    elif x < 0:
+        neg_sum += x
+        neg_cnt += 1
+if pos_cnt > 0:
+    pos_avg = pos_sum / pos_cnt
+if neg_cnt > 0:
+    neg_avg = neg_sum / neg_cnt
+
+# 11.86
+weights = [85, 92, 105, 78, 110, 88, 102, 76, 115, 83,
+           108, 91, 98, 120, 82, 106, 79, 112, 87, 104,
+           81, 109, 89, 118, 84]
+heavy_sum = 0
+heavy_cnt = 0
+light_sum = 0
+light_cnt = 0
+for w in weights:
+    if w > 100:
+        heavy_sum += w
+        heavy_cnt += 1
+    else:
+        light_sum += w
+        light_cnt += 1
+if heavy_cnt > 0:
+    heavy_avg = heavy_sum / heavy_cnt
+if light_cnt > 0:
+    light_avg = light_sum / light_cnt
+
+# 11.87
+heights = [160, -165, 155, -170, -158, 162, -168, 152, 159,
+           -163, 167, -161, 164, -166, 169, -157, 171, 153,
+           -156, 172, -154, 158]
+boys_sum = 0
+boys_cnt = 0
+girls_sum = 0
+girls_cnt = 0
+for h in heights:
+    if h < 0:  # мальчики
+        boys_sum += abs(h)
+        boys_cnt += 1
+    else:  # девочки
+        girls_sum += h
+        girls_cnt += 1
+if boys_cnt > 0:
+    boys_avg = boys_sum / boys_cnt
+if girls_cnt > 0:
+    girls_avg = girls_sum / girls_cnt
+
+# 11.88
+cars = [6000, 7000, 8000, 9000, 10000]  # стоимости автомобилей
+bikes = [1000, 1500, 2000, 2500, 3000]  # стоимости мотоциклов
+car_sum = sum(cars)
+bike_sum = sum(bikes)
+car_avg = car_sum / len(cars)
+bike_avg = bike_sum / len(bikes)
+res = car_avg > bike_avg * 3
+
+# 11.89
+heights = [160, -165, 155, -170, -158, 162, -168, 152, 159,
+           -163, 167, -161, 164, -166, 169, -157, 171, 153]
+boys_sum = 0
+boys_cnt = 0
+girls_sum = 0
+girls_cnt = 0
+for h in heights:
+    if h < 0:  # мальчики
+        boys_sum += abs(h)
+        boys_cnt += 1
+    else:  # девочки
+        girls_sum += h
+        girls_cnt += 1
+if boys_cnt > 0 and girls_cnt > 0:
+    boys_avg = boys_sum / boys_cnt
+    girls_avg = girls_sum / girls_cnt
+    res = boys_avg - girls_avg > 10
+
+# 11.90
+arr = [15, 5, 25, 8, 30, 12, 18, 7, 22]
+total = sum(arr)
+cnt = 0
+indices = []
+for i in range(len(arr)):
+    if arr[i] > total:
+        cnt += 1
+        indices.append(i)
+
+# 11.91
+arr = [15, 5, 25, 8, 30, 12, 18, 7, 22]
+min_val = min(arr)
+max_val = max(arr)
+avg_limit = (min_val + max_val) / 2
+cnt = 0
+indices = []
+for i in range(len(arr)):
+    if arr[i] > avg_limit:
+        cnt += 1
+        indices.append(i)
+
+# 11.92
+heights = [160, 165, 155, 170, 158, 162, 168, 152, 159,
+           163, 167, 161, 164, 166, 169, 157, 171, 153,
+           156, 172, 154, 158, 173, 162, 159]
+total = sum(heights)
+avg_height = total / len(heights)
+cnt = 0
+for h in heights:
+    if h > avg_height:
+        cnt += 1
+
+# 11.93
+prices = [100, 150, 80, 200, 120, 90, 180, 130, 110, 170,
+          140, 85, 190, 125, 95, 160, 135, 105, 175, 115]
+total = sum(prices)
+avg_price = total / len(prices)
+cnt = 0
+for p in prices:
+    if p < avg_price:
+        cnt += 1
+
+# 11.94
+january = [5, 8, 3, 10, 2, 7, 4, 9, 6, 3,
+           8, 5, 7, 4, 6, 9, 2, 8, 5, 7,
+           3, 10, 4, 6, 8, 5, 7, 9, 3, 6, 4]
+total = sum(january)
+avg_rain = total / len(january)
+cnt = 0
+days = []
+for i in range(len(january)):
+    if january[i] > avg_rain:
+        cnt += 1
+        days.append(i + 1)  # +1 потому что дни с 1 января
+
+# 11.95
+marks = [5, 4, 3, 2, 5, 4, 3, 5, 4, 2, 5,
+         3, 4, 5, 4, 3, 2, 4, 5, 3, 4, 5]
+total = sum(marks)
+avg_mark = total / len(marks)
+cnt = 0
+indices = []
+for i in range(len(marks)):
+    if marks[i] < avg_mark:
+        cnt += 1
+        indices.append(i)
+
+# 11.96
+rainfall = [45, 48, 42, 50, 47, 43, 49, 44, 52, 46,
+            41, 51, 47, 44, 49, 45, 50, 43, 48, 46,
+            42, 51, 47, 44, 49, 45, 52, 43, 48, 46,
+            41, 50, 47, 44, 49, 45, 51, 42, 48, 46,
+            43, 52, 47, 44, 49, 45, 50, 41, 48, 46]  # 50 лет
+total = sum(rainfall)
+avg_rain = total / len(rainfall)
+deviations = []
+for i in range(len(rainfall)):
+    dev = rainfall[i] - avg_rain
+    deviations.append(dev)
+
+# 11.97
+arr = [15, 5, 25, 8, 30, 12, 18, 7, 22]
+avg = sum(arr) / len(arr)
+closest_val = arr[0]
+min_diff = abs(arr[0] - avg)
+for i in range(1, len(arr)):
+    diff = abs(arr[i] - avg)
+    if diff < min_diff:
+        min_diff = diff
+        closest_val = arr[i]
+
+# 11.98
+arr = [1, 3, 5, 2, 4, 6, 8, 3, 7, 2,
+       5, 9, 4, 6, 3, 8, 2, 7, 5, 4]
+max_sum = 0
+max_start = 0
+for i in range(len(arr) - 4):
+    curr_sum = arr[i] + arr[i+1] + arr[i+2] + arr[i+3] + arr[i+4]
+    if curr_sum > max_sum:
+        max_sum = curr_sum
+        max_start = i
+
+# 11.100
+arr = [1, 3, 5, 2, 4, 3, 6, 8, 7, 9]
+has_duplicate = False
+n = len(arr)
+for i in range(n):
+    for j in range(i + 1, n):
+        if arr[i] == arr[j]:
+            has_duplicate = True
+            break
+    if has_duplicate:
+        break
+
+# 11.101 и 11.102
+arr = [1, 3, 5, 2, 4, 3, 6, 8, 7, 9]
+duplicate_val = None
+counts = {}
+for x in arr:
+    if x in counts:
+        counts[x] += 1
+    else:
+        counts[x] = 1
+
+# Проверка на ровно два одинаковых элемента
+exactly_two = False
+for val, cnt in counts.items():
+    if cnt == 2:
+        exactly_two = True
+        duplicate_val = val
+        break
+
+# Если нужно найти значения (11.102)
+if exactly_two:
+    for val, cnt in counts.items():
+        if cnt == 2:
+            duplicate_val = val
+
+print(f"\nСумма периметров: {P1 + P2:.2f}")
+print(f"Сумма площадей: {S1 + S2:.2f}")
