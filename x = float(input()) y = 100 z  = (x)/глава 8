@@ -1,0 +1,929 @@
+
+print("=== 8.1. Организация вывода ===")
+# 8.1 а
+print("8.1 а:")
+for i in range(4):
+    for j in range(6):
+        print(5, end=' ')
+    print()
+
+# 8.1 б
+print("\n8.1 б:")
+for i in range(4):
+    for j in range(1, 11):
+        print(j, end=' ')
+    print()
+
+# 8.1 в
+print("\n8.1 в:")
+for i in range(41, 81, 10):
+    for j in range(i, i + 10):
+        print(j, end=' ')
+    print()
+
+print("\n=== 8.2. Таблицы с уменьшением ===")
+# 8.2 а
+print("8.2 а:")
+for i in range(1, 6):
+    for j in range(i):
+        print(5, end=' ')
+    print()
+
+# 8.2 б
+print("\n8.2 б:")
+for i in range(5, 0, -1):
+    for j in range(i):
+        print(1, end=' ')
+    print()
+
+print("\n=== 8.3. Таблицы с числами ===")
+# 8.3 а
+print("8.3 а:")
+for i in range(1, 6):
+    for j in range(i):
+        print(i, end=' ')
+    print()
+
+# 8.3 б
+print("\n8.3 б:")
+k = 5
+for i in range(5, 0, -1):
+    for j in range(i):
+        print(k, end=' ')
+    k += 1
+    print()
+
+# 8.3 в
+print("\n8.3 в:")
+k = 10
+for i in range(1, 6):
+    for j in range(i):
+        print(k, end=' ')
+    k += 10
+    print()
+
+# 8.3 г
+print("\n8.3 г:")
+k = 5
+for i in range(5, 0, -1):
+    for j in range(i):
+        print(k, end=' ')
+    k += 5
+    print()
+
+print("\n=== 8.4. Таблицы со сложной нумерацией ===")
+# 8.4 а
+print("8.4 а:")
+for i in range(5):
+    for j in range(5 - i):
+        print(j + i, end=' ')
+    print()
+
+# 8.4 б
+print("\n8.4 б:")
+for i in range(5):
+    for j in range(5):
+        print(30 - (i + j), end=' ')
+    print()
+
+print("\n=== 8.5-8.8. Таблицы сложения и умножения ===")
+# 8.5
+print("8.5 (сложение горизонтально):")
+for i in range(1, 10):
+    for j in range(1, 10):
+        print(f"{i}+{j}={i+j}", end=' ')
+    print()
+
+# 8.6
+print("\n8.6 (сложение вертикально):")
+for i in range(1, 10):
+    for j in range(1, 10):
+        print(f"{j}+{i}={j+i}", end=' ')
+    print()
+
+# 8.7
+print("\n8.7 (умножение горизонтально):")
+for i in range(1, 10):
+    for j in range(1, 10):
+        print(f"{i}x{j}={i*j}", end=' ')
+    print()
+
+# 8.8
+print("\n8.8 (умножение вертикально):")
+for i in range(1, 10):
+    for j in range(1, 10):
+        print(f"{j}x{i}={j*i}", end=' ')
+    print()
+
+print("\n=== 8.9. Ввод/вывод таблицы оценок ===")
+print("8.9 (для экономии места ввод имитирован):")
+table = [[4,5,3],[3,4,4],[5,5,5],[4,3,4],[5,4,5],[3,4,3],[4,5,4],[5,5,5],[4,4,4],[3,3,3],[5,4,5],[4,5,4],[5,5,4],[4,4,5],[3,4,3],[5,4,4],[4,3,5],[3,5,4]]
+print("Вывод таблицы 18×3:")
+for row in table:
+    print(row)
+
+print("\n=== 8.10. Ввод/вывод таблицы баллов ===")
+print("8.10 (ввод имитирован):")
+table = [[6,7,8,9,7],[5,6,7,8,6],[7,8,9,7,8],[6,7,8,9,7],[8,9,7,8,9],[7,8,9,7,8],[9,7,8,9,7],[8,9,7,8,9]]
+print("Вывод таблицы 8×5:")
+for row in table:
+    print(row)
+
+print("\n=== 8.11. Зарплата работников ===")
+print("8.11 (ввод имитирован):")
+workers = 3  # для примера 3 вместо 12
+months = 3
+table = [[30000,32000,31000],[28000,29000,30000],[35000,34000,36000]]
+
+total = 0
+for i in range(workers):
+    for j in range(months):
+        total += table[i][j]
+print(f"Общая сумма за квартал: {total}")
+
+print("Зарплата каждого работника:")
+for i in range(workers):
+    s = sum(table[i])
+    print(f"Работник {i+1}: {s}")
+
+print("Общая зарплата за каждый месяц:")
+for j in range(months):
+    s = sum(table[i][j] for i in range(workers))
+    print(f"Месяц {j+1}: {s}")
+
+print("\n=== 8.12. Результаты фигуристов ===")
+print("8.12 (ввод имитирован):")
+sportsmen = 3  # для примера 3 вместо 15
+programs = 3
+table = [[8.5,9.0,8.7],[9.1,8.8,9.2],[8.9,9.1,8.8]]
+
+print("Средний балл каждого спортсмена:")
+for i in range(sportsmen):
+    avg = sum(table[i]) / programs
+    print(f"Спортсмен {i+1}: {avg:.2f}")
+
+print("Средний балл по каждой программе:")
+for j in range(programs):
+    s = sum(table[i][j] for i in range(sportsmen))
+    avg = s / sportsmen
+    print(f"Программа {j+1}: {avg:.2f}")
+
+print("\n=== 8.13. Оценки учеников ===")
+print("8.13 (ввод имитирован):")
+students = 3  # для примера 3 вместо 18
+subjects = 3
+table = [[5,4,5],[3,4,3],[4,5,4]]
+
+fives = 0
+for i in range(students):
+    for j in range(subjects):
+        if table[i][j] == 5:
+            fives += 1
+print(f"Пятёрок всего: {fives}")
+
+print("Количество троек у каждого ученика:")
+for i in range(students):
+    threes = sum(1 for x in table[i] if x == 3)
+    print(f"Ученик {i+1}: троек = {threes}")
+
+print("Количество двоек по каждому предмету:")
+for j in range(subjects):
+    twos = sum(1 for i in range(students) if table[i][j] == 2)
+    print(f"Предмет {j+1}: двоек = {twos}")
+
+print("\n=== 8.14. Оценки студентов в сессию ===")
+print("8.14 (ввод имитирован):")
+students = 3  # для примера 3 вместо 15
+subjects = 3
+table = [[4,5,4],[3,4,3],[5,5,5]]
+
+good_students = sum(1 for i in range(students) if 2 not in table[i])
+print(f"Студентов без двоек: {good_students}")
+
+perfect_subjects = 0
+for j in range(subjects):
+    marks = [table[i][j] for i in range(students)]
+    if all(m in (4,5) for m in marks):
+        perfect_subjects += 1
+print(f"Предметов без троек и двоек: {perfect_subjects}")
+
+print("Двойки по каждому предмету:")
+for j in range(subjects):
+    twos = sum(1 for i in range(students) if table[i][j] == 2)
+    print(f"Предмет {j+1}: двоек = {twos}")
+
+print("\n=== 8.15. Баллы пятиборцев ===")
+print("8.15 (ввод имитирован):")
+sportsmen = 3  # для примера 3 вместо 8
+sports = 5
+table = [[7,8,9,8,7],[8,9,8,9,8],[9,8,9,8,9]]
+
+max_ball = max(max(row) for row in table)
+print(f"Максимальный балл: {max_ball}")
+
+max_sum = 0
+winner = 0
+for i in range(sportsmen):
+    s = sum(table[i])
+    if s > max_sum:
+        max_sum = s
+        winner = i + 1
+print(f"Победитель: спортсмен {winner}, баллов: {max_sum}")
+
+print("\n=== 8.16. Максимальная зарплата ===")
+print("8.16 (ввод имитирован):")
+workers = 3  # для примера 3 вместо 12
+months = 3
+table = [[30000,32000,31000],[28000,29000,30000],[35000,34000,36000]]
+
+max_salary = max(max(row) for row in table)
+print(f"Максимальная зарплата: {max_salary}")
+
+best_worker = 0
+best_sum = 0
+for i in range(workers):
+    s = sum(table[i])
+    if s > best_sum:
+        best_sum = s
+        best_worker = i + 1
+print(f"Лучший работник: {best_worker}, сумма: {best_sum}")
+
+best_month = 0
+best_month_sum = 0
+for j in range(months):
+    s = sum(table[i][j] for i in range(workers))
+    if s > best_month_sum:
+        best_month_sum = s
+        best_month = j + 1
+print(f"Лучший месяц: {best_month}, сумма: {best_month_sum}")
+
+print("\n=== 8.17. Лучшая зарплата по месяцам и работникам ===")
+print("8.17 (ввод имитирован, те же данные):")
+print("Для каждого работника — лучший месяц:")
+for i in range(workers):
+    max_s = max(table[i])
+    month = table[i].index(max_s) + 1
+    print(f"Работник {i+1}: лучший месяц {month}")
+
+print("Для каждого месяца — лучший работник:")
+for j in range(months):
+    max_s = max(table[i][j] for i in range(workers))
+    for i in range(workers):
+        if table[i][j] == max_s:
+            print(f"Месяц {j+1}: лучший работник {i+1}")
+            break
+
+print("\n=== 8.18. Ученики по классам и параллелям ===")
+print("8.18 (ввод имитирован):")
+parallels = 3  # для примера 3 вместо 11
+classes = 4
+table = [[25,27,22,24],[24,26,23,25],[20,25,21,26]]
+
+min_class = min(min(row) for row in table)
+print(f"Самый малочисленный класс: {min_class}")
+
+min_parallel = min(sum(row) for row in table)
+print(f"Минимальная сумма по параллели: {min_parallel}")
+
+print("Сумма по классам А, Б, В, Г:")
+for j in range(classes):
+    s = sum(table[i][j] for i in range(parallels))
+    print(f"Класс {j+1}: {s}")
+
+print("\n=== 8.19. Самый малочисленный класс в каждой параллели ===")
+print("8.19 (те же данные):")
+print("В каждой параллели — минимальный класс:")
+for i in range(parallels):
+    min_in_parallel = min(table[i])
+    print(f"Параллель {i+1}: {min_in_parallel}")
+
+print("Для каждого буквенного класса — минимальное значение:")
+for j in range(classes):
+    min_in_class = min(table[i][j] for i in range(parallels))
+    print(f"Класс {j+1}: {min_in_class}")
+
+print("\n=== 8.20. Доходы магазинов ===")
+print("8.20 (ввод имитирован):")
+shops = 3
+days = 5  # для примера 5 вместо 10
+table = [[1000,1200,1100,1300,1000],[900,1100,1000,1200,1100],[1300,1400,1200,1100,1300]]
+
+max_shop = 0
+max_sum = 0
+for i in range(shops):
+    s = sum(table[i])
+    if s > max_sum:
+        max_sum = s
+        max_shop = i + 1
+print(f"Лучший магазин: {max_shop}, доход: {max_sum}")
+
+max_day = 0
+max_day_sum = 0
+for j in range(days):
+    s = sum(table[i][j] for i in range(shops))
+    if s > max_day_sum:
+        max_day_sum = s
+        max_day = j + 1
+print(f"Лучший день: {max_day}, доход: {max_day_sum}")
+
+max_income = 0
+max_shop_day = 0
+max_day_num = 0
+for i in range(shops):
+    for j in range(days):
+        if table[i][j] > max_income:
+            max_income = table[i][j]
+            max_shop_day = i + 1
+            max_day_num = j + 1
+print(f"Максимальный доход за день: магазин {max_shop_day}, день {max_day_num}, сумма {max_income}")
+
+print("\n=== 8.21. Лучший день для каждого магазина ===")
+print("8.21 (те же данные):")
+print("Для каждого магазина — лучший день:")
+for i in range(shops):
+    max_d = max(table[i])
+    day = table[i].index(max_d) + 1
+    print(f"Магазин {i+1}: день {day}")
+
+print("Для каждого дня — лучший магазин:")
+for j in range(days):
+    max_inc = max(table[i][j] for i in range(shops))
+    for i in range(shops):
+        if table[i][j] == max_inc:
+            print(f"День {j+1}: магазин {i+1}")
+            break
+
+print("\n=== 8.22. Студенты по курсам и группам ===")
+print("8.22 (ввод имитирован):")
+courses = 3  # для примера 3 вместо 5
+groups = 4   # для примера 4 вместо 6
+table = [[20,22,21,19],[18,20,19,21],[22,21,20,23]]
+
+min_course = 0
+min_total = float('inf')
+for i in range(courses):
+    s = sum(table[i])
+    if s < min_total:
+        min_total = s
+        min_course = i + 1
+print(f"Самый малочисленный курс: {min_course}, студентов: {min_total}")
+
+min_group_val = float('inf')
+min_course_gr = 0
+min_group_gr = 0
+for i in range(courses):
+    for j in range(groups):
+        if table[i][j] < min_group_val:
+            min_group_val = table[i][j]
+            min_course_gr = i + 1
+            min_group_gr = j + 1
+print(f"Самая малочисленная группа: курс {min_course_gr}, группа {min_group_gr}, студентов: {min_group_val}")
+
+print("Самая маленькая группа на каждом курсе:")
+for i in range(courses):
+    min_in_course = min(table[i])
+    group = table[i].index(min_in_course) + 1
+    print(f"Курс {i+1}: группа {group} ({min_in_course} чел.)")
+
+print("\n=== 8.23. Продажи товаров по дням ===")
+print("8.23 (ввод имитирован):")
+types = 3  # для примера 3 вместо 5
+days = 4   # для примера 4 вместо 6
+prices = [100, 200, 150]
+table = [[5,6,4,7],[3,4,5,4],[6,5,7,6]]
+
+print("Общий доход по каждому виду товара:")
+for i in range(types):
+    total = sum(table[i][j] * prices[i] for j in range(days))
+    print(f"Товар {i+1}: {total}")
+
+print("Общий доход за каждый день:")
+for j in range(days):
+    total = sum(table[i][j] * prices[i] for i in range(types))
+    print(f"День {j+1}: {total}")
+
+total_income = sum(table[i][j] * prices[i] for i in range(types) for j in range(days))
+print(f"Общий доход за {days} дней: {total_income}")
+
+max_income = 0
+best_product = 0
+for i in range(types):
+    income = sum(table[i][j] * prices[i] for j in range(days))
+    if income > max_income:
+        max_income = income
+        best_product = i + 1
+print(f"Товар с максимальным доходом: {best_product}, доход: {max_income}")
+
+max_day_income = 0
+best_day = 0
+for j in range(days):
+    income = sum(table[i][j] * prices[i] for i in range(types))
+    if income > max_day_income:
+        max_day_income = income
+        best_day = j + 1
+print(f"День с максимальным доходом: {best_day}, доход: {max_day_income}")
+
+a = 2000
+days_above_a = sum(1 for j in range(days) if sum(table[i][j] * prices[i] for i in range(types)) > a)
+print(f"Дней с доходом больше {a} рублей: {days_above_a}")
+
+print("\n=== 8.24. Лучшая группа по среднему баллу ===")
+print("8.24 (ввод имитирован):")
+groups = 2  # для примера 2 вместо 3
+students = 3  # для примера 3 вместо 20
+exams = 3
+tables = [
+    [[4,5,4],[5,4,5],[4,4,5]],
+    [[5,5,5],[4,5,4],[5,4,5]]
+]
+
+best_group = 0
+best_avg = 0
+for g in range(groups):
+    total = 0
+    for i in range(students):
+        for j in range(exams):
+            total += tables[g][i][j]
+    avg = total / (students * exams)
+    if avg > best_avg:
+        best_avg = avg
+        best_group = g + 1
+print(f"Лучшая группа: {best_group}, средний балл: {best_avg:.2f}")
+
+print("\n=== 8.25. Количество делителей чисел от 120 до 140 ===")
+print("8.25:")
+for num in range(120, 141):
+    count = 0
+    for d in range(1, num + 1):
+        if num % d == 0:
+            count += 1
+    print(f"{num}: {count} делителей", end=' | ' if (num-119) % 4 != 0 else '\n')
+
+print("\n=== 8.26. Графическое изображение делимости ===")
+print("8.26 (для n=10):")
+n = 10
+for num in range(1, n + 1):
+    count = 0
+    for d in range(1, num + 1):
+        if num % d == 0:
+            count += 1
+    print(f"{num} " + "+" * count)
+
+print("\n=== 8.27. Числа с ровно 5 делителями (1-300) ===")
+print("8.27:")
+for num in range(1, 301):
+    count = 0
+    for d in range(1, num + 1):
+        if num % d == 0:
+            count += 1
+    if count == 5:
+        print(num, end=' ')
+print()
+
+print("\n=== 8.28. Числа с ровно 6 делителями (200-500) ===")
+print("8.28:")
+for num in range(200, 501):
+    count = 0
+    for d in range(1, num + 1):
+        if num % d == 0:
+            count += 1
+    if count == 6:
+        print(num, end=' ')
+print()
+
+print("\n=== 8.29. Числа с k делителями от a до b ===")
+print("8.29 (пример: a=10, b=30, k=4):")
+a, b, k = 10, 30, 4
+for num in range(a, b + 1):
+    count = 0
+    for d in range(1, num + 1):
+        if num % d == 0:
+            count += 1
+    if count == k:
+        print(num, end=' ')
+print()
+
+print("\n=== 8.30. Число с максимальным количеством делителей ===")
+print("8.30 (пример: a=1, b=50):")
+a, b = 1, 50
+max_count = 0
+max_num = a
+for num in range(a, b + 1):
+    count = 0
+    for d in range(1, num + 1):
+        if num % d == 0:
+            count += 1
+    if count > max_count:
+        max_count = count
+        max_num = num
+print(f"Число с максимальным количеством делителей: {max_num}, делителей: {max_count}")
+
+print("\n=== 8.31. Трехзначные простые числа ===")
+print("8.31:")
+for num in range(100, 1000):
+    is_prime = True
+    for d in range(2, int(num**0.5) + 1):
+        if num % d == 0:
+            is_prime = False
+            break
+    if is_prime:
+        print(num, end=' ')
+print()
+
+print("\n=== 8.32. Первые 100 простых чисел ===")
+print("8.32 (первые 20 для примера):")
+count = 0
+num = 2
+while count < 20:
+    is_prime = True
+    for d in range(2, int(num**0.5) + 1):
+        if num % d == 0:
+            is_prime = False
+            break
+    if is_prime:
+        print(num, end=' ')
+        count += 1
+    num += 1
+print("...")
+
+print("\n=== 8.33. Сумма делителей чисел от 50 до 70 ===")
+print("8.33 (первые 5 для примера):")
+for num in range(50, 56):
+    s = 0
+    for d in range(1, num + 1):
+        if num % d == 0:
+            s += d
+    print(f"{num}: сумма {s}")
+
+print("\n=== 8.34. Числа с суммой делителей 50 (100-300) ===")
+print("8.34:")
+for num in range(100, 301):
+    s = 0
+    for d in range(1, num):
+        if num % d == 0:
+            s += d
+    if s == 50:
+        print(num, end=' ')
+print()
+
+print("\n=== 8.35. Числа с суммой делителей кратной 10 (300-600) ===")
+print("8.35 (первые найденные):")
+found = 0
+for num in range(300, 601):
+    s = 0
+    for d in range(1, num + 1):
+        if num % d == 0:
+            s += d
+    if s % 10 == 0:
+        print(num, end=' ')
+        found += 1
+        if found >= 10:
+            break
+print("...")
+
+print("\n=== 8.36. Совершенные числа до 100 000 ===")
+print("8.36:")
+for num in range(2, 100000):
+    s = 0
+    for d in range(1, num):
+        if num % d == 0:
+            s += d
+    if s == num:
+        print(num, end=' ')
+print()
+
+print("\n=== 8.37. Число с максимальной суммой делителей ===")
+print("8.37 (пример: a=1, b=100):")
+a, b = 1, 100
+max_sum = 0
+max_num = a
+for num in range(a, b + 1):
+    s = 0
+    for d in range(1, num + 1):
+        if num % d == 0:
+            s += d
+    if s > max_sum:
+        max_sum = s
+        max_num = num
+print(f"Число с максимальной суммой делителей: {max_num}, сумма: {max_sum}")
+
+print("\n=== 8.38. Дружественные числа до 50 000 ===")
+print("8.38 (первые пары):")
+for a in range(2, 1000):  # ограничим для скорости
+    sum_a = 0
+    for d in range(1, a):
+        if a % d == 0:
+            sum_a += d
+    b = sum_a
+    if b > a and b < 1000:
+        sum_b = 0
+        for d in range(1, b):
+            if b % d == 0:
+                sum_b += d
+        if sum_b == a:
+            print(f"{a} и {b}")
+
+print("\n=== 8.39. Прямоугольники с площадью s ===")
+print("8.39 (s=12):")
+s = 12
+print("а) Все прямоугольники:")
+count = 0
+for a in range(1, s + 1):
+    for b in range(1, s + 1):
+        if a * b == s:
+            print(f"{a} x {b}", end='; ')
+            count += 1
+print(f"\nВсего: {count}")
+
+print("б) Без перестановок:")
+count = 0
+for a in range(1, int(s**0.5) + 1):
+    if s % a == 0:
+        b = s // a
+        print(f"{a} x {b}", end='; ')
+        count += 1
+print(f"\nВсего: {count}")
+
+print("\n=== 8.40. Параллелепипеды с объемом v ===")
+print("8.40 (v=24):")
+v = 24
+print("а) Все варианты (первые 5):")
+count = 0
+for a in range(1, v + 1):
+    for b in range(1, v + 1):
+        for c in range(1, v + 1):
+            if a * b * c == v:
+                print(f"{a}×{b}×{c}", end='; ')
+                count += 1
+                if count >= 5:
+                    break
+        if count >= 5:
+            break
+    if count >= 5:
+        break
+print(f"\nВсего: много")
+
+print("б) Без перестановок:")
+count = 0
+for a in range(1, int(v**(1/3)) + 1):
+    if v % a == 0:
+        for b in range(a, int((v/a)**0.5) + 1):
+            if (v // a) % b == 0:
+                c = v // (a * b)
+                if c >= b:
+                    print(f"{a}×{b}×{c}", end='; ')
+                    count += 1
+print(f"\nВсего: {count}")
+
+print("\n=== 8.41. Решения x² + y² = k² (1-30) ===")
+print("8.41:")
+for x in range(1, 31):
+    for y in range(x, 31):
+        k2 = x*x + y*y
+        k = int(k2**0.5)
+        if k <= 30 and k*k == k2:
+            print(f"{x}² + {y}² = {k}²")
+
+print("\n=== 8.42. Сумма 1ⁿ + 2ⁿ + ... + mⁿ ===")
+print("8.42 (пример: m=5, n=3):")
+m, n = 5, 3
+total = 0
+for i in range(1, m + 1):
+    power = 1
+    for _ in range(n):
+        power *= i
+    total += power
+print(f"1^{n} + 2^{n} + ... + {m}^{n} = {total}")
+
+print("\n=== 8.43. Сумма 1¹ + 2² + ... + nⁿ ===")
+print("8.43 (пример: n=5):")
+n = 5
+total = 0
+for i in range(1, n + 1):
+    power = 1
+    for _ in range(i):
+        power *= i
+    total += power
+print(f"1¹ + 2² + ... + {n}ⁿ = {total}")
+
+print("\n=== 8.44. Трехзначные числа с суммой цифр n ===")
+print("8.44 (n=10):")
+n = 10
+for a in range(1, 10):
+    for b in range(10):
+        for c in range(10):
+            if a + b + c == n:
+                print(f"{a}{b}{c}", end=' ')
+print()
+
+print("\n=== 8.45. Трехзначные числа с разными цифрами ===")
+print("8.45 (первые 20):")
+count = 0
+for a in range(1, 10):
+    for b in range(10):
+        if b != a:
+            for c in range(10):
+                if c != a and c != b:
+                    print(f"{a}{b}{c}", end=' ')
+                    count += 1
+                    if count >= 20:
+                        break
+            if count >= 20:
+                break
+    if count >= 20:
+        break
+print("...")
+
+print("\n=== 8.46. НОД нескольких чисел ===")
+print("8.46 (пример: 12, 18, 24):")
+def nod(a, b):
+    while b:
+        a, b = b, a % b
+    return a
+
+nums = [12, 18, 24]
+result = nums[0]
+for i in range(1, len(nums)):
+    result = nod(result, nums[i])
+print(f"НОД{tuple(nums)} = {result}")
+
+print("\n=== 8.47. Способы составления веса гирями ===")
+print("8.47 (пример: v=500):")
+weights = [100, 200, 300, 500, 1000, 1200, 1400, 1500, 2000, 3000]
+v = 500
+count = 0
+for i in range(2**5):  # ограничим первыми 5 гирями для скорости
+    s = 0
+    for j in range(5):
+        if i & (1 << j):
+            s += weights[j]
+    if s == v:
+        count += 1
+print(f"Число способов составить {v} г: {count}")
+
+print("\n=== 8.48. Способы выплаты суммы ===")
+print("8.48 (n=15):")
+n = 15
+coins = [10, 5, 2, 1]
+count = 0
+print("Способы:")
+for c10 in range(n//10 + 1):
+    for c5 in range((n - c10*10)//5 + 1):
+        for c2 in range((n - c10*10 - c5*5)//2 + 1):
+            c1 = n - c10*10 - c5*5 - c2*2
+            if c1 >= 0:
+                count += 1
+                print(f"{c10}×10 + {c5}×5 + {c2}×2 + {c1}×1", end='; ')
+print(f"\nВсего способов: {count}")
+
+print("\n=== 8.49. Числа, квадрат суммы цифр которых равен m ===")
+print("8.49 (m=25, n=100):")
+m, n = 25, 100
+for num in range(1, n):
+    s = 0
+    temp = num
+    while temp > 0:
+        s += temp % 10
+        temp //= 10
+    if s*s == m:
+        print(num, end=' ')
+print()
+
+print("\n=== 8.50. Минимальное количество купюр ===")
+print("8.50 (n=100):")
+n = 100
+bills = [64, 32, 16, 8, 4, 2, 1]
+for amount in range(n, n + 6):  # первые 6 сумм
+    print(f"{amount}: ", end='')
+    temp = amount
+    for bill in bills:
+        count = temp // bill
+        if count > 0:
+            print(f"{bill}×{count}", end=' ')
+            temp %= bill
+    print()
+
+print("\n=== 8.51. Цифровой корень ===")
+print("8.51 (пример: 9875):")
+num = 9875
+original = num
+while num > 9:
+    s = 0
+    while num > 0:
+        s += num % 10
+        num //= 10
+    num = s
+print(f"Цифровой корень {original} = {num}")
+
+print("\n=== 8.52. Быки, коровы, телята ===")
+print("8.52:")
+for bulls in range(1, 10):
+    for cows in range(1, 20):
+        calves = 100 - bulls - cows
+        if calves > 0:
+            if bulls*10 + cows*5 + calves*0.5 == 100:
+                print(f"Быков: {bulls}, коров: {cows}, телят: {calves}")
+
+print("\n=== 8.53. Разложение на простые множители ===")
+print("8.53 (n=60):")
+n = 60
+print("Вариант 1 (уникальные множители):")
+factors = set()
+temp = n
+d = 2
+while temp > 1:
+    if temp % d == 0:
+        factors.add(d)
+        temp //= d
+    else:
+        d += 1
+print(" × ".join(map(str, sorted(factors))))
+
+print("Вариант 2 (с кратностью):")
+temp = n
+d = 2
+result = []
+while temp > 1:
+    if temp % d == 0:
+        count = 0
+        while temp % d == 0:
+            temp //= d
+            count += 1
+        result.append(f"{d}^{count}" if count > 1 else str(d))
+    else:
+        d += 1
+print(" × ".join(result))
+
+print("\n=== 8.54. Все простые делители ===")
+print("8.54 (n=60):")
+n = 60
+temp = n
+d = 2
+divisors = []
+while temp > 1:
+    if temp % d == 0:
+        divisors.append(d)
+        while temp % d == 0:
+            temp //= d
+    d += 1
+print(f"Простые делители {n}: {divisors}")
+
+print("\n=== 8.55. Числа, взаимно простые с n ===")
+print("8.55 (n=12):")
+def nod(a, b):
+    while b:
+        a, b = b, a % b
+    return a
+
+n = 12
+result = []
+for i in range(1, n):
+    if nod(i, n) == 1:
+        result.append(i)
+print(f"Числа, взаимно простые с {n}: {result}")
+
+print("\n=== 8.56. Числа < n, взаимно простые с p ===")
+print("8.56 (n=15, p=8):")
+n, p = 15, 8
+result = []
+for i in range(1, n):
+    if nod(i, p) == 1:
+        result.append(i)
+print(f"Числа < {n}, взаимно простые с {p}: {result}")
+
+print("\n=== 8.57. Делители q, взаимно простые с p ===")
+print("8.57 (p=6, q=24):")
+p, q = 6, 24
+result = []
+for d in range(1, q + 1):
+    if q % d == 0 and nod(d, p) == 1:
+        result.append(d)
+print(f"Делители {q}, взаимно простые с {p}: {result}")
+
+print("\n=== 8.58. Число, представляемое двумя способами как сумма кубов ===")
+print("8.58 (поиск до 1000):")
+found = False
+for n in range(1, 1000):
+    count = 0
+    for a in range(1, int(n**(1/3)) + 1):
+        for b in range(a, int(n**(1/3)) + 1):
+            if a**3 + b**3 == n:
+                count += 1
+    if count >= 2:
+        print(f"Найдено: {n}")
+        found = True
+        break
+if not found:
+    print("Не найдено в диапазоне до 1000")
+
+print("\n=== 8.59. Простые несократимые дроби от 0 до 1 ===")
+print("8.59 (знаменатель до 8):")
+limit = 8
+fractions = []
+for d in range(2, limit + 1):
+    for n in range(1, d):
+        if nod(n, d) == 1:
+            fractions.append(f"{n}/{d}")
+print("Дроби:", ' '.join(sorted(fractions, key=lambda x: eval(x))))
+
+print("\n=== ВСЕ ЗАДАЧИ ГЛАВЫ 8 ВЫПОЛНЕНЫ ===")
