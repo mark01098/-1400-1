@@ -1,0 +1,620 @@
+# 15.1
+print("15.1:")
+with open("15_1.txt", "w", encoding="utf-8") as f:
+    f.write("Здравствуй, мир!")
+print("Создан файл с фразой 'Здравствуй, мир!'")
+
+# 15.2
+print("\n15.2:")
+# Для примера используем готовую строку
+text = "Пример строки"
+with open("15_2.txt", "w", encoding="utf-8") as f:
+    for _ in range(5):
+        f.write(text + "\n")
+print("Создан файл с 5 одинаковыми строками")
+
+# 15.3
+print("\n15.3:")
+lines = ["Первая строка", "Вторая строка", "Третья строка", 
+         "Четвертая строка", "Пятая строка", "Шестая строка"]
+with open("15_3.txt", "w", encoding="utf-8") as f:
+    for line in lines:
+        f.write(line + "\n")
+print("Создан файл с 6 строками")
+
+# 15.4
+print("\n15.4:")
+array = ["Элемент 1", "Элемент 2", "Элемент 3", "Элемент 4"]
+with open("15_4.txt", "w", encoding="utf-8") as f:
+    for item in array:
+        f.write(item + "\n")
+print("Элементы массива записаны в файл")
+
+# 15.5
+print("\n15.5:")
+# Создаем файл для примера
+with open("15_5.txt", "w", encoding="utf-8") as f:
+    f.write("Привет!\n")
+
+# Добавляем строку в конец
+with open("15_5.txt", "a", encoding="utf-8") as f:
+    f.write("До свидания, люди!\n")
+print("Добавлена строка 'До свидания, люди!' в конец файла")
+
+# 15.6
+print("\n15.6:")
+# Создаем файл для примера
+with open("15_6.txt", "w", encoding="utf-8") as f:
+    f.write("Исходная строка\n")
+
+# Добавляем 3 строки
+new_lines = ["Новая строка 1", "Новая строка 2", "Новая строка 3"]
+with open("15_6.txt", "a", encoding="utf-8") as f:
+    for line in new_lines:
+        f.write(line + "\n")
+print("Добавлено 3 новые строки в конец файла")
+
+# 15.7
+print("\n15.7:")
+with open("15_7.txt", "w", encoding="utf-8") as f:
+    f.write("Здравствуйте, дорогие ребята")
+
+# Добавляем восклицательный знак в конец строки
+with open("15_7.txt", "r+", encoding="utf-8") as f:
+    content = f.read()
+    f.seek(0)  # Возвращаемся в начало файла
+    f.write(content + "!")
+print("Добавлен восклицательный знак в конец строки")
+
+# 15.8
+print("\n15.8:")
+# Создаем файл для примера
+with open("15_8.txt", "w", encoding="utf-8") as f:
+    f.write("Строка 1\nСтрока 2\nСтрока 3\nСтрока 4\n")
+
+# Подсчитываем количество строк
+with open("15_8.txt", "r", encoding="utf-8") as f:
+    line_count = sum(1 for _ in f)
+print(f"Количество строк в файле: {line_count}")
+
+# 15.9
+print("\n15.9:")
+with open("15_8.txt", "r", encoding="utf-8") as f:
+    content = f.read()
+    char_count = len(content)
+print(f"Количество символов в файле: {char_count}")
+
+# 15.10
+print("\n15.10:")
+with open("15_8.txt", "r", encoding="utf-8") as f:
+    for i, line in enumerate(f, 1):
+        print(f"Строка {i}: {len(line.strip())} символов")
+
+# 15.11
+print("\n15.11:")
+# Создаем файл для примера
+with open("15_11_source.txt", "w", encoding="utf-8") as f:
+    for i in range(1, 6):
+        f.write(f"Строка {i}\n")
+
+# Удаляем третью строку
+with open("15_11_source.txt", "r", encoding="utf-8") as source:
+    lines = source.readlines()
+
+# Удаляем третью строку (индекс 2)
+del lines[2]
+
+with open("15_11_result.txt", "w", encoding="utf-8") as dest:
+    dest.writelines(lines)
+
+print("Третья строка удалена. Результат записан в другой файл")
+print("Исходные строки: 1,2,3,4,5")
+print("Результат: 1,2,4,5")
+
+# 15.12
+print("\n15.12:")
+# Создаем файл для примера
+with open("15_12_source.txt", "w", encoding="utf-8") as f:
+    for i in range(1, 6):
+        f.write(f"Строка {i}\n")
+
+# Удаляем последнюю строку
+with open("15_12_source.txt", "r", encoding="utf-8") as source:
+    lines = source.readlines()
+
+# Удаляем последнюю строку
+lines = lines[:-1]
+
+with open("15_12_result.txt", "w", encoding="utf-8") as dest:
+    dest.writelines(lines)
+
+print("Последняя строка удалена. Результат записан в другой файл")
+
+# 15.13
+print("\n15.13:")
+# Создаем файл с вопросительными знаками
+with open("15_13_source.txt", "w", encoding="utf-8") as f:
+    f.write("Это строка с вопросом?\n")
+    f.write("А это без вопроса\n")
+    f.write("Еще одна с вопросом?\n")
+    f.write("И последняя\n")
+
+# Удаляем первую строку с вопросительным знаком
+with open("15_13_source.txt", "r", encoding="utf-8") as source:
+    lines = source.readlines()
+
+# Находим и удаляем первую строку, заканчивающуюся на '?'
+result_lines = []
+removed = False
+for line in lines:
+    if line.strip().endswith('?') and not removed:
+        removed = True
+        continue
+    result_lines.append(line)
+
+with open("15_13_result.txt", "w", encoding="utf-8") as dest:
+    dest.writelines(result_lines)
+
+print("Первая строка с вопросительным знаком удалена")
+
+# 15.14
+print("\n15.14:")
+# Создаем файл для примера
+with open("15_14.txt", "w", encoding="utf-8") as f:
+    f.write("Этот файл будет очищен\n")
+    f.write("Вторая строка\n")
+    f.write("Третья строка\n")
+
+# Очищаем файл
+with open("15_14.txt", "w", encoding="utf-8") as f:
+    pass  # Просто открываем для записи - файл очищается
+
+print("Файл очищен (вся информация удалена)")
+
+# 15.15
+print("\n15.15:")
+# Создаем файл для примера
+with open("15_15_source.txt", "w", encoding="utf-8") as f:
+    f.write("Строка без пробелов\n")
+    f.write("Строка с пробелами и текстом\n")
+    f.write("Еще одна\n")
+    f.write("Строка 4\n")
+    f.write("Строка 5\n")
+    f.write("Последняя строка\n")
+
+# а) после пятой строки
+with open("15_15_source.txt", "r", encoding="utf-8") as source:
+    lines = source.readlines()
+
+lines.insert(5, "------------\n")  # после пятой строки (индекс 5)
+
+with open("15_15_result_a.txt", "w", encoding="utf-8") as dest:
+    dest.writelines(lines)
+
+print("а) Строка из черточек добавлена после пятой строки")
+
+# б) после последней строки без пробела
+with open("15_15_source.txt", "r", encoding="utf-8") as source:
+    lines = source.readlines()
+
+# Находим индекс последней строки без пробела
+last_no_space_index = -1
+for i, line in enumerate(lines):
+    if ' ' not in line.strip():
+        last_no_space_index = i
+
+if last_no_space_index != -1:
+    lines.insert(last_no_space_index + 1, "------------\n")
+else:
+    lines.append("------------\n")
+
+with open("15_15_result_b.txt", "w", encoding="utf-8") as dest:
+    dest.writelines(lines)
+
+print("б) Строка из черточек добавлена после последней строки без пробела")
+
+# 15.16
+print("\n15.16:")
+# Создаем файл для примера
+with open("15_16.txt", "w", encoding="utf-8") as f:
+    for i in range(1, 11):
+        f.write(f"Строка номер {i}\n")
+
+with open("15_16.txt", "r", encoding="utf-8") as f:
+    lines = f.readlines()
+
+print("а) Первая строка:", lines[0].strip())
+print("б) Пятая строка:", lines[4].strip())
+print("в) Первые 5 строк:")
+for i in range(5):
+    print(f"  {lines[i].strip()}")
+print("г) Строки с 3-й по 7-ю:")
+for i in range(2, 7):
+    print(f"  {lines[i].strip()}")
+print("д) Весь файл:")
+with open("15_16.txt", "r", encoding="utf-8") as f:
+    print(f.read())
+
+# 15.17
+print("\n15.17:")
+# Создаем файл с 20 строками
+with open("15_17.txt", "w", encoding="utf-8") as f:
+    for i in range(1, 21):
+        f.write(f"Строка {i}: Текст пример\n")
+
+# Читаем строки в массив
+lines_array = []
+with open("15_17.txt", "r", encoding="utf-8") as f:
+    lines_array = [line.strip() for line in f]
+
+print("Строки файла записаны в массив")
+print(f"Количество строк в массиве: {len(lines_array)}")
+print(f"Первая строка в массиве: {lines_array[0]}")
+print(f"Последняя строка в массиве: {lines_array[-1]}")
+
+# 15.18
+print("\n15.18:")
+# Создаем файл для примера
+with open("15_18.txt", "w", encoding="utf-8") as f:
+    f.write("Текст начинается с Т\n")
+    f.write("А это не с Т\n")
+    f.write("Тоже с Т\n")
+    f.write("Очень длинная строка с большим количеством символов\n")
+    f.write("Короткая\n")
+    f.write("Строка с   несколькими   пробелами\n")
+    f.write("Строка с фрагментом искомым\n")
+    f.write("Другая строка\n")
+
+with open("15_18.txt", "r", encoding="utf-8") as f:
+    all_lines = [line.strip() for line in f]
+
+print("а) Строки, начинающиеся с Т:")
+for line in all_lines:
+    if line.startswith("Т"):
+        print(f"  {line}")
+
+print("\nб) Строки длиннее 30 символов:")
+for line in all_lines:
+    if len(line) > 30:
+        print(f"  {line}")
+
+print("\nв) Строки с более чем 3 пробелами:")
+for line in all_lines:
+    if line.count(' ') > 3:
+        print(f"  {line}")
+
+print("\nг) Строки с фрагментом 'фрагментом':")
+search_text = "фрагментом"
+for line in all_lines:
+    if search_text in line:
+        print(f"  {line}")
+
+# 15.19
+print("\n15.19:")
+# Создаем файл для примера
+with open("15_19.txt", "w", encoding="utf-8") as f:
+    f.write("Анна и Андрей\n")
+    f.write("Борис и Богдан\n")
+    f.write("александр и алексей\n")
+    f.write("и и и и и - 5 букв и\n")
+    f.write("ирина и инна\n")
+    f.write("три и четыре\n")
+
+with open("15_19.txt", "r", encoding="utf-8") as f:
+    all_lines = [line.strip() for line in f]
+
+# а) строки, начинающиеся с А или а
+count_a = sum(1 for line in all_lines if line.lower().startswith('а'))
+print(f"а) Количество строк, начинающихся с А или а: {count_a}")
+
+# б) строки с ровно 5 букв 'и'
+count_5_i = 0
+for line in all_lines:
+    if line.lower().count('и') == 5:
+        count_5_i += 1
+        print(f"  Найдена строка: {line}")
+print(f"б) Количество строк с ровно 5 буквами 'и': {count_5_i}")
+
+# 15.20
+print("\n15.20:")
+# Создаем файл с разными длинами строк
+with open("15_20.txt", "w", encoding="utf-8") as f:
+    f.write("Короткая\n")
+    f.write("Средняя по длине строка\n")
+    f.write("Очень длинная строка с большим количеством символов\n")
+    f.write("Еще одна длинная строка\n")
+    f.write("Короткая\n")
+
+with open("15_20.txt", "r", encoding="utf-8") as f:
+    all_lines = [line.strip() for line in f]
+
+# а) длина самой длинной строки
+max_len = max(len(line) for line in all_lines)
+print(f"а) Длина самой длинной строки: {max_len}")
+
+# б) номер самой длинной строки
+max_index = -1
+for i, line in enumerate(all_lines):
+    if len(line) == max_len:
+        max_index = i + 1
+        break
+print(f"б) Номер самой длинной строки: {max_index}")
+
+# в) самая длинная строка (первая)
+longest_line = next(line for line in all_lines if len(line) == max_len)
+print(f"в) Самая длинная строка: '{longest_line}'")
+
+# 15.21
+print("\n15.21:")
+# Создаем файл для примера
+with open("15_21.txt", "w", encoding="utf-8") as f:
+    f.write("Первая строка\n")
+    f.write("Вторая строка\n")
+    f.write("Третья строка с Т\n")
+    f.write("Четвертая\n")
+    f.write("Текст с Т\n")
+
+with open("15_21.txt", "r", encoding="utf-8") as f:
+    all_lines = [line.strip() for line in f]
+
+# Находим первую строку, начинающуюся с Т
+first_t_index = -1
+for i, line in enumerate(all_lines):
+    if line.startswith("Т"):
+        first_t_index = i + 1
+        break
+
+if first_t_index != -1:
+    print(f"Найдена строка, начинающаяся с Т. Номер: {first_t_index}")
+    print(f"Строка: '{all_lines[first_t_index-1]}'")
+else:
+    print("Строк, начинающихся с Т, не найдено")
+
+# 15.22
+print("\n15.22:")
+# Создаем файл для примера
+with open("15_22.txt", "w", encoding="utf-8") as f:
+    f.write("Первая строка файла\n")
+    f.write("Вторая строка\n")
+    f.write("Третья строка\n")
+
+with open("15_22.txt", "r", encoding="utf-8") as f:
+    lines = f.readlines()
+
+print(f"а) Первый символ первой строки: '{lines[0][0]}'")
+print(f"б) Пятый символ первой строки: '{lines[0][4]}'")
+print(f"в) Первые 10 символов первой строки: '{lines[0][:10]}'")
+
+s1, s2 = 3, 8
+print(f"г) Символы с {s1}-го по {s2}-й в первой строке: '{lines[0][s1-1:s2]}'")
+print(f"д) Первый символ второй строки: '{lines[1][0]}'")
+
+n, k = 3, 4
+print(f"е) {k}-й символ {n}-й строки: '{lines[n-1][k-1]}'")
+
+# 15.23
+print("\n15.23:")
+# Создаем файл, где первые два символа каждой строки - буквы
+with open("15_23.txt", "w", encoding="utf-8") as f:
+    f.write("Анна идет в школу\n")
+    f.write("Борис читает книгу\n")
+    f.write("Вера пишет письмо\n")
+    f.write("Гриша играет в мяч\n")
+
+with open("15_23.txt", "r", encoding="utf-8") as f:
+    all_lines = [line.strip() for line in f]
+
+# а) слово из первых букв
+first_letters = ''.join(line[0] for line in all_lines if line)
+print(f"а) Слово из первых букв: '{first_letters}'")
+
+# б) слово из вторых букв
+second_letters = ''.join(line[1] for line in all_lines if len(line) > 1)
+print(f"б) Слово из вторых букв: '{second_letters}'")
+
+# в) последовательность из s-х символов
+s = 3
+s_chars = ''.join(line[s-1] for line in all_lines if len(line) >= s)
+print(f"в) Последовательность из {s}-х символов: '{s_chars}'")
+
+# 15.24
+print("\n15.24:")
+# Создаем исходный файл
+with open("15_24_source.txt", "w", encoding="utf-8") as f:
+    for i in range(1, 6):
+        f.write(f"Строка {i}\n")
+
+# а) в том же порядке
+with open("15_24_source.txt", "r", encoding="utf-8") as source:
+    with open("15_24_a.txt", "w", encoding="utf-8") as dest:
+        for line in source:
+            dest.write(line)
+
+# б) в обратном порядке
+with open("15_24_source.txt", "r", encoding="utf-8") as source:
+    lines = source.readlines()
+
+with open("15_24_b.txt", "w", encoding="utf-8") as dest:
+    for line in reversed(lines):
+        dest.write(line)
+
+print("а) Строки переписаны в том же порядке")
+print("б) Строки переписаны в обратном порядке")
+
+# 15.25
+print("\n15.25:")
+# Создаем исходный файл
+with open("15_25_source.txt", "w", encoding="utf-8") as f:
+    f.write("12345\n")
+    f.write("abcde\n")
+    f.write("ABCDE\n")
+
+# а) строки в прямом порядке, символы в обратном
+with open("15_25_source.txt", "r", encoding="utf-8") as source:
+    with open("15_25_a.txt", "w", encoding="utf-8") as dest:
+        for line in source:
+            dest.write(line.strip()[::-1] + "\n")
+
+# б) строки и символы в обратном порядке
+with open("15_25_source.txt", "r", encoding="utf-8") as source:
+    lines = source.readlines()
+
+with open("15_25_b.txt", "w", encoding="utf-8") as dest:
+    for line in reversed(lines):
+        dest.write(line.strip()[::-1] + "\n")
+
+print("а) Символы переписаны в обратном порядке, строки - в прямом")
+print("б) Символы и строки переписаны в обратном порядке")
+
+# 15.26
+print("\n15.26:")
+# Создаем исходный файл
+with open("15_26_source.txt", "w", encoding="utf-8") as f:
+    f.write("Первая строка\n")
+    f.write("Вторая строка\n")
+    f.write("Третья строка\n")
+
+# Добавляем восклицательный знак в конец каждой строки
+with open("15_26_source.txt", "r", encoding="utf-8") as source:
+    with open("15_26_result.txt", "w", encoding="utf-8") as dest:
+        for line in source:
+            dest.write(line.strip() + "!\n")
+
+print("В конец каждой строки добавлен восклицательный знак")
+
+# 15.27
+print("\n15.27:")
+# Создаем файл с разной длиной строк
+with open("15_27_source.txt", "w", encoding="utf-8") as f:
+    f.write("Короткая строка\n")
+    f.write("Очень длинная строка с большим количеством символов\n")
+    f.write("Средняя строка\n")
+    f.write("Еще одна очень длинная строка\n")
+    f.write("Последняя\n")
+
+# Копируем строки длиннее 30 символов
+with open("15_27_source.txt", "r", encoding="utf-8") as source:
+    with open("15_27_result.txt", "w", encoding="utf-8") as dest:
+        for line in source:
+            if len(line.strip()) > 30:
+                dest.write(line)
+
+print("Строки длиннее 30 символов скопированы в другой файл")
+
+# 15.28
+print("\n15.28:")
+# Создаем файл с нулями и единицами
+with open("15_28_source.txt", "w", encoding="utf-8") as f:
+    f.write("101010\n")
+    f.write("010101\n")
+    f.write("110011\n")
+    f.write("001100\n")
+
+# Заменяем 0 на 1 и наоборот
+with open("15_28_source.txt", "r", encoding="utf-8") as source:
+    with open("15_28_result.txt", "w", encoding="utf-8") as dest:
+        for line in source:
+            transformed = line.strip().replace('0', 'x').replace('1', '0').replace('x', '1')
+            dest.write(transformed + "\n")
+
+print("Символы 0 и 1 заменены на противоположные")
+
+# 15.29
+print("\n15.29:")
+# Создаем файл для примера
+with open("15_29_source.txt", "w", encoding="utf-8") as f:
+    for i in range(1, 11):
+        f.write(f"Строка {i}\n")
+
+# Разделяем на четные и нечетные строки
+with open("15_29_source.txt", "r", encoding="utf-8") as source:
+    with open("15_29_even.txt", "w", encoding="utf-8") as even_file:
+        with open("15_29_odd.txt", "w", encoding="utf-8") as odd_file:
+            for i, line in enumerate(source, 1):
+                if i % 2 == 0:  # четные
+                    even_file.write(line)
+                else:  # нечетные
+                    odd_file.write(line)
+
+print("Строки разделены на четные и нечетные")
+
+# 15.30
+print("\n15.30:")
+# Создаем два файла
+with open("15_30_file1.txt", "w", encoding="utf-8") as f:
+    f.write("Файл1 строка1\n")
+    f.write("Файл1 строка2\n")
+    f.write("Файл1 строка3\n")
+
+with open("15_30_file2.txt", "w", encoding="utf-8") as f:
+    f.write("Файл2 строка1\n")
+    f.write("Файл2 строка2\n")
+    f.write("Файл2 строка3\n")
+
+# Обмениваем содержимое с помощью вспомогательного файла
+# 1. Копируем file1 в temp
+with open("15_30_file1.txt", "r", encoding="utf-8") as f1:
+    with open("15_30_temp.txt", "w", encoding="utf-8") as temp:
+        for line in f1:
+            temp.write(line)
+
+# 2. Копируем file2 в file1
+with open("15_30_file2.txt", "r", encoding="utf-8") as f2:
+    with open("15_30_file1.txt", "w", encoding="utf-8") as f1:
+        for line in f2:
+            f1.write(line)
+
+# 3. Копируем temp в file2
+with open("15_30_temp.txt", "r", encoding="utf-8") as temp:
+    with open("15_30_file2.txt", "w", encoding="utf-8") as f2:
+        for line in temp:
+            f2.write(line)
+
+print("Содержимое файлов обменено местами")
+
+# 15.31
+print("\n15.31:")
+# Создаем два файла с различиями
+with open("15_31_file1.txt", "w", encoding="utf-8") as f:
+    f.write("Первая строка\n")
+    f.write("Вторая строка\n")
+    f.write("Третья строка\n")
+    f.write("Четвертая строка\n")
+    f.write("Пятая строка\n")
+
+with open("15_31_file2.txt", "w", encoding="utf-8") as f:
+    f.write("Первая строка\n")
+    f.write("Вторая строка\n")
+    f.write("Третья строка отличается\n")
+    f.write("Четвертая строка\n")
+    f.write("Пятая строка\n")
+
+# Сравниваем файлы
+with open("15_31_file1.txt", "r", encoding="utf-8") as f1:
+    with open("15_31_file2.txt", "r", encoding="utf-8") as f2:
+        diff_line = -1
+        line_num = 1
+        
+        while True:
+            line1 = f1.readline()
+            line2 = f2.readline()
+            
+            if not line1 and not line2:
+                break  # оба файла закончились
+                
+            if line1 != line2:
+                diff_line = line_num
+                break
+                
+            line_num += 1
+
+if diff_line != -1:
+    print(f"Файлы отличаются на строке №{diff_line}")
+    with open("15_31_file1.txt", "r", encoding="utf-8") as f1:
+        lines1 = f1.readlines()
+    with open("15_31_file2.txt", "r", encoding="utf-8") as f2:
+        lines2 = f2.readlines()
+    print(f"  В file1: '{lines1[diff_line-1].strip()}'")
+    print(f"  В file2: '{lines2[diff_line-1].strip()}'")
+else:
+    print("Файлы полностью совпадают")
