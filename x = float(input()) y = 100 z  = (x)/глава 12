@@ -3314,3 +3314,1255 @@ else:
 
 print("230 результат:", arr)
 
+import random
+
+# 12.231
+print("231:")
+arr = [[50, 120, 30], [80, 90, 110], [70, 60, 95]]
+# Находим последний элемент > 100
+last_col = -1
+for i in range(len(arr)):
+    for j in range(len(arr[0])):
+        if arr[i][j] > 100:
+            last_col = j
+
+if last_col != -1 and last_col != 1:  # если не тот же самый столбец
+    for i in range(len(arr)):
+        arr[i][1], arr[i][last_col] = arr[i][last_col], arr[i][1]
+print("231:", arr)
+
+# 12.232
+print("\n232:")
+arr = [[random.randint(50, 70) for _ in range(10)] for _ in range(12)]
+print("До удаления 4 гонщика:", len(arr), "строк")
+# Удаляем 4-го гонщика (индекс 3)
+for i in range(3, len(arr)-1):
+    arr[i] = arr[i+1][:]
+arr[-1] = [0]*10  # последнюю строку обнуляем
+arr = arr[:-1]  # уменьшаем размер
+print("После удаления:", len(arr), "строк")
+
+# 12.233
+print("\n233:")
+arr = [[random.randint(30, 50) for _ in range(12)] for _ in range(16)]
+print("До удаления 5 этапа:", len(arr[0]), "столбцов")
+# Удаляем 5-й этап (индекс 4)
+for i in range(len(arr)):
+    for j in range(4, len(arr[0])-1):
+        arr[i][j] = arr[i][j+1]
+    arr[i][-1] = 0  # последний столбец обнуляем
+    arr[i] = arr[i][:-1]  # уменьшаем размер
+print("После удаления:", len(arr[0]), "столбцов")
+
+# 12.234
+print("\n234:")
+arr = [[1,2,3],[4,5,6],[7,8,9]]
+k = 1  # удаляем вторую строку
+s = 2  # удаляем третий столбец
+
+# а)
+for i in range(k, len(arr)-1):
+    arr[i] = arr[i+1][:]
+arr[-1] = [0]*len(arr[0])
+arr = arr[:-1]
+print("234a:", arr)
+
+# б)
+arr = [[1,2,3],[4,5,6],[7,8,9]]
+for i in range(len(arr)):
+    for j in range(s, len(arr[0])-1):
+        arr[i][j] = arr[i][j+1]
+    arr[i][-1] = 0
+    arr[i] = arr[i][:-1]
+print("234b:", arr)
+
+# 12.235
+print("\n235:")
+arr = [[1,2,3],[4,5,6],[7,8,9]]
+limit = 10
+zero_count = 1
+
+# а)
+for i in range(len(arr)):
+    if sum(arr[i]) <= limit:
+        # удаляем эту строку
+        for j in range(i, len(arr)-1):
+            arr[j] = arr[j+1][:]
+        arr[-1] = [0]*len(arr[0])
+        arr = arr[:-1]
+        break
+print("235a:", arr)
+
+# б)
+arr = [[1,0,3],[4,5,0],[7,8,9]]
+for j in range(len(arr[0])):
+    zeros = sum(1 for i in range(len(arr)) if arr[i][j] == 0)
+    if zeros == zero_count:
+        # удаляем этот столбец
+        for i in range(len(arr)):
+            for k in range(j, len(arr[0])-1):
+                arr[i][k] = arr[i][k+1]
+            arr[i][-1] = 0
+            arr[i] = arr[i][:-1]
+        break
+print("235b:", arr)
+
+# 12.236
+print("\n236:")
+arr = [[1,2,3,4,5],[6,7,8,9,10],[11,12,13,14,15]]
+s1, s2 = 2, 4  # перед 3-й и 5-й строками (индексы 2 и 4)
+k1, k2 = 1, 3  # после 2-го и перед 4-м столбцами
+
+# Сначала удаляем строку перед s2, потом перед s1 (т.к. индексы сдвигаются)
+rows_to_delete = sorted([s1-1, s2-1], reverse=True)
+for row in rows_to_delete:
+    if row < len(arr):
+        for i in range(row, len(arr)-1):
+            arr[i] = arr[i+1][:]
+        arr[-1] = [0]*len(arr[0])
+        arr = arr[:-1]
+print("236a:", arr)
+
+# б) 
+arr = [[1,2,3,4,5,6],[7,8,9,10,11,12],[13,14,15,16,17,18]]
+cols_to_delete = []
+if k1 < len(arr[0]):
+    cols_to_delete.append(k1)  # столбец после k1-го
+if k2 > 0:
+    cols_to_delete.append(k2-1)  # столбец перед k2-м
+
+cols_to_delete = sorted(cols_to_delete, reverse=True)
+for col in cols_to_delete:
+    if col < len(arr[0]):
+        for i in range(len(arr)):
+            for j in range(col, len(arr[0])-1):
+                arr[i][j] = arr[i][j+1]
+            arr[i][-1] = 0
+            arr[i] = arr[i][:-1]
+print("236b:", arr)
+
+# 12.237
+print("\n237:")
+arr = [[1,2,3,4,5],[6,7,8,9,10],[11,12,13,14,15],[16,17,18,19,20]]
+n1, n2 = 1, 2  # удаляем строки 2-3 (индексы 1-2)
+s1, s2 = 0, 1  # удаляем столбцы 1-2 (индексы 0-1)
+
+# а)
+rows_to_remove = n2 - n1 + 1
+for _ in range(rows_to_remove):
+    for i in range(n1, len(arr)-1):
+        arr[i] = arr[i+1][:]
+    arr[-1] = [0]*len(arr[0])
+    arr = arr[:-1]
+print("237a:", arr)
+
+# б)
+arr = [[1,2,3,4,5],[6,7,8,9,10],[11,12,13,14,15]]
+cols_to_remove = s2 - s1 + 1
+for _ in range(cols_to_remove):
+    for i in range(len(arr)):
+        for j in range(s1, len(arr[0])-1):
+            arr[i][j] = arr[i][j+1]
+        arr[i][-1] = 0
+        arr[i] = arr[i][:-1]
+print("237b:", arr)
+
+# 12.238
+print("\n238:")
+arr = [[1,2,3],[4,5,6],[7,8,9],[10,11,12],[13,14,15]]
+# а)
+initial_rows = len(arr)
+i = 1  # начинаем с индекса 1 (вторая строка)
+while i < len(arr):
+    for j in range(i, len(arr)-1):
+        arr[j] = arr[j+1][:]
+    arr[-1] = [0]*len(arr[0])
+    arr = arr[:-1]
+    i += 1  # переходим к следующей четной строке (но т.к. массив сдвинулся, это будет та же позиция)
+print("238a:", arr, "уменьшилось на", initial_rows - len(arr), "строк")
+
+# б)
+arr = [[1,2,3,4,5,6],[7,8,9,10,11,12],[13,14,15,16,17,18]]
+initial_cols = len(arr[0])
+j = 2  # начинаем с индекса 2 (третий столбец, кратный 3)
+while j < len(arr[0]):
+    for i in range(len(arr)):
+        for k in range(j, len(arr[0])-1):
+            arr[i][k] = arr[i][k+1]
+        arr[i][-1] = 0
+        arr[i] = arr[i][:-1]
+    j += 2  # следующий столбец, кратный 3
+print("238b:", arr, "уменьшилось на", initial_cols - len(arr[0]), "столбцов")
+
+# 12.239
+print("\n239:")
+arr = [[1,2,3],[4,5,6],[7,8,9],[10,11,12]]
+odd_limit = 2
+sum_limit = 15
+
+# а)
+i = 0
+while i < len(arr):
+    odd_count = sum(1 for x in arr[i] if x % 2 == 1)
+    if odd_count == odd_limit:
+        for j in range(i, len(arr)-1):
+            arr[j] = arr[j+1][:]
+        arr[-1] = [0]*len(arr[0])
+        arr = arr[:-1]
+    else:
+        i += 1
+print("239a:", arr)
+
+# б)
+arr = [[1,2,3],[4,5,6],[7,8,9],[10,11,12]]
+j = 0
+while j < len(arr[0]):
+    col_sum = sum(arr[i][j] for i in range(len(arr)))
+    if col_sum > sum_limit:
+        for i in range(len(arr)):
+            for k in range(j, len(arr[0])-1):
+                arr[i][k] = arr[i][k+1]
+            arr[i][-1] = 0
+            arr[i] = arr[i][:-1]
+    else:
+        j += 1
+print("239b:", arr)
+
+# 12.240
+print("\n240:")
+arr = [[5, -3, 2], [-1, 4, -6], [3, -2, 1]]
+# Находим наименьший по модулю элемент
+min_abs = abs(arr[0][0])
+min_i, min_j = 0, 0
+for i in range(len(arr)):
+    for j in range(len(arr[0])):
+        if abs(arr[i][j]) < min_abs:
+            min_abs = abs(arr[i][j])
+            min_i, min_j = i, j
+
+# Удаляем строку
+for i in range(min_i, len(arr)-1):
+    arr[i] = arr[i+1][:]
+arr[-1] = [0]*len(arr[0])
+arr = arr[:-1]
+
+# Удаляем столбец (учитываем, что массив уже уменьшился на строку)
+if min_j < len(arr[0]):  # проверяем, что столбец еще существует
+    for i in range(len(arr)):
+        for j in range(min_j, len(arr[0])-1):
+            arr[i][j] = arr[i][j+1]
+        arr[i][-1] = 0
+        arr[i] = arr[i][:-1]
+print("240:", arr)
+
+# 12.241
+print("\n241:")
+arr = [[1,2,3],[4,5,6],[7,8,9]]
+s = 1  # после строки с индексом 1
+k = 1  # перед столбцом с индексом 1
+
+# а)
+arr.append([0]*len(arr[0]))  # добавляем пустую строку
+for i in range(len(arr)-1, s+1, -1):
+    arr[i] = arr[i-1][:]
+arr[s+1] = [100]*len(arr[0])
+print("241a:", arr)
+
+# б)
+arr = [[1,2,3],[4,5,6],[7,8,9]]
+for i in range(len(arr)):
+    arr[i].append(0)  # добавляем пустой столбец
+    for j in range(len(arr[i])-1, k, -1):
+        arr[i][j] = arr[i][j-1]
+    arr[i][k] = 0
+print("241b:", arr)
+
+# 12.242
+print("\n242:")
+arr = [[1,2,3],[4,5,6],[7,8,9]]
+s = 1  # перед строкой с индексом 1
+k = 1  # после столбца с индексом 1
+
+# а) - имитация ввода с клавиатуры
+new_row = [10, 20, 30]
+arr.append([0]*len(arr[0]))
+for i in range(len(arr)-1, s, -1):
+    arr[i] = arr[i-1][:]
+arr[s] = new_row
+print("242a:", arr)
+
+# б)
+arr = [[1,2,3],[4,5,6],[7,8,9]]
+new_col = [10, 20, 30]
+for i in range(len(arr)):
+    arr[i].append(0)
+    for j in range(len(arr[i])-1, k+1, -1):
+        arr[i][j] = arr[i][j-1]
+    arr[i][k+1] = new_col[i]
+print("242b:", arr)
+
+# 12.243
+print("\n243:")
+arr = [[1,0,3],[4,0,0],[7,8,9]]
+zero_limit = 2
+sum_limit = 10
+
+# а)
+target_row = -1
+for i in range(len(arr)):
+    if sum(1 for x in arr[i] if x == 0) == zero_limit:
+        target_row = i
+        break
+
+if target_row != -1:
+    arr.append([0]*len(arr[0]))
+    for i in range(len(arr)-1, target_row+1, -1):
+        arr[i] = arr[i-1][:]
+    arr[target_row+1] = [0]*len(arr[0])
+print("243a:", arr)
+
+# б)
+arr = [[1,2,3],[4,5,6],[7,8,9]]
+target_col = -1
+for j in range(len(arr[0])):
+    col_sum = sum(arr[i][j] for i in range(len(arr)))
+    if col_sum <= sum_limit:
+        target_col = j
+        break
+
+if target_col != -1:
+    for i in range(len(arr)):
+        arr[i].append(0)
+        for j in range(len(arr[i])-1, target_col+1, -1):
+            arr[i][j] = arr[i][j-1]
+        arr[i][target_col+1] = 10
+print("243b:", arr)
+
+# 12.244
+print("\n244:")
+arr = [[1,2,3],[4,5,6],[7,8,9]]
+s1, s2 = 1, 2
+k1 = 1
+
+# а)
+# Вставляем перед s2
+arr.append([0]*len(arr[0]))
+for i in range(len(arr)-1, s2, -1):
+    arr[i] = arr[i-1][:]
+arr[s2] = [0]*len(arr[0])
+
+# Вставляем перед s1 (учитываем сдвиг)
+arr.append([0]*len(arr[0]))
+for i in range(len(arr)-1, s1+1, -1):  # s1 увеличился на 1
+    arr[i] = arr[i-1][:]
+arr[s1+1] = [0]*len(arr[0])
+print("244a:", arr)
+
+# б)
+arr = [[1,2,3],[4,5,6],[7,8,9]]
+# Вставляем после k1
+for i in range(len(arr)):
+    arr[i].append(0)
+    for j in range(len(arr[i])-1, k1+1, -1):
+        arr[i][j] = arr[i][j-1]
+    arr[i][k1+1] = 1
+
+# Вставляем перед k1 (учитываем сдвиг)
+for i in range(len(arr)):
+    arr[i].append(0)
+    for j in range(len(arr[i])-1, k1+1, -1):  # k1 увеличился на 1
+        arr[i][j] = arr[i][j-1]
+    arr[i][k1+1] = 1
+print("244b:", arr)
+
+# 12.245
+print("\n245:")
+arr = [[1,2,3],[4,5,6],[7,8,9]]
+s = 1
+k = 1
+
+# а) - имитация ввода
+row1 = [10, 20, 30]
+row2 = [40, 50, 60]
+
+# Вставляем после s
+arr.append([0]*len(arr[0]))
+for i in range(len(arr)-1, s+1, -1):
+    arr[i] = arr[i-1][:]
+arr[s+1] = row1
+
+# Вставляем перед s (учитываем сдвиг)
+arr.append([0]*len(arr[0]))
+for i in range(len(arr)-1, s+1, -1):  # s не изменился
+    arr[i] = arr[i-1][:]
+arr[s+1] = row2
+print("245a:", arr)
+
+# б)
+arr = [[1,2,3],[4,5,6],[7,8,9]]
+col1 = [10, 20, 30]
+col2 = [40, 50, 60]
+
+# Вставляем перед k
+for i in range(len(arr)):
+    arr[i].append(0)
+    for j in range(len(arr[i])-1, k, -1):
+        arr[i][j] = arr[i][j-1]
+    arr[i][k] = col1[i]
+
+# Вставляем после k (учитываем сдвиг)
+for i in range(len(arr)):
+    arr[i].append(0)
+    for j in range(len(arr[i])-1, k+2, -1):  # k увеличился на 1
+        arr[i][j] = arr[i][j-1]
+    arr[i][k+2] = col2[i]
+print("245b:", arr)
+
+# 12.246
+print("\n246:")
+arr = [[i*10 + j + 1 for j in range(10)] for i in range(15)]
+# Вставляем строки из нулей после строк, номер которых кратен 3
+# Проходим с конца, чтобы индексы не сдвигались
+for i in range(len(arr)-1, -1, -1):
+    if (i + 1) % 3 == 0:  # номер строки (начиная с 1)
+        arr.insert(i+1, [0]*len(arr[0]))
+print("246: вставлено строк после кратных 3")
+
+# 12.247
+print("\n247:")
+arr = [[i*20 + j + 1 for j in range(20)] for i in range(5)]
+# Вставляем столбцы из 10 после четных столбцов
+# Проходим с конца, чтобы индексы не сдвигались
+for j in range(len(arr[0])-1, -1, -1):
+    if (j + 1) % 2 == 0:  # номер столбца (начиная с 1)
+        for i in range(len(arr)):
+            arr[i].insert(j+1, 10)
+print("247: вставлено столбцов после четных")
+
+# 12.248
+print("\n248:")
+arr = [[1,2,3],[4,5,6],[7,8,9]]
+sum_limit = 10
+even_limit = 1
+
+# а)
+i = 0
+while i < len(arr):
+    if sum(arr[i]) > sum_limit:
+        arr.insert(i+1, [100]*len(arr[0]))
+        i += 2  # пропускаем вставленную строку
+    else:
+        i += 1
+print("248a:", arr)
+
+# б)
+arr = [[1,2,3,4],[5,6,7,8],[9,10,11,12]]
+j = 0
+while j < len(arr[0]):
+    even_count = sum(1 for i in range(len(arr)) if arr[i][j] % 2 == 0)
+    if even_count > even_limit:
+        for i in range(len(arr)):
+            arr[i].insert(j, -1)
+        j += 2  # пропускаем вставленный столбец
+    else:
+        j += 1
+print("248b:", arr)
+
+# 12.249
+print("\n249:")
+arr = [[1,-1,2],[-2,3,-3],[4,-4,5]]
+# а)
+i = 0
+while i < len(arr):
+    pos_count = sum(1 for x in arr[i] if x > 0)
+    neg_count = sum(1 for x in arr[i] if x < 0)
+    if pos_count == neg_count:
+        arr.insert(i, [0]*len(arr[0]))
+        i += 2
+    else:
+        i += 1
+print("249a:", arr)
+
+# б)
+arr = [[1,-1,2],[-2,3,-3],[4,-4,5]]
+j = 0
+while j < len(arr[0]):
+    pos_count = sum(1 for i in range(len(arr)) if arr[i][j] > 0)
+    neg_count = sum(1 for i in range(len(arr)) if arr[i][j] < 0)
+    if pos_count > neg_count:
+        for i in range(len(arr)):
+            arr[i].insert(j, 10)
+        j += 2
+    else:
+        j += 1
+print("249b:", arr)
+
+# 12.250
+print("\n250:")
+arr = [[random.randint(3,5) for _ in range(10)] for _ in range(25)]
+s = 12  # новое место ученика (индекс 11)
+new_grades = [4,5,4,5,3,4,5,4,4,5]  # имитация ввода
+arr.insert(s-1, new_grades)
+print(f"250: вставлен новый ученик на {s}-е место")
+
+# 12.251
+print("\n251:")
+arr = [[random.randint(3,5) for _ in range(12)] for _ in range(23)]
+s = 5  # место нового предмета (индекс 4)
+new_grades = [random.randint(3,5) for _ in range(23)]  # имитация ввода
+for i in range(len(arr)):
+    arr[i].insert(s-1, new_grades[i])
+print(f"251: вставлен новый предмет на {s}-е место")
+
+# 12.252
+print("\n252:")
+arr = [[1,2,3],[4,5,6],[7,8,9]]
+s, k = 0, 2
+a, b = 0, 2
+
+# а)
+first_row = arr[0][:]
+for i in range(len(arr)-1):
+    arr[i] = arr[i+1][:]
+arr[-1] = first_row
+print("252a:", arr)
+
+# б)
+arr = [[1,2,3],[4,5,6],[7,8,9]]
+first_col = [arr[i][0] for i in range(len(arr))]
+for j in range(len(arr[0])-1):
+    for i in range(len(arr)):
+        arr[i][j] = arr[i][j+1]
+for i in range(len(arr)):
+    arr[i][-1] = first_col[i]
+print("252b:", arr)
+
+# в)
+arr = [[1,2,3],[4,5,6],[7,8,9]]
+if s < k:
+    row_s = arr[s][:]
+    for i in range(s, k):
+        arr[i] = arr[i+1][:]
+    arr[k] = row_s
+print("252c:", arr)
+
+# г)
+arr = [[1,2,3,4],[5,6,7,8],[9,10,11,12]]
+if a < b:
+    col_a = [arr[i][a] for i in range(len(arr))]
+    for j in range(a, b):
+        for i in range(len(arr)):
+            arr[i][j] = arr[i][j+1]
+    for i in range(len(arr)):
+        arr[i][b] = col_a[i]
+print("252d:", arr)
+
+# 12.253
+print("\n253:")
+arr = [[1,2,3],[4,5,6],[7,8,9]]
+s, k = 2, 0
+a, b = 2, 0
+
+# а)
+last_row = arr[-1][:]
+for i in range(len(arr)-1, 0, -1):
+    arr[i] = arr[i-1][:]
+arr[0] = last_row
+print("253a:", arr)
+
+# б)
+arr = [[1,2,3],[4,5,6],[7,8,9]]
+last_col = [arr[i][-1] for i in range(len(arr))]
+for j in range(len(arr[0])-1, 0, -1):
+    for i in range(len(arr)):
+        arr[i][j] = arr[i][j-1]
+for i in range(len(arr)):
+    arr[i][0] = last_col[i]
+print("253b:", arr)
+
+# в)
+arr = [[1,2,3],[4,5,6],[7,8,9]]
+if s > k:
+    row_s = arr[s][:]
+    for i in range(s, k, -1):
+        arr[i] = arr[i-1][:]
+    arr[k] = row_s
+print("253c:", arr)
+
+# г)
+arr = [[1,2,3,4],[5,6,7,8],[9,10,11,12]]
+if a > b:
+    col_a = [arr[i][a] for i in range(len(arr))]
+    for j in range(a, b, -1):
+        for i in range(len(arr)):
+            arr[i][j] = arr[i][j-1]
+    for i in range(len(arr)):
+        arr[i][b] = col_a[i]
+print("253d:", arr)
+
+# 12.254
+print("\n254:")
+arr = [[i*3 + j + 1 for j in range(3)] for i in range(20)]
+k = 5
+first_k = arr[:k]
+arr = arr[k:] + first_k
+print("254: первые", k, "строк перенесены в конец")
+
+# 12.255
+print("\n255:")
+arr = [[i*20 + j + 1 for j in range(20)] for i in range(5)]
+s = 8
+for i in range(len(arr)):
+    first_s = arr[i][:s]
+    arr[i] = arr[i][s:] + first_s
+print("255: первые", s, "столбцов перенесены в конец")
+
+# 12.256
+print("\n256:")
+arr = [[i*3 + j + 1 for j in range(3)] for i in range(12)]
+new_arr = []
+for i in range(6):
+    new_arr.append(arr[i])
+    new_arr.append(arr[11-i])
+arr = new_arr
+print("256: строки переставлены в порядке 1,12,2,11,...")
+
+# 12.257
+print("\n257:")
+arr = [[i*18 + j + 1 for j in range(18)] for i in range(3)]
+new_cols = []
+for j in range(9):
+    new_cols.append(j)
+    new_cols.append(17-j)
+
+for i in range(len(arr)):
+    new_row = [arr[i][j] for j in new_cols]
+    arr[i] = new_row
+print("257: столбцы переставлены в порядке 1,18,2,17,...")
+
+# 12.258
+print("\n258:")
+arr1 = [[1,2,3],[4,5,6]]
+arr2 = [[7,8,9],[10,11,12]]
+
+# а)
+arr3 = [[0]*len(arr1[0]) for _ in range(len(arr1))]
+for i in range(len(arr1)):
+    for j in range(len(arr1[0])):
+        arr3[i][j] = arr1[i][j] + arr2[i][j]
+print("258a:", arr3)
+
+# б)
+arr3 = [[0]*len(arr1[0]) for _ in range(len(arr1))]
+for i in range(len(arr1)):
+    for j in range(len(arr1[0])):
+        if (arr1[i][j] > 0 and arr2[i][j] > 0) or (arr1[i][j] < 0 and arr2[i][j] < 0):
+            arr3[i][j] = 100
+print("258b:", arr3)
+
+# 12.259
+print("\n259:")
+# а)
+arr3 = [[0]*len(arr1[0]) for _ in range(len(arr1))]
+for i in range(len(arr1)):
+    for j in range(len(arr1[0])):
+        arr3[i][j] = arr1[i][j] - arr2[i][j]
+print("259a:", arr3)
+
+# б)
+arr3 = [[0]*len(arr1[0]) for _ in range(len(arr1))]
+for i in range(len(arr1)):
+    for j in range(len(arr1[0])):
+        if arr1[i][j] > 50 and arr2[i][j] > 50:
+            arr3[i][j] = 13
+        else:
+            arr3[i][j] = 12
+print("259b:", arr3)
+
+# 12.260
+print("\n260:")
+arr1 = [[random.randint(0, 10) for _ in range(28)] for _ in range(12)]
+arr2 = [[random.randint(0, 10) for _ in range(28)] for _ in range(12)]
+arr3 = [[0]*28 for _ in range(12)]
+for i in range(12):
+    for j in range(28):
+        arr3[i][j] = arr2[i][j] - arr1[i][j]  # изменение осадков
+print("260: создан массив изменений осадков")
+
+import random
+
+# 12.261
+print("261:")
+arr1 = [[random.randint(-10, 30) for _ in range(28)] for _ in range(12)]
+arr2 = [[random.randint(-10, 30) for _ in range(28)] for _ in range(12)]
+arr3 = [[0]*28 for _ in range(12)]
+for i in range(12):
+    for j in range(28):
+        if arr1[i][j] != 0:
+            arr3[i][j] = ((arr2[i][j] - arr1[i][j]) / abs(arr1[i][j])) * 100
+        else:
+            arr3[i][j] = 0
+print("261: создан массив изменений температуры в %")
+
+# 12.262
+print("\n262:")
+arr = [[1,2,3],[4,5,6],[7,8,9]]
+# а)
+result_a = []
+for row in arr:
+    result_a.extend(row)
+print("262a:", result_a)
+
+# б)
+result_b = []
+for j in range(len(arr[0])):
+    for i in range(len(arr)):
+        result_b.append(arr[i][j])
+print("262b:", result_b)
+
+# 12.263
+print("\n263:")
+n = 4
+arr = [[i*4 + j + 1 for j in range(n)] for i in range(n)]
+print("Массив 4x4:")
+for row in arr:
+    print(row)
+
+# а)
+above_main = []
+for i in range(n):
+    for j in range(i+1, n):
+        above_main.append(arr[i][j])
+print("263a (над главной диагональю):", above_main)
+
+# б)
+below_main = []
+for i in range(1, n):
+    for j in range(i):
+        below_main.append(arr[i][j])
+print("263b (под главной диагональю):", below_main)
+
+# в)
+above_side = []
+for i in range(n-1):
+    for j in range(n-1-i):
+        above_side.append(arr[i][j])
+print("263c (над побочной диагональю):", above_side)
+
+# г)
+below_side = []
+for i in range(1, n):
+    for j in range(n-i, n):
+        below_side.append(arr[i][j])
+print("263d (под побочной диагональю):", below_side)
+
+# 12.264
+print("\n264:")
+arr = [[random.randint(-10, 10) for _ in range(n)] for _ in range(n)]
+# а)
+multiples_of_3 = []
+for row in arr:
+    for x in row:
+        if x % 3 == 0:
+            multiples_of_3.append(x)
+print("264a (кратные 3):", multiples_of_3)
+
+# б)
+positive = []
+others = []
+for row in arr:
+    for x in row:
+        if x > 0:
+            positive.append(x)
+        else:
+            others.append(x)
+print("264b положительные:", positive)
+print("264b остальные:", others)
+
+# 12.265
+print("\n265:")
+# а)
+negative = []
+for row in arr:
+    for x in row:
+        if x < 0:
+            negative.append(x)
+print("265a отрицательные:", negative)
+
+# б)
+even = []
+odd = []
+for row in arr:
+    for x in row:
+        if x % 2 == 0:
+            even.append(x)
+        else:
+            odd.append(x)
+print("265b четные:", even)
+print("265b нечетные:", odd)
+
+# 12.266
+print("\n266:")
+arr = [[1,2,3],[4,5,6],[7,8,9]]
+threshold = 4
+# а)
+col_counts = []
+for j in range(len(arr[0])):
+    count = 0
+    for i in range(len(arr)):
+        if arr[i][j] > threshold:
+            count += 1
+    col_counts.append(count)
+print("266a (по столбцам >", threshold, "):", col_counts)
+
+# б)
+row_sums = []
+for row in arr:
+    total = 0
+    for x in row:
+        if x < threshold:
+            total += x
+    row_sums.append(total)
+print("266b (по строкам <", threshold, "):", row_sums)
+
+# 12.267
+print("\n267:")
+arr = [[2,-3,4],[-5,6,-7],[8,-9,10]]
+# а)
+col_sums = []
+for j in range(len(arr[0])):
+    total = 0
+    for i in range(len(arr)):
+        if arr[i][j] > 0 and arr[i][j] % 2 == 0:
+            total += arr[i][j]
+    col_sums.append(total)
+print("267a (четные положительные по столбцам):", col_sums)
+
+# б)
+row_counts = []
+for row in arr:
+    count = 0
+    for x in row:
+        if x < 0 and x % 2 != 0:
+            count += 1
+    row_counts.append(count)
+print("267b (нечетные отрицательные по строкам):", row_counts)
+
+# в)
+row_counts2 = []
+for row in arr:
+    count = 0
+    for x in row:
+        if x < 0 and (x % 3 == 0 or x % 7 == 0):
+            count += 1
+    row_counts2.append(count)
+print("267c (отрицательные кратные 3 или 7):", row_counts2)
+
+# г)
+col_sums2 = []
+for j in range(len(arr[0])):
+    total = 0
+    for i in range(len(arr)):
+        if arr[i][j] > 0 and (arr[i][j] % 4 == 0 or arr[i][j] % 5 == 0):
+            total += arr[i][j]
+    col_sums2.append(total)
+print("267d (положительные кратные 4 или 5):", col_sums2)
+
+# 12.268
+print("\n268:")
+arr = [[-5,10,-3],[8,-2,4],[-6,7,-9]]
+# а)
+col_max_abs = []
+for j in range(len(arr[0])):
+    max_abs = abs(arr[0][j])
+    for i in range(1, len(arr)):
+        if abs(arr[i][j]) > max_abs:
+            max_abs = abs(arr[i][j])
+    col_max_abs.append(max_abs)
+print("268a (макс по модулю по столбцам):", col_max_abs)
+
+# б)
+row_max_abs = []
+for row in arr:
+    max_abs = abs(row[0])
+    for x in row[1:]:
+        if abs(x) > max_abs:
+            max_abs = abs(x)
+    row_max_abs.append(max_abs)
+print("268b (макс по модулю по строкам):", row_max_abs)
+
+# 12.269
+print("\n269:")
+arr = [[1,2,3],[4,5,6],[7,8,9]]
+# а)
+first_even_col = []
+for j in range(len(arr[0])):
+    found = 0
+    for i in range(len(arr)):
+        if arr[i][j] % 2 == 0:
+            found = arr[i][j]
+            break
+    first_even_col.append(found)
+print("269a (первый четный по столбцам):", first_even_col)
+
+# б)
+last_odd_row = []
+for row in arr:
+    found = 0
+    for x in reversed(row):
+        if x % 2 != 0:
+            found = x
+            break
+    last_odd_row.append(found)
+print("269b (последний нечетный по строкам):", last_odd_row)
+
+# 12.270
+print("\n270:")
+char_arr = [['a','b','c'],['d','e','f'],['g','h','i']]
+corners = char_arr[0][0] + char_arr[0][-1] + char_arr[-1][0] + char_arr[-1][-1]
+print("270 (углы):", corners)
+
+# 12.271
+print("\n271:")
+row_num = 0
+indices = [0, 2, 4]  # номера символов
+word = ''.join([char_arr[row_num][i] for i in indices if i < len(char_arr[row_num])])
+print("271 слово из строки", row_num, "символов", indices, ":", word)
+
+# 12.272
+print("\n272:")
+char_arr = [['п','р','и','в','е','т'],
+            ['м','и','р','!',' ',' '],
+            ['к','о','д',' ',' ',' '],
+            ['ш','и','ф','р',' ',' '],
+            ['т','е','к','с','т',' ']]
+
+# а) по звездочкам из рисунка 12.9 (предположим шаблон)
+word_a = ''
+for i in range(5):
+    if i % 2 == 0:  # строки 1,3,5 (индексы 0,2,4)
+        word_a += ''.join(char_arr[i][:3])
+    else:  # строки 2,4 (индексы 1,3)
+        word_a += ''.join(char_arr[i][:2])
+print("272a:", word_a)
+
+# б) по столбцам
+word_b = ''
+for j in range(3):
+    for i in range(5):
+        word_b += char_arr[i][j]
+print("272b:", word_b)
+
+# 12.273
+print("\n273:")
+for i in range(len(char_arr)):
+    word = ''.join([char_arr[i][j] for j in range(1, len(char_arr[i]), 2)])
+    if word:
+        print(f"273 строка {i}: {word}")
+
+# 12.274
+print("\n274:")
+for j in range(len(char_arr[0])):
+    word = ''.join([char_arr[i][j] for i in range(0, len(char_arr), 2)])
+    if word:
+        print(f"274 столбец {j}: {word}")
+
+# 12.275
+print("\n275:")
+char_arr = [['н','е','б','о',' ','е'],
+            ['с','о','л','н','ц','е'],
+            ['в','е','т','е','р','н']]
+
+for i in range(len(char_arr)):
+    if 'н' in char_arr[i]:
+        n_index = char_arr[i].index('н')
+        e_count = 0
+        for j in range(n_index+1, len(char_arr[i])):
+            if char_arr[i][j] == 'е':
+                e_count += 1
+        print(f"275 строка {i}: е справа от н: {e_count}")
+
+# 12.276
+print("\n276:")
+char_arr = [['с','ш','а','р','с'],
+            ['щ','и','ш','с','а'],
+            ['с','о','к','ш',' ']]
+
+for i in range(len(char_arr)):
+    if 'ш' in char_arr[i]:
+        sh_index = char_arr[i].index('ш')
+        s_count = 0
+        for j in range(sh_index):
+            if char_arr[i][j] == 'с':
+                s_count += 1
+        print(f"276 строка {i}: с слева от ш: {s_count}")
+
+# 12.277
+print("\n277:")
+char_arr = [['д','о','м','а',' '],
+            ['с','а','д',' ',' '],
+            ['д','е','н','ь','а']]
+
+has_a_after_d = False
+for i in range(len(char_arr)):
+    if 'д' in char_arr[i] and 'а' in char_arr[i]:
+        d_index = char_arr[i].index('д')
+        a_indices = [j for j, ch in enumerate(char_arr[i]) if ch == 'а']
+        for a_index in a_indices:
+            if a_index > d_index:
+                has_a_after_d = True
+                print(f"277: в строке {i} а справа от д")
+                break
+if not has_a_after_d:
+    print("277: нет строк с а справа от д")
+
+# 12.278
+print("\n278:")
+char_arr = [['м','о','л','о','к','о'],
+            ['о','к','н','о',' ',' '],
+            ['о','р','е','о','л','о']]
+
+count_3_o = 0
+for i in range(len(char_arr)):
+    o_count = char_arr[i].count('о')
+    if o_count == 3:
+        count_3_o += 1
+        print(f"278: строка {i} имеет ровно 3 буквы о")
+print("278 всего строк с 3 буквами о:", count_3_o)
+
+# 12.279
+print("\n279:")
+char_arr = [['и','г','р','а','и','и','и'],
+            ['м','и','р','и',' ',' ',' '],
+            ['с','и','л','а','и','и','и']]
+
+for i in range(len(char_arr)):
+    i_count = char_arr[i].count('и')
+    if i_count == 4:
+        word = ''.join(char_arr[i]).replace(' ', '')
+        print(f"279 строка {i}: {word}")
+
+# 12.280
+print("\n280:")
+char_arr = [['а',' ','б',' ','в'],
+            [' ','г',' ','д',' '],
+            ['е',' ',' ','ж',' ']]
+
+max_spaces = 0
+for row in char_arr:
+    spaces = row.count(' ')
+    max_spaces = max(max_spaces, spaces)
+print("280 макс пробелов в строке:", max_spaces)
+
+# 12.281
+print("\n281:")
+count_max = 0
+for row in char_arr:
+    if row.count(' ') == max_spaces:
+        count_max += 1
+print("281 строк с макс пробелами:", count_max)
+
+# 12.282
+print("\n282:")
+n1, n2 = 0, 1
+if char_arr[n1] == char_arr[n2]:
+    print(f"282 строки {n1} и {n2} одинаковые")
+else:
+    print(f"282 строки {n1} и {n2} разные")
+
+# 12.283
+print("\n283:")
+char_arr = [['а',' ','ш','щ','1'],
+            ['б',' ',' ','щ','2'],
+            ['в','ш','щ',' ','3']]
+
+# а)
+max_spaces_col = -1
+max_spaces_count = 0
+for j in range(len(char_arr[0])):
+    spaces = sum(1 for i in range(len(char_arr)) if char_arr[i][j] == ' ')
+    if spaces > max_spaces_count:
+        max_spaces_count = spaces
+        max_spaces_col = j
+print(f"283a столбец с макс пробелами: {max_spaces_col+1}")
+
+# б)
+max_sh_shch = -1
+max_sh_shch_count = 0
+for i in range(len(char_arr)):
+    count = char_arr[i].count('ш') + char_arr[i].count('щ')
+    if count >= max_sh_shch_count:
+        max_sh_shch_count = count
+        max_sh_shch = i
+print(f"283b последняя строка с макс ш/щ: {max_sh_shch+1}")
+
+# в)
+max_digits = -1
+max_digits_count = 0
+for i in range(len(char_arr)):
+    digits = sum(1 for ch in char_arr[i] if ch.isdigit())
+    if digits > max_digits_count:
+        max_digits_count = digits
+        max_digits = i
+print(f"283c первая строка с макс цифр: {max_digits+1}")
+
+# 12.284
+print("\n284:")
+n = 8
+chess = [[' ']*n for _ in range(n)]
+for i in range(n):
+    for j in range(n):
+        if (i + j) % 2 == 0:
+            chess[i][j] = 'x'
+print("284 шахматная доска:")
+for row in chess:
+    print(''.join(row))
+
+# 12.285
+print("\n285:")
+n = 8
+board = [['0']*n for _ in range(n)]
+v, g = 3, 4  # вертикаль 3, горизонталь 4 (индексы: v-1, g-1)
+vi, gi = v-1, g-1
+
+# а) ладья
+board_rook = [row[:] for row in board]
+board_rook[gi][vi] = 'л'
+for i in range(n):
+    if i != gi:
+        board_rook[i][vi] = '*'
+    if i != vi:
+        board_rook[gi][i] = '*'
+print("285a ладья:")
+for row in board_rook:
+    print(''.join(row))
+
+# б) слон
+board_bishop = [row[:] for row in board]
+board_bishop[gi][vi] = 'с'
+for i in range(1, n):
+    if gi-i >= 0 and vi-i >= 0:
+        board_bishop[gi-i][vi-i] = '*'
+    if gi-i >= 0 and vi+i < n:
+        board_bishop[gi-i][vi+i] = '*'
+    if gi+i < n and vi-i >= 0:
+        board_bishop[gi+i][vi-i] = '*'
+    if gi+i < n and vi+i < n:
+        board_bishop[gi+i][vi+i] = '*'
+print("\n285b слон:")
+for row in board_bishop:
+    print(''.join(row))
+
+# в) ферзь
+board_queen = [row[:] for row in board]
+board_queen[gi][vi] = 'ф'
+# ладья + слон
+for i in range(n):
+    if i != gi:
+        board_queen[i][vi] = '*'
+    if i != vi:
+        board_queen[gi][i] = '*'
+for i in range(1, n):
+    if gi-i >= 0 and vi-i >= 0:
+        board_queen[gi-i][vi-i] = '*'
+    if gi-i >= 0 and vi+i < n:
+        board_queen[gi-i][vi+i] = '*'
+    if gi+i < n and vi-i >= 0:
+        board_queen[gi+i][vi-i] = '*'
+    if gi+i < n and vi+i < n:
+        board_queen[gi+i][vi+i] = '*'
+print("\n285c ферзь:")
+for row in board_queen:
+    print(''.join(row))
+
+# г) конь
+board_knight = [row[:] for row in board]
+board_knight[gi][vi] = 'к'
+moves = [(-2,-1),(-2,1),(-1,-2),(-1,2),(1,-2),(1,2),(2,-1),(2,1)]
+for move in moves:
+    ni, nj = gi + move[0], vi + move[1]
+    if 0 <= ni < n and 0 <= nj < n:
+        board_knight[ni][nj] = '*'
+print("\n285d конь:")
+for row in board_knight:
+    print(''.join(row))
+
+# 12.286 - пропускаем (очень сложно)
+
+# 12.287
+print("\n287:")
+n = 18
+results = [['']*n for _ in range(n)]
+# Заполняем над главной диагональю
+for i in range(n):
+    for j in range(i+1, n):
+        home = random.randint(0, 3)
+        away = random.randint(0, 3)
+        results[i][j] = f"{home}:{away}"
+
+print("287 со списком:")
+wins = [0]*n
+draws = [0]*n
+losses = [0]*n
+points = [0]*n
+goals_for = [0]*n
+goals_against = [0]*n
+
+for i in range(n):
+    for j in range(i+1, n):
+        if results[i][j]:
+            home_goals, away_goals = map(int, results[i][j].split(':'))
+            goals_for[i] += home_goals
+            goals_against[i] += away_goals
+            goals_for[j] += away_goals
+            goals_against[j] += home_goals
+            
+            if home_goals > away_goals:
+                wins[i] += 1
+                losses[j] += 1
+                points[i] += 3
+            elif home_goals == away_goals:
+                draws[i] += 1
+                draws[j] += 1
+                points[i] += 1
+                points[j] += 1
+            else:
+                losses[i] += 1
+                wins[j] += 1
+                points[j] += 3
+
+for i in range(3):  # покажем для первых 3 команд
+    print(f"Команда {i+1}: В={wins[i]}, Н={draws[i]}, П={losses[i]}, О={points[i]}, ГЗ={goals_for[i]}, ГП={goals_against[i]}")
+
+print("\n287 без списков (для команды 1):")
+win1 = draw1 = loss1 = point1 = gf1 = ga1 = 0
+# Просматриваем строку 0
+for j in range(1, n):
+    if results[0][j]:
+        h, a = map(int, results[0][j].split(':'))
+        gf1 += h
+        ga1 += a
+        if h > a:
+            win1 += 1
+            point1 += 3
+        elif h == a:
+            draw1 += 1
+            point1 += 1
+        else:
+            loss1 += 1
+
+for i in range(1, n):
+    if results[i][0]:
+        a, h = map(int, results[i][0].split(':'))  # поменяны местами
+        gf1 += h
+        ga1 += a
+        if h > a:
+            win1 += 1
+            point1 += 3
+        elif h == a:
+            draw1 += 1
+            point1 += 1
+        else:
+            loss1 += 1
+
+print(f"Команда 1: В={win1}, Н={draw1}, П={loss1}, О={point1}, ГЗ={gf1}, ГП={ga1}")
