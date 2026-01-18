@@ -1,0 +1,1227 @@
+# 13.1
+print("13.1:")
+surnames = ["Иванов", "Петров", "Сидоров", "Кузнецов", "Смирнов"]
+names = ["Иван", "Петр", "Алексей", "Дмитрий", "Сергей"]
+for i in range(5):
+    print(f"{surnames[i]} {names[i]}")
+
+# 13.2
+print("\n13.2:")
+clubs = ["Спартак", "ЦСКА", "Зенит", "Локомотив", "Динамо"]
+cities = ["Москва", "Москва", "Санкт-Петербург", "Москва", "Москва"]
+for i in range(5):
+    print(f"{clubs[i]} - {cities[i]}")
+
+# 13.3
+print("\n13.3:")
+cities = ["Рим", "Париж", "Милан", "Лондон", "Венеция"]
+countries = ["Италия", "Франция", "Италия", "Англия", "Италия"]
+for i in range(len(cities)):
+    if countries[i] == "Италия":
+        print(cities[i])
+
+# 13.4
+print("\n13.4:")
+surnames = ["Иванов", "Петров", "Сидоров", "Кузнецов", "Смирнов"]
+military = [True, False, True, True, False]
+for i in range(len(surnames)):
+    if military[i]:
+        print(surnames[i])
+
+# 13.5
+print("\n13.5:")
+peaks = ["Эверест", "Монблан", "Эльбрус", "Казбек", "Аконкагуа"]
+heights = [8848, 4810, 5642, 5033, 6962]
+for i in range(len(peaks)):
+    if heights[i] > 3000:
+        print(f"{peaks[i]} - {heights[i]} м")
+
+# 13.6
+print("\n13.6:")
+cars = ["Toyota Camry", "BMW M5", "Lada Vesta", "Mercedes S-class", "Ford Focus"]
+speeds = [210, 250, 180, 230, 190]
+for i in range(len(cars)):
+    if speeds[i] > 180:
+        print(f"{cars[i]} - {speeds[i]} км/ч")
+
+# 13.7
+print("\n13.7:")
+surnames = ["Иванов", "Петров", "Сидоров"]
+addresses = ["ул. Ленина 1", "ул. Пушкина 5", "ул. Гагарина 10"]
+phones_num = [1234567, 3456789, 3123456]  # вариант 1
+phones_str = ["123-45-67", "345-67-89", "312-34-56"]  # вариант 2
+
+print("Случай 1 (7 цифр):")
+for i in range(len(surnames)):
+    if str(phones_num[i]).startswith('3'):
+        print(f"{surnames[i]}, {addresses[i]}")
+
+print("\nСлучай 2 (формат):")
+for i in range(len(surnames)):
+    if phones_str[i].startswith('3'):
+        print(f"{surnames[i]}, {addresses[i]}")
+
+# 13.8
+print("\n13.8:")
+surnames = ["Иванов", "Петров", "Сидоров"]
+names = ["Иван", "Петр", "Алексей"]
+addresses = ["ул. Ленина 1", "ул. Пушкина 5", "ул. Гагарина 10"]
+phones_num = [1234567, 0, 3123456]  # 0 - нет телефона
+phones_str = ["123-45-67", "", "312-34-56"]  # "" - нет телефона
+
+print("Случай 1 (7 цифр):")
+for i in range(len(surnames)):
+    if phones_num[i] == 0:
+        print(f"{surnames[i]} {names[i]}, {addresses[i]}")
+
+print("\nСлучай 2 (формат):")
+for i in range(len(surnames)):
+    if phones_str[i] == "":
+        print(f"{surnames[i]} {names[i]}, {addresses[i]}")
+
+# 13.9
+print("\n13.9:")
+surnames = ["Иванов", "Петров", "Сидоров"]
+names = ["Иван", "Петр", "Алексей"]
+addresses = ["ул. Ленина 1", "ул. Пушкина 5", "ул. Гагарина 10"]
+items = ["т", "х", "т"]  # т - телевизор, х - холодильник
+
+for i in range(len(surnames)):
+    if items[i] == "т":
+        print(f"{surnames[i]} {names[i]}, {addresses[i]}")
+
+# 13.10
+print("\n13.10:")
+surnames = ["Иванов", "Петров", "Сидоров", "Кузнецов"]
+married = [True, False, True, True]
+has_children = [True, False, True, False]
+
+for i in range(len(surnames)):
+    if married[i] and has_children[i]:
+        print(surnames[i])
+
+# 13.11
+print("\n13.11:")
+surnames = ["Иванов", "Петров", "Сидоров", "Кузнецов"]
+grades = [9, 10, 9, 11]
+scores = [5, 4, 5, 3]
+
+for i in range(len(surnames)):
+    if grades[i] == 9 and scores[i] == 5:
+        print(surnames[i])
+
+# 13.12
+print("\n13.12:")
+import datetime
+surnames = ["Иванов", "Петров", "Сидоров"]
+names = ["Иван", "Петр", "Алексей"]
+patronymics = ["Иванович", "Петрович", "Алексеевич"]
+addresses = ["ул. Ленина 1", "ул. Пушкина 5", "ул. Гагарина 10"]
+hire_months = [3, 6, 9]  # месяцы
+hire_years = [2020, 2021, 2022]  # годы
+
+today = datetime.datetime.now()
+current_year = today.year
+current_month = today.month
+
+print("Сотрудники, проработавшие не менее 3 лет:")
+for i in range(len(surnames)):
+    years_worked = current_year - hire_years[i]
+    if current_month < hire_months[i]:
+        years_worked -= 1
+    
+    if years_worked >= 3:
+        print(f"{surnames[i]} {names[i]} {patronymics[i]}, {addresses[i]}")
+
+# 13.13
+print("\n13.13:")
+products = ["Хлеб", "Молоко", "Сыр"]
+rubles = [30, 80, 250]
+kopeeks = [50, 0, 30]
+
+# Сравниваем первый и второй товары
+price1 = rubles[0] * 100 + kopeeks[0]
+price2 = rubles[1] * 100 + kopeeks[1]
+
+if price1 > price2:
+    print(f"{products[0]} дороже {products[1]}")
+elif price1 < price2:
+    print(f"{products[1]} дороже {products[0]}")
+else:
+    print(f"{products[0]} и {products[1]} стоят одинаково")
+
+# 13.14
+print("\n13.14:")
+hours = [10, 14, 23]
+minutes = [30, 15, 45]
+
+# Сравниваем первый и второй моменты времени
+time1 = hours[0] * 60 + minutes[0]
+time2 = hours[1] * 60 + minutes[1]
+
+if time1 < time2:
+    print(f"{hours[0]}:{minutes[0]:02d} было раньше, чем {hours[1]}:{minutes[1]:02d}")
+elif time1 > time2:
+    print(f"{hours[1]}:{minutes[1]:02d} было раньше, чем {hours[0]}:{minutes[0]:02d}")
+else:
+    print("Времена совпадают")
+
+# 13.15
+print("\n13.15:")
+years = [2020, 2021, 2022]
+months = [5, 8, 3]
+days = [10, 15, 20]
+events = ["Событие А", "Событие Б", "Событие В"]
+
+# Сравниваем первое и второе события
+date1 = years[0] * 10000 + months[0] * 100 + days[0]
+date2 = years[1] * 10000 + months[1] * 100 + days[1]
+
+print("а) По порядковому номеру:")
+if date1 > date2:
+    print("Первое событие произошло позже")
+else:
+    print("Второе событие произошло позже")
+
+print("\nб) По тексту:")
+if date1 > date2:
+    print(f"{events[0]} произошло позже, чем {events[1]}")
+else:
+    print(f"{events[1]} произошло позже, чем {events[0]}")
+
+# 13.16
+print("\n13.16:")
+hours = [10, 14, 10]
+minutes = [30, 15, 30]
+seconds = [20, 45, 25]
+
+time1 = hours[0] * 3600 + minutes[0] * 60 + seconds[0]
+time2 = hours[1] * 3600 + minutes[1] * 60 + seconds[1]
+time3 = hours[2] * 3600 + minutes[2] * 60 + seconds[2]
+
+print(f"Сравниваем {hours[0]}:{minutes[0]:02d}:{seconds[0]:02d} и {hours[1]}:{minutes[1]:02d}:{seconds[1]:02d}:")
+if time1 < time2:
+    print("Первый момент был раньше")
+else:
+    print("Второй момент был раньше")
+
+# 13.17
+print("\n13.17:")
+surnames = ["Кузин", "Петров", "Куравлев", "Сидоров", "Кудин"]
+addresses = ["ул. Ленина 1", "ул. Пушкина 5", "ул. Гагарина 10", "ул. Мира 3", "ул. Солнечная 7"]
+target_surnames = ["Кузин", "Куравлев", "Кудин", "Кульков", "Кубиков"]
+
+print("Работают ли люди с указанными фамилиями:")
+found = False
+for i in range(len(surnames)):
+    if surnames[i] in target_surnames:
+        print(f"{surnames[i]} - {addresses[i]}")
+        found = True
+
+if not found:
+    print("Людей с такими фамилиями не найдено")
+
+# 13.18
+print("\n13.18:")
+countries = ["Египет", "Франция", "Китай", "Бразилия", "Индия"]
+continents = ["Африка", "Европа", "Азия", "Южная Америка", "Азия"]
+
+print("Страны в Африке или Азии:")
+for i in range(len(countries)):
+    if continents[i] in ["Африка", "Азия"]:
+        print(countries[i])
+
+# 13.19
+print("\n13.19:")
+import datetime
+surnames = ["Иванов", "Петров", "Сидоров"]
+names = ["Иван", "Петр", "Алексей"]
+birth_years = [2000, 2001, 2002]
+birth_months = [5, 8, 3]
+birth_days = [10, 15, 20]
+
+today = datetime.datetime.now()
+current_month = today.month
+current_day = today.day
+
+print("Ученики с днем рождения сегодня:")
+for i in range(len(surnames)):
+    if birth_months[i] == current_month and birth_days[i] == current_day:
+        print(f"{names[i]} {surnames[i]}")
+
+# 13.20
+print("\n13.20:")
+surnames = ["Иванов", "Петров", "Сидоров"]
+phones = ["123-45-67", "234-56-78", "345-67-89"]
+
+print("а) Поиск телефона по фамилии:")
+search_surname = "Петров"
+for i in range(len(surnames)):
+    if surnames[i] == search_surname:
+        print(f"Телефон {search_surname}: {phones[i]}")
+        break
+else:
+    print(f"{search_surname} не найден")
+
+print("\nб) Поиск по номеру телефона:")
+search_phone = "234-56-78"
+for i in range(len(phones)):
+    if phones[i] == search_phone:
+        print(f"Телефон {search_phone} принадлежит: {surnames[i]}")
+        break
+else:
+    print(f"Телефон {search_phone} не найден")
+
+# 13.21
+print("\n13.21:")
+# Создаем структуру для учеников
+students = []
+students.append({"surname": "Иванов", "name": "Иван", "address": "ул. Ленина 1", "school": 15, "grade": 10})
+students.append({"surname": "Петров", "name": "Петр", "address": "ул. Пушкина 5", "school": 20, "grade": 9})
+students.append({"surname": "Сидоров", "name": "Алексей", "address": "ул. Гагарина 10", "school": 15, "grade": 11})
+students.append({"surname": "Кузнецов", "name": "Дмитрий", "address": "ул. Мира 3", "school": 20, "grade": 8})
+
+# Заданная школа
+target_school = 15
+
+# Создаем новый массив для учеников старших классов заданной школы
+senior_students = []
+for student in students:
+    if student["school"] == target_school and student["grade"] in [10, 11]:
+        senior_students.append(student)
+
+print("Ученики старших классов школы", target_school, ":")
+for student in senior_students:
+    print(f"{student['surname']} {student['name']}, {student['address']}")
+
+# 13.22
+print("\n13.22:")
+precipitation = [5.2, 3.1, 0.0, 12.5, 2.3]  # мм осадков
+temperatures = [3, -2, 5, -5, 1]  °C
+
+snow = 0
+rain = 0
+
+for i in range(len(precipitation)):
+    if temperatures[i] > 0:
+        rain += precipitation[i]
+    else:
+        snow += precipitation[i]
+
+print(f"Дождь: {rain} мм")
+print(f"Снег: {snow} мм")
+
+# 13.23
+print("\n13.23:")
+cars = ["Toyota Camry", "BMW M5", "Lada Vesta", "Mercedes S-class"]
+power = [150, 600, 106, 450]  # л.с.
+prices = [2000000, 8000000, 900000, 10000000]  # руб.
+
+total_cost = 0
+for i in range(len(cars)):
+    if power[i] > 100:
+        total_cost += prices[i]
+
+print(f"Общая стоимость автомобилей мощностью >100 л.с.: {total_cost} руб.")
+
+# 13.24
+print("\n13.24:")
+names = ["Иван", "Мария", "Петр", "Анна", "Сергей"]
+ages = [25, 30, 35, 28, 40]
+genders = ["м", "ж", "м", "ж", "м"]  # м - мужчина, ж - женщина
+weights = [80, 60, 85, 55, 90]  # кг
+
+total_male_weight = 0
+for i in range(len(names)):
+    if genders[i] == "м":
+        total_male_weight += weights[i]
+
+print(f"Общая масса мужчин: {total_male_weight} кг")
+
+# 13.25
+print("\n13.25:")
+institutions = ["Школа №1", "Техникум", "Училище", "Школа №2", "Школа №3"]
+types = ["школа", "техникум", "училище", "школа", "школа"]
+students_count = [500, 300, 200, 400, 350]
+
+total_school_students = 0
+for i in range(len(institutions)):
+    if types[i] == "школа":
+        total_school_students += students_count[i]
+
+print(f"Общее число учащихся школ: {total_school_students}")
+
+# 13.26
+print("\n13.26:")
+journals = ["Наука", "Техника", "Спорт", "Мода"]
+prices = [150, 200, 100, 250]  # руб.
+circulation = [5000, 12000, 8000, 15000]  # экз.
+
+total_price = 0
+count = 0
+for i in range(len(journals)):
+    if circulation[i] < 10000:
+        total_price += prices[i]
+        count += 1
+
+if count > 0:
+    average_price = total_price / count
+    print(f"Средняя стоимость журналов с тиражом <10000: {average_price:.2f} руб.")
+else:
+    print("Нет журналов с тиражом <10000")
+
+# 13.27
+print("\n13.27:")
+cars = ["Toyota 2015", "BMW 2018", "Lada 2010", "Mercedes 2019"]
+prices = [1000000, 3000000, 500000, 5000000]  # руб.
+ages = [8, 5, 13, 4]  # лет
+
+total_price = 0
+count = 0
+for i in range(len(cars)):
+    if ages[i] > 6:
+        total_price += prices[i]
+        count += 1
+
+if count > 0:
+    average_price = total_price / count
+    print(f"Средняя стоимость автомобилей старше 6 лет: {average_price:.2f} руб.")
+else:
+    print("Нет автомобилей старше 6 лет")
+
+# 13.28
+print("\n13.28:")
+names = ["Иван", "Мария", "Петр", "Анна", "Сергей"]
+heights = [180, 165, 175, 160, 185]  # см
+genders = ["м", "ж", "м", "ж", "м"]
+
+total_male_height = 0
+male_count = 0
+for i in range(len(names)):
+    if genders[i] == "м":
+        total_male_height += heights[i]
+        male_count += 1
+
+if male_count > 0:
+    average_height = total_male_height / male_count
+    print(f"Средний рост мужчин: {average_height:.1f} см")
+else:
+    print("Нет мужчин")
+
+# 13.29
+print("\n13.29:")
+cars = ["Toyota Camry", "Ford Transit", "BMW X5", "Mercedes Sprinter"]
+prices = [2000000, 3000000, 5000000, 4000000]
+types = ["легковой", "грузовой", "легковой", "грузовой"]
+
+total_price = 0
+count = 0
+for i in range(len(cars)):
+    if types[i] == "легковой":
+        total_price += prices[i]
+        count += 1
+
+if count > 0:
+    average_price = total_price / count
+    print(f"Средняя стоимость легковых автомобилей: {average_price:.2f} руб.")
+else:
+    print("Нет легковых автомобилей")
+
+# 13.30
+print("\n13.30:")
+surnames = ["Иванов", "Петров", "Сидоров"]
+# Оценки по 3 предметам для каждого ученика
+grades = [
+    [5, 4, 5, 4],  # Иванов
+    [3, 4, 3, 5],  # Петров
+    [5, 5, 4, 5]   # Сидоров
+]
+
+# Средние оценки учеников
+student_averages = []
+for student_grades in grades:
+    avg = sum(student_grades) / len(student_grades)
+    student_averages.append(avg)
+
+# Средняя оценка класса
+class_average = sum(student_averages) / len(student_averages)
+
+print("Средние оценки учеников:")
+for i in range(len(surnames)):
+    print(f"{surnames[i]}: {student_averages[i]:.2f}")
+print(f"\nСредняя оценка класса: {class_average:.2f}")
+
+print("\nУченики с оценкой выше средней по классу:")
+for i in range(len(surnames)):
+    if student_averages[i] > class_average:
+        print(surnames[i])
+
+# 13.31
+print("\n13.31:")
+materials = ["Сталь", "Алюминий", "Дерево", "Стекло"]
+masses = [10, 5, 3, 8]  # кг
+volumes = [0.0013, 0.0019, 0.006, 0.003]  # м³
+
+max_density = 0
+for i in range(len(materials)):
+    density = masses[i] / volumes[i]
+    if density > max_density:
+        max_density = density
+
+print(f"Максимальная плотность материала: {max_density:.2f} кг/м³")
+
+# 13.32
+print("\n13.32:")
+countries = ["Россия", "Китай", "Индия", "США"]
+populations = [146.7, 1402.0, 1380.0, 331.9]  # млн чел.
+areas = [17125, 9597, 3287, 9834]  # тыс. км²
+
+max_density = 0
+for i in range(len(countries)):
+    density = populations[i] * 1000000 / (areas[i] * 1000)  # чел/км²
+    if density > max_density:
+        max_density = density
+
+print(f"Максимальная плотность населения: {max_density:.2f} чел/км²")
+
+# 13.33
+print("\n13.33:")
+materials = ["Сталь", "Алюминий", "Дерево", "Стекло"]
+masses = [10, 5, 3, 8]
+volumes = [0.0013, 0.0019, 0.006, 0.003]
+
+min_density = float('inf')
+min_material = ""
+for i in range(len(materials)):
+    density = masses[i] / volumes[i]
+    if density < min_density:
+        min_density = density
+        min_material = materials[i]
+
+print(f"Материал с минимальной плотностью: {min_material} ({min_density:.2f} кг/м³)")
+
+# 13.34
+print("\n13.34:")
+countries = ["Россия", "Китай", "Индия", "США"]
+populations = [146.7, 1402.0, 1380.0, 331.9]
+areas = [17125, 9597, 3287, 9834]
+
+min_density = float('inf')
+min_country = ""
+for i in range(len(countries)):
+    density = populations[i] * 1000000 / (areas[i] * 1000)
+    if density < min_density:
+        min_density = density
+        min_country = countries[i]
+
+print(f"Страна с минимальной плотностью населения: {min_country} ({min_density:.2f} чел/км²)")
+
+# 13.35
+print("\n13.35:")
+surnames = ["Иванов", "Петров", "Сидоров"]
+grades = [
+    [5, 4, 5, 4, 5],  # Иванов
+    [3, 4, 3, 5, 4],  # Петров
+    [5, 5, 4, 5, 5]   # Сидоров
+]
+
+# а) с наибольшей суммой
+max_sum = 0
+max_surname = ""
+for i in range(len(surnames)):
+    total = sum(grades[i])
+    if total > max_sum:
+        max_sum = total
+        max_surname = surnames[i]
+print(f"а) Наибольшая сумма оценок: {max_surname} ({max_sum} баллов)")
+
+# б) с наименьшей суммой
+min_sum = float('inf')
+min_surname = ""
+for i in range(len(surnames)):
+    total = sum(grades[i])
+    if total < min_sum:
+        min_sum = total
+        min_surname = surnames[i]
+print(f"б) Наименьшая сумма оценок: {min_surname} ({min_sum} баллов)")
+
+# 13.36
+print("\n13.36:")
+surnames = ["Иванов", "Петров", "Сидоров", "Кузнецов"]
+grades = [
+    [5, 4, 5, 4],  # Иванов
+    [3, 4, 3, 5],  # Петров
+    [5, 5, 4, 5],  # Сидоров
+    [4, 4, 4, 4]   # Кузнецов
+]
+
+max_sum = 0
+max_surname = ""
+for i in range(len(surnames)):
+    total = sum(grades[i])
+    if total > max_sum:
+        max_sum = total
+        max_surname = surnames[i]
+
+print(f"Максимальная сумма оценок: {max_surname} ({max_sum} баллов)")
+
+# 13.37
+print("\n13.37:")
+surnames = ["Иванов", "Петров", "Сидоров"]
+scores = [
+    [100, 80, 90, 85, 95],  # Иванов
+    [95, 85, 88, 92, 90],   # Петров
+    [90, 92, 94, 88, 96]    # Сидоров
+]
+
+max_total = 0
+winner = ""
+for i in range(len(surnames)):
+    total = sum(scores[i])
+    if total > max_total:
+        max_total = total
+        winner = surnames[i]
+
+print(f"Победитель: {winner} ({max_total} баллов)")
+
+# 13.38
+print("\n13.38:")
+teams = ["Спартак", "ЦСКА", "Зенит", "Динамо"]
+points = [65, 70, 68, 60]
+
+# а) чемпион
+max_points = max(points)
+champion_index = points.index(max_points)
+print(f"а) Чемпион: {teams[champion_index]} ({max_points} очков)")
+
+# б) второе и третье места
+sorted_points = sorted(points, reverse=True)
+second_points = sorted_points[1]
+third_points = sorted_points[2]
+
+second_index = points.index(second_points)
+third_index = points.index(third_points)
+print(f"б) Второе место: {teams[second_index]}, третье место: {teams[third_index]}")
+
+# в) первое и второе места за один проход
+first_team = ""
+second_team = ""
+first_points = -1
+second_points = -1
+
+for i in range(len(teams)):
+    if points[i] > first_points:
+        second_points = first_points
+        second_team = first_team
+        first_points = points[i]
+        first_team = teams[i]
+    elif points[i] > second_points:
+        second_points = points[i]
+        second_team = teams[i]
+
+print(f"в) Первое место: {first_team}, второе место: {second_team}")
+
+# 13.39
+print("\n13.39:")
+surnames = ["Иванов", "Петров", "Сидоров", "Кузнецов", "Смирнов"]
+heights = [185, 170, 180, 175, 190]
+
+# а) самый высокий и самый низкий
+max_height = max(heights)
+min_height = min(heights)
+max_index = heights.index(max_height)
+min_index = heights.index(min_height)
+print(f"а) Самый высокий: {surnames[max_index]}, самый низкий: {surnames[min_index]}")
+
+# б) два самых высоких без учета абсолютного максимума
+heights_without_max = [h for h in heights if h != max_height]
+second_max_height = max(heights_without_max)
+second_max_index = heights.index(second_max_height)
+print(f"б) Два самых высоких (без абсолютного): {surnames[max_index]} и {surnames[second_max_index]}")
+
+# в) два самых высоких за один проход
+first_height = -1
+second_height = -1
+first_surname = ""
+second_surname = ""
+
+for i in range(len(surnames)):
+    if heights[i] > first_height:
+        second_height = first_height
+        second_surname = first_surname
+        first_height = heights[i]
+        first_surname = surnames[i]
+    elif heights[i] > second_height:
+        second_height = heights[i]
+        second_surname = surnames[i]
+
+print(f"в) Два самых высоких: {first_surname} и {second_surname}")
+
+# 13.40
+print("\n13.40:")
+surnames = ["Иванов", "Петрова", "Сидоров", "Кузнецова", "Петров"]
+salaries = [50000, 45000, 60000, 40000, 55000]
+genders = ["м", "ж", "м", "ж", "м"]
+
+# а) мужчина с самой большой зарплатой
+max_male_salary = -1
+max_male_surname = ""
+for i in range(len(surnames)):
+    if genders[i] == "м" and salaries[i] > max_male_salary:
+        max_male_salary = salaries[i]
+        max_male_surname = surnames[i]
+print(f"а) Мужчина с самой большой зарплатой: {max_male_surname} ({max_male_salary} руб.)")
+
+# б) мужчина и женщина с самой маленькой зарплатой
+min_male_salary = float('inf')
+min_female_salary = float('inf')
+min_male_surname = ""
+min_female_surname = ""
+
+for i in range(len(surnames)):
+    if genders[i] == "м" and salaries[i] < min_male_salary:
+        min_male_salary = salaries[i]
+        min_male_surname = surnames[i]
+    elif genders[i] == "ж" and salaries[i] < min_female_salary:
+        min_female_salary = salaries[i]
+        min_female_surname = surnames[i]
+
+print(f"б) Мужчина с самой маленькой зарплатой: {min_male_surname} ({min_male_salary} руб.)")
+print(f"   Женщина с самой маленькой зарплатой: {min_female_surname} ({min_female_salary} руб.)")
+
+import random
+
+# 13.41
+print("13.41:")
+surnames = ["Иванов", "Петров", "Сидоров", "Кузнецов", "Смирнов", "Васильев"]
+ages = [25, 30, 35, 28, 40, 22]
+military = [True, False, True, True, False, True]  # True - военнообязанный
+
+# а) самый младший среди военнообязанных
+min_age = float('inf')
+min_surname = ""
+for i in range(len(surnames)):
+    if military[i] and ages[i] < min_age:
+        min_age = ages[i]
+        min_surname = surnames[i]
+print(f"а) Самый младший военнообязанный: {min_surname} ({min_age} лет)")
+
+# б) самый старший в каждой группе
+max_military_age = -1
+max_military_surname = ""
+max_civilian_age = -1
+max_civilian_surname = ""
+
+for i in range(len(surnames)):
+    if military[i] and ages[i] > max_military_age:
+        max_military_age = ages[i]
+        max_military_surname = surnames[i]
+    elif not military[i] and ages[i] > max_civilian_age:
+        max_civilian_age = ages[i]
+        max_civilian_surname = surnames[i]
+
+print(f"б) Самый старший военнообязанный: {max_military_surname} ({max_military_age} лет)")
+print(f"   Самый старший невоеннообязанный: {max_civilian_surname} ({max_civilian_age} лет)")
+
+# 13.42
+print("\n13.42:")
+trains = [
+    {"number": 1, "route": "Москва-Санкт-Петербург", "arrive_h": 10, "arrive_m": 30, "depart_h": 10, "depart_m": 45},
+    {"number": 2, "route": "Казань-Нижний Новгород", "arrive_h": 11, "arrive_m": 15, "depart_h": 11, "depart_m": 30},
+    {"number": 3, "route": "Екатеринбург-Челябинск", "arrive_h": 12, "arrive_m": 0, "depart_h": 12, "depart_m": 20}
+]
+
+# Заданное время
+check_h = 11
+check_m = 20
+
+print(f"Поезда на станции в {check_h:02d}:{check_m:02d}:")
+for train in trains:
+    arrive_time = train["arrive_h"] * 60 + train["arrive_m"]
+    depart_time = train["depart_h"] * 60 + train["depart_m"]
+    check_time = check_h * 60 + check_m
+    
+    if arrive_time <= check_time < depart_time:
+        print(f"  №{train['number']} {train['route']}")
+
+# 13.43
+print("\n13.43:")
+passengers = [
+    {"items": 2, "weight": 35.5},
+    {"items": 1, "weight": 20.0},
+    {"items": 3, "weight": 45.0},
+    {"items": 1, "weight": 24.5},
+    {"items": 4, "weight": 60.0}
+]
+
+# а) более двух вещей
+count_more_than_2 = sum(1 for p in passengers if p["items"] > 2)
+print(f"а) Пассажиров с >2 вещами: {count_more_than_2}")
+
+# б) одна вещь < 25 кг
+has_one_item_under_25 = any(p["items"] == 1 and p["weight"] < 25 for p in passengers)
+print(f"б) Есть пассажир с одной вещью <25кг: {has_one_item_under_25}")
+
+# в) больше среднего числа вещей
+total_items = sum(p["items"] for p in passengers)
+avg_items = total_items / len(passengers)
+count_above_avg = sum(1 for p in passengers if p["items"] > avg_items)
+print(f"в) Пассажиров с вещами > среднего ({avg_items:.1f}): {count_above_avg}")
+
+# г) средний вес отличается не более чем на 0.5 кг
+total_weight = sum(p["weight"] for p in passengers)
+avg_weight_per_item = total_weight / total_items
+
+print(f"г) Средний вес вещи: {avg_weight_per_item:.2f} кг")
+for i, p in enumerate(passengers, 1):
+    if p["items"] > 0:
+        item_avg_weight = p["weight"] / p["items"]
+        if abs(item_avg_weight - avg_weight_per_item) <= 0.5:
+            print(f"   Багаж №{i}: средний вес {item_avg_weight:.2f} кг")
+
+# 13.44
+print("\n13.44:")
+matches = [
+    {"scored": 3, "conceded": 1},
+    {"scored": 1, "conceded": 1},
+    {"scored": 0, "conceded": 2},
+    {"scored": 2, "conceded": 0},
+    {"scored": 1, "conceded": 2}
+]
+
+wins = draws = losses = points = 0
+
+print("а) Результаты игр:")
+for i, match in enumerate(matches, 1):
+    if match["scored"] > match["conceded"]:
+        result = "выигрыш"
+        wins += 1
+        points += 3
+    elif match["scored"] == match["conceded"]:
+        result = "ничья"
+        draws += 1
+        points += 1
+    else:
+        result = "проигрыш"
+        losses += 1
+    print(f"  Игра {i}: {match['scored']}:{match['conceded']} - {result}")
+
+print(f"б) Количество выигрышей: {wins}")
+print(f"в) Выигрышей: {wins}, проигрышей: {losses}")
+print(f"г) Выигрышей: {wins}, ничьих: {draws}, проигрышей: {losses}")
+print(f"д) Общее число очков: {points}")
+
+# 13.45
+print("\n13.45:")
+boys = [
+    {"surname": "Иванов", "height": 185},
+    {"surname": "Петров", "height": 180},
+    {"surname": "Сидоров", "height": 175},
+    {"surname": "Кузнецов", "height": 170},
+    {"surname": "Смирнов", "height": 165}
+]
+
+new_boy_height = 172
+new_boy_surname = "Новиков"
+
+# а) ученики с ростом меньше нового
+print("а) Ученики ниже нового:")
+for boy in boys:
+    if boy["height"] < new_boy_height:
+        print(f"  {boy['surname']} ({boy['height']} см)")
+
+# б) после кого вставить нового
+insert_after = None
+for i in range(len(boys)):
+    if boys[i]["height"] > new_boy_height:
+        insert_after = boys[i]["surname"]
+print(f"\nб) Нового вставить после: {insert_after}")
+
+# в) с ближайшим ростом
+closest_diff = float('inf')
+closest_surname = ""
+for boy in boys:
+    diff = abs(boy["height"] - new_boy_height)
+    if diff < closest_diff:
+        closest_diff = diff
+        closest_surname = boy["surname"]
+print(f"в) Ближайший рост у: {closest_surname} (разница {closest_diff} см)")
+
+# 13.46
+print("\n13.46:")
+teams = [
+    {"name": "Спартак", "points": 70},
+    {"name": "ЦСКА", "points": 68},
+    {"name": "Зенит", "points": 65},
+    {"name": "Динамо", "points": 60},
+    {"name": "Локомотив", "points": 55}
+]
+
+new_team_points = 63
+new_team_name = "Рубин"
+
+# а) место новой команды
+place = 1
+for team in teams:
+    if team["points"] > new_team_points:
+        place += 1
+print(f"а) Команда '{new_team_name}' заняла {place}-е место")
+
+# б) команды с меньшим количеством очков
+print("б) Команды с меньшим количеством очков:")
+for team in teams:
+    if team["points"] < new_team_points:
+        print(f"  {team['name']} ({team['points']} очков)")
+
+# 13.47
+print("\n13.47:")
+# Таблица оценок
+students = [
+    {"surname": "Иванов", "grades": [5,4,5,4,5,4,5,4,5,4]},
+    {"surname": "Петров", "grades": [4,3,4,4,3,4,3,4,4,3]},
+    {"surname": "Сидоров", "grades": [5,5,5,5,5,5,5,5,5,5]},
+    {"surname": "Кузнецов", "grades": [3,4,3,4,3,4,3,4,3,4]}
+]
+
+# Новый ученик
+new_student = {"surname": "Новиков", "grades": [4,4,4,4,4,4,4,4,4,4]}
+s = 2  # место для вставки (после 1-го)
+
+# Вставляем нового ученика
+students.insert(s, new_student)
+
+print("Обновленная таблица оценок:")
+for i, student in enumerate(students, 1):
+    print(f"{i:2}. {student['surname']}: {student['grades']}")
+
+# 13.48
+print("\n13.48:")
+# Таблица оценок по предметам
+subjects = ["Математика", "Физика", "Химия", "Информатика"]
+grades_table = [
+    [5,4,5,4],  # Иванов
+    [4,3,4,3],  # Петров
+    [5,5,5,5],  # Сидоров
+    [3,4,3,4]   # Кузнецов
+]
+
+# Новый предмет и оценки
+new_subject = "Биология"
+new_grades = [4,4,5,3]
+k = 2  # место для вставки (после 1-го предмета)
+
+# Вставляем новый предмет
+subjects.insert(k, new_subject)
+for i in range(len(grades_table)):
+    grades_table[i].insert(k, new_grades[i])
+
+print("Обновленная таблица оценок:")
+print("Фамилия", end="")
+for subject in subjects:
+    print(f" {subject:15}", end="")
+print()
+
+for i, surname in enumerate(["Иванов", "Петров", "Сидоров", "Кузнецов"]):
+    print(f"{surname:8}", end="")
+    for grade in grades_table[i]:
+        print(f" {grade:15}", end="")
+    print()
+
+# 13.49
+print("\n13.49:")
+boys = [
+    {"surname": "Иванов", "height": 185},
+    {"surname": "Петров", "height": 180},
+    {"surname": "Сидоров", "height": 175},
+    {"surname": "Кузнецов", "height": 170},
+    {"surname": "Смирнов", "height": 165}
+]
+
+new_boy = {"surname": "Новиков", "height": 172}
+
+# Находим место для вставки
+insert_index = 0
+for i in range(len(boys)):
+    if boys[i]["height"] > new_boy["height"]:
+        insert_index = i + 1
+
+# Вставляем нового ученика
+boys.insert(insert_index, new_boy)
+
+print("Список учеников по убыванию роста:")
+for boy in boys:
+    print(f"  {boy['surname']} - {boy['height']} см")
+
+# 13.50
+print("\n13.50:")
+teams = [
+    {"name": "Спартак", "points": 70},
+    {"name": "ЦСКА", "points": 68},
+    {"name": "Зенит", "points": 65},
+    {"name": "Динамо", "points": 60},
+    {"name": "Локомотив", "points": 55}
+]
+
+new_team = {"name": "Рубин", "points": 63}
+
+# Находим место для вставки
+insert_index = 0
+for i in range(len(teams)):
+    if teams[i]["points"] > new_team["points"]:
+        insert_index = i + 1
+
+# Вставляем новую команду
+teams.insert(insert_index, new_team)
+
+print("Таблица команд по убыванию очков:")
+for i, team in enumerate(teams, 1):
+    print(f"{i:2}. {team['name']} - {team['points']} очков")
+
+# 13.51
+print("\n13.51:")
+teams = [
+    {"name": "Спартак", "points": 68},
+    {"name": "ЦСКА", "points": 70},
+    {"name": "Зенит", "points": 65},
+    {"name": "Динамо", "points": 60},
+    {"name": "Локомотив", "points": 72}
+]
+
+# Сортируем по убыванию очков
+sorted_teams = sorted(teams, key=lambda x: x["points"], reverse=True)
+
+print("Места команд в чемпионате:")
+for i, team in enumerate(sorted_teams, 1):
+    print(f"{i:2}. {team['name']} - {team['points']} очков")
+
+# 13.52
+print("\n13.52:")
+students = [
+    {"surname": "Иванов", "height": 185},
+    {"surname": "Петров", "height": 170},
+    {"surname": "Сидоров", "height": 180},
+    {"surname": "Кузнецов", "height": 175},
+    {"surname": "Смирнов", "height": 165}
+]
+
+# Сортируем по возрастанию роста
+sorted_students = sorted(students, key=lambda x: x["height"])
+
+print("Ученики по возрастанию роста:")
+for student in sorted_students:
+    print(f"  {student['surname']} - {student['height']} см")
+
+# 13.53
+print("\n13.53:")
+n = 5
+teams = ["Спартак", "ЦСКА", "Зенит", "Динамо", "Локомотив"]
+
+# Таблица результатов (0-проигрыш, 1-ничья, 3-выигрыш)
+# Главная диагональ = 0
+results = [
+    [0, 3, 1, 0, 3],
+    [0, 0, 3, 1, 3],
+    [1, 0, 0, 3, 1],
+    [3, 1, 0, 0, 3],
+    [0, 0, 1, 0, 0]
+]
+
+# Рассчитываем очки для каждой команды
+team_stats = []
+for i in range(n):
+    wins = draws = losses = points = 0
+    for j in range(n):
+        if i != j:
+            if results[i][j] == 3:
+                wins += 1
+                points += 3
+            elif results[i][j] == 1:
+                draws += 1
+                points += 1
+            else:
+                losses += 1
+    team_stats.append({
+        "name": teams[i],
+        "wins": wins,
+        "draws": draws,
+        "losses": losses,
+        "points": points
+    })
+
+# а) больше побед, чем проигрышей
+print("а) Команды с победами > проигрышей:")
+for stats in team_stats:
+    if stats["wins"] > stats["losses"]:
+        print(f"  {stats['name']}")
+
+# б) без проигрышей
+print("\nб) Команды без проигрышей:")
+for stats in team_stats:
+    if stats["losses"] == 0:
+        print(f"  {stats['name']}")
+
+# в) чемпион
+champion = max(team_stats, key=lambda x: x["points"])
+print(f"\nв) Чемпион: {champion['name']} ({champion['points']} очков)")
+
+# г) проверка порядка
+print("\nг) Проверка порядка команд:")
+sorted_by_points = sorted(team_stats, key=lambda x: x["points"], reverse=True)
+is_correct_order = all(team_stats[i]["points"] == sorted_by_points[i]["points"] for i in range(n))
+
+if is_correct_order:
+    print("  Команды расположены правильно")
+else:
+    print("  Команды расположены неправильно")
+    for i in range(n):
+        if team_stats[i]["points"] != sorted_by_points[i]["points"]:
+            print(f"  Нарушение у команды: {team_stats[i]['name']}")
+            break
+
+# д) порядок команд по местам
+print("\nд) Порядок команд по местам:")
+for i, stats in enumerate(sorted_by_points, 1):
+    print(f"{i:2}. {stats['name']} - {stats['points']} очков (В:{stats['wins']} Н:{stats['draws']} П:{stats['losses']})")
+
+# 13.54
+print("\n13.54:")
+n_teams = 4
+n_games = 3
+
+teams = ["Спартак", "ЦСКА", "Зенит", "Динамо"]
+
+# Результаты матчей: команда i против команды j
+matches = [
+    [  # Спартак (0)
+        None,  # против себя
+        {"scored": 2, "conceded": 1},  # против ЦСКА
+        {"scored": 1, "conceded": 1},  # против Зенита
+        {"scored": 3, "conceded": 0}   # против Динамо
+    ],
+    [  # ЦСКА (1)
+        {"scored": 1, "conceded": 2},  # против Спартака
+        None,  # против себя
+        {"scored": 2, "conceded": 2},  # против Зенита
+        {"scored": 0, "conceded": 1}   # против Динамо
+    ],
+    [  # Зенит (2)
+        {"scored": 1, "conceded": 1},  # против Спартака
+        {"scored": 2, "conceded": 2},  # против ЦСКА
+        None,  # против себя
+        {"scored": 2, "conceded": 1}   # против Динамо
+    ],
+    [  # Динамо (3)
+        {"scored": 0, "conceded": 3},  # против Спартака
+        {"scored": 1, "conceded": 0},  # против ЦСКА
+        {"scored": 1, "conceded": 2},  # против Зенита
+        None  # против себя
+    ]
+]
+
+# а) таблица очков
+print("а) Таблица чемпионата:")
+team_stats = []
+for i in range(n_teams):
+    wins = draws = losses = points = 0
+    for j in range(n_teams):
+        if i != j and matches[i][j]:
+            if matches[i][j]["scored"] > matches[i][j]["conceded"]:
+                wins += 1
+                points += 3
+            elif matches[i][j]["scored"] == matches[i][j]["conceded"]:
+                draws += 1
+                points += 1
+            else:
+                losses += 1
+    team_stats.append({
+        "name": teams[i],
+        "wins": wins,
+        "draws": draws,
+        "losses": losses,
+        "points": points
+    })
+
+for stats in team_stats:
+    print(f"  {stats['name']}: {stats['points']} очков (В:{stats['wins']} Н:{stats['draws']} П:{stats['losses']})")
+
+# б) количество ничьих (не используя таблицу)
+draw_count = 0
+for i in range(n_teams):
+    for j in range(i+1, n_teams):
+        if matches[i][j] and matches[i][j]["scored"] == matches[i][j]["conceded"]:
+            draw_count += 1
+print(f"\nб) Количество ничьих: {draw_count}")
+
+# в) игры с разницей >= 3
+big_diff_count = 0
+for i in range(n_teams):
+    for j in range(i+1, n_teams):
+        if matches[i][j]:
+            diff = abs(matches[i][j]["scored"] - matches[i][j]["conceded"])
+            if diff >= 3:
+                big_diff_count += 1
+print(f"в) Игр с разницей >=3: {big_diff_count}")
+
+# г) статистика каждой команды
+print("\nг) Статистика команд:")
+for stats in team_stats:
+    print(f"  {stats['name']}: В:{stats['wins']} Н:{stats['draws']} П:{stats['losses']}")
+
+# д) очки каждой команды
+print("\nд) Очки команд:")
+for stats in team_stats:
+    print(f"  {stats['name']}: {stats['points']} очков")
+
+# е) чемпион
+champion = max(team_stats, key=lambda x: x["points"])
+print(f"\nе) Чемпион: {champion['name']} ({champion['points']} очков)")
+
+# 13.55
+print("\n13.55:")
+# Две таблицы для костей домино
+left = [4, 3, 0, 6, 2, 5, 1]
+right = [3, 3, 3, 0, 2, 5, 1]
+
+# Случай 1: левая таблица - левая половина, правая - правая половина
+print("Случай 1 (левая=левая половина, правая=правая половина):")
+is_valid = True
+violating_bone = -1
+
+for i in range(1, len(left)):
+    if right[i-1] != left[i]:
+        is_valid = False
+        violating_bone = i
+        break
+
+if is_valid:
+    print("  Кости выложены правильно по правилам домино")
+else:
+    print(f"  Нарушение на кости №{violating_bone+1}")
+    print(f"  Правая сторона кости {violating_bone}: {right[violating_bone-1]}")
+    print(f"  Левая сторона кости {violating_bone+1}: {left[violating_bone]}")
+
+# Случай 2: каждая таблица может содержать любую половину
+print("\nСлучай 2 (любая половина в любой таблице):")
+is_valid = True
+violating_bone = -1
+
+for i in range(1, len(left)):
+    if right[i-1] != left[i] and right[i-1] != right[i] and left[i-1] != left[i] and left[i-1] != right[i]:
+        is_valid = False
+        violating_bone = i
+        break
+
+if is_valid:
+    print("  Кости выложены правильно по правилам домино")
+else:
+    print(f"  Нарушение на кости №{violating_bone+1}")
+
+# Используем записи для хранения костей домино
+print("\nИспользование записей для хранения костей:")
+dominoes = []
+for i in range(len(left)):
+    dominoes.append({"left": left[i], "right": right[i]})
+
+print("Кости домино:")
+for i, domino in enumerate(dominoes, 1):
+    print(f"  Кость {i}: [{domino['left']}|{domino['right']}]")
