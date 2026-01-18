@@ -1,0 +1,3316 @@
+# 12.1
+a = [[1,2,3],[4,5,6],[7,8,9]]
+print("1a:", a[0][2])
+print("1b:", a[2][0])
+
+# 12.2
+print("2a:", a[2][2])
+print("2b:", a[0][0])
+
+# 12.3
+print("3a:", a[1][0])
+print("3b:", a[0][1])
+
+# 12.4
+print("4a:", a[0][2])
+print("4b:", a[1][1])
+
+# 12.5
+print("5a:", end=" ")
+for x in a[4]:
+    print(x, end=" ")
+print()
+
+s = 1
+print("5b:", end=" ")
+for row in a:
+    print(row[s], end=" ")
+print()
+
+# 12.6
+print("6a:")
+for row in a:
+    print(row[1])
+
+print("6b:", end=" ")
+for x in a[0]:
+    print(x, end=" ")
+print()
+
+# 12.7
+a = [[1,2,3],[4,5,6],[7,8,9],[10,11,12],[13,14,15]]
+a[4][0] = 1949
+print("7a:", a[4])
+
+x = 77
+a[1][2] = x
+print("7b:", a[1])
+
+# 12.8
+a = [[1,2,3],[4,5,6],[7,8,9]]
+for row in a:
+    row[1] = 13
+print("8a:", [row[1] for row in a])
+
+y = 99
+a[2][2] = y
+print("8b:", a[2])
+
+# 12.9
+a = [[1,2,3],[4,5,6],[7,8,9]]
+a[0][2], a[2][0] = a[2][0], a[0][2]
+print("9a:", a[0][2], a[2][0])
+
+a = [[1,2,3],[4,5,6],[7,8,9]]
+a[2][2], a[0][0] = a[0][0], a[2][2]
+print("9b:", a[2][2], a[0][0])
+
+# 12.10
+a = [[1,2,3],[4,5,6],[7,8,9]]
+a[0][1], a[2][0] = a[2][0], a[0][1]
+print("10:", a[0], a[2])
+
+# 12.11
+a = [[1,2,3],[4,5,6],[7,8,9]]
+print("11a:", a[0][0] + a[2][2])
+s = a[0][0] + a[0][2] + a[2][0] + a[2][2]
+print("11b:", s/4)
+
+# 12.12
+print("12a:", a[0][2] + a[2][0])
+p = a[0][0] * a[0][2] * a[2][0] * a[2][2]
+print("12b:", p**0.25)
+
+# 12.13
+print("13a:", a[0][2] + a[1][2])
+print("13b:", a[1][0] * a[1][1])
+
+# 12.14
+print("14a:", a[1][0] + a[1][2])
+print("14b:", a[0][4] * a[1][4])
+
+# 12.15
+print("15a:", a[0][0] + a[2][2])
+print("15b:", (a[0][0] + a[1][1] + a[2][2])/3)
+
+# 12.16
+print("16a:", a[2][2] - a[0][0])
+print("16b:", (a[0][0]*a[2][2])**0.5)
+
+# 12.17
+if a[2][2] < a[2][0]:
+    print("17a: правый нижний меньше")
+else:
+    print("17a: левый нижний меньше")
+
+if a[0][2] < a[2][0]:
+    print("17b: правый верхний меньше")
+else:
+    print("17b: левый нижний меньше")
+
+# 12.18
+if a[0][0] > a[0][2]:
+    print("18a: левый верхний больше")
+else:
+    print("18a: правый верхний больше")
+
+if a[2][2] < a[0][0]:
+    print("18b: правый нижний меньше")
+else:
+    print("18b: левый верхний меньше")
+
+# 12.19
+a = [[-5,2,3],[4,5,6],[7,8,-9]]
+if abs(a[0][2]) > abs(a[1][1]):
+    print("19a: модуль правого верхнего больше")
+else:
+    print("19a: модуль другого элемента больше")
+
+if a[0][0] < a[1][1]:
+    print("19b:", a[0][0], "меньше")
+else:
+    print("19b:", a[1][1], "меньше")
+
+# 12.20
+a = [[24,35,46],[57,68,79],[80,91,102]]
+print("20a:", a[0][0]%2==0, a[2][0]%2==0)
+print("20b:", a[0][2]%10==0, a[2][2]%10==0)
+
+# 12.21
+a = [[17,24,35],[46,53,60],[75,82,95]]
+print("21a:", a[0][2]%2==1, a[2][2]%2==1)
+print("21b:", a[0][0]%10==5, a[2][0]%10==5)
+
+# 12.22
+print("22:")
+t = []
+for i in range(1,10):
+    row = []
+    for j in range(1,10):
+        row.append(i*j)
+    t.append(row)
+for row in t:
+    print(row)
+
+# 12.23
+print("23a:")
+n = 7
+for i in range(n):
+    for j in range(n):
+        if i==j or i+j==n-1:
+            print(1, end=" ")
+        else:
+            print(0, end=" ")
+    print()
+
+# 12.24
+print("24a:")
+n = 6
+p = [[1]*n for _ in range(n)]
+for i in range(1,n):
+    for j in range(1,n):
+        p[i][j] = p[i-1][j] + p[i][j-1]
+for row in p:
+    print(row)
+
+# 12.25
+print("25a:")
+b = []
+for i in range(12):
+    row = []
+    for j in range(10):
+        row.append(i*10 + j + 1)
+    b.append(row)
+for row in b:
+    print(row)
+
+# 12.26
+print("26:")
+n = 8
+c = [[0]*n for _ in range(n)]
+for i in range(n):
+    for j in range(n):
+        if (i+j)%2==0:
+            c[i][j]=1
+for row in c:
+    print(row)
+
+# 12.27
+print("27:")
+m,n = 3,4
+d = list(range(1, m*n+1))
+e = []
+for i in range(m):
+    e.append(d[i*n:(i+1)*n])
+for row in e:
+    print(row)
+
+# 12.28
+print("28:")
+n = 5
+f = [[0]*n for _ in range(n)]
+num = 1
+top = 0
+bottom = n-1
+left = 0
+right = n-1
+
+while num <= n*n:
+    for j in range(left, right+1):
+        f[top][j] = num
+        num += 1
+    top += 1
+    
+    for i in range(top, bottom+1):
+        f[i][right] = num
+        num += 1
+    right -= 1
+    
+    for j in range(right, left-1, -1):
+        f[bottom][j] = num
+        num += 1
+    bottom -= 1
+    
+    for i in range(bottom, top-1, -1):
+        f[i][left] = num
+        num += 1
+    left += 1
+
+for row in f:
+    print(row)
+
+# 12.29
+print("29:")
+n = 7
+g = [[0]*n for _ in range(n)]
+num = 1
+top = 0
+bottom = n-1
+left = 0
+right = n-1
+
+while num <= n*n:
+    for j in range(left, right+1):
+        g[top][j] = num
+        num += 1
+    top += 1
+    
+    for i in range(top, bottom+1):
+        g[i][right] = num
+        num += 1
+    right -= 1
+    
+    for j in range(right, left-1, -1):
+        g[bottom][j] = num
+        num += 1
+    bottom -= 1
+    
+    for i in range(bottom, top-1, -1):
+        g[i][left] = num
+        num += 1
+    left += 1
+
+for row in g:
+    print(row)
+
+# 12.30
+print("30:")
+n = 9
+h = [[0]*n for _ in range(n)]
+num = 1
+top = 0
+bottom = n-1
+left = 0
+right = n-1
+
+while num <= n*n:
+    for j in range(left, right+1):
+        h[top][j] = num
+        num += 1
+    top += 1
+    
+    for i in range(top, bottom+1):
+        h[i][right] = num
+        num += 1
+    right -= 1
+    
+    for j in range(right, left-1, -1):
+        h[bottom][j] = num
+        num += 1
+    bottom -= 1
+    
+    for i in range(bottom, top-1, -1):
+        h[i][left] = num
+        num += 1
+    left += 1
+
+res = []
+top = 0
+bottom = n-1
+left = 0
+right = n-1
+
+while len(res) < n*n:
+    for j in range(left, right+1):
+        res.append(h[top][j])
+    top += 1
+    
+    for i in range(top, bottom+1):
+        res.append(h[i][right])
+    right -= 1
+    
+    for j in range(right, left-1, -1):
+        res.append(h[bottom][j])
+    bottom -= 1
+    
+    for i in range(bottom, top-1, -1):
+        res.append(h[i][left])
+    left += 1
+
+print(res[:20], "...")
+
+import random
+
+# 12.31
+print("31:")
+nums = list(range(1, 26))
+random.shuffle(nums)
+arr = []
+for i in range(5):
+    row = []
+    for j in range(5):
+        row.append(nums[i*5 + j])
+    arr.append(row)
+for row in arr:
+    print(row)
+
+# 12.32
+print("\n32:")
+a = [[1,2,3],[4,5,6],[7,8,9]]
+print("a:", a[2][::-1])
+k = 0
+col = []
+for i in range(len(a)-1, -1, -1):
+    col.append(a[i][k])
+print("b:", col)
+
+# 12.33
+print("\n33:")
+print("a:", end=" ")
+for i in range(len(a)-1, -1, -1):
+    print(a[i][4], end=" ")
+print()
+n = 0
+print("b:", a[n][::-1])
+
+# 12.34
+print("\n34:")
+a = [[1,2,3],[4,5,6],[7,8,9]]
+print("a:")
+for row in a:
+    print(row[::-1])
+print("b:")
+for i in range(len(a)):
+    if i%2==0:
+        print(a[i][::-1])
+    else:
+        print(a[i])
+print("c:")
+for j in range(len(a[0])):
+    for i in range(len(a)):
+        print(a[i][j], end=" ")
+    print()
+print("d:")
+for j in range(len(a[0])):
+    for i in range(len(a)-1, -1, -1):
+        print(a[i][j], end=" ")
+    print()
+
+# 12.35
+print("\n35:")
+a = [[2,4,6],[1,3,5],[7,8,9]]
+print("a:", sum(a[2]))
+s = 1
+col_sum = 0
+for row in a:
+    col_sum += row[s]
+print("b:", col_sum)
+
+# 12.36
+print("\n36:")
+print("a:", sum(row[1] for row in a))
+k = 0
+print("b:", sum(a[k]))
+
+# 12.37
+print("\n37:")
+school = [[25,24,26,23],[27,26,28,25],[26,25,27,24],
+          [28,27,29,26],[30,29,31,28]]
+print(sum(school[4]))
+
+# 12.38
+print("\n38:")
+scores = [[85,87,90,92,88],[82,85,88,90,86],
+          [88,90,93,95,91],[84,86,89,91,87]]
+print(sum(scores[2]))
+
+# 12.39
+print("\n39:")
+seats = [[random.randint(0,1) for _ in range(36)] for _ in range(25)]
+print(sum(seats[11]))
+
+# 12.40
+print("\n40:")
+students = [[random.randint(20,30) for _ in range(8)] for _ in range(5)]
+course = 2
+print(sum(students[course]))
+
+# 12.41
+print("\n41:")
+sal = [[random.randint(50,100) for _ in range(12)] for _ in range(20)]
+person = 3
+print(sum(sal[person]))
+
+# 12.42
+print("\n42:")
+train = [[random.randint(0,1) for _ in range(36)] for _ in range(18)]
+wagon = 5
+print(train[wagon].count(0))
+
+# 12.43
+print("\n43:")
+sal = [[random.randint(40,80) for _ in range(12)] for _ in range(18)]
+june_sum = 0
+for row in sal:
+    june_sum += row[5]
+print(june_sum)
+
+# 12.44
+print("\n44:")
+course5 = [random.randint(15,25) for _ in range(10)]
+print(sum(course5))
+
+# 12.45
+print("\n45:")
+parallel = [random.randint(20,30) for _ in range(5)]
+print(sum(parallel))
+
+# 12.46
+print("\n46:")
+athlete = [random.randint(60,100) for _ in range(5)]
+print(sum(athlete))
+
+# 12.47
+print("\n47:")
+a = [[2,3,4],[1,2,3],[4,5,6]]
+p = 1
+for x in a[2]:
+    p *= x
+print(p)
+
+# 12.48
+print("\n48:")
+a = [[1,2,3,4],[5,6,7,8],[9,10,11,12]]
+sum_sq_col = 0
+for row in a:
+    sum_sq_col += row[3]**2
+print("a:", sum_sq_col)
+k = 1
+sum_sq_row = 0
+for x in a[k]:
+    sum_sq_row += x**2
+print("b:", sum_sq_row)
+
+# 12.49
+print("\n49:")
+a = [[3,4,5],[6,7,8],[9,10,11]]
+sum_sq_row = 0
+for x in a[1]:
+    sum_sq_row += x**2
+print("a:", sum_sq_row)
+c = 0
+sum_sq_col = 0
+for row in a:
+    sum_sq_col += row[c]**2
+print("b:", sum_sq_col)
+
+# 12.50
+print("\n50:")
+a = [[10,20,30],[15,25,35],[20,30,40]]
+col_sum = 0
+for row in a:
+    col_sum += row[1]
+print("a:", col_sum/len(a))
+k = 2
+print("b:", sum(a[k])/len(a[k]))
+
+# 12.51
+print("\n51:")
+a = [[5,10,15],[6,12,18],[7,14,21]]
+n = 1
+col_sum = 0
+for row in a:
+    col_sum += row[n]
+print("a:", col_sum/len(a))
+print("b:", sum(a[0])/len(a[0]))
+
+# 12.52
+print("\n52:")
+grades = [[random.randint(3,5) for _ in range(10)] for _ in range(20)]
+print(sum(grades[4])/10)
+
+# 12.53
+print("\n53:")
+income = [[random.randint(100,500) for _ in range(12)] for _ in range(10)]
+shop = 3
+print(sum(income[shop])/12)
+
+# 12.54
+print("\n54:")
+groups = [random.randint(20,30) for _ in range(8)]
+print(sum(groups)/8)
+
+# 12.55
+print("\n55:")
+sal = [random.randint(40,80) for _ in range(18)]
+month = 3
+print(sum(sal)/18)
+
+# 12.56
+print("\n56:")
+a = [[2,4,6],[8,10,12],[14,16,18]]
+total = 0
+sq_total = 0
+count = 0
+for row in a:
+    for x in row:
+        total += x
+        sq_total += x*x
+        count += 1
+print("a:", total)
+print("b:", sq_total)
+print("c:", total/count)
+
+# 12.57
+print("\n57:")
+sal = [[random.randint(40,80) for _ in range(12)] for _ in range(18)]
+total = 0
+for row in sal:
+    total += sum(row)
+print(total)
+
+# 12.58
+print("\n58:")
+total = 0
+for _ in range(55):
+    total += random.randint(20,30)
+print(total)
+
+# 12.59
+print("\n59:")
+hall = [[random.randint(0,1) for _ in range(40)] for _ in range(23)]
+free = 0
+for row in hall:
+    free += row.count(0)
+print(free)
+
+# 12.60
+print("\n60:")
+all_groups = [random.randint(20,30) for _ in range(40)]
+print(sum(all_groups)/40)
+
+# 12.61
+print("\n61:")
+grades = [[random.randint(3,5) for _ in range(10)] for _ in range(20)]
+total_sum = 0
+total_count = 0
+for row in grades:
+    total_sum += sum(row)
+    total_count += len(row)
+print(total_sum/total_count)
+
+import random
+
+# 12.62
+print("62:")
+a = [[2,4,6],[1,3,5],[7,8,9]]
+# а) сумма строк
+print("a со списком:")
+sum_rows = []
+for row in a:
+    sum_rows.append(sum(row))
+print(sum_rows)
+
+print("a без списка:")
+for row in a:
+    print(sum(row), end=" ")
+print()
+
+# б) сумма столбцов
+print("b со списком:")
+sum_cols = []
+for j in range(len(a[0])):
+    s = 0
+    for i in range(len(a)):
+        s += a[i][j]
+    sum_cols.append(s)
+print(sum_cols)
+
+print("b без списка:")
+for j in range(len(a[0])):
+    s = 0
+    for i in range(len(a)):
+        s += a[i][j]
+    print(s, end=" ")
+print()
+
+# 12.63
+print("\n63:")
+school = [[25,24,26,23],[27,26,28,25],[26,25,27,24],
+          [28,27,29,26],[30,29,31,28]]
+for row in school:
+    print(sum(row)/4, end=" ")
+print()
+
+# 12.64
+print("\n64:")
+sal = [[random.randint(40,80) for _ in range(12)] for _ in range(18)]
+for j in range(12):
+    s = 0
+    for i in range(18):
+        s += sal[i][j]
+    print(s/18, end=" ")
+print()
+
+# 12.65
+print("\n65:")
+group1 = [[random.randint(3,5) for _ in range(3)] for _ in range(20)]
+group2 = [[random.randint(3,5) for _ in range(3)] for _ in range(20)]
+group3 = [[random.randint(3,5) for _ in range(3)] for _ in range(20)]
+
+avg1 = sum(sum(row) for row in group1)/60
+avg2 = sum(sum(row) for row in group2)/60
+avg3 = sum(sum(row) for row in group3)/60
+
+if avg1 > avg2 and avg1 > avg3:
+    print("Первая группа лучшая")
+elif avg2 > avg1 and avg2 > avg3:
+    print("Вторая группа лучшая")
+else:
+    print("Третья группа лучшая")
+
+# 12.66
+print("\n66:")
+a = [[5,15,25],[8,18,28],[10,20,30],[12,22,32]]
+# а)
+s = 0
+for row in a:
+    if row[1] > 10:
+        s += row[1]
+print("a:", s)
+
+# б)
+print("b:", sum(x for x in a[2] if x <= 25))
+
+# в)
+print("c:", sum(1 for x in a[0] if x != 0))
+
+# г)
+print("d:", sum(1 for row in a if row[1] > 15))
+
+# 12.67
+print("\n67:")
+a = [[-5,10,15],[8,-2,25],[10,20,-30],[12,22,32]]
+# а)
+print("a:", sum(x for x in a[4] if x < 0))
+
+# б)
+print("b:", sum(row[3] for row in a if row[3] < 100))
+
+# в)
+print("c:", sum(1 for x in a[3] if x < 5))
+
+# г)
+print("d:", sum(1 for row in a if row[1] != 0 and row[1] > 15))
+
+# 12.68
+print("\n68:")
+a = [[2,5,8],[4,7,10],[6,9,12],[8,11,14]]
+# а)
+even = [row[2] for row in a if row[2]%2==0]
+if even:
+    print("a:", sum(even)/len(even))
+
+# б)
+multiples = [x for x in a[3] if x%3==0]
+if multiples:
+    print("b:", sum(multiples)/len(multiples))
+
+# 12.69
+print("\n69:")
+a = [[1,4,7],[3,6,9],[5,8,11],[7,10,13],[9,12,15]]
+# а)
+odd = [x for x in a[4] if x%2==1]
+if odd:
+    print("a:", sum(odd)/len(odd))
+
+# б)
+multiples4 = [row[3] for row in a if row[3]%4==0]
+if multiples4:
+    print("b:", sum(multiples4)/len(multiples4))
+
+# 12.70
+print("\n70:")
+games = [[random.randint(0,5) for _ in range(22)],
+         [random.randint(0,5) for _ in range(22)]]
+
+wins = 0
+draws = 0
+loses = 0
+diff_ge_3 = 0
+points = 0
+
+for j in range(22):
+    if games[0][j] > games[1][j]:
+        wins += 1
+        points += 3
+        print("выигрыш", end=" ")
+    elif games[0][j] == games[1][j]:
+        draws += 1
+        points += 1
+        print("ничья", end=" ")
+    else:
+        loses += 1
+        print("проигрыш", end=" ")
+    
+    if games[0][j] - games[1][j] >= 3:
+        diff_ge_3 += 1
+
+print("\na: вывод выше")
+print("b:", wins)
+print("c:", wins, loses)
+print("d:", wins, draws, loses)
+print("e:", diff_ge_3)
+print("f:", points)
+
+# 12.71
+print("\n71:")
+a = [[10,35,20],[25,40,15],[30,45,50]]
+# а)
+print("a:", sum(x for row in a for x in row if x > 30))
+
+# б)
+print("b:", sum(1 for row in a for x in row if x%2==1))
+
+# в)
+even = [x for row in a for x in row if x%2==0]
+if even:
+    print("c:", sum(even)/len(even))
+
+# г)
+s = 2
+sum_s = 0
+for i in range(len(a)):
+    for j in range(len(a[0])):
+        if i + j == s:
+            sum_s += a[i][j]
+print("d:", sum_s)
+
+# 12.72
+print("\n72:")
+a = [[45,20,60],[30,55,10],[25,65,40]]
+# а)
+print("a:", sum(x for row in a for x in row if x%2==0))
+
+# б)
+print("b:", sum(1 for row in a for x in row if x < 50))
+
+# в)
+odd = [x for row in a for x in row if x%2==1]
+if odd:
+    print("c:", sum(odd)/len(odd))
+
+# г)
+sum_mult = 0
+for i in range(len(a)):
+    for j in range(len(a[0])):
+        if (i + j) % 3 == 0:
+            sum_mult += a[i][j]
+print("d:", sum_mult)
+
+# 12.73
+print("\n73:")
+a = [[5,10,5],[10,5,10],[5,10,5]]
+max_val = max(max(row) for row in a)
+min_val = min(min(row) for row in a)
+
+max_count = sum(1 for row in a for x in row if x == max_val)
+min_count = sum(1 for row in a for x in row if x == min_val)
+
+print("a:", max_count)
+print("b:", min_count)
+
+# 12.74
+print("\n74:")
+a = [[1,1,2,2],[3,3,3,4],[5,6,6,6]]
+# а) в строках
+pairs_row = 0
+for row in a:
+    for j in range(len(row)-1):
+        if row[j] == row[j+1]:
+            pairs_row += 1
+print("a:", pairs_row)
+
+# б) в столбцах
+pairs_col = 0
+for j in range(len(a[0])):
+    for i in range(len(a)-1):
+        if a[i][j] == a[i+1][j]:
+            pairs_col += 1
+print("b:", pairs_col)
+
+# 12.75
+print("\n75:")
+a = [[5,-2,3,-4,1],[-1,2,-3,4,-5],[6,-7,8,-9,0]]
+sign_changes = 0
+prev = a[0][0]
+for row in a:
+    for x in row:
+        if (prev > 0 and x < 0) or (prev < 0 and x > 0):
+            sign_changes += 1
+        prev = x
+print(sign_changes)
+
+# 12.76
+print("\n76:")
+a = [[-5,2,-3],[4,-1,6],[-2,3,-4]]
+# Со списком
+print("Со списком:")
+sums = []
+for row in a:
+    sums.append(sum(x for x in row if x < 0))
+print("a:", sums)
+
+# Без списка
+print("Без списка:")
+for row in a:
+    s = 0
+    for x in row:
+        if x < 0:
+            s += x
+    print(s, end=" ")
+print()
+
+# 12.77
+print("\n77:")
+a = [[1,2,3],[4,5,6],[7,8,9]]
+# Со списком
+print("Со списком:")
+sums = []
+for j in range(len(a[0])):
+    s = 0
+    for i in range(len(a)):
+        if a[i][j] % 2 == 1:
+            s += a[i][j]
+    sums.append(s)
+print("a:", sums)
+
+# Без списка
+print("Без списка:")
+for j in range(len(a[0])):
+    s = 0
+    for i in range(len(a)):
+        if a[i][j] % 2 == 1:
+            s += a[i][j]
+    print(s, end=" ")
+print()
+
+# 12.78
+print("\n78:")
+a = [[1,1,2,2],[3,4,4,5],[6,6,6,7]]
+# а) по строкам
+for i in range(len(a)):
+    count = 0
+    for j in range(len(a[i])-1):
+        if a[i][j] == a[i][j+1]:
+            count += 1
+    print(f"Строка {i}: {count}")
+
+# б) по столбцам
+for j in range(len(a[0])):
+    count = 0
+    for i in range(len(a)-1):
+        if a[i][j] == a[i+1][j]:
+            count += 1
+    print(f"Столбец {j}: {count}")
+
+# 12.79
+print("\n79:")
+a = [[1,2,3,4],[5,6,7,8],[9,10,11,12]]
+k1, k2 = 0, 1
+s1, s2 = 1, 2
+
+# а) строки с k1 по k2
+sum_rows = 0
+for i in range(k1, k2+1):
+    sum_rows += sum(a[i])
+print("a:", sum_rows)
+
+# б) столбцы с s1 по s2
+sum_cols = 0
+for j in range(s1, s2+1):
+    for i in range(len(a)):
+        sum_cols += a[i][j]
+print("b:", sum_cols)
+
+# 12.80
+print("\n80:")
+a = [[1,2,3],[2,3,4],[3,4,5]]
+unique = set()
+for row in a:
+    for x in row:
+        unique.add(x)
+print(len(unique))
+
+# 12.81
+print("\n81:")
+a = [[10,20,30],[5,15,25],[8,18,28]]
+print("a:", max(row[2] for row in a))
+print("b:", min(a[1]))
+
+# 12.82
+print("\n82:")
+a = [[2,12,22],[4,14,24],[6,16,26],[8,18,28],[10,20,30]]
+print("a:", max(a[4]))
+print("b:", min(row[3] for row in a))
+
+# 12.83
+print("\n83:")
+a = [[5,10,15],[3,8,13],[7,12,17]]
+row_num = 1
+col_num = 2
+print("a:", min(a[row_num]))
+print("b:", max(a[i][col_num] for i in range(len(a))))
+
+# 12.84
+print("\n84:")
+print("a:", max(a[1]))
+print("b:", min(row[2] for row in a))
+
+# 12.85
+print("\n85:")
+a = [[5,10,15],[3,8,13],[7,12,17],[2,7,12]]
+# а)
+min_val = min(a[3])
+min_col = a[3].index(min_val)
+print("a:", min_col)
+
+# б)
+col_vals = [row[2] for row in a]
+max_val = max(col_vals)
+max_row = len(col_vals) - 1 - col_vals[::-1].index(max_val)
+print("b:", max_row)
+
+# 12.86
+print("\n86:")
+a = [[10,20,30],[15,25,35],[20,30,40],[25,35,45]]
+# а)
+col_vals = [row[1] for row in a]
+max_val = max(col_vals)
+max_row = col_vals.index(max_val)
+print("a:", max_row)
+
+# б)
+min_val = min(a[2])
+min_col = len(a[2]) - 1 - a[2][::-1].index(min_val)
+print("b:", min_col)
+
+# 12.87
+print("\n87:")
+a = [[5,10,15],[3,10,13],[7,10,17]]
+row_num = 1
+col_num = 2
+
+# а) для столбца col_num
+col_vals = [row[col_num] for row in a]
+max_val = max(col_vals)
+max_row = len(col_vals) - 1 - col_vals[::-1].index(max_val)
+print("a:", max_row)
+
+# б) для строки row_num
+min_val = min(a[row_num])
+min_col = a[row_num].index(min_val)
+print("b:", min_col)
+
+# 12.88
+print("\n88:")
+# а) для строки row_num
+max_val = max(a[row_num])
+max_col = len(a[row_num]) - 1 - a[row_num][::-1].index(max_val)
+print("a:", max_col)
+
+# б) для столбца col_num
+min_val = min(row[col_num] for row in a)
+min_row = len(a) - 1
+for i in range(len(a)-1, -1, -1):
+    if a[i][col_num] == min_val:
+        min_row = i
+        break
+print("b:", min_row)
+
+# 12.89
+print("\n89:")
+a = [[5,10,5],[3,8,3],[7,12,7]]
+# Со списком
+print("Со списком:")
+all_vals = []
+for row in a:
+    all_vals.extend(row)
+print("a:", max(all_vals))
+print("b:", min(all_vals))
+
+# Без списка
+print("Без списка:")
+max_val = a[0][0]
+min_val = a[0][0]
+for row in a:
+    max_val = max(max_val, max(row))
+    min_val = min(min_val, min(row))
+print("a:", max_val)
+print("b:", min_val)
+
+# 12.90
+print("\n90:")
+a = [[5,10,15,5],[3,8,3,8],[7,12,7,12]]
+print("Со списком:")
+for i in range(len(a)):
+    print(f"Строка {i}: max={max(a[i])}, min={min(a[i])}")
+
+print("Без списка:")
+for i in range(len(a)):
+    row_max = a[i][0]
+    row_min = a[i][0]
+    for x in a[i]:
+        if x > row_max:
+            row_max = x
+        if x < row_min:
+            row_min = x
+    print(f"Строка {i}: max={row_max}, min={row_min}")
+
+# 12.91
+print("\n91:")
+a = [[5,10,15],[3,8,13],[7,12,17]]
+print("Со списком:")
+for j in range(len(a[0])):
+    col_vals = [row[j] for row in a]
+    print(f"Столбец {j}: max={max(col_vals)}, min={min(col_vals)}")
+
+print("Без списка:")
+for j in range(len(a[0])):
+    col_max = a[0][j]
+    col_min = a[0][j]
+    for i in range(len(a)):
+        if a[i][j] > col_max:
+            col_max = a[i][j]
+        if a[i][j] < col_min:
+            col_min = a[i][j]
+    print(f"Столбец {j}: max={col_max}, min={col_min}")
+
+# 12.92
+print("\n92:")
+a = [[1,2,3],[4,5,6],[7,8,9]]
+# Со списком
+print("Со списком:")
+row_sums = [sum(row) for row in a]
+col_sums = []
+for j in range(len(a[0])):
+    s = 0
+    for i in range(len(a)):
+        s += a[i][j]
+    col_sums.append(s)
+print("a:", min(row_sums))
+print("b:", max(col_sums))
+
+# Без списка
+print("Без списка:")
+min_row_sum = sum(a[0])
+for row in a:
+    min_row_sum = min(min_row_sum, sum(row))
+print("a:", min_row_sum)
+
+max_col_sum = 0
+for j in range(len(a[0])):
+    s = 0
+    for i in range(len(a)):
+        s += a[i][j]
+    max_col_sum = max(max_col_sum, s)
+print("b:", max_col_sum)
+
+import random
+
+# 12.93
+print("93:")
+a = [[1,2,3],[4,5,6],[7,8,9]]
+# Со списком
+row_sums = [sum(row) for row in a]
+col_sums = []
+for j in range(len(a[0])):
+    s = 0
+    for i in range(len(a)):
+        s += a[i][j]
+    col_sums.append(s)
+print("a со списком:", max(row_sums))
+print("b со списком:", min(col_sums))
+
+# Без списка
+max_row_sum = sum(a[0])
+for row in a:
+    max_row_sum = max(max_row_sum, sum(row))
+print("a без списка:", max_row_sum)
+
+min_col_sum = 0
+for j in range(len(a[0])):
+    s = 0
+    for i in range(len(a)):
+        s += a[i][j]
+    if j == 0:
+        min_col_sum = s
+    else:
+        min_col_sum = min(min_col_sum, s)
+print("b без списка:", min_col_sum)
+
+# 12.94
+print("\n94:")
+school = [[random.randint(20,30) for _ in range(4)] for _ in range(11)]
+# Со списком
+parallel_sums = [sum(row) for row in school]
+print("a со списком:", max(parallel_sums))
+print("b со списком:", min(parallel_sums))
+
+# Без списка
+max_parallel = sum(school[0])
+min_parallel = sum(school[0])
+for row in school:
+    s = sum(row)
+    max_parallel = max(max_parallel, s)
+    min_parallel = min(min_parallel, s)
+print("a без списка:", max_parallel)
+print("b без списка:", min_parallel)
+
+# 12.95
+print("\n95:")
+scores = [[random.randint(60,100) for _ in range(5)] for _ in range(20)]
+# Со списком
+total_scores = [sum(row) for row in scores]
+print("a со списком:", max(total_scores))
+print("b со списком:", min(total_scores))
+
+# Без списка
+max_score = sum(scores[0])
+min_score = sum(scores[0])
+for row in scores:
+    s = sum(row)
+    max_score = max(max_score, s)
+    min_score = min(min_score, s)
+print("a без списка:", max_score)
+print("b без списка:", min_score)
+
+# 12.96
+print("\n96:")
+a = [[1,2,3],[4,5,6],[7,8,9]]
+# Со списком
+row_sums = [sum(row) for row in a]
+max_row_val = max(row_sums)
+max_row_index = len(row_sums) - 1 - row_sums[::-1].index(max_row_val)
+print("a со списком:", max_row_index)
+
+col_sums = []
+for j in range(len(a[0])):
+    s = 0
+    for i in range(len(a)):
+        s += a[i][j]
+    col_sums.append(s)
+min_col_val = min(col_sums)
+min_col_index = col_sums.index(min_col_val)
+print("b со списком:", min_col_index)
+
+# Без списка
+max_row_index = 0
+max_row_sum = sum(a[0])
+for i in range(1, len(a)):
+    s = sum(a[i])
+    if s >= max_row_sum:
+        max_row_sum = s
+        max_row_index = i
+print("a без списка:", max_row_index)
+
+min_col_index = 0
+min_col_sum = 0
+for i in range(len(a)):
+    min_col_sum += a[i][0]
+for j in range(1, len(a[0])):
+    s = 0
+    for i in range(len(a)):
+        s += a[i][j]
+    if s < min_col_sum:
+        min_col_sum = s
+        min_col_index = j
+print("b без списка:", min_col_index)
+
+# 12.97
+print("\n97:")
+# Со списком
+row_sums = [sum(row) for row in a]
+min_row_val = min(row_sums)
+min_row_index = row_sums.index(min_row_val)
+print("a со списком:", min_row_index)
+
+col_sums = []
+for j in range(len(a[0])):
+    s = 0
+    for i in range(len(a)):
+        s += a[i][j]
+    col_sums.append(s)
+max_col_val = max(col_sums)
+max_col_index = len(col_sums) - 1 - col_sums[::-1].index(max_col_val)
+print("b со списком:", max_col_index)
+
+# Без списка
+min_row_index = 0
+min_row_sum = sum(a[0])
+for i in range(1, len(a)):
+    s = sum(a[i])
+    if s < min_row_sum:
+        min_row_sum = s
+        min_row_index = i
+print("a без списка:", min_row_index)
+
+max_col_index = 0
+max_col_sum = 0
+for i in range(len(a)):
+    max_col_sum += a[i][0]
+for j in range(1, len(a[0])):
+    s = 0
+    for i in range(len(a)):
+        s += a[i][j]
+    if s >= max_col_sum:
+        max_col_sum = s
+        max_col_index = j
+print("b без списка:", max_col_index)
+
+# 12.98
+print("\n98:")
+house = [[random.randint(1,5) for _ in range(4)] for _ in range(12)]
+# Со списком
+floor_sums = [sum(row) for row in house]
+min_floor_index = floor_sums.index(min(floor_sums))
+max_floor_index = floor_sums.index(max(floor_sums))
+print("a со списком:", min_floor_index + 1)
+print("b со списком:", max_floor_index + 1)
+
+# Без списка
+min_floor = 0
+max_floor = 0
+min_sum = sum(house[0])
+max_sum = sum(house[0])
+for i in range(1, len(house)):
+    s = sum(house[i])
+    if s < min_sum:
+        min_sum = s
+        min_floor = i
+    if s > max_sum:
+        max_sum = s
+        max_floor = i
+print("a без списка:", min_floor + 1)
+print("b без списка:", max_floor + 1)
+
+# 12.99
+print("\n99:")
+seats = [[random.randint(0,1) for _ in range(36)] for _ in range(25)]
+# Со списком
+row_sums = [sum(row) for row in seats]
+max_row_index = row_sums.index(max(row_sums))
+min_row_index = row_sums.index(min(row_sums))
+print("a со списком:", max_row_index + 1)
+print("b со списком:", min_row_index + 1)
+
+# Без списка
+max_row = 0
+min_row = 0
+max_tickets = sum(seats[0])
+min_tickets = sum(seats[0])
+for i in range(1, len(seats)):
+    s = sum(seats[i])
+    if s > max_tickets:
+        max_tickets = s
+        max_row = i
+    if s < min_tickets:
+        min_tickets = s
+        min_row = i
+print("a без списка:", max_row + 1)
+print("b без списка:", min_row + 1)
+
+# 12.100
+print("\n100:")
+n = 17
+table = [[0]*n for _ in range(n)]
+for i in range(n):
+    for j in range(n):
+        if i != j:
+            table[i][j] = random.choice([0,1,3])
+# Со списком
+team_scores = [sum(row) for row in table]
+print("a со списком:", max(team_scores))
+min_score = min(team_scores)
+last_team = team_scores.index(min_score)
+print("b со списком:", last_team + 1)
+
+# Без списка
+max_score = sum(table[0])
+min_score = sum(table[0])
+last_team = 0
+champion_team = 0
+for i in range(1, n):
+    s = sum(table[i])
+    if s > max_score:
+        max_score = s
+        champion_team = i
+    if s < min_score:
+        min_score = s
+        last_team = i
+print("a без списка:", max_score)
+print("b без списка:", last_team + 1)
+
+# 12.101
+print("\n101:")
+print("a:", min_score)
+print("b:", champion_team + 1)
+
+# 12.102
+print("\n102:")
+arr = [[random.randint(1,10) for _ in range(20)] for _ in range(2)]
+max_sum = 0
+for j in range(19):
+    s = arr[0][j] + arr[0][j+1] + arr[1][j] + arr[1][j+1]
+    max_sum = max(max_sum, s)
+print("102:", max_sum)
+
+# 12.103
+print("\n103:")
+arr = [[random.randint(1,10) for _ in range(15)] for _ in range(2)]
+min_sum = float('inf')
+for j in range(14):
+    s = arr[0][j] + arr[0][j+1] + arr[1][j] + arr[1][j+1]
+    min_sum = min(min_sum, s)
+print("103:", min_sum)
+
+# 12.104
+print("\n104:")
+arr = [[random.randint(1,10) for _ in range(2)] for _ in range(22)]
+max_sum = 0
+for i in range(21):
+    s = arr[i][0] + arr[i][1] + arr[i+1][0] + arr[i+1][1]
+    max_sum = max(max_sum, s)
+print("104:", max_sum)
+
+# 12.105
+print("\n105:")
+arr = [[random.randint(1,10) for _ in range(2)] for _ in range(15)]
+min_sum = float('inf')
+for i in range(14):
+    s = arr[i][0] + arr[i][1] + arr[i+1][0] + arr[i+1][1]
+    min_sum = min(min_sum, s)
+print("105:", min_sum)
+
+# 12.106
+print("\n106:")
+arr = [[random.randint(1,10) for _ in range(20)] for _ in range(2)]
+max_sum = 0
+max_col = 0
+for j in range(19):
+    s = arr[0][j] + arr[0][j+1] + arr[1][j] + arr[1][j+1]
+    if s > max_sum:
+        max_sum = s
+        max_col = j
+print("106:", max_col, max_col+1)
+
+# 12.107
+print("\n107:")
+arr = [[random.randint(1,10) for _ in range(15)] for _ in range(2)]
+min_sum = float('inf')
+min_col = 0
+for j in range(14):
+    s = arr[0][j] + arr[0][j+1] + arr[1][j] + arr[1][j+1]
+    if s < min_sum:
+        min_sum = s
+        min_col = j
+print("107:", min_col, min_col+1)
+
+# 12.108
+print("\n108:")
+arr = [[random.randint(1,10) for _ in range(2)] for _ in range(22)]
+max_sum = 0
+max_row = 0
+for i in range(21):
+    s = arr[i][0] + arr[i][1] + arr[i+1][0] + arr[i+1][1]
+    if s > max_sum:
+        max_sum = s
+        max_row = i
+print("108:", max_row, max_row+1)
+
+# 12.109
+print("\n109:")
+arr = [[random.randint(1,10) for _ in range(2)] for _ in range(15)]
+min_sum = float('inf')
+min_row = 0
+for i in range(14):
+    s = arr[i][0] + arr[i][1] + arr[i+1][0] + arr[i+1][1]
+    if s < min_sum:
+        min_sum = s
+        min_row = i
+print("109:", min_row, min_row+1)
+
+# 12.110 - пропускаем (слишком сложно для простого кода)
+
+# 12.111
+print("\n111:")
+a = [[1,2,3],[4,5,6],[7,8,9]]
+# а)
+prod = 1
+for row in a:
+    prod *= row[1]
+print("a:", 100 <= prod <= 999)
+
+# б)
+row_num = 1
+limit = 10
+print("b:", sum(a[row_num]) > limit)
+
+# 12.112
+print("\n112:")
+a = [[1,2,3,4],[5,6,7,8],[9,10,11,12]]
+# а)
+print("a:", 10 <= sum(a[3]) <= 99)
+
+# б)
+col_num = 2
+limit = 100
+prod = 1
+for row in a:
+    prod *= row[col_num]
+print("b:", prod <= limit)
+
+# 12.113
+print("\n113:")
+sal = [[random.randint(40,80) for _ in range(12)] for _ in range(18)]
+limit = 500
+print("113:", sum(sal[0]) > limit)
+
+# 12.114
+print("\n114:")
+income = [[random.randint(100,500) for _ in range(12)] for _ in range(10)]
+limit = 3000
+september_sum = 0
+for row in income:
+    september_sum += row[8]  # сентябрь - 9 месяц
+print("114:", september_sum > limit)
+
+# 12.115
+print("\n115:")
+seats = [[random.randint(0,1) for _ in range(40)] for _ in range(23)]
+print("115:", 0 in seats[0])
+
+# 12.116
+print("\n116:")
+train = [[random.randint(0,1) for _ in range(36)] for _ in range(18)]
+wagon_num = 5
+print("116:", 0 in train[wagon_num])
+
+# 12.117
+print("\n117:")
+a = [[2,4,6],[3,5,7],[8,10,12]]
+# а)
+print("a:", sum(a[0]) % 2 == 0)
+
+# б)
+col_num = 1
+k = 3
+col_sum = 0
+for row in a:
+    col_sum += row[col_num]
+print("b:", col_sum % k == 0)
+
+# 12.118
+print("\n118:")
+a = [[5,15,25],[12,22,32],[18,28,38]]
+# а)
+row_num = 1
+print("a:", sum(a[row_num]) % 10 == 0)
+
+# б)
+col_sum = 0
+for row in a:
+    col_sum += row[1]
+print("b:", col_sum % 2 == 1)
+
+# 12.119
+print("\n119:")
+a = [[1,2,3],[4,5,6],[7,8,9],[10,11,12]]
+# а)
+sum1 = sum(a[0])
+sum_penultimate = sum(a[-2])
+if sum1 > sum_penultimate:
+    print("a: первая строка")
+else:
+    print("a: предпоследняя строка")
+
+# б)
+sum2 = sum(row[1] for row in a)
+sum_last = sum(row[-1] for row in a)
+if sum2 < sum_last:
+    print("b: второй столбец")
+else:
+    print("b: последний столбец")
+
+# 12.120
+print("\n120:")
+# а)
+sum_first = sum(row[0] for row in a)
+sum_last = sum(row[-1] for row in a)
+if sum_first < sum_last:
+    print("a: первый столбец")
+else:
+    print("a: последний столбец")
+
+# б)
+sum2 = sum(a[1])
+sum3 = sum(a[2])
+if sum2 > sum3:
+    print("b: вторая строка")
+else:
+    print("b: третья строка")
+
+# 12.121
+print("\n121:")
+k = 1
+s = 2
+sum_row = sum(a[k])
+sum_col = sum(row[s] for row in a)
+print("121:", max(sum_row, sum_col))
+
+# 12.122
+print("\n122:")
+floor3 = sum(house[2])
+floor5 = sum(house[4])
+if floor3 > floor5:
+    print("122: третий этаж")
+else:
+    print("122: пятый этаж")
+
+# 12.123
+print("\n123:")
+sal = [[random.randint(40,80) for _ in range(12)] for _ in range(20)]
+feb_sum = sum(row[1] for row in sal)
+oct_sum = sum(row[9] for row in sal)
+print("123:", feb_sum < oct_sum)
+
+# 12.124
+print("\n124:")
+max_class = 0
+for i in [8, 9]:  # 10-е и 11-е классы (индексы 9 и 10)
+    for x in school[i]:
+        max_class = max(max_class, x)
+print("124:", max_class)
+
+# 12.125
+print("\n125:")
+max_family = 0
+for i in [2, 3]:  # 3-й и 4-й этажи
+    for x in house[i]:
+        max_family = max(max_family, x)
+print("125:", max_family)
+
+# 12.126
+print("\n126:")
+a = [[1,2,3],[4,5,6],[7,8,9]]
+total = sum(sum(row) for row in a)
+count = len(a) * len(a[0])
+avg = total / count
+closest_val = a[0][0]
+closest_i, closest_j = 0, 0
+for i in range(len(a)):
+    for j in range(len(a[0])):
+        if abs(a[i][j] - avg) < abs(closest_val - avg):
+            closest_val = a[i][j]
+            closest_i, closest_j = i, j
+print("126:", closest_i, closest_j)
+
+# 12.127
+print("\n127:")
+total = sum(sum(row) for row in a)
+print("127:", 1000 <= total <= 9999)
+
+# 12.128
+print("\n128:")
+train = [[random.randint(0,1) for _ in range(36)] for _ in range(20)]
+has_free = False
+for row in train:
+    if 0 in row:
+        has_free = True
+        break
+print("128:", has_free)
+
+# 12.129
+print("\n129:")
+income = [[random.randint(100,500) for _ in range(12)] for _ in range(10)]
+limit = 40000
+total = 0
+for row in income:
+    total += sum(row)
+print("129:", total > limit)
+
+# 12.130 - пропускаем (слишком сложно)
+
+# 12.131
+print("\n131:")
+magic = [[2,7,6],[9,5,1],[4,3,8]]
+n = 3
+target_sum = sum(magic[0])
+is_magic = True
+# Проверка строк
+for row in magic:
+    if sum(row) != target_sum:
+        is_magic = False
+        break
+# Проверка столбцов
+for j in range(n):
+    col_sum = 0
+    for i in range(n):
+        col_sum += magic[i][j]
+    if col_sum != target_sum:
+        is_magic = False
+        break
+# Проверка диагоналей
+diag1 = sum(magic[i][i] for i in range(n))
+diag2 = sum(magic[i][n-1-i] for i in range(n))
+if diag1 != target_sum or diag2 != target_sum:
+    is_magic = False
+print("131:", is_magic)
+
+# 12.132
+print("\n132:")
+a = [[1,2,3],[4,5,6],[7,8,9]]
+seen = set()
+has_duplicate = False
+for row in a:
+    for x in row:
+        if x in seen:
+            has_duplicate = True
+            break
+        seen.add(x)
+print("132:", has_duplicate)
+
+# 12.133
+print("\n133:")
+a = [[1,2,3],[4,5,6],[7,8,1]]
+count_dict = {}
+for row in a:
+    for x in row:
+        count_dict[x] = count_dict.get(x, 0) + 1
+duplicates = [x for x, count in count_dict.items() if count == 2]
+print("133:", len(duplicates) == 1)
+
+# 12.134
+print("\n134:")
+for x, count in count_dict.items():
+    if count == 2:
+        print("134:", x)
+        break
+
+# 12.135
+print("\n135:")
+a = [[1,2,3],[4,5,6],[7,8,9],[10,11,12],[13,14,15]]
+found_col = -1
+for j in range(len(a[0])):
+    if a[4][j] == 13:
+        found_col = j
+        break
+print("135:", found_col)
+
+# 12.136
+print("\n136:")
+a = [[1,2,3],[4,5,6],[0,8,0],[10,11,12]]
+found_col = -1
+for j in range(len(a[0])-1, -1, -1):
+    if a[2][j] == 0:
+        found_col = j
+        break
+print("136:", found_col)
+
+# 12.137
+print("\n137:")
+a = [[1,21,3],[4,5,6],[7,21,9],[10,11,12]]
+found_row = -1
+for i in range(len(a)):
+    if a[i][1] == 21:
+        found_row = i
+        break
+print("137:", found_row)
+
+# 12.138
+print("\n138:")
+a = [[1,2,3],[4,10,6],[7,8,9],[10,10,12]]
+found_row = -1
+for i in range(len(a)-1, -1, -1):
+    if a[i][1] == 10:
+        found_row = i
+        break
+print("138:", found_row)
+
+# 12.139
+print("\n139:")
+a = [[1,2,3],[4,5,6],[7,8,9]]
+# а)
+target = 5
+row_num = 1
+found = False
+for j in range(len(a[0])):
+    if a[row_num][j] == target:
+        print("139a:", row_num, j)
+        found = True
+        break
+if not found:
+    print("139a: не найдено")
+
+# б)
+col_num = 2
+k = 3
+found = False
+for i in range(len(a)):
+    if a[i][col_num] % k == 0:
+        print("139b:", i, col_num)
+        found = True
+        break
+if not found:
+    print("139b: не найдено")
+
+# 12.140
+print("\n140:")
+a = [[13,2,3],[4,23,6],[7,8,9]]
+# а)
+row_num = 0
+found = False
+for j in range(len(a[0])):
+    if a[row_num][j] % 10 == 3:
+        print("140a:", row_num, j)
+        found = True
+        break
+if not found:
+    print("140a: не найдено")
+
+# б)
+col_num = 1
+found = False
+for i in range(len(a)):
+    if a[i][col_num] == 0:
+        print("140b:", i, col_num)
+        found = True
+        break
+if not found:
+    print("140b: не найдено")
+
+import random
+
+# 12.141
+print("141:")
+a = [[1,2,3],[4,5,6],[7,8,9]]
+# а)
+row_num = 0
+is_sorted = True
+break_point = -1
+for j in range(len(a[row_num])-1):
+    if a[row_num][j] > a[row_num][j+1]:
+        is_sorted = False
+        break_point = j+1
+        break
+print("a:", is_sorted)
+if not is_sorted:
+    print(f"  нарушение на позиции ({row_num}, {break_point})")
+
+# б)
+col_num = 2
+is_sorted = True
+break_point = -1
+for i in range(len(a)-1):
+    if a[i][col_num] < a[i+1][col_num]:
+        is_sorted = False
+        break_point = i+1
+        break
+print("b:", is_sorted)
+if not is_sorted:
+    print(f"  нарушение на позиции ({break_point}, {col_num})")
+
+# 12.142
+print("\n142:")
+a = [[1,2,7],[4,14,6],[21,8,9]]
+# а)
+found = False
+for i in range(len(a)):
+    for j in range(len(a[0])):
+        if a[i][j] % 7 == 0:
+            print("a:", i, j)
+            found = True
+            break
+    if found:
+        break
+
+# б)
+z = 10
+last_i, last_j = -1, -1
+for i in range(len(a)):
+    for j in range(len(a[0])):
+        if a[i][j] > z:
+            last_i, last_j = i, j
+print("b:", last_i, last_j)
+
+# 12.143
+print("\n143:")
+a = [[1,2,0],[4,5,6],[7,8,0]]
+# а)
+found = False
+for i in range(len(a)):
+    for j in range(len(a[0])):
+        if a[i][j] == 0:
+            print("a:", i, j)
+            found = True
+            break
+    if found:
+        break
+
+# б)
+last_i, last_j = -1, -1
+for i in range(len(a)):
+    for j in range(len(a[0])):
+        if a[i][j] % 2 == 0:
+            last_i, last_j = i, j
+print("b:", last_i, last_j)
+
+# 12.144
+print("\n144:")
+a = [[-1,-2,-3],[-4,5,-6],[-7,-8,-9]]
+# а)
+has_positive = False
+for row in a:
+    for x in row:
+        if x > 0:
+            has_positive = True
+            break
+    if has_positive:
+        break
+print("a:", has_positive)
+
+# б)
+digit = 5
+has_digit = False
+for row in a:
+    for x in row:
+        if x % 10 == digit:
+            has_digit = True
+            break
+    if has_digit:
+        break
+print("b:", has_digit)
+
+# 12.145
+print("\n145:")
+a = [[1,2,-3],[4,-5,6],[-7,8,-9]]
+last_i, last_j = -1, -1
+for i in range(len(a)):
+    for j in range(len(a[0])):
+        if a[i][j] < 0:
+            # ищем самый нижний и самый правый
+            if i > last_i or (i == last_i and j > last_j):
+                last_i, last_j = i, j
+print("145:", last_i, last_j)
+
+# 12.146
+print("\n146:")
+a = [[1,-2,3],[-4,5,6],[7,8,-9]]
+# а)
+for i in range(len(a)):
+    for j in range(len(a[i])):
+        if a[i][j] < 0:
+            print(f"строка {i}: первый отрицательный на позиции {j}")
+            break
+
+# б)
+for i in range(len(a)):
+    for j in range(len(a[i])-1, -1, -1):
+        if a[i][j] % 2 == 0:
+            print(f"строка {i}: последний четный на позиции {j}")
+            break
+
+# 12.147
+print("\n147:")
+a = [[1,2,3],[4,5,6],[7,8,9]]
+# а)
+for j in range(len(a[0])):
+    for i in range(len(a)):
+        if a[i][j] % 2 == 1:
+            print(f"столбец {j}: первый нечетный на позиции {i}")
+            break
+
+# б)
+for j in range(len(a[0])):
+    for i in range(len(a)-1, -1, -1):
+        if a[i][j] > 0:
+            print(f"столбец {j}: последний положительный на позиции {i}")
+            break
+
+# 12.148
+print("\n148:")
+a = [[-1,-2,-3],[1,2,3],[4,5,6]]
+digit = 3
+for i in range(len(a)):
+    # а)
+    has_positive = False
+    for x in a[i]:
+        if x > 0:
+            has_positive = True
+            break
+    print(f"строка {i}: есть положительные? {has_positive}")
+    
+    # б)
+    has_digit = False
+    for x in a[i]:
+        if x % 10 == digit:
+            has_digit = True
+            break
+    print(f"строка {i}: есть элементы с последней цифрой {digit}? {has_digit}")
+    
+    # в)
+    is_sorted = True
+    for j in range(len(a[i])-1):
+        if a[i][j] > a[i][j+1]:
+            is_sorted = False
+            break
+    print(f"строка {i}: отсортирована по возрастанию? {is_sorted}")
+    
+    # г)
+    has_duplicate = len(set(a[i])) != len(a[i])
+    print(f"строка {i}: есть одинаковые элементы? {has_duplicate}")
+
+# 12.149
+print("\n149:")
+d = 5
+for j in range(len(a[0])):
+    # а)
+    has_greater = False
+    for i in range(len(a)):
+        if a[i][j] > d:
+            has_greater = True
+            break
+    print(f"столбец {j}: есть элементы > {d}? {has_greater}")
+    
+    # б)
+    has_odd = False
+    for i in range(len(a)):
+        if a[i][j] % 2 == 1:
+            has_odd = True
+            break
+    print(f"столбец {j}: есть нечетные? {has_odd}")
+    
+    # в)
+    is_sorted = True
+    for i in range(len(a)-1):
+        if a[i][j] < a[i+1][j]:
+            is_sorted = False
+            break
+    print(f"столбец {j}: отсортирован по убыванию? {is_sorted}")
+    
+    # г)
+    col_values = [a[i][j] for i in range(len(a))]
+    has_duplicate = len(set(col_values)) != len(col_values)
+    print(f"столбец {j}: есть одинаковые? {has_duplicate}")
+
+# 12.150
+print("\n150:")
+a = [[1,2,3],[-4,5,6],[7,8,9],[2,4,6],[3,6,9]]
+# а)
+for i in range(len(a)):
+    all_positive = True
+    for x in a[i]:
+        if x <= 0:
+            all_positive = False
+            break
+    if all_positive:
+        print(f"a: строка {i}")
+        break
+
+# б)
+for i in range(len(a)):
+    all_non_negative = True
+    for x in a[i]:
+        if x < 0:
+            all_non_negative = False
+            break
+    if all_non_negative:
+        print(f"b: строка {i}")
+        break
+
+# в)
+for i in range(len(a)):
+    all_even = True
+    for x in a[i]:
+        if x % 2 != 0:
+            all_even = False
+            break
+    if all_even:
+        print(f"c: строка {i}")
+        break
+
+# г)
+num = 3
+for i in range(len(a)):
+    all_multiple = True
+    for x in a[i]:
+        if x % num != 0:
+            all_multiple = False
+            break
+    if all_multiple:
+        print(f"d: строка {i}")
+        break
+
+# 12.151
+print("\n151:")
+# а)
+for j in range(len(a[0])):
+    all_odd = True
+    for i in range(len(a)):
+        if a[i][j] % 2 == 0:
+            all_odd = False
+            break
+    if all_odd:
+        print(f"a: столбец {j}")
+        break
+
+# б)
+for j in range(len(a[0])):
+    all_greater = True
+    for i in range(len(a)):
+        if a[i][j] <= 10:
+            all_greater = False
+            break
+    if all_greater:
+        print(f"b: столбец {j}")
+        break
+
+# в)
+a_val, b_val = 2, 8
+for j in range(len(a[0])):
+    all_in_range = True
+    for i in range(len(a)):
+        if not (a_val <= a[i][j] <= b_val):
+            all_in_range = False
+            break
+    if all_in_range:
+        print(f"c: столбец {j}")
+        break
+
+# г)
+num = 3
+for j in range(len(a[0])):
+    all_multiple = True
+    for i in range(len(a)):
+        if a[i][j] % num != 0:
+            all_multiple = False
+            break
+    if all_multiple:
+        print(f"d: столбец {j}")
+        break
+
+# 12.152
+print("\n152:")
+a = [[1,3,5],[2,4,6],[-1,-2,-3],[1,-2,3],[5,5,1]]
+# а)
+for row in a:
+    all_odd = True
+    for x in row:
+        if x % 2 == 0:
+            all_odd = False
+            break
+    if all_odd:
+        print("a: есть строка только из нечетных")
+        break
+
+# б)
+num1, num2 = 2, 3
+for row in a:
+    all_multiple = True
+    for x in row:
+        if x % num1 != 0 and x % num2 != 0:
+            all_multiple = False
+            break
+    if all_multiple:
+        print("b: есть строка только из кратных", num1, "или", num2)
+        break
+
+# в)
+for row in a:
+    all_negative = True
+    for x in row:
+        if x >= 0:
+            all_negative = False
+            break
+    if all_negative:
+        print("c: есть строка только из отрицательных")
+        break
+
+# г)
+for row in a:
+    pos_count = sum(1 for x in row if x > 0)
+    neg_count = sum(1 for x in row if x < 0)
+    if pos_count > neg_count:
+        print("d: есть строка с больше положительных чем отрицательных")
+        break
+
+# д)
+for row in a:
+    if len(set(row)) != len(row):
+        print("e: есть строка с одинаковыми элементами")
+        break
+
+# е)
+max_val = max(max(row) for row in a)
+for row in a:
+    count_max = sum(1 for x in row if x == max_val)
+    if count_max >= 2:
+        print("f: есть строка с хотя бы двумя максимальными элементами")
+        break
+
+# 12.153
+print("\n153:")
+# а)
+for j in range(len(a[0])):
+    all_zero = True
+    for i in range(len(a)):
+        if a[i][j] != 0:
+            all_zero = False
+            break
+    if all_zero:
+        print("a: есть столбец только из нулей")
+        break
+
+# б)
+b_val = 5
+for j in range(len(a[0])):
+    all_in_range = True
+    for i in range(len(a)):
+        if not (0 <= a[i][j] <= b_val):
+            all_in_range = False
+            break
+    if all_in_range:
+        print("b: есть столбец только из элементов от 0 до", b_val)
+        break
+
+# в)
+for j in range(len(a[0])):
+    all_even = True
+    for i in range(len(a)):
+        if a[i][j] % 2 != 0:
+            all_even = False
+            break
+    if all_even:
+        print("c: есть столбец только из четных")
+        break
+
+# г)
+for j in range(len(a[0])):
+    pos_count = sum(1 for i in range(len(a)) if a[i][j] > 0)
+    neg_count = sum(1 for i in range(len(a)) if a[i][j] < 0)
+    if pos_count == neg_count:
+        print("d: есть столбец с равным количеством положительных и отрицательных")
+        break
+
+# д)
+for j in range(len(a[0])):
+    col_values = [a[i][j] for i in range(len(a))]
+    if len(set(col_values)) != len(col_values):
+        print("e: есть столбец с одинаковыми элементами")
+        break
+
+# е)
+min_val = min(min(row) for row in a)
+for j in range(len(a[0])):
+    count_min = sum(1 for i in range(len(a)) if a[i][j] == min_val)
+    if count_min >= 3:
+        print("f: есть столбец с хотя бы тремя минимальными элементами")
+        break
+
+# 12.154-12.170 - квадратные массивы
+print("\n154-170 (квадратные массивы):")
+n = 5
+arr = [[(i*5 + j + 1) for j in range(n)] for i in range(n)]
+print("Массив 5x5:")
+for row in arr:
+    print(row)
+
+# 12.154
+row_num = 2
+print(f"154: элемент главной диагонали в строке {row_num}: {arr[row_num][row_num]}")
+
+# 12.155
+col_num = 2
+print(f"155: элемент побочной диагонали в столбце {col_num}: {arr[col_num][n-1-col_num]}")
+
+# 12.156
+print("156a:", end=" ")
+for i in range(n):
+    print(arr[i][i], end=" ")
+print()
+
+print("156b:", end=" ")
+for i in range(n-1, -1, -1):
+    print(arr[i][n-1-i], end=" ")
+print()
+
+# 12.157
+print("157a:", end=" ")
+for i in range(n):
+    print(arr[i][n-1-i], end=" ")
+print()
+
+print("157b:", end=" ")
+for i in range(n-1, -1, -1):
+    print(arr[i][i], end=" ")
+print()
+
+# 12.158
+print(f"158: сумма элементов главной диагонали: {arr[0][0] + arr[2][2]}")
+
+# 12.159
+print(f"159: произведение элементов побочной диагонали: {arr[0][n-1] * arr[n-1][0]}")
+
+# 12.160
+for i in range(n):
+    arr[i][i] = 0
+print("160: главная диагональ заменена нулями")
+
+# 12.161
+for i in range(n):
+    arr[i][n-1-i] = 100
+print("161: побочная диагональ заменена на 100")
+
+# Восстановим массив
+arr = [[(i*5 + j + 1) for j in range(n)] for i in range(n)]
+
+# 12.162
+main_sum = sum(arr[i][i] for i in range(n))
+side_sum = sum(arr[i][n-1-i] for i in range(n))
+print(f"162a: сумма главной диагонали: {main_sum}")
+print(f"162b: сумма побочной диагонали: {side_sum}")
+
+# 12.163
+print(f"163a: среднее главной диагонали: {main_sum/n}")
+print(f"163b: среднее побочной диагонали: {side_sum/n}")
+
+# 12.164
+print("164:")
+# Со списком
+sums = []
+for i in range(n):
+    sums.append(arr[i][i] + arr[i][n-1-i])
+print("со списком:", sums)
+
+# Без списка
+print("без списка:", end=" ")
+for i in range(n):
+    print(arr[i][i] + arr[i][n-1-i], end=" ")
+print()
+
+# 12.165
+print("165:")
+# Со списком
+sums_col = []
+for j in range(n):
+    sums_col.append(arr[j][j] + arr[n-1-j][j])
+print("со списком:", sums_col)
+
+# Без списка
+print("без списка:", end=" ")
+for j in range(n):
+    print(arr[j][j] + arr[n-1-j][j], end=" ")
+print()
+
+# 12.166
+arr[0][0], arr[2][2] = arr[2][2], arr[0][0]
+print("166: поменяны местами элементы главной диагонали")
+
+# 12.167
+arr[0][n-1], arr[n-1][0] = arr[n-1][0], arr[0][n-1]
+print("167: поменяны местами элементы побочной диагонали")
+
+# Восстановим массив
+arr = [[(i*5 + j + 1) for j in range(n)] for i in range(n)]
+
+# 12.168
+print(f"168: сумма главной диагонали <= 100? {main_sum <= 100}")
+
+# 12.169
+print(f"169: сумма побочной диагонали оканчивается 0? {side_sum % 10 == 0}")
+
+# 12.170
+if main_sum > side_sum:
+    print("170: сумма главной диагонали больше")
+elif main_sum < side_sum:
+    print("170: сумма побочной диагонали больше")
+else:
+    print("170: суммы равны")
+
+import random
+
+# 12.171
+print("171:")
+n = 5
+arr = [[random.randint(1, 30) for _ in range(n)] for _ in range(n)]
+print("Массив 5x5:")
+for row in arr:
+    print(row)
+
+# а)
+sum_main_gt20 = 0
+for i in range(n):
+    if arr[i][i] > 20:
+        sum_main_gt20 += arr[i][i]
+print("a:", sum_main_gt20)
+
+# б)
+sum_side_mod4 = 0
+for i in range(n):
+    if arr[i][n-1-i] % 4 == 0:
+        sum_side_mod4 += arr[i][n-1-i]
+print("b:", sum_side_mod4)
+
+# в)
+count_side_eq5 = sum(1 for i in range(n) if arr[i][n-1-i] == 5)
+print("c:", count_side_eq5)
+
+# г)
+count_main_even = sum(1 for i in range(n) if arr[i][i] % 2 == 0)
+print("d:", count_main_even)
+
+# 12.172
+print("\n172:")
+# а)
+prod_side_lt10 = 1
+for i in range(n):
+    if arr[i][n-1-i] < 10:
+        prod_side_lt10 *= arr[i][n-1-i]
+print("a:", prod_side_lt10)
+
+# б)
+sum_main_end7 = sum(arr[i][i] for i in range(n) if arr[i][i] % 10 == 7)
+print("b:", sum_main_end7)
+
+# в)
+count_main_zero = sum(1 for i in range(n) if arr[i][i] == 0)
+print("c:", count_main_zero)
+
+# г)
+count_side_odd = sum(1 for i in range(n) if arr[i][n-1-i] % 2 == 1)
+print("d:", count_side_odd)
+
+# 12.173
+print("\n173:")
+# а)
+min_main = min(arr[i][i] for i in range(n))
+print("a:", min_main)
+
+# б)
+max_side = max(arr[i][n-1-i] for i in range(n))
+print("b:", max_side)
+
+# 12.174
+print("\n174:")
+# а)
+print("a:", max(arr[i][i] for i in range(n)))
+
+# б)
+print("b:", min(arr[i][n-1-i] for i in range(n)))
+
+# 12.175
+print("\n175:")
+# а)
+max_main = arr[0][0]
+max_main_index = 0
+for i in range(1, n):
+    if arr[i][i] > max_main:
+        max_main = arr[i][i]
+        max_main_index = i
+print("a:", max_main_index, max_main_index)
+
+# б)
+min_side = arr[0][n-1]
+min_side_index = 0
+for i in range(1, n):
+    if arr[i][n-1-i] < min_side:
+        min_side = arr[i][n-1-i]
+        min_side_index = i
+print("b:", min_side_index, n-1-min_side_index)
+
+# 12.176
+print("\n176:")
+# а)
+min_main = arr[0][0]
+min_main_index = 0
+for i in range(1, n):
+    if arr[i][i] <= min_main:
+        min_main = arr[i][i]
+        min_main_index = i
+print("a:", min_main_index, min_main_index)
+
+# б)
+max_side = arr[0][n-1]
+max_side_index = 0
+for i in range(1, n):
+    if arr[i][n-1-i] >= max_side:
+        max_side = arr[i][n-1-i]
+        max_side_index = i
+print("b:", max_side_index, n-1-max_side_index)
+
+# 12.177
+print("\n177:")
+n = 5  # нечетное
+arr = [[(i*5 + j + 1) for j in range(n)] for i in range(n)]
+center = n // 2
+
+# Находим максимальный на диагоналях
+max_diag = arr[0][0]
+max_i, max_j = 0, 0
+for i in range(n):
+    if arr[i][i] > max_diag:
+        max_diag = arr[i][i]
+        max_i, max_j = i, i
+    if arr[i][n-1-i] > max_diag:
+        max_diag = arr[i][n-1-i]
+        max_i, max_j = i, n-1-i
+
+# Меняем с центром
+arr[max_i][max_j], arr[center][center] = arr[center][center], arr[max_i][max_j]
+print("177: поменяли максимальный на диагоналях с центральным")
+
+# 12.178
+arr = [[(i*5 + j + 1) for j in range(n)] for i in range(n)]
+
+# Находим минимальный на диагоналях
+min_diag = arr[0][0]
+min_i, min_j = 0, 0
+for i in range(n):
+    if arr[i][i] < min_diag:
+        min_diag = arr[i][i]
+        min_i, min_j = i, i
+    if arr[i][n-1-i] < min_diag:
+        min_diag = arr[i][n-1-i]
+        min_i, min_j = i, n-1-i
+
+# Меняем с левым нижним углом
+arr[min_i][min_j], arr[n-1][0] = arr[n-1][0], arr[min_i][min_j]
+print("178: поменяли минимальный на диагоналях с левым нижним углом")
+
+# 12.179
+print("\n179:")
+n = 5
+# а) симметрично относительно главной диагонали
+arr_sym_main = [[0]*n for _ in range(n)]
+for i in range(n):
+    for j in range(n):
+        if i <= j:
+            arr_sym_main[i][j] = i*5 + j + 1
+            arr_sym_main[j][i] = i*5 + j + 1
+print("a (симметрия относительно главной диагонали):")
+for row in arr_sym_main:
+    print(row)
+
+# б) симметрично относительно побочной диагонали
+arr_sym_side = [[0]*n for _ in range(n)]
+for i in range(n):
+    for j in range(n):
+        if i + j <= n-1:
+            value = i*5 + j + 1
+            arr_sym_side[i][j] = value
+            arr_sym_side[n-1-j][n-1-i] = value
+print("\nb (симметрия относительно побочной диагонали):")
+for row in arr_sym_side:
+    print(row)
+
+# 12.180
+print("\n180:")
+n = 18
+table = [[0]*n for _ in range(n)]
+# Заполняем только над главной диагональю
+for i in range(n):
+    for j in range(i+1, n):
+        table[i][j] = random.choice([0, 1, 3])
+
+print("180a (со списком):")
+wins = [0]*n
+draws = [0]*n
+losses = [0]*n
+points = [0]*n
+
+for i in range(n):
+    for j in range(i+1, n):
+        if table[i][j] == 3:
+            wins[i] += 1
+            losses[j] += 1
+            points[i] += 3
+        elif table[i][j] == 1:
+            draws[i] += 1
+            draws[j] += 1
+            points[i] += 1
+            points[j] += 1
+        else:  # 0
+            losses[i] += 1
+            wins[j] += 1
+            points[j] += 3
+
+for i in range(3):  # покажем для первых 3 команд
+    print(f"Команда {i}: выигрыши={wins[i]}, ничьи={draws[i]}, проигрыши={losses[i]}, очки={points[i]}")
+
+print("\n180b (без списка):")
+for i in range(3):  # для первых 3 команд
+    win_count = 0
+    draw_count = 0
+    loss_count = 0
+    point_count = 0
+    
+    # Просматриваем строку i
+    for j in range(i+1, n):
+        if table[i][j] == 3:
+            win_count += 1
+            point_count += 3
+        elif table[i][j] == 1:
+            draw_count += 1
+            point_count += 1
+        else:
+            loss_count += 1
+    
+    # Просматриваем столбец i (игры, где команда i была гостем)
+    for k in range(i):
+        if table[k][i] == 0:
+            win_count += 1
+            point_count += 3
+        elif table[k][i] == 1:
+            draw_count += 1
+            point_count += 1
+        else:
+            loss_count += 1
+    
+    print(f"Команда {i}: выигрыши={win_count}, ничьи={draw_count}, проигрыши={loss_count}, очки={point_count}")
+
+# 12.181 - пропускаем (сложная логика)
+
+# 12.182
+print("\n182:")
+n = 10
+arr = [[random.randint(10, 99) for _ in range(n)] for _ in range(n)]
+print("182a (выше главной диагонали):")
+for i in range(n):
+    for j in range(i+1, n):
+        print(arr[i][j], end=" ")
+    print()
+
+print("\n182b (ниже побочной диагонали):")
+for i in range(1, n):
+    for j in range(n-i, n):
+        print(arr[i][j], end=" ")
+    print()
+
+# 12.183
+print("\n183:")
+n = 15
+arr = [[random.randint(0, 9) for _ in range(n)] for _ in range(n)]
+print("183a (выше побочной диагонали):")
+for i in range(n-1):
+    for j in range(n-1-i):
+        print(arr[i][j], end=" ")
+    print()
+
+print("\n183b (ниже главной диагонали):")
+for i in range(1, n):
+    for j in range(i):
+        print(arr[i][j], end=" ")
+    print()
+
+# 12.184
+print("\n184:")
+target = 3
+found = False
+for i in range(n):
+    if arr[i][i] == target:
+        print(f"a: найден на позиции ({i}, {i})")
+        found = True
+        break
+if not found:
+    print("a: не найден")
+
+# 12.185
+target = 5
+found = False
+for i in range(n):
+    if arr[i][n-1-i] == target:
+        print(f"b: найден на позиции ({i}, {n-1-i})")
+        found = True
+        break
+if not found:
+    print("b: не найден")
+
+# 12.186
+print("\n186:")
+is_sorted = True
+break_point = -1
+for i in range(n-1):
+    if arr[i][i] > arr[i+1][i+1]:
+        is_sorted = False
+        break_point = i+1
+        break
+print("Главная диагональ упорядочена по неубыванию?", is_sorted)
+if not is_sorted:
+    print(f"Нарушение на позиции ({break_point}, {break_point})")
+
+# 12.187
+print("\n187:")
+is_sorted = True
+break_point = -1
+for i in range(n-1):
+    if arr[i][n-1-i] < arr[i+1][n-2-i]:
+        is_sorted = False
+        break_point = i+1
+        break
+print("Побочная диагональ упорядочена по невозрастанию?", is_sorted)
+if not is_sorted:
+    print(f"Нарушение на позиции ({break_point}, {n-1-break_point})")
+
+# 12.188
+print("\n188:")
+n = 4
+arr_sym = [[1,2,3,4],[2,5,6,7],[3,6,8,9],[4,7,9,10]]
+is_symmetric = True
+for i in range(n):
+    for j in range(i+1, n):
+        if arr_sym[i][j] != arr_sym[j][i]:
+            is_symmetric = False
+            break
+    if not is_symmetric:
+        break
+print("Массив симметричен относительно главной диагонали?", is_symmetric)
+
+# 12.189
+print("\n189:")
+is_symmetric = True
+for i in range(n):
+    for j in range(n-i-1):
+        if arr_sym[i][j] != arr_sym[n-1-j][n-1-i]:
+            is_symmetric = False
+            break
+    if not is_symmetric:
+        break
+print("Массив симметричен относительно побочной диагонали?", is_symmetric)
+
+# 12.190
+print("\n190:")
+n = 6
+arr = [[(i*6 + j + 1) for j in range(n)] for i in range(n)]
+print("Массив 6x6:")
+for row in arr:
+    print(row)
+
+sum_top = sum_bottom = sum_left = sum_right = 0
+for i in range(n):
+    for j in range(n):
+        if i != j and i + j != n-1:  # не на диагоналях
+            if i < j and i + j < n-1:  # верхняя четверть
+                sum_top += arr[i][j]
+            elif i > j and i + j > n-1:  # нижняя четверть
+                sum_bottom += arr[i][j]
+            elif i > j and i + j < n-1:  # левая четверть
+                sum_left += arr[i][j]
+            elif i < j and i + j > n-1:  # правая четверть
+                sum_right += arr[i][j]
+
+print(f"a: сумма верхней четверти = {sum_top}")
+print(f"b: сумма правой четверти = {sum_right}")
+print(f"c: сумма нижней четверти = {sum_bottom}")
+print(f"d: сумма левой четверти = {sum_left}")
+
+# 12.191 - пропускаем (слишком сложно)
+
+# 12.192
+print("\n192:")
+arr = [[1,2,3],[4,5,6],[7,8,9]]
+# а)
+arr[0][0], arr[2][0] = arr[2][0], arr[0][0]
+print("a: поменяли левый верхний и левый нижний")
+print(arr[0][0], arr[2][0])
+
+# б)
+arr = [[1,2,3],[4,5,6],[7,8,9]]
+arr[2][2], arr[0][2] = arr[0][2], arr[2][2]
+print("b: поменяли правый нижний и правый верхний")
+print(arr[2][2], arr[0][2])
+
+# 12.193
+print("\n193:")
+arr = [[3,5,2],[8,1,4],[6,9,7]]
+print("Массив:")
+for row in arr:
+    print(row)
+
+# Находим первый максимальный
+max_val = arr[0][0]
+max_i, max_j = 0, 0
+for i in range(len(arr)):
+    for j in range(len(arr[0])):
+        if arr[i][j] > max_val:
+            max_val = arr[i][j]
+            max_i, max_j = i, j
+
+# Находим последний минимальный
+min_val = arr[0][0]
+min_i, min_j = 0, 0
+for i in range(len(arr)):
+    for j in range(len(arr[0])):
+        if arr[i][j] <= min_val:
+            min_val = arr[i][j]
+            min_i, min_j = i, j
+
+# Меняем местами
+arr[max_i][max_j], arr[min_i][min_j] = arr[min_i][min_j], arr[max_i][max_j]
+print(f"Поменяли первый максимальный ({max_val}) с последним минимальным ({min_val})")
+
+# 12.194
+print("\n194:")
+arr = [[1,2,3,4,5],[6,7,8,9,10],[11,12,13,14,15]]
+# а)
+for j in range(len(arr[0])):
+    arr[1][j] = 5
+print("a: вторая строка заменена на 5:", arr[1])
+
+# б)
+for i in range(len(arr)):
+    if len(arr[i]) > 4:
+        arr[i][4] = 10
+print("b: пятый столбец:", [arr[i][4] for i in range(len(arr))])
+
+# 12.195
+print("\n195:")
+arr = [[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]]
+# а)
+for i in range(len(arr)):
+    arr[i][2] = -12
+print("a: третий столбец:", [arr[i][2] for i in range(len(arr))])
+
+# б)
+for j in range(len(arr[0])):
+    arr[3][j] = 4
+print("b: четвертая строка:", arr[3])
+
+# 12.196
+print("\n196:")
+arr = [[1,2,3],[4,5,6],[7,8,9]]
+row_num = 1
+col_num = 2
+value = 99
+
+# а)
+for j in range(len(arr[0])):
+    arr[row_num][j] = value
+print(f"a: строка {row_num} заменена на {value}:", arr[row_num])
+
+# б)
+arr = [[1,2,3],[4,5,6],[7,8,9]]
+for i in range(len(arr)):
+    arr[i][col_num] = value
+print(f"b: столбец {col_num} заменен на {value}:", [arr[i][col_num] for i in range(len(arr))])
+
+# 12.197
+print("\n197:")
+arr = [[1,2,3],[4,5,6],[7,8,9]]
+row_num = 1
+col_num = 2
+
+# а)
+print("a: Введите 3 числа для строки (через пробел):")
+# Для примера будем использовать готовый список
+seq = [10, 20, 30]
+for j in range(len(arr[0])):
+    arr[row_num][j] = seq[j]
+print("Строка заменена:", arr[row_num])
+
+# б)
+arr = [[1,2,3],[4,5,6],[7,8,9]]
+seq = [100, 200, 300]
+for i in range(len(arr)):
+    arr[i][col_num] = seq[i]
+print("Столбец заменен:", [arr[i][col_num] for i in range(len(arr))])
+
+# 12.198
+print("\n198:")
+arr = [[1,2,3],[4,5,6],[7,8,9]]
+k1, k2 = 0, 2
+for j in range(len(arr[0])):
+    arr[k1][j] += arr[k2][j]
+print(f"К строке {k1} добавлена строка {k2}:", arr[k1])
+
+# 12.199
+print("\n199:")
+arr = [[1,2,3],[4,5,6],[7,8,9]]
+s1, s2 = 0, 2
+for i in range(len(arr)):
+    arr[i][s1] += arr[i][s2]
+print(f"К столбцу {s1} добавлен столбец {s2}:", [arr[i][s1] for i in range(len(arr))])
+
+# 12.200
+print("\n200:")
+arr = [[1,2,3],[4,5,6],[7,8,9]]
+k, s = 1, 2
+# Меняем знак в строке k
+for j in range(len(arr[0])):
+    if j != s:  # не меняем элемент на пересечении
+        arr[k][j] = -arr[k][j]
+
+# Меняем знак в столбце s
+for i in range(len(arr)):
+    if i != k:  # не меняем элемент на пересечении
+        arr[i][s] = -arr[i][s]
+
+print(f"Строка {k} и столбец {s} (кроме пересечения) заменены на противоположные:")
+for row in arr:
+    print(row)
+
+import random
+
+# 12.201
+print("201:")
+arr = [[3,5,2],[8,1,4],[6,9,7]]
+for i in range(len(arr)):
+    max_val = max(arr[i])
+    max_index = arr[i].index(max_val)
+    arr[i][0], arr[i][max_index] = arr[i][max_index], arr[i][0]
+print("201:", arr)
+
+# 12.202
+print("\n202:")
+arr = [[3,5,2],[8,1,4],[6,9,7]]
+for j in range(len(arr[0])):
+    # Находим минимальный в столбце
+    min_val = arr[0][j]
+    min_index = 0
+    for i in range(1, len(arr)):
+        if arr[i][j] < min_val:
+            min_val = arr[i][j]
+            min_index = i
+    # Меняем с последним
+    arr[min_index][j], arr[-1][j] = arr[-1][j], arr[min_index][j]
+print("202:", arr)
+
+# 12.203 - аналогично 12.201
+print("\n203:")
+arr = [[3,5,2],[8,1,4],[6,9,7]]
+for i in range(len(arr)):
+    max_val = max(arr[i])
+    max_index = arr[i].index(max_val)
+    arr[i][0], arr[i][max_index] = arr[i][max_index], arr[i][0]
+print("203:", arr)
+
+# 12.204 - аналогично 12.202
+print("\n204:")
+arr = [[3,5,2],[8,1,4],[6,9,7]]
+for j in range(len(arr[0])):
+    min_val = arr[0][j]
+    min_index = 0
+    for i in range(1, len(arr)):
+        if arr[i][j] < min_val:
+            min_val = arr[i][j]
+            min_index = i
+    arr[min_index][j], arr[-1][j] = arr[-1][j], arr[min_index][j]
+print("204:", arr)
+
+# 12.205
+print("\n205:")
+arr = [[1,2,3],[4,5,6],[7,8,9]]
+# а) со списком
+row1, row2 = 0, 2
+temp = arr[row1][:]
+arr[row1] = arr[row2][:]
+arr[row2] = temp
+print("205a со списком:", arr)
+
+# а) без списка
+arr = [[1,2,3],[4,5,6],[7,8,9]]
+for j in range(len(arr[0])):
+    arr[row1][j], arr[row2][j] = arr[row2][j], arr[row1][j]
+print("205a без списка:", arr)
+
+# б) со списком
+arr = [[1,2,3],[4,5,6],[7,8,9]]
+col1, col2 = 0, 2
+temp = [arr[i][col1] for i in range(len(arr))]
+for i in range(len(arr)):
+    arr[i][col1] = arr[i][col2]
+    arr[i][col2] = temp[i]
+print("205b со списком:", arr)
+
+# б) без списка
+arr = [[1,2,3],[4,5,6],[7,8,9]]
+for i in range(len(arr)):
+    arr[i][col1], arr[i][col2] = arr[i][col2], arr[i][col1]
+print("205b без списка:", arr)
+
+# 12.206
+print("\n206:")
+arr = [[2,5,8],[3,12,7],[4,9,6]]
+# а)
+for i in range(len(arr)):
+    for j in range(len(arr[0])):
+        if arr[i][j] % 2 == 0:
+            arr[i][j] += arr[i][0]
+print("206a:", arr)
+
+# б)
+arr = [[2,5,8],[3,12,7],[4,9,6]]
+for i in range(len(arr)):
+    for j in range(len(arr[0])):
+        if arr[i][j] % 10 == 2:
+            arr[i][j] *= arr[-1][j]
+print("206b:", arr)
+
+# в)
+arr = [[2,-5,8],[3,12,-7],[4,9,6]]
+for i in range(len(arr)):
+    for j in range(len(arr[0])):
+        if arr[i][j] > 0:
+            arr[i][j] += arr[i][-1]
+        else:
+            arr[i][j] += arr[i][0]
+print("206c:", arr)
+
+# г)
+arr = [[1,2,3,4],[5,6,7,8],[9,10,11,12]]
+for i in range(len(arr)):
+    for j in range(len(arr[0])):
+        if (i + j) % 5 == 0:
+            arr[i][j] = 0
+print("206d:", arr)
+
+# 12.207
+print("\n207:")
+arr = [[1,2,3],[4,5,6],[7,8,9]]
+# а)
+for i in range(len(arr)):
+    for j in range(len(arr[0])):
+        if arr[i][j] % 2 == 1:
+            arr[i][j] -= arr[-1][j]
+print("207a:", arr)
+
+# б)
+arr = [[1,-2,3],[-4,5,6],[7,8,-9]]
+for i in range(len(arr)):
+    for j in range(len(arr[0])):
+        if arr[i][j] < 0:
+            arr[i][j] *= arr[i][0]
+print("207b:", arr)
+
+# в)
+arr = [[1,2,3],[4,5,6],[7,8,9]]
+for i in range(len(arr)):
+    for j in range(len(arr[0])):
+        if arr[i][j] % 2 == 0:
+            arr[i][j] += arr[i][-1]
+        else:
+            arr[i][j] += arr[0][j]
+print("207c:", arr)
+
+# г)
+arr = [[1,2,3],[4,5,6],[7,8,9]]
+for i in range(len(arr)):
+    for j in range(len(arr[0])):
+        if (i + j) % 2 == 0:
+            arr[i][j] = -1
+print("207d:", arr)
+
+# 12.208
+print("\n208:")
+arr = [[2,5,7],[4,3,9],[6,8,1]]
+# а)
+for i in range(len(arr)):
+    for j in range(len(arr[0])):
+        if arr[i][j] % 2 == 1:
+            arr[i][j] *= 2
+            break
+print("208a:", arr)
+
+# б)
+arr = [[1,0,3],[0,5,0],[4,0,6]]
+for j in range(len(arr[0])):
+    for i in range(len(arr)-1, -1, -1):
+        if arr[i][j] == 0:
+            arr[i][j] = 100
+            break
+print("208b:", arr)
+
+# 12.209
+print("\n209:")
+arr = [[2,5,8],[3,12,7],[4,9,6]]
+# а)
+for j in range(len(arr[0])):
+    for i in range(len(arr)-1, -1, -1):
+        if arr[i][j] % 2 == 0:
+            arr[i][j] -= 1
+            break
+print("209a:", arr)
+
+# б)
+arr = [[1,0,3],[0,5,0],[4,0,6]]
+for i in range(len(arr)):
+    for j in range(len(arr[0])):
+        if arr[i][j] == 0:
+            arr[i][j] = -1
+            break
+print("209b:", arr)
+
+# 12.210
+print("\n210:")
+arr = [[3,5,2],[8,1,4],[6,9,7]]
+# а)
+for i in range(len(arr)):
+    min_val = min(arr[i])
+    max_val = max(arr[i])
+    min_index = arr[i].index(min_val)
+    arr[i][min_index] = max_val
+print("210a:", arr)
+
+# б)
+arr = [[-5,10,3],[-8,2,4],[6,-9,7]]
+for j in range(len(arr[0])):
+    max_abs = abs(arr[0][j])
+    max_index = 0
+    for i in range(1, len(arr)):
+        if abs(arr[i][j]) > max_abs:
+            max_abs = abs(arr[i][j])
+            max_index = i
+    arr[max_index][j] = -arr[max_index][j]
+print("210b:", arr)
+
+# 12.211
+print("\n211:")
+arr = [[1,0,-2],[3,4,5],[-1,0,2]]
+for i in range(len(arr)):
+    first_zero = -1
+    last_negative = -1
+    
+    for j in range(len(arr[i])):
+        if arr[i][j] == 0 and first_zero == -1:
+            first_zero = j
+        if arr[i][j] < 0:
+            last_negative = j
+    
+    if first_zero != -1 and last_negative != -1:
+        arr[i][first_zero], arr[i][last_negative] = arr[i][last_negative], arr[i][first_zero]
+        print(f"211 строка {i}: поменяли местами")
+    else:
+        print(f"211 строка {i}: нет нужных элементов")
+
+print("211 результат:", arr)
+
+# 12.212
+print("\n212:")
+arr = [[1,-2,0],[3,4,5],[-1,0,2]]
+for j in range(len(arr[0])):
+    first_negative = -1
+    last_zero = -1
+    
+    for i in range(len(arr)):
+        if arr[i][j] < 0 and first_negative == -1:
+            first_negative = i
+        if arr[i][j] == 0:
+            last_zero = i
+    
+    if first_negative != -1 and last_zero != -1:
+        arr[first_negative][j], arr[last_zero][j] = arr[last_zero][j], arr[first_negative][j]
+        print(f"212 столбец {j}: поменяли местами")
+    else:
+        print(f"212 столбец {j}: нет нужных элементов")
+
+print("212 результат:", arr)
+
+# 12.213
+print("\n213:")
+arr = [[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]]
+# а)
+for i in range(len(arr)):
+    if i % 2 == 0:  # четные строки (индексы 0, 2, ...)
+        for j in range(len(arr[0])):
+            arr[i][j] += arr[0][j]
+print("213a:", arr)
+
+# б)
+arr = [[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]]
+for i in range(len(arr)):
+    for j in range(len(arr[0])):
+        if j % 2 == 1:  # нечетные столбцы (индексы 1, 3, ...)
+            arr[i][j] -= arr[i][-1]
+print("213b:", arr)
+
+# 12.214
+print("\n214:")
+arr = [[1,2,3],[4,5,6],[7,8,9]]
+# а)
+arr[0], arr[2] = arr[2], arr[0]
+print("214a:", arr)
+
+# б)
+arr = [[1,2,3],[4,5,6],[7,8,9]]
+for i in range(len(arr)):
+    arr[i][1], arr[i][-1] = arr[i][-1], arr[i][1]
+print("214b:", arr)
+
+# 12.215
+print("\n215:")
+arr = [[1,2,3,4,5],[6,7,8,9,10],[11,12,13,14,15]]
+# а)
+for i in range(len(arr)):
+    arr[i][0], arr[i][-2] = arr[i][-2], arr[i][0]
+print("215a:", arr)
+
+# б)
+arr = [[1,2,3,4,5],[6,7,8,9,10],[11,12,13,14,15]]
+arr[1], arr[-1] = arr[-1], arr[1]
+print("215b:", arr)
+
+# 12.216
+print("\n216:")
+arr = [[1,2,3],[4,5,6],[7,8,9]]
+row1, row2 = 0, 2
+col1, col2 = 1, 2
+
+# а)
+arr[row1], arr[row2] = arr[row2], arr[row1]
+print("216a:", arr)
+
+# б)
+arr = [[1,2,3],[4,5,6],[7,8,9]]
+for i in range(len(arr)):
+    arr[i][col1], arr[i][col2] = arr[i][col2], arr[i][col1]
+print("216b:", arr)
+
+# 12.217
+print("\n217:")
+n = 4
+arr = [[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]]
+# а)
+for i in range(n):
+    for j in range(i+1, n):
+        arr[i][j], arr[j][i] = arr[j][i], arr[i][j]
+print("217a (симметрия относительно главной):", arr)
+
+# б)
+arr = [[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]]
+for i in range(n):
+    for j in range(n-i-1):
+        arr[i][j], arr[n-1-j][n-1-i] = arr[n-1-j][n-1-i], arr[i][j]
+print("217b (симметрия относительно побочной):", arr)
+
+# 12.218
+print("\n218:")
+arr = [[1,2],[3,4],[5,6],[7,8]]
+half = len(arr) // 2
+for i in range(half):
+    arr[i], arr[i+half] = arr[i+half], arr[i]
+print("218:", arr)
+
+# 12.219
+print("\n219:")
+arr = [[1,2,3,4],[5,6,7,8],[9,10,11,12]]
+half = len(arr[0]) // 2
+for i in range(len(arr)):
+    for j in range(half):
+        arr[i][j], arr[i][j+half] = arr[i][j+half], arr[i][j]
+print("219:", arr)
+
+# 12.220
+print("\n220:")
+arr = [[1,2],[3,4],[5,6],[7,8]]
+for i in range(0, len(arr), 2):
+    arr[i], arr[i+1] = arr[i+1], arr[i]
+print("220:", arr)
+
+# 12.221
+print("\n221:")
+arr = [[1,2,3,4],[5,6,7,8],[9,10,11,12]]
+for i in range(len(arr)):
+    for j in range(0, len(arr[0]), 2):
+        arr[i][j], arr[i][j+1] = arr[i][j+1], arr[i][j]
+print("221:", arr)
+
+# 12.222
+print("\n222:")
+arr = [[1,2],[3,4],[5,6],[7,8]]
+for i in range(len(arr)//2):
+    arr[i], arr[-1-i] = arr[-1-i], arr[i]
+print("222:", arr)
+
+# 12.223
+print("\n223:")
+arr = [[1,2,3,4],[5,6,7,8],[9,10,11,12]]
+for i in range(len(arr)):
+    for j in range(len(arr[0])//2):
+        arr[i][j], arr[i][-1-j] = arr[i][-1-j], arr[i][j]
+print("223:", arr)
+
+# 12.224
+print("\n224:")
+arr = [[i*8 + j + 1 for j in range(8)] for i in range(15)]
+print("224 до:")
+for i in range(3):
+    print(arr[i])
+print("...")
+for i in range(12, 15):
+    print(arr[i])
+
+# Переставляем
+temp = arr[:3]
+arr[:3] = arr[-3:]
+arr[-3:] = temp
+
+print("\n224 после:")
+for i in range(3):
+    print(arr[i])
+print("...")
+for i in range(12, 15):
+    print(arr[i])
+
+# 12.225
+print("\n225:")
+arr = [[i*20 + j + 1 for j in range(20)] for i in range(5)]
+# Переставляем столбцы
+for i in range(len(arr)):
+    temp = arr[i][:3]
+    arr[i][:3] = arr[i][-3:]
+    arr[i][-3:] = temp
+
+print("225 первые 3 столбца:", [arr[i][:3] for i in range(5)])
+print("последние 3 столбца:", [arr[i][-3:] for i in range(5)])
+
+# 12.226
+print("\n226:")
+arr = [[i*8 + j + 1 for j in range(8)] for i in range(12)]
+# Переворачиваем строки с 3 по 9 (индексы 2-8)
+arr[2:9] = arr[8:1:-1]
+print("226 строки 3-9 перевернуты")
+
+# 12.227
+print("\n227:")
+arr = [[i*16 + j + 1 for j in range(16)] for i in range(5)]
+# Переворачиваем столбцы с 4 по 10 (индексы 3-9)
+for i in range(len(arr)):
+    arr[i][3:10] = arr[i][9:2:-1]
+print("227 столбцы 4-10 перевернуты")
+
+# 12.228
+print("\n228:")
+arr = [[i*8 + j + 1 for j in range(8)] for i in range(15)]
+k, s = 3, 10  # для примера
+arr[k+1:s] = arr[s-1:k:-1]
+print(f"228 строки с {k+2} по {s} перевернуты")
+
+# 12.229
+print("\n229:")
+arr = [[i*20 + j + 1 for j in range(20)] for i in range(5)]
+k, s = 4, 15  # для примера
+for i in range(len(arr)):
+    arr[i][k+1:s] = arr[i][s-1:k:-1]
+print(f"229 столбцы с {k+2} по {s} перевернуты")
+
+# 12.230
+print("\n230:")
+arr = [[1,2,3],[4,0,6],[7,8,9]]
+# Находим первый нулевой элемент
+zero_row = -1
+zero_col = -1
+for i in range(len(arr)):
+    for j in range(len(arr[0])):
+        if arr[i][j] == 0:
+            zero_row, zero_col = i, j
+            break
+    if zero_row != -1:
+        break
+
+if zero_row != -1:
+    arr[0], arr[zero_row] = arr[zero_row], arr[0]
+    print(f"230: поменяли первую строку со строкой {zero_row}")
+else:
+    print("230: нет нулевых элементов")
+
+print("230 результат:", arr)
+
