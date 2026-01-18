@@ -1085,8 +1085,7 @@ if found_index != -1:
 else:
     print("Таких пар нет")
 
-# ====================== ЗАДАЧА 6.66 ======================
-# Пара одинаковых соседних чисел (последовательность до -1)
+#  6.66
 print("Вводите числа, конец — -1:")
 prev = None
 found_index = -1
@@ -1104,8 +1103,7 @@ if found_index != -1:
 else:
     print("Таких пар нет")
 
-# ====================== ЗАДАЧА 6.67 ======================
-# Пара соседних нечётных чисел
+# 6.67
 print("Введите 20 натуральных чисел:")
 prev = None
 found_index = -1
@@ -1119,23 +1117,28 @@ if found_index != -1:
 else:
     print("Таких пар нет")
 
-# ====================== ЗАДАЧА 6.68 ======================
-# Пара соседних чётных чисел (последовательность до 9999)
-print("Вводите числа, конец — 9999:")
-prev = None
-found_index = -1
+# 6.68
 count = 0
+prev = None
+found = False
+
 while True:
     x = int(input())
     count += 1
+    
     if x == 9999:
         break
-    if prev is not None and prev % 2 == 0 and x % 2 == 0 and found_index == -1:
-        found_index = count-1
+    
+    if prev is not None:
+        if prev % 2 == 0 and x % 2 == 0:
+            print(f"Пара соседних четных чисел: {prev} и {x}")
+            print(f"На позициях: {count-1} и {count}")
+            found = True
+            break
+    
     prev = x
-if found_index != -1:
-    print(f"Первая пара соседних чётных чисел с номера: {found_index}")
-else:
+
+if not found:
     print("Таких пар нет")
 
  # 6.69 
