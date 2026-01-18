@@ -1,0 +1,1555 @@
+# 14.1
+print("14.1:")
+# а) 
+with open("14_1_a.txt", "w") as f:
+    f.write("500")
+print("а) Создан файл с числом 500")
+
+# б)
+with open("14_1_b.txt", "w") as f:
+    f.write("4.5")
+print("б) Создан файл с числом 4.5")
+
+# в)
+with open("14_1_c.txt", "w", encoding="utf-8") as f:
+    f.write("Привет")
+print("в) Создан файл со словом 'Привет'")
+
+# 14.2
+print("\n14.2:")
+# Для этого примера используем числа и слова как пример
+num = 7
+float_num = 3.14
+word = "Пример"
+
+# а)
+with open("14_2_a.txt", "w") as f:
+    for _ in range(5):
+        f.write(str(num) + "\n")
+print("а) Создан файл с 5 одинаковыми числами")
+
+# б)
+with open("14_2_b.txt", "w") as f:
+    for _ in range(5):
+        f.write(str(float_num) + "\n")
+print("б) Создан файл с 5 одинаковыми вещественными числами")
+
+# в)
+with open("14_2_c.txt", "w", encoding="utf-8") as f:
+    for _ in range(5):
+        f.write(word + "\n")
+print("в) Создан файл с 5 одинаковыми словами")
+
+# 14.3
+print("\n14.3:")
+with open("14_3.txt", "w") as f:
+    for i in range(10, 17):
+        f.write(str(i) + "\n")
+print("Создан файл с числами 10, 11, ..., 16")
+
+# 14.4
+print("\n14.4:")
+# Для примера используем готовые данные
+integers = [1, 2, 3, 4, 5, 6, 7]
+floats = [1.1, 2.2, 3.3, 4.4]
+words = ["яблоко", "банан", "апельсин", "груша", "виноград"]
+
+# а)
+with open("14_4_a.txt", "w") as f:
+    for num in integers:
+        f.write(str(num) + "\n")
+print("а) Создан файл с 7 целыми числами")
+
+# б)
+with open("14_4_b.txt", "w") as f:
+    for num in floats:
+        f.write(str(num) + "\n")
+print("б) Создан файл с 4 вещественными числами")
+
+# в)
+with open("14_4_c.txt", "w", encoding="utf-8") as f:
+    for word in words:
+        f.write(word + "\n")
+print("в) Создан файл с 5 словами")
+
+# 14.5
+print("\n14.5:")
+import random
+numbers = [random.uniform(0, 100) for _ in range(20)]
+
+with open("14_5.txt", "w") as f:
+    for num in numbers:
+        f.write(str(num) + "\n")
+print("Создан файл с 20 вещественными числами")
+
+# 14.6
+print("\n14.6:")
+sentence = "Это тестовое предложение."
+with open("14_6.txt", "w", encoding="utf-8") as f:
+    for char in sentence:
+        f.write(char + "\n")
+print("Записан каждый символ предложения в файл")
+print("Лучшая структура: файл с отдельными строками для каждого символа")
+
+# 14.7
+print("\n14.7:")
+sequence = [1, 3, 5, 7, 9, 0]  # последовательность, оканчивающаяся нулем
+with open("14_7.txt", "w") as f:
+    for num in sequence:
+        f.write(str(num) + "\n")
+print("Записана последовательность чисел, оканчивающаяся нулем")
+
+# 14.8
+print("\n14.8:")
+# Создаем файл для примера
+with open("14_8.txt", "w") as f:
+    f.write("Исходное содержимое\n")
+
+# а)
+with open("14_8.txt", "a") as f:
+    f.write("0\n")
+print("а) Добавлен 0 в конец файла")
+
+# б)
+with open("14_8.txt", "a", encoding="utf-8") as f:
+    f.write("До свидания!\n")
+print("б) Добавлена фраза 'До свидания!' в конец файла")
+
+# 14.9
+print("\n14.9:")
+# Создаем файл для примера
+with open("14_9.txt", "w") as f:
+    f.write("Исходное содержимое\n")
+
+# а) 
+more_integers = [10, 20, 30, 40, 50, 60]
+with open("14_9.txt", "a") as f:
+    for num in more_integers:
+        f.write(str(num) + "\n")
+print("а) Добавлено 6 целых чисел в конец файла")
+
+# б)
+more_floats = [1.5, 2.5, 3.5, 4.5, 5.5]
+with open("14_9.txt", "a") as f:
+    for num in more_floats:
+        f.write(str(num) + "\n")
+print("б) Добавлено 5 вещественных чисел в конец файла")
+
+# в)
+more_words = ["зима", "весна", "лето", "осень"]
+with open("14_9.txt", "a", encoding="utf-8") as f:
+    for word in more_words:
+        f.write(word + "\n")
+print("в) Добавлено 4 слова в конец файла")
+
+# 14.10
+print("\n14.10:")
+fibonacci = [1, 1]
+for i in range(2, 12):
+    fibonacci.append(fibonacci[i-1] + fibonacci[i-2])
+
+with open("14_10.txt", "w") as f:
+    for num in fibonacci:
+        f.write(str(num) + "\n")
+print("Создан файл с первыми 12 числами Фибоначчи")
+
+# 14.11
+print("\n14.11:")
+# Создаем файл с числами для примера
+numbers = list(range(1, 21))  # числа от 1 до 20
+with open("14_11.txt", "w") as f:
+    for num in numbers:
+        f.write(str(num) + "\n")
+
+# Читаем файл
+with open("14_11.txt", "r") as f:
+    lines = f.readlines()
+    nums = [int(line.strip()) for line in lines]
+
+print(f"а) Первый элемент: {nums[0]}")
+print(f"б) Третий элемент: {nums[2]}")
+print(f"в) n-й элемент (n=7): {nums[6]}")
+print(f"г) Последний элемент: {nums[-1]}")
+
+# 14.12
+print("\n14.12:")
+# Создаем файл со словами для примера
+words = ["яблоко", "банан", "апельсин", "груша", "виноград", "лимон", "манго", "персик"]
+with open("14_12.txt", "w", encoding="utf-8") as f:
+    for word in words:
+        f.write(word + "\n")
+
+with open("14_12.txt", "r", encoding="utf-8") as f:
+    lines = f.readlines()
+    words_list = [line.strip() for line in lines]
+
+print(f"а) Первый элемент: {words_list[0]}")
+print(f"б) Пятый элемент: {words_list[4]}")
+print(f"в) k-й элемент (k=3): {words_list[2]}")
+print(f"г) Последний элемент: {words_list[-1]}")
+
+# 14.13
+print("\n14.13:")
+# Создаем файл с 10 числами
+with open("14_13.txt", "w") as f:
+    for i in range(1, 11):
+        f.write(str(i*10) + "\n")
+
+print("Вариант 1 (известно количество):")
+with open("14_13.txt", "r") as f:
+    for i in range(10):
+        print(f.read(3).strip(), end=" ")  # читаем по 3 символа (число + \n)
+print()
+
+print("\nВариант 2 (неизвестно количество):")
+with open("14_13.txt", "r") as f:
+    for line in f:
+        print(line.strip(), end=" ")
+print()
+
+# 14.14
+print("\n14.14:")
+# Создаем файл со словами
+with open("14_14.txt", "w", encoding="utf-8") as f:
+    fruits = ["яблоко", "груша", "слива", "вишня", "абрикос", "персик", "нектарин", "манго", "папайя", "киви", "ананас", "банан"]
+    for fruit in fruits:
+        f.write(fruit + "\n")
+
+print("Вариант 1 (известно количество):")
+with open("14_14.txt", "r", encoding="utf-8") as f:
+    for i in range(12):
+        print(f.readline().strip(), end=" ")
+print()
+
+print("\nВариант 2 (неизвестно количество):")
+with open("14_14.txt", "r", encoding="utf-8") as f:
+    for line in f:
+        print(line.strip(), end=" ")
+print()
+
+# 14.15
+print("\n14.15:")
+# Создаем файл с 12 вещественными числами
+import random
+with open("14_15.txt", "w") as f:
+    for _ in range(12):
+        f.write(str(round(random.uniform(0, 100), 2)) + "\n")
+
+# Читаем в массив
+numbers_array = []
+with open("14_15.txt", "r") as f:
+    for line in f:
+        numbers_array.append(float(line.strip()))
+
+print("Числа из файла в массиве:")
+print(numbers_array)
+
+# 14.16
+print("\n14.16:")
+# Создаем файл с отдельными буквами
+letters = ["п", "р", "и", "в", "е", "т"]
+with open("14_16.txt", "w", encoding="utf-8") as f:
+    for letter in letters:
+        f.write(letter + "\n")
+
+# Читаем и составляем слово
+word = ""
+with open("14_16.txt", "r", encoding="utf-8") as f:
+    for line in f:
+        word += line.strip()
+
+print(f"Слово из букв файла: {word}")
+
+# 14.17
+print("\n14.17:")
+# Создаем файл с числами
+with open("14_17.txt", "w") as f:
+    for i in range(1, 21):
+        f.write(str(i) + "\n")
+
+print("а) Известно количество (20 чисел):")
+with open("14_17.txt", "r") as f:
+    for i in range(20):
+        num = int(f.readline().strip())
+        if (i + 1) % 2 == 1:  # нечетные порядковые номера
+            print(num, end=" ")
+print()
+
+print("\nб) Неизвестно количество:")
+with open("14_17.txt", "r") as f:
+    index = 1
+    for line in f:
+        if index % 2 == 1:  # нечетные порядковые номера
+            print(line.strip(), end=" ")
+        index += 1
+print()
+
+# 14.18
+print("\n14.18:")
+# Создаем файл с числами
+with open("14_18.txt", "w") as f:
+    for i in range(1, 14):
+        f.write(str(i*3) + "\n")  # 3, 6, 9, ..., 39
+
+a = 20
+
+print(f"а) Известно количество (13 чисел), больше {a}:")
+with open("14_18.txt", "r") as f:
+    for i in range(13):
+        num = int(f.readline().strip())
+        if num > a:
+            print(num, end=" ")
+print()
+
+print(f"\nб) Неизвестно количество, больше {a}:")
+with open("14_18.txt", "r") as f:
+    for line in f:
+        num = int(line.strip())
+        if num > a:
+            print(num, end=" ")
+print()
+
+# 14.19
+print("\n14.19:")
+# Создаем файл со словами
+words = ["собака", "кот", "слон", "кошка", "мышь", "сова", "корова", "коза", "сорока", "ворона"]
+with open("14_19.txt", "w", encoding="utf-8") as f:
+    for word in words:
+        f.write(word + "\n")
+
+print("а) Известно количество (10 слов), начинаются на 'с':")
+with open("14_19.txt", "r", encoding="utf-8") as f:
+    for i in range(10):
+        word = f.readline().strip()
+        if word.startswith("с"):
+            print(word, end=" ")
+print()
+
+print("\nб) Неизвестно количество, начинаются на 'с':")
+with open("14_19.txt", "r", encoding="utf-8") as f:
+    for line in f:
+        word = line.strip()
+        if word.startswith("с"):
+            print(word, end=" ")
+print()
+
+# 14.20
+print("\n14.20:")
+# Создаем файл с целыми числами
+import random
+with open("14_20.txt", "w") as f:
+    for _ in range(18):
+        f.write(str(random.randint(-10, 10)) + "\n")
+
+positive_numbers = []
+with open("14_20.txt", "r") as f:
+    for line in f:
+        num = int(line.strip())
+        if num > 0:
+            positive_numbers.append(num)
+
+print("Положительные числа из файла:")
+print(positive_numbers)
+
+# 14.21
+print("\n14.21:")
+# Создаем файл с отдельными буквами
+letters = ["п", "р", "о", "г", "р", "а", "м", "м", "а"]
+with open("14_21.txt", "w", encoding="utf-8") as f:
+    for letter in letters:
+        f.write(letter + "\n")
+
+word = ""
+index = 1
+with open("14_21.txt", "r", encoding="utf-8") as f:
+    for line in f:
+        if index % 2 == 0:  # четные порядковые номера
+            word += line.strip()
+        index += 1
+
+print(f"Слово из букв с четными номерами: {word}")
+
+# 14.22
+print("\n14.22:")
+# Создаем файл с числами
+with open("14_22.txt", "w") as f:
+    for i in range(1, 11):
+        f.write(str(i) + "\n")
+
+# а) Изменяем первый элемент
+new_value = 100
+with open("14_22.txt", "r") as f:
+    lines = f.readlines()
+
+lines[0] = str(new_value) + "\n"
+
+with open("14_22.txt", "w") as f:
+    f.writelines(lines)
+
+print("а) Изменен первый элемент на", new_value)
+
+# б) Изменяем пятый элемент
+new_value = 500
+with open("14_22.txt", "r") as f:
+    lines = f.readlines()
+
+lines[4] = str(new_value) + "\n"
+
+with open("14_22.txt", "w") as f:
+    f.writelines(lines)
+
+print("б) Изменен пятый элемент на", new_value)
+
+# в) Изменяем k-й элемент (k=3)
+k = 3
+new_value = 300
+with open("14_22.txt", "r") as f:
+    lines = f.readlines()
+
+lines[k-1] = str(new_value) + "\n"
+
+with open("14_22.txt", "w") as f:
+    f.writelines(lines)
+
+print(f"в) Изменен {k}-й элемент на", new_value)
+
+# г) Изменяем последний элемент
+new_value = 999
+with open("14_22.txt", "r") as f:
+    lines = f.readlines()
+
+lines[-1] = str(new_value) + "\n"
+
+with open("14_22.txt", "w") as f:
+    f.writelines(lines)
+
+print("г) Изменен последний элемент на", new_value)
+
+# 14.23
+print("\n14.23:")
+# Создаем файл со словами
+words = ["яблоко", "банан", "апельсин", "груша", "виноград", "лимон"]
+with open("14_23.txt", "w", encoding="utf-8") as f:
+    for word in words:
+        f.write(word + "\n")
+
+# а) Изменяем первое слово
+new_word = "арбуз"
+with open("14_23.txt", "r", encoding="utf-8") as f:
+    lines = f.readlines()
+
+lines[0] = new_word + "\n"
+
+with open("14_23.txt", "w", encoding="utf-8") as f:
+    f.writelines(lines)
+
+print("а) Изменено первое слово на", new_word)
+
+# б) Изменяем третье слово
+new_word = "мандарин"
+with open("14_23.txt", "r", encoding="utf-8") as f:
+    lines = f.readlines()
+
+lines[2] = new_word + "\n"
+
+with open("14_23.txt", "w", encoding="utf-8") as f:
+    f.writelines(lines)
+
+print("б) Изменено третье слово на", new_word)
+
+# в) Изменяем s-е слово (s=5)
+s = 5
+new_word = "дыня"
+with open("14_23.txt", "r", encoding="utf-8") as f:
+    lines = f.readlines()
+
+lines[s-1] = new_word + "\n"
+
+with open("14_23.txt", "w", encoding="utf-8") as f:
+    f.writelines(lines)
+
+print(f"в) Изменено {s}-е слово на", new_word)
+
+# г) Изменяем последнее слово
+new_word = "манго"
+with open("14_23.txt", "r", encoding="utf-8") as f:
+    lines = f.readlines()
+
+lines[-1] = new_word + "\n"
+
+with open("14_23.txt", "w", encoding="utf-8") as f:
+    f.writelines(lines)
+
+print("г) Изменено последнее слово на", new_word)
+
+# 14.24
+print("\n14.24:")
+# Создаем файл с 10 числами
+with open("14_24.txt", "w") as f:
+    for i in range(1, 11):
+        f.write(str(i) + "\n")
+
+print("а) Известно количество (10 чисел):")
+new_values = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
+with open("14_24.txt", "r") as f:
+    lines = f.readlines()
+
+for i in range(10):
+    lines[i] = str(new_values[i]) + "\n"
+
+with open("14_24.txt", "w") as f:
+    f.writelines(lines)
+
+print("  Все элементы изменены")
+
+# Создаем новый файл с неизвестным количеством чисел
+import random
+with open("14_24_2.txt", "w") as f:
+    count = random.randint(5, 15)
+    for i in range(count):
+        f.write(str(random.randint(1, 100)) + "\n")
+
+print("\nб) Неизвестно количество:")
+with open("14_24_2.txt", "r") as f:
+    lines = f.readlines()
+
+new_values = [int(line.strip()) * 2 for line in lines]  # удваиваем каждое число
+
+with open("14_24_2.txt", "w") as f:
+    for value in new_values:
+        f.write(str(value) + "\n")
+
+print("  Все элементы изменены (удвоены)")
+
+# 14.25
+print("\n14.25:")
+# Создаем файл с 12 словами
+fruits = ["яблоко", "банан", "апельсин", "груша", "виноград", "лимон", 
+          "манго", "персик", "слива", "вишня", "киви", "ананас"]
+with open("14_25.txt", "w", encoding="utf-8") as f:
+    for fruit in fruits:
+        f.write(fruit + "\n")
+
+print("а) Известно количество (12 слов):")
+new_words = ["ягода", "фрукт", "плод", "растение", "дерево", "куст",
+             "сад", "огород", "поле", "лес", "река", "гора"]
+with open("14_25.txt", "r", encoding="utf-8") as f:
+    lines = f.readlines()
+
+for i in range(12):
+    lines[i] = new_words[i] + "\n"
+
+with open("14_25.txt", "w", encoding="utf-8") as f:
+    f.writelines(lines)
+
+print("  Все слова изменены")
+
+# Создаем новый файл с неизвестным количеством слов
+with open("14_25_2.txt", "w", encoding="utf-8") as f:
+    animals = ["собака", "кошка", "мышь", "слон", "тигр", "лев", "медведь"]
+    count = random.randint(3, 7)
+    for i in range(count):
+        f.write(animals[i] + "\n")
+
+print("\nб) Неизвестно количество:")
+with open("14_25_2.txt", "r", encoding="utf-8") as f:
+    lines = f.readlines()
+
+new_animals = ["птица", "рыба", "насекомое", "пресмыкающееся", "амфибия", "моллюск", "червь"]
+
+with open("14_25_2.txt", "w", encoding="utf-8") as f:
+    for i in range(len(lines)):
+        f.write(new_animals[i % len(new_animals)] + "\n")
+
+print("  Все слова изменены")
+
+# 14.26
+print("\n14.26:")
+# Создаем файл с 20 числами
+with open("14_26.txt", "w") as f:
+    for i in range(1, 21):
+        f.write(str(i) + "\n")
+
+print("а) Известно количество (20 чисел), кратные 3:")
+new_values = [i * 100 for i in range(1, 21)]  # новые значения
+with open("14_26.txt", "r") as f:
+    lines = f.readlines()
+
+for i in range(20):
+    if (i + 1) % 3 == 0:  # порядковый номер кратен 3
+        lines[i] = str(new_values[i]) + "\n"
+
+with open("14_26.txt", "w") as f:
+    f.writelines(lines)
+
+print("  Элементы с номерами, кратными 3, изменены")
+
+# Создаем новый файл с неизвестным количеством чисел
+with open("14_26_2.txt", "w") as f:
+    for i in range(1, random.randint(10, 20)):
+        f.write(str(i) + "\n")
+
+print("\nб) Неизвестно количество, кратные 3:")
+with open("14_26_2.txt", "r") as f:
+    lines = f.readlines()
+
+index = 1
+for i in range(len(lines)):
+    if index % 3 == 0:  # порядковый номер кратен 3
+        lines[i] = str(int(lines[i].strip()) * 10) + "\n"
+    index += 1
+
+with open("14_26_2.txt", "w") as f:
+    f.writelines(lines)
+
+print("  Элементы с номерами, кратными 3, изменены (умножены на 10)")
+
+# 14.27
+print("\n14.27:")
+# Создаем файл с 13 числами
+with open("14_27.txt", "w") as f:
+    for i in range(1, 14):
+        f.write(str(i) + "\n")
+
+print("а) Известно количество (13 чисел), четные -> 0:")
+with open("14_27.txt", "r") as f:
+    lines = f.readlines()
+
+for i in range(13):
+    num = int(lines[i].strip())
+    if num % 2 == 0:
+        lines[i] = "0\n"
+
+with open("14_27.txt", "w") as f:
+    f.writelines(lines)
+
+print("  Четные элементы заменены нулями")
+
+# Создаем новый файл с неизвестным количеством чисел
+with open("14_27_2.txt", "w") as f:
+    for i in range(1, random.randint(8, 15)):
+        f.write(str(i) + "\n")
+
+print("\nб) Неизвестно количество, четные -> 0:")
+with open("14_27_2.txt", "r") as f:
+    lines = f.readlines()
+
+for i in range(len(lines)):
+    num = int(lines[i].strip())
+    if num % 2 == 0:
+        lines[i] = "0\n"
+
+with open("14_27_2.txt", "w") as f:
+    f.writelines(lines)
+
+print("  Четные элементы заменены нулями")
+
+# 14.28
+print("\n14.28:")
+# Создаем файл со словами
+words = ["кот", "собака", "корова", "коза", "мышь", "кошка", "кролик"]
+with open("14_28.txt", "w", encoding="utf-8") as f:
+    for word in words:
+        f.write(word + "\n")
+
+with open("14_28.txt", "r", encoding="utf-8") as f:
+    lines = f.readlines()
+
+for i in range(len(lines)):
+    word = lines[i].strip()
+    if word.startswith("к"):
+        lines[i] = "К" + word[1:] + "\n"
+
+with open("14_28.txt", "w", encoding="utf-8") as f:
+    f.writelines(lines)
+
+print("Слова, начинающиеся на 'к', изменены на 'К':")
+with open("14_28.txt", "r", encoding="utf-8") as f:
+    print(f.read())
+
+# 14.29
+print("\n14.29:")
+# Создаем файл с числами
+import random
+numbers = [random.randint(-50, 50) for _ in range(15)]
+with open("14_29.txt", "w") as f:
+    for num in numbers:
+        f.write(str(num) + "\n")
+
+# Читаем все числа
+with open("14_29.txt", "r") as f:
+    nums = [int(line.strip()) for line in f]
+
+print(f"а) Сумма первого и второго чисел: {nums[0]} + {nums[1]} = {nums[0] + nums[1]}")
+
+k1, k2 = 3, 7
+print(f"б) Сумма {k1}-го и {k2}-го чисел: {nums[k1-1]} + {nums[k2-1]} = {nums[k1-1] + nums[k2-1]}")
+
+print(f"в) Произведение первого и последнего чисел: {nums[0]} × {nums[-1]} = {nums[0] * nums[-1]}")
+
+print(f"г) Сумма всех чисел: {sum(nums)}")
+
+a = 10
+count_le_a = sum(1 for num in nums if num <= a)
+print(f"д) Количество чисел, не превышающих {a}: {count_le_a}")
+
+positive_nums = [num for num in nums if num > 0]
+if positive_nums:
+    avg_positive = sum(positive_nums) / len(positive_nums)
+    print(f"е) Среднее арифметическое положительных чисел: {avg_positive:.2f}")
+else:
+    print("е) Нет положительных чисел")
+
+b = 30
+first_greater_than_b = next((num for num in nums if num > b), None)
+if first_greater_than_b:
+    print(f"ж) Первое число, большее {b}: {first_greater_than_b}")
+else:
+    print(f"ж) Нет чисел, больших {b}")
+
+print(f"з) Максимальное число: {max(nums)}")
+
+min_num = min(nums)
+min_index = nums.index(min_num) + 1  # +1 для порядкового номера
+print(f"и) Порядковый номер минимального числа: {min_index}")
+
+# 14.30
+print("\n14.30:")
+# Создаем файл со словами
+words = ["мама", "папа", "мир", "дом", "машина", "кот", "собака", "малина", "книга", "море"]
+with open("14_30.txt", "w", encoding="utf-8") as f:
+    for word in words:
+        f.write(word + "\n")
+
+with open("14_30.txt", "r", encoding="utf-8") as f:
+    words_list = [line.strip() for line in f]
+
+# а) слова на букву 'м'
+count_m = sum(1 for word in words_list if word.startswith("м"))
+print(f"а) Количество слов, начинающихся на 'м': {count_m}")
+
+# б) первое слово на букву 'к'
+k_index = next((i+1 for i, word in enumerate(words_list) if word.startswith("к")), None)
+if k_index:
+    print(f"б) Первое слово на 'к' имеет порядковый номер: {k_index}")
+else:
+    print("б) Нет слов, начинающихся на 'к'")
+
+# в) предложение из слов с четными номерами
+even_words = [words_list[i] for i in range(len(words_list)) if (i+1) % 2 == 0]
+sentence = " ".join(even_words)
+print(f"в) Предложение из слов с четными номерами: {sentence}")
+
+# г) самое длинное слово
+longest_word = max(words_list, key=len)
+print(f"г) Самое длинное слово: '{longest_word}' (длина: {len(longest_word)})")
+
+# 14.31
+print("\n14.31:")
+# Создаем файл с символами
+text = "12abnoенураne"
+with open("14_31.txt", "w", encoding="utf-8") as f:
+    for char in text:
+        f.write(char + "\n")
+
+with open("14_31.txt", "r", encoding="utf-8") as f:
+    chars = [line.strip() for line in f]
+
+# а) первые два символа - цифры?
+if len(chars) >= 2 and chars[0].isdigit() and chars[1].isdigit():
+    num = int(chars[0] + chars[1])
+    print(f"а) Первые два символа - цифры {chars[0]} и {chars[1]}")
+    print(f"   Число {num} четное: {num % 2 == 0}")
+else:
+    print("а) Первые два символа не являются цифрами")
+
+# б) вхождения букв а, о, у
+for letter in ['а', 'о', 'у']:
+    count = chars.count(letter)
+    print(f"б) Буква '{letter}' встречается: {count} раз")
+
+# в) вхождения сочетания "не"
+count_ne = 0
+for i in range(len(chars) - 1):
+    if chars[i] == 'н' and chars[i+1] == 'е':
+        count_ne += 1
+print(f"в) Сочетание 'не' встречается: {count_ne} раз")
+
+# г) образуют ли символы "ура"
+has_ura = any(i < len(chars)-2 and chars[i] == 'у' and chars[i+1] == 'р' and chars[i+2] == 'а' 
+              for i in range(len(chars)))
+print(f"г) Файл содержит сочетание 'ура': {has_ura}")
+
+# 14.32
+print("\n14.32:")
+# Создаем файл с городами и населением
+cities = [
+    {"name": "Москва", "population": 12615},
+    {"name": "Санкт-Петербург", "population": 5398},
+    {"name": "Новосибирск", "population": 1625}
+]
+
+with open("14_32.txt", "w", encoding="utf-8") as f:
+    for city in cities:
+        f.write(f"{city['name']},{city['population']}\n")
+
+# Увеличиваем население на 5%
+with open("14_32.txt", "r", encoding="utf-8") as f:
+    lines = f.readlines()
+
+new_lines = []
+for line in lines:
+    name, population = line.strip().split(",")
+    new_population = int(int(population) * 1.05)  # +5%
+    new_lines.append(f"{name},{new_population}\n")
+
+with open("14_32.txt", "w", encoding="utf-8") as f:
+    f.writelines(new_lines)
+
+print("Население городов увеличено на 5%:")
+with open("14_32.txt", "r", encoding="utf-8") as f:
+    print(f.read())
+
+# 14.33
+print("\n14.33:")
+# Создаем файл с фамилиями и весом
+people = [
+    {"name": "Иванов", "weight": 80},
+    {"name": "Петров", "weight": 75},
+    {"name": "Сидоров", "weight": 90}
+]
+
+with open("14_33.txt", "w", encoding="utf-8") as f:
+    for person in people:
+        f.write(f"{person['name']},{person['weight']}\n")
+
+# Увеличиваем вес на 3%
+with open("14_33.txt", "r", encoding="utf-8") as f:
+    lines = f.readlines()
+
+new_lines = []
+for line in lines:
+    name, weight = line.strip().split(",")
+    new_weight = float(weight) * 1.03
+    new_lines.append(f"{name},{new_weight:.1f}\n")
+
+with open("14_33.txt", "w", encoding="utf-8") as f:
+    f.writelines(new_lines)
+
+print("Вес людей увеличен на 3%:")
+with open("14_33.txt", "r", encoding="utf-8") as f:
+    print(f.read())
+
+# 14.34
+print("\n14.34:")
+# Создаем файл с числами
+numbers = list(range(1, 11))
+with open("14_34.txt", "w") as f:
+    for num in numbers:
+        f.write(str(num) + "\n")
+
+# а) меняем местами первое и третье число
+with open("14_34.txt", "r") as f:
+    lines = f.readlines()
+
+lines[0], lines[2] = lines[2], lines[0]
+
+with open("14_34.txt", "w") as f:
+    f.writelines(lines)
+
+print("а) Поменяны местами первое и третье число")
+
+# б) меняем местами второе и последнее
+with open("14_34.txt", "r") as f:
+    lines = f.readlines()
+
+lines[1], lines[-1] = lines[-1], lines[1]
+
+with open("14_34.txt", "w") as f:
+    f.writelines(lines)
+
+print("б) Поменяны местами второе и последнее число")
+
+# в) меняем местами n1-е и n2-е (n1=4, n2=7)
+n1, n2 = 4, 7
+with open("14_34.txt", "r") as f:
+    lines = f.readlines()
+
+lines[n1-1], lines[n2-1] = lines[n2-1], lines[n1-1]
+
+with open("14_34.txt", "w") as f:
+    f.writelines(lines)
+
+print(f"в) Поменяны местами {n1}-е и {n2}-е число")
+
+# 14.35
+print("\n14.35:")
+# Создаем файл с буквами "орпцессор" (исправляем на "процессор")
+letters = ["о", "р", "п", "ц", "е", "с", "с", "о", "р"]
+with open("14_35.txt", "w", encoding="utf-8") as f:
+    for letter in letters:
+        f.write(letter + "\n")
+
+# Правильный порядок: "процессор"
+correct_order = ["п", "р", "о", "ц", "е", "с", "с", "о", "р"]
+
+with open("14_35_correct.txt", "w", encoding="utf-8") as f:
+    for letter in correct_order:
+        f.write(letter + "\n")
+
+print("Создан файл с правильным порядком букв слова 'процессор'")
+
+# 14.36
+print("\n14.36:")
+# Создаем файл с буквами "кадировко" (исправляем на "кодировка")
+letters = ["к", "а", "д", "и", "р", "о", "в", "к", "о"]
+with open("14_36.txt", "w", encoding="utf-8") as f:
+    for letter in letters:
+        f.write(letter + "\n")
+
+# Правильный порядок: "кодировка"
+correct_order = ["к", "о", "д", "и", "р", "о", "в", "к", "а"]
+
+with open("14_36_correct.txt", "w", encoding="utf-8") as f:
+    for letter in correct_order:
+        f.write(letter + "\n")
+
+print("Создан файл с правильным порядком букв слова 'кодировка'")
+
+# 14.37
+print("\n14.37:")
+# Создаем файл с буквами "олгаритм" (исправляем на "алгоритм")
+letters = ["о", "л", "г", "а", "р", "и", "т", "м"]
+with open("14_37.txt", "w", encoding="utf-8") as f:
+    for letter in letters:
+        f.write(letter + "\n")
+
+# Правильный порядок: "алгоритм"
+correct_order = ["а", "л", "г", "о", "р", "и", "т", "м"]
+
+with open("14_37_correct.txt", "w", encoding="utf-8") as f:
+    for letter in correct_order:
+        f.write(letter + "\n")
+
+print("Создан файл с правильным порядком букв слова 'алгоритм'")
+
+# 14.38
+print("\n14.38:")
+# Создаем файл с символами
+chars = ["a", "b", "c", "d", "e", "f"]
+with open("14_38.txt", "w", encoding="utf-8") as f:
+    for char in chars:
+        f.write(char + "\n")
+
+# Меняем местами элементы 2 и 5 (индексы 1 и 4)
+pos1, pos2 = 2, 5
+with open("14_38.txt", "r", encoding="utf-8") as f:
+    lines = f.readlines()
+
+lines[pos1-1], lines[pos2-1] = lines[pos2-1], lines[pos1-1]
+
+with open("14_38.txt", "w", encoding="utf-8") as f:
+    f.writelines(lines)
+
+print(f"Поменяны местами символы на позициях {pos1} и {pos2}")
+print("Содержимое файла после обмена:")
+with open("14_38.txt", "r", encoding="utf-8") as f:
+    print(f.read())
+
+# 14.39
+print("\n14.39:")
+# Создаем исходный файл с числами
+import random
+numbers = [random.randint(1, 100) for _ in range(10)]
+with open("14_39_source.txt", "w") as f:
+    for num in numbers:
+        f.write(str(num) + "\n")
+
+# Копируем в другой файл
+with open("14_39_source.txt", "r") as source:
+    with open("14_39_dest.txt", "w") as dest:
+        for line in source:
+            dest.write(line)
+
+print("Содержимое файла скопировано в другой файл")
+print("Исходный файл:", numbers)
+print("Конечный файл:", end=" ")
+with open("14_39_dest.txt", "r") as f:
+    for line in f:
+        print(line.strip(), end=" ")
+print()
+
+# 14.40 (начало задачи)
+print("\n14.40 (начало задачи):")
+# Создаем файл с отдельными буквами
+letters = ["п", "р", "о", "г", "р", "а", "м", "м", "и", "р", "о", "в", "а", "н", "и", "е"]
+with open("14_40.txt", "w", encoding="utf-8") as f:
+    for letter in letters:
+        f.write(letter + "\n")
+
+print("Создан файл с отдельными буквами для задачи 14.40")
+
+# 14.41
+print("14.41:")
+# Создаем исходный файл с числами
+import random
+numbers = [random.randint(1, 100) for _ in range(10)]
+with open("14_41_source.txt", "w") as f:
+    for num in numbers:
+        f.write(str(num) + "\n")
+
+# Удаляем пятое число и записываем в другой файл
+with open("14_41_source.txt", "r") as source:
+    with open("14_41_result.txt", "w") as dest:
+        index = 1
+        for line in source:
+            if index != 5:  # пропускаем пятое число
+                dest.write(line)
+            index += 1
+
+print("Пятое число удалено. Исходные числа:", numbers)
+print("Результат:", end=" ")
+with open("14_41_result.txt", "r") as f:
+    for line in f:
+        print(line.strip(), end=" ")
+print()
+
+# 14.42
+print("\n14.42:")
+# Создаем файл с буквами "киллобайт" (исправляем ошибку: должно быть "килобайт")
+letters = ["к", "и", "л", "л", "о", "б", "а", "й", "т"]
+with open("14_42_source.txt", "w", encoding="utf-8") as f:
+    for letter in letters:
+        f.write(letter + "\n")
+
+# Исправляем ошибку (удаляем лишнюю 'л')
+with open("14_42_source.txt", "r", encoding="utf-8") as source:
+    letters_list = [line.strip() for line in source]
+
+# Правильное слово: "килобайт"
+correct_letters = ["к", "и", "л", "о", "б", "а", "й", "т"]
+
+with open("14_42_result.txt", "w", encoding="utf-8") as dest:
+    for letter in correct_letters:
+        dest.write(letter + "\n")
+
+print("Ошибка исправлена: 'киллобайт' -> 'килобайт'")
+
+# 14.43
+print("\n14.43:")
+# Создаем файл с целыми числами, включая -100
+numbers = [10, -50, -100, 30, 40, 60, -100, 80]
+with open("14_43_source.txt", "w") as f:
+    for num in numbers:
+        f.write(str(num) + "\n")
+
+# Вставляем 100 после первого -100
+with open("14_43_source.txt", "r") as source:
+    with open("14_43_result.txt", "w") as dest:
+        inserted = False
+        for line in source:
+            num = int(line.strip())
+            dest.write(str(num) + "\n")
+            if num == -100 and not inserted:
+                dest.write("100\n")
+                inserted = True
+
+print("Вставлено 100 после первого -100")
+print("Исходные числа:", numbers)
+print("Результат:", end=" ")
+with open("14_43_result.txt", "r") as f:
+    for line in f:
+        print(line.strip(), end=" ")
+print()
+
+# 14.44
+print("\n14.44:")
+# Создаем файл с буквами "оловяный" (исправляем ошибку: должно быть "оловянный")
+letters = ["о", "л", "о", "в", "я", "н", "ы", "й"]
+with open("14_44_source.txt", "w", encoding="utf-8") as f:
+    for letter in letters:
+        f.write(letter + "\n")
+
+# Правильное слово: "оловянный" (две 'н')
+with open("14_44_source.txt", "r", encoding="utf-8") as source:
+    letters_list = [line.strip() for line in source]
+
+# Вставляем вторую 'н' после 'я'
+correct_letters = []
+for i, letter in enumerate(letters_list):
+    correct_letters.append(letter)
+    if i == 4:  # после 'я' (индекс 4)
+        correct_letters.append("н")
+
+with open("14_44_result.txt", "w", encoding="utf-8") as dest:
+    for letter in correct_letters:
+        dest.write(letter + "\n")
+
+print("Ошибка исправлена: 'оловяный' -> 'оловянный'")
+
+# 14.45
+print("\n14.45:")
+# Создаем файл с целыми числами
+numbers = [random.randint(1, 100) for _ in range(15)]
+with open("14_45_source.txt", "w") as f:
+    for num in numbers:
+        f.write(str(num) + "\n")
+
+# Записываем четные числа в другой файл
+with open("14_45_source.txt", "r") as source:
+    with open("14_45_even.txt", "w") as dest:
+        for line in source:
+            num = int(line.strip())
+            if num % 2 == 0:
+                dest.write(str(num) + "\n")
+
+print("Четные числа записаны в отдельный файл")
+print("Исходные числа:", numbers)
+print("Четные числа:", [num for num in numbers if num % 2 == 0])
+
+# 14.46
+print("\n14.46:")
+# Создаем файл со словами
+words = ["яблоко", "апельсин", "банан", "огурцы", "ананас", "виноград", "арбуз", "перец"]
+with open("14_46_source.txt", "w", encoding="utf-8") as f:
+    for word in words:
+        f.write(word + "\n")
+
+# Записываем слова на 'о' или 'а' в другой файл
+with open("14_46_source.txt", "r", encoding="utf-8") as source:
+    with open("14_46_result.txt", "w", encoding="utf-8") as dest:
+        for line in source:
+            word = line.strip()
+            if word.startswith("о") or word.startswith("а"):
+                dest.write(word + "\n")
+
+print("Слова на 'о' или 'а' записаны в отдельный файл")
+print("Исходные слова:", words)
+print("Слова на 'о' или 'а':", [word for word in words if word.startswith("о") or word.startswith("а")])
+
+# 14.47
+print("\n14.47:")
+# Создаем файл с 30 числами
+numbers = list(range(1, 31))
+with open("14_47_source.txt", "w") as f:
+    for num in numbers:
+        f.write(str(num) + "\n")
+
+# Записываем числа в обратном порядке в другой файл
+with open("14_47_source.txt", "r") as f:
+    lines = f.readlines()
+
+with open("14_47_reverse.txt", "w") as f:
+    for line in reversed(lines):
+        f.write(line)
+
+print("Числа записаны в обратном порядке")
+print("Исходные (первые 5):", numbers[:5])
+print("Обратные (первые 5):", end=" ")
+with open("14_47_reverse.txt", "r") as f:
+    for i, line in enumerate(f):
+        if i < 5:
+            print(line.strip(), end=" ")
+print()
+
+# 14.48
+print("\n14.48:")
+# Создаем файл с 20 символами
+chars = [chr(ord('a') + i % 26) for i in range(20)]
+with open("14_48_source.txt", "w", encoding="utf-8") as f:
+    for char in chars:
+        f.write(char + "\n")
+
+# Записываем символы в обратном порядке в другой файл
+with open("14_48_source.txt", "r", encoding="utf-8") as f:
+    lines = f.readlines()
+
+with open("14_48_reverse.txt", "w", encoding="utf-8") as f:
+    for line in reversed(lines):
+        f.write(line)
+
+print("Символы записаны в обратном порядке")
+print("Исходные символы:", chars)
+print("Обратные символы:", end=" ")
+with open("14_48_reverse.txt", "r", encoding="utf-8") as f:
+    result_chars = [line.strip() for line in f]
+print(result_chars[:5], "...")
+
+# 14.49
+print("\n14.49:")
+# Создаем файл с целыми числами, включая нули
+numbers = [10, 0, 25, 30, 0, 40, 50, 0, 60]
+with open("14_49_source.txt", "w") as f:
+    for num in numbers:
+        f.write(str(num) + "\n")
+
+# Удаляем число после первого нуля
+with open("14_49_source.txt", "r") as source:
+    nums = [int(line.strip()) for line in source]
+
+# Находим первый ноль и удаляем число после него
+result = []
+skip_next = False
+zero_found = False
+
+for i, num in enumerate(nums):
+    if skip_next:
+        skip_next = False
+        continue
+    
+    if num == 0 and not zero_found:
+        zero_found = True
+        skip_next = True
+    
+    result.append(num)
+
+# Если после последнего числа был ноль, и мы должны были его удалить, но его нет
+if skip_next and zero_found:
+    result = result[:-1]
+
+with open("14_49_result.txt", "w") as f:
+    for num in result:
+        f.write(str(num) + "\n")
+
+print("Удалено число после первого нуля")
+print("Исходные числа:", numbers)
+print("Результат:", result)
+
+# 14.50
+print("\n14.50:")
+# Создаем файл с символами, включая буквы 'о'
+chars = ["а", "б", "о", "в", "г", "о", "д", "е", "о", "ж"]
+with open("14_50_source.txt", "w", encoding="utf-8") as f:
+    for char in chars:
+        f.write(char + "\n")
+
+# Удаляем первую букву 'о'
+with open("14_50_source.txt", "r", encoding="utf-8") as source:
+    chars_list = [line.strip() for line in source]
+
+result_chars = []
+o_found = False
+for char in chars_list:
+    if char == "о" and not o_found:
+        o_found = True
+        continue
+    result_chars.append(char)
+
+with open("14_50_result.txt", "w", encoding="utf-8") as f:
+    for char in result_chars:
+        f.write(char + "\n")
+
+print("Удалена первая буква 'о'")
+print("Исходные символы:", chars)
+print("Результат:", result_chars)
+
+# 14.51
+print("\n14.51:")
+# Создаем два файла с числами
+file1_nums = [1, 2, 3, 4, 5]
+file2_nums = [10, 20, 30, 40, 50]
+
+with open("14_51_file1.txt", "w") as f:
+    for num in file1_nums:
+        f.write(str(num) + "\n")
+
+with open("14_51_file2.txt", "w") as f:
+    for num in file2_nums:
+        f.write(str(num) + "\n")
+
+# а) Сумма соответствующих элементов
+with open("14_51_file1.txt", "r") as f1:
+    with open("14_51_file2.txt", "r") as f2:
+        with open("14_51_sum.txt", "w") as f3:
+            for line1, line2 in zip(f1, f2):
+                sum_val = int(line1.strip()) + int(line2.strip())
+                f3.write(str(sum_val) + "\n")
+
+# б) Больший из соответствующих элементов
+with open("14_51_file1.txt", "r") as f1:
+    with open("14_51_file2.txt", "r") as f2:
+        with open("14_51_max.txt", "w") as f3:
+            for line1, line2 in zip(f1, f2):
+                max_val = max(int(line1.strip()), int(line2.strip()))
+                f3.write(str(max_val) + "\n")
+
+print("а) Сумма элементов:")
+print("  Файл1:", file1_nums)
+print("  Файл2:", file2_nums)
+print("  Сумма:", end=" ")
+with open("14_51_sum.txt", "r") as f:
+    for line in f:
+        print(line.strip(), end=" ")
+print()
+
+print("б) Больший элемент:")
+print("  Максимум:", end=" ")
+with open("14_51_max.txt", "r") as f:
+    for line in f:
+        print(line.strip(), end=" ")
+print()
+
+# 14.52
+print("\n14.52:")
+# а) Разность соответствующих элементов
+with open("14_51_file1.txt", "r") as f1:
+    with open("14_51_file2.txt", "r") as f2:
+        with open("14_52_diff.txt", "w") as f3:
+            for line1, line2 in zip(f1, f2):
+                diff_val = int(line1.strip()) - int(line2.strip())
+                f3.write(str(diff_val) + "\n")
+
+# б) Меньший из соответствующих элементов
+with open("14_51_file1.txt", "r") as f1:
+    with open("14_51_file2.txt", "r") as f2:
+        with open("14_52_min.txt", "w") as f3:
+            for line1, line2 in zip(f1, f2):
+                min_val = min(int(line1.strip()), int(line2.strip()))
+                f3.write(str(min_val) + "\n")
+
+print("а) Разность элементов:")
+print("  Разность:", end=" ")
+with open("14_52_diff.txt", "r") as f:
+    for line in f:
+        print(line.strip(), end=" ")
+print()
+
+print("б) Меньший элемент:")
+print("  Минимум:", end=" ")
+with open("14_52_min.txt", "r") as f:
+    for line in f:
+        print(line.strip(), end=" ")
+print()
+
+# 14.53
+print("\n14.53:")
+# Создаем два файла с буквами
+file1_chars = ["а", "б", "в", "г", "д"]
+file2_chars = ["1", "2", "3", "4", "5"]
+
+with open("14_53_file1.txt", "w", encoding="utf-8") as f:
+    for char in file1_chars:
+        f.write(char + "\n")
+
+with open("14_53_file2.txt", "w", encoding="utf-8") as f:
+    for char in file2_chars:
+        f.write(char + "\n")
+
+# Сочетание соответствующих букв
+with open("14_53_file1.txt", "r", encoding="utf-8") as f1:
+    with open("14_53_file2.txt", "r", encoding="utf-8") as f2:
+        with open("14_53_combined.txt", "w", encoding="utf-8") as f3:
+            for line1, line2 in zip(f1, f2):
+                combined = line1.strip() + line2.strip()
+                f3.write(combined + "\n")
+
+print("Сочетание соответствующих букв:")
+print("  Файл1:", file1_chars)
+print("  Файл2:", file2_chars)
+print("  Сочетание:", end=" ")
+with open("14_53_combined.txt", "r", encoding="utf-8") as f:
+    for line in f:
+        print(line.strip(), end=" ")
+print()
+
+# 14.54
+print("\n14.54:")
+# Создаем два файла с числами
+file1_nums = [1, 2, 3, 4]
+file2_nums = [10, 20, 30, 40]
+
+with open("14_54_file1.txt", "w") as f:
+    for num in file1_nums:
+        f.write(str(num) + "\n")
+
+with open("14_54_file2.txt", "w") as f:
+    for num in file2_nums:
+        f.write(str(num) + "\n")
+
+# Объединяем файлы
+with open("14_54_file1.txt", "r") as f1:
+    with open("14_54_file2.txt", "r") as f2:
+        with open("14_54_combined.txt", "w") as f3:
+            # Сначала числа из первого файла
+            for line in f1:
+                f3.write(line)
+            # Затем числа из второго файла
+            for line in f2:
+                f3.write(line)
+
+print("Объединенный файл:")
+print("  Файл1:", file1_nums)
+print("  Файл2:", file2_nums)
+print("  Объединенный:", end=" ")
+with open("14_54_combined.txt", "r") as f:
+    for line in f:
+        print(line.strip(), end=" ")
+print()
+
+# 14.55
+print("\n14.55:")
+# Создаем два файла с буквами
+file1_chars = ["а", "б", "в", "г", "д", "е"]
+file2_chars = ["а", "б", "в", "х", "у", "z"]
+
+with open("14_55_file1.txt", "w", encoding="utf-8") as f:
+    for char in file1_chars:
+        f.write(char + "\n")
+
+with open("14_55_file2.txt", "w", encoding="utf-8") as f:
+    for char in file2_chars:
+        f.write(char + "\n")
+
+# Находим начальные совпадающие элементы
+with open("14_55_file1.txt", "r", encoding="utf-8") as f1:
+    with open("14_55_file2.txt", "r", encoding="utf-8") as f2:
+        with open("14_55_common.txt", "w", encoding="utf-8") as f3:
+            for line1, line2 in zip(f1, f2):
+                if line1.strip() == line2.strip():
+                    f3.write(line1)
+                else:
+                    break
+
+print("Начальные совпадающие элементы:")
+print("  Файл1:", file1_chars)
+print("  Файл2:", file2_chars)
+print("  Совпадают:", end=" ")
+with open("14_55_common.txt", "r", encoding="utf-8") as f:
+    for line in f:
+        print(line.strip(), end=" ")
+print()
+
+# 14.56
+print("\n14.56:")
+# Создаем файл с целыми числами
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+with open("14_56_source.txt", "w") as f:
+    for num in numbers:
+        f.write(str(num) + "\n")
+
+# Разделяем на четные и нечетные
+with open("14_56_source.txt", "r") as source:
+    with open("14_56_even.txt", "w") as even_file:
+        with open("14_56_odd.txt", "w") as odd_file:
+            for line in source:
+                num = int(line.strip())
+                if num % 2 == 0:
+                    even_file.write(str(num) + "\n")
+                else:
+                    odd_file.write(str(num) + "\n")
+
+print("Числа разделены на четные и нечетные:")
+print("  Исходные:", numbers)
+print("  Четные:", [num for num in numbers if num % 2 == 0])
+print("  Нечетные:", [num for num in numbers if num % 2 == 1])
+
+# 14.57
+print("\n14.57:")
+# Создаем файл с символами (буквы и цифры)
+chars = ["а", "1", "б", "2", "в", "3", "г", "4", "д", "5"]
+with open("14_57_source.txt", "w", encoding="utf-8") as f:
+    for char in chars:
+        f.write(char + "\n")
+
+# Разделяем на цифры и остальные символы
+with open("14_57_source.txt", "r", encoding="utf-8") as source:
+    with open("14_57_digits.txt", "w", encoding="utf-8") as digits_file:
+        with open("14_57_others.txt", "w", encoding="utf-8") as others_file:
+            for line in source:
+                char = line.strip()
+                if char.isdigit():
+                    digits_file.write(char + "\n")
+                else:
+                    others_file.write(char + "\n")
+
+print("Символы разделены на цифры и остальные:")
+print("  Исходные:", chars)
+print("  Цифры:", [char for char in chars if char.isdigit()])
+print("  Остальные:", [char for char in chars if not char.isdigit()])
+
+# 14.58
+print("\n14.58:")
+# Создаем два файла с символами
+file1_chars = ["а", "б", "в", "г", "д"]
+file2_chars = ["1", "2", "3", "4", "5"]
+
+with open("14_58_file1.txt", "w", encoding="utf-8") as f:
+    for char in file1_chars:
+        f.write(char + "\n")
+
+with open("14_58_file2.txt", "w", encoding="utf-8") as f:
+    for char in file2_chars:
+        f.write(char + "\n")
+
+# Обмениваем содержимое с помощью вспомогательного файла
+# Шаг 1: Копируем file1 в temp
+with open("14_58_file1.txt", "r", encoding="utf-8") as f1:
+    with open("14_58_temp.txt", "w", encoding="utf-8") as temp:
+        for line in f1:
+            temp.write(line)
+
+# Шаг 2: Копируем file2 в file1
+with open("14_58_file2.txt", "r", encoding="utf-8") as f2:
+    with open("14_58_file1.txt", "w", encoding="utf-8") as f1:
+        for line in f2:
+            f1.write(line)
+
+# Шаг 3: Копируем temp в file2
+with open("14_58_temp.txt", "r", encoding="utf-8") as temp:
+    with open("14_58_file2.txt", "w", encoding="utf-8") as f2:
+        for line in temp:
+            f2.write(line)
+
+print("Содержимое файлов обменяно:")
+print("  Исходный file1:", file1_chars)
+print("  Исходный file2:", file2_chars)
+print("  После обмена file1:", end=" ")
+with open("14_58_file1.txt", "r", encoding="utf-8") as f:
+    for line in f:
+        print(line.strip(), end=" ")
+print()
+print("  После обмена file2:", end=" ")
+with open("14_58_file2.txt", "r", encoding="utf-8") as f:
+    for line in f:
+        print(line.strip(), end=" ")
+print()
+
+# 14.59
+print("\n14.59:")
+# Создаем два файла с символами (с различием)
+file1_chars = ["а", "б", "в", "г", "д", "е"]
+file2_chars = ["а", "б", "в", "х", "д", "е"]
+
+with open("14_59_file1.txt", "w", encoding="utf-8") as f:
+    for char in file1_chars:
+        f.write(char + "\n")
+
+with open("14_59_file2.txt", "w", encoding="utf-8") as f:
+    for char in file2_chars:
+        f.write(char + "\n")
+
+# Сравниваем файлы
+with open("14_59_file1.txt", "r", encoding="utf-8") as f1:
+    with open("14_59_file2.txt", "r", encoding="utf-8") as f2:
+        diff_index = -1
+        index = 1
+        for line1, line2 in zip(f1, f2):
+            if line1.strip() != line2.strip():
+                diff_index = index
+                break
+            index += 1
+        
+        # Проверяем, если файлы разной длины
+        if diff_index == -1:
+            # Проверяем, есть ли еще элементы в одном из файлов
+            extra_line1 = f1.readline()
+            extra_line2 = f2.readline()
+            if extra_line1 or extra_line2:
+                diff_index = index
+
+if diff_index != -1:
+    print(f"Файлы отличаются на компоненте №{diff_index}")
+    print(f"  В file1: '{file1_chars[diff_index-1] if diff_index-1 < len(file1_chars) else 'конец файла'}'")
+    print(f"  В file2: '{file2_chars[diff_index-1] if diff_index-1 < len(file2_chars) else 'конец файла'}'")
+else:
+    print("Файлы полностью совпадают")
