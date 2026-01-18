@@ -1,0 +1,377 @@
+import random
+
+# 17.1
+print("17.1")
+arr = [random.randint(1, 100) for _ in range(10)]
+print("Исходный массив:", arr)
+
+# а) пузырьковая сортировка
+arr_a = arr.copy()
+for i in range(len(arr_a)-1):
+    for j in range(len(arr_a)-1-i):
+        if arr_a[j] > arr_a[j+1]:
+            arr_a[j], arr_a[j+1] = arr_a[j+1], arr_a[j]
+print("а) Пузырьковая:", arr_a)
+
+# б) сортировка выбором
+arr_b = arr.copy()
+for i in range(len(arr_b)-1):
+    min_idx = i
+    for j in range(i+1, len(arr_b)):
+        if arr_b[j] < arr_b[min_idx]:
+            min_idx = j
+    arr_b[i], arr_b[min_idx] = arr_b[min_idx], arr_b[i]
+print("б) Выбором:", arr_b)
+
+# в) сортировка вставками
+arr_c = arr.copy()
+for i in range(1, len(arr_c)):
+    key = arr_c[i]
+    j = i-1
+    while j >= 0 and key < arr_c[j]:
+        arr_c[j+1] = arr_c[j]
+        j -= 1
+    arr_c[j+1] = key
+print("в) Вставками:", arr_c)
+
+# г) сортировка подсчетом
+arr_d = arr.copy()
+max_val = max(arr_d)
+count = [0]*(max_val+1)
+for num in arr_d:
+    count[num] += 1
+index = 0
+for i in range(max_val+1):
+    for j in range(count[i]):
+        arr_d[index] = i
+        index += 1
+print("г) Подсчетом:", arr_d)
+
+# 17.2
+print("\n17.2")
+print("По убыванию:")
+arr_desc = arr.copy()
+for i in range(len(arr_desc)-1):
+    for j in range(len(arr_desc)-1-i):
+        if arr_desc[j] < arr_desc[j+1]:
+            arr_desc[j], arr_desc[j+1] = arr_desc[j+1], arr_desc[j]
+print("Пузырьковая по убыванию:", arr_desc)
+
+# 17.3
+print("\n17.3")
+heights = [random.randint(150, 190) for _ in range(25)]
+heights_sorted = sorted(heights)
+tenth_from_highest = heights_sorted[-10]
+print("Рост 10-го от самого высокого:", tenth_from_highest)
+
+# 17.4
+print("\n17.4")
+speeds = [random.randint(180, 300) for _ in range(15)]
+speeds_sorted = sorted(speeds, reverse=True)
+sixth_fastest = speeds_sorted[5]
+print("6-й самый быстрый:", sixth_fastest)
+
+# 17.5
+print("\n17.5")
+class1 = [random.uniform(3.0, 5.0) for _ in range(18)]
+class2 = [random.uniform(3.0, 5.0) for _ in range(18)]
+class1_sorted = sorted(class1, reverse=True)
+class2_sorted = sorted(class2, reverse=True)
+third_class1 = class1_sorted[2]
+third_class2 = class2_sorted[2]
+if third_class1 > third_class2:
+    print("В 1-м классе выше 3-й успевающий")
+else:
+    print("Во 2-м классе выше 3-й успевающий")
+
+# 17.6
+print("\n17.6")
+salary1 = [random.randint(30000, 100000) for _ in range(15)]
+salary2 = [random.randint(30000, 100000) for _ in range(15)]
+salary1_sorted = sorted(salary1, reverse=True)
+salary2_sorted = sorted(salary2, reverse=True)
+fifth1 = salary1_sorted[4]
+fifth2 = salary2_sorted[4]
+if fifth1 > fifth2:
+    print("В 1-й фирме выше 5-я зарплата")
+else:
+    print("Во 2-й фирме выше 5-я зарплата")
+
+# 17.7
+print("\n17.7")
+prices = [random.randint(10000, 100000) for _ in range(12)]
+prices_sorted = sorted(prices)
+fifth_cheapest = prices_sorted[4]
+print("5-й самый дешевый:", fifth_cheapest)
+
+# 17.8
+print("\n17.8")
+masses = [random.randint(1, 50) for _ in range(20)]
+masses_sorted = sorted(masses)
+fifth_lightest = masses_sorted[4]
+print("5-й самый легкий:", fifth_lightest)
+
+# 17.9
+print("\n17.9")
+heights1 = [random.randint(150, 190) for _ in range(23)]
+heights2 = [random.randint(150, 190) for _ in range(23)]
+heights1_sorted = sorted(heights1, reverse=True)
+heights2_sorted = sorted(heights2, reverse=True)
+third_tallest1 = heights1_sorted[2]
+third_tallest2 = heights2_sorted[2]
+if third_tallest1 > third_tallest2:
+    print("В 1-м классе выше 3-й самый высокий")
+else:
+    print("Во 2-м классе выше 3-й самый высокий")
+
+# 17.10
+print("\n17.10")
+products1 = [random.randint(100, 1000) for _ in range(10)]
+products2 = [random.randint(100, 1000) for _ in range(10)]
+products1_sorted = sorted(products1, reverse=True)
+products2_sorted = sorted(products2, reverse=True)
+fourth_expensive1 = products1_sorted[3]
+fourth_expensive2 = products2_sorted[3]
+if fourth_expensive1 > fourth_expensive2:
+    print("В 1-м магазине дороже 4-й товар")
+else:
+    print("Во 2-м магазине дороже 4-й товар")
+
+# 17.11
+print("\n17.11")
+heights = [random.randint(150, 190) for _ in range(18)]
+heights_sorted = sorted(heights)
+middle1 = heights_sorted[8]
+middle2 = heights_sorted[9]
+avg = (middle1 + middle2) / 2
+print("Средний рост двух в середине:", avg)
+
+# 17.12
+print("\n17.12")
+heights = [random.randint(150, 190) for _ in range(15)]
+heights_sorted = sorted(heights)
+middle1 = heights_sorted[6]
+middle2 = heights_sorted[7]
+middle3 = heights_sorted[8]
+avg = (middle1 + middle2 + middle3) / 3
+print("Средний рост трех в середине:", avg)
+
+# 17.13
+print("\n17.13")
+cars = ["Toyota", "Honda", "BMW", "Mercedes", "Audi", "Ford", "Chevrolet"]
+prices = [random.randint(20000, 80000) for _ in range(7)]
+cars_with_prices = list(zip(prices, cars))
+cars_with_prices.sort()
+middle_car = cars_with_prices[3][1]
+print("Авто со средней ценой:", middle_car)
+
+# 17.14
+print("\n17.14")
+surnames = ["Иванов", "Петров", "Сидоров", "Смирнов", "Кузнецов", 
+            "Васильев", "Попов", "Новиков", "Федоров", "Морозов", "Волков"]
+heights = [random.randint(150, 190) for _ in range(11)]
+people = list(zip(heights, surnames))
+people.sort()
+middle_person = people[5][1]
+print("Человек в середине шеренги:", middle_person)
+
+# 17.15
+print("\n17.15")
+surnames1 = ["Иванов", "Петров", "Сидоров", "Смирнов", "Кузнецов", 
+             "Васильев", "Попов", "Новиков", "Федоров", "Морозов"]
+surnames2 = ["Иванов", "Петров", "Сидоров", "Смирнов", "Кузнецов", 
+             "Васильев", "Попов", "Новиков", "Федоров", "Морозов"]
+if sorted(surnames1) == sorted(surnames2):
+    print("Списки одинаковые")
+else:
+    print("Списки разные")
+
+# 17.16
+print("\n17.16")
+words1 = ["яблоко", "банан", "апельсин", "груша", "виноград", 
+          "лимон", "мандарин", "персик", "слива", "киви", "арбуз", "дыня"]
+words2 = ["яблоко", "банан", "апельсин", "груша", "виноград", 
+          "лимон", "мандарин", "персик", "слива", "киви", "арбуз", "дыня"]
+if sorted(words1) == sorted(words2):
+    print("Наборы одинаковые")
+else:
+    print("Наборы разные")
+
+# 17.17
+print("\n17.17")
+num = 51234
+digits = [int(d) for d in str(num)]
+
+# а) по убыванию
+digits_desc = sorted(digits, reverse=True)
+num_desc = int(''.join(map(str, digits_desc)))
+print("а) По убыванию:", num_desc)
+
+# б) по возрастанию
+digits_asc = sorted(digits)
+num_asc = int(''.join(map(str, digits_asc)))
+print("б) По возрастанию:", num_asc)
+
+# 17.18
+print("\n17.18")
+num1 = 51354
+num2 = 55314
+digits1 = sorted(str(num1))
+digits2 = sorted(str(num2))
+if digits1 == digits2:
+    print("Числа из одних цифр")
+else:
+    print("Числа из разных цифр")
+
+# 17.19
+print("\n17.19")
+word1 = "логика"
+word2 = "иголка"
+letters1 = sorted(word1)
+letters2 = sorted(word2)
+if letters1 == letters2:
+    print("Из букв одного можно составить другое")
+else:
+    print("Нельзя составить")
+
+# 17.20
+print("\n17.20")
+a = sorted([random.randint(1, 50) for _ in range(5)])
+b = sorted([random.randint(1, 50) for _ in range(5)])
+c = []
+i = j = 0
+while i < len(a) and j < len(b):
+    if a[i] <= b[j]:
+        c.append(a[i])
+        i += 1
+    else:
+        c.append(b[j])
+        j += 1
+c.extend(a[i:])
+c.extend(b[j:])
+print("Массив a:", a)
+print("Массив b:", b)
+print("Объединенный массив c:", c)
+
+# 17.21
+print("\n17.21")
+def hanoi(n, source, target, auxiliary):
+    if n > 0:
+        hanoi(n-1, source, auxiliary, target)
+        print(f"Диск {n} с {source} на {target}")
+        hanoi(n-1, auxiliary, target, source)
+
+print("Ханойские башни (3 диска):")
+hanoi(3, 'A', 'C', 'B')
+
+# 17.22
+print("\n17.22")
+matrix = [[random.randint(1, 10) for _ in range(4)] for _ in range(5)]
+print("Исходная матрица:")
+for row in matrix:
+    print(row)
+
+# а) неубывающая по суммам строк
+sums = [sum(row) for row in matrix]
+matrix_a = [row for _, row in sorted(zip(sums, matrix))]
+print("\nа) По неубыванию сумм:")
+for row in matrix_a:
+    print(row, "Сумма:", sum(row))
+
+# б) невозрастающая по суммам строк
+matrix_b = [row for _, row in sorted(zip(sums, matrix), reverse=True)]
+print("\nб) По невозрастанию сумм:")
+for row in matrix_b:
+    print(row, "Сумма:", sum(row))
+
+# 17.23
+print("\n17.23")
+matrix = [[random.randint(1, 10) for _ in range(5)] for _ in range(4)]
+print("Исходная матрица:")
+for row in matrix:
+    print(row)
+
+# транспонируем для работы со столбцами
+transposed = [[matrix[j][i] for j in range(len(matrix))] for i in range(len(matrix[0]))]
+sums = [sum(col) for col in transposed]
+
+# а) невозрастающая по суммам столбцов
+transposed_a = [col for _, col in sorted(zip(sums, transposed), reverse=True)]
+matrix_a = [[transposed_a[j][i] for j in range(len(transposed_a))] for i in range(len(transposed_a[0]))]
+print("\nа) По невозрастанию сумм столбцов:")
+for row in matrix_a:
+    print(row)
+
+# б) неубывающая по суммам столбцов
+transposed_b = [col for _, col in sorted(zip(sums, transposed))]
+matrix_b = [[transposed_b[j][i] for j in range(len(transposed_b))] for i in range(len(transposed_b[0]))]
+print("\nб) По неубыванию сумм столбцов:")
+for row in matrix_b:
+    print(row)
+
+# 17.24
+print("\n17.24")
+matrix = [[random.randint(1, 10) for _ in range(4)] for _ in range(5)]
+print("Исходная матрица:")
+for row in matrix:
+    print(row)
+
+# а) неубывающая по максимумам строк
+max_vals = [max(row) for row in matrix]
+matrix_a = [row for _, row in sorted(zip(max_vals, matrix))]
+print("\nа) По неубыванию максимумов:")
+for row in matrix_a:
+    print(row, "Максимум:", max(row))
+
+# б) невозрастающая по минимумам строк
+min_vals = [min(row) for row in matrix]
+matrix_b = [row for _, row in sorted(zip(min_vals, matrix), reverse=True)]
+print("\nб) По невозрастанию минимумов:")
+for row in matrix_b:
+    print(row, "Минимум:", min(row))
+
+# 17.25
+print("\n17.25")
+matrix = [[random.randint(1, 10) for _ in range(5)] for _ in range(4)]
+print("Исходная матрица:")
+for row in matrix:
+    print(row)
+
+transposed = [[matrix[j][i] for j in range(len(matrix))] for i in range(len(matrix[0]))]
+max_vals = [max(col) for col in transposed]
+min_vals = [min(col) for col in transposed]
+
+# а) невозрастающая по максимумам столбцов
+transposed_a = [col for _, col in sorted(zip(max_vals, transposed), reverse=True)]
+matrix_a = [[transposed_a[j][i] for j in range(len(transposed_a))] for i in range(len(transposed_a[0]))]
+print("\nа) По невозрастанию максимумов столбцов:")
+for row in matrix_a:
+    print(row)
+
+# б) неубывающая по минимумам столбцов
+transposed_b = [col for _, col in sorted(zip(min_vals, transposed))]
+matrix_b = [[transposed_b[j][i] for j in range(len(transposed_b))] for i in range(len(transposed_b[0]))]
+print("\nб) По неубыванию минимумов столбцов:")
+for row in matrix_b:
+    print(row)
+
+# 17.26
+print("\n17.26")
+n = 4
+matrix = [[random.randint(1, 100) for _ in range(n)] for _ in range(n)]
+print("Исходная матрица:")
+for row in matrix:
+    print(row)
+
+# Преобразуем в одномерный массив, сортируем и обратно
+flat = [num for row in matrix for num in row]
+flat.sort()
+index = 0
+for i in range(n):
+    for j in range(n):
+        matrix[i][j] = flat[index]
+        index += 1
+
+print("\nОтсортированная матрица:")
+for row in matrix:
+    print(row)
