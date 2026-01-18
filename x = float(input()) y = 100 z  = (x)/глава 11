@@ -1,1264 +1,6 @@
 
-# 11.1. Заполнить массив заданными значениями
-print("11.1. Массив с заданными значениями:")
-arr = [37, 0, 50, 46, 34, 46, 0, 13]
-print("Массив:", arr)
-print("Элементы массива:")
-for i in range(len(arr)):
-    print(f"arr[{i}] = {arr[i]}")
-
-# 11.2. Заполнить массив значениями с клавиатуры
-print("\n11.2. Заполнение массива с клавиатуры:")
-n = 5  # для примера 5 элементов, а не 10
-arr = []
-for i in range(n):
-    value = int(input(f"Введите элемент {i+1}: "))
-    arr.append(value)
-print("Получился массив:", arr)
-
-# 11.3. Заполнить массив случайными значениями
-import random
-print("\n11.3. Массивы со случайными значениями:")
-
-# а) вещественные от 0 до 1
-arr_a = [random.random() for _ in range(5)]
-print("а) От 0 до 1:", arr_a)
-
-# б) вещественные от 22 до 23
-arr_b = [22 + random.random() for _ in range(5)]
-print("б) От 22 до 23:", arr_b)
-
-# в) вещественные от 0 до 10
-arr_c = [random.random() * 10 for _ in range(5)]
-print("в) От 0 до 10:", arr_c)
-
-# г) вещественные от -50 до 50
-arr_d = [random.random() * 100 - 50 for _ in range(5)]
-print("г) От -50 до 50:", arr_d)
-
-# д) целые от 0 до 10 включительно
-arr_e = [random.randint(0, 10) for _ in range(5)]
-print("д) Целые от 0 до 10:", arr_e)
-
-# 11.4. Массив роста людей (163-190 см)
-print("\n11.4. Рост 12 человек:")
-rost = [random.randint(163, 190) for _ in range(12)]
-print("Рост (см):", rost)
-
-# 11.5. Массив веса людей (50-100 кг)
-print("\n11.5. Вес 20 человек:")
-ves = [random.randint(50, 100) for _ in range(20)]
-print("Вес (кг):", ves)
-
-# 11.6. Заполнить массив от 1 до 12
-print("\n11.6. Массив от 1 до 12:")
-arr = list(range(1, 13))
-print("Массив:", arr)
-
-# 11.7. Заполнить массив от 20 до 1
-print("\n11.7. Массив от 20 до 1:")
-arr = list(range(20, 0, -1))
-print("Массив:", arr)
-
-# 11.8. Убывающая и возрастающая последовательности
-print("\n11.8. Специальные последовательности:")
-
-# а) убывающая последовательность
-arr_down = [15 - i for i in range(8)]  # 15, 14, 13, ..., 8
-print("а) Убывающая:", arr_down)
-
-# б) возрастающая последовательность
-arr_up = [i * 3 for i in range(8)]  # 0, 3, 6, ..., 21
-print("б) Возрастающая:", arr_up)
-
-# 11.9. Арифметическая и геометрическая прогрессии
-print("\n11.9. Прогрессии:")
-
-# а) арифметическая прогрессия
-a = 2  # первый член
-p = 3  # разность
-arifm = [a + p * i for i in range(10)]
-print(f"а) Арифметическая (a={a}, p={p}):", arifm)
-
-# б) геометрическая прогрессия
-a = 2  # первый член
-z = 3  # знаменатель
-geom = [a * (z ** i) for i in range(20)]
-print(f"б) Геометрическая (a={a}, z={z}):", geom[:5], "...")  # показываем первые 5
-
-# в) последовательность Фибоначчи
-fib = [1, 1]
-for i in range(2, 12):
-    fib.append(fib[i-1] + fib[i-2])
-print("в) Фибоначчи (первые 12):", fib)
-
-# 11.10. Разбить число на цифры в обратном порядке
-print("\n11.10. Разбить число на цифры:")
-n = 12345
-arr = [0] * 6  # создаем массив из 6 нулей
-
-temp = n
-i = 0
-while temp > 0 and i < 6:
-    arr[i] = temp % 10  # берем последнюю цифру
-    temp //= 10  # убираем последнюю цифру
-    i += 1
-
-print(f"Число: {n}")
-print("Цифры в обратном порядке:", arr)
-
-# 11.11. Массив с неповторяющимися числами
-print("\n11.11. Неповторяющиеся числа:")
-arr = []
-while len(arr) < 20:
-    num = random.randint(1, 100)
-    if num not in arr:  # проверяем, нет ли уже такого числа
-        arr.append(num)
-print("20 неповторяющихся чисел от 1 до 100:", arr)
-
-# 11.12. Специальные последовательности чисел
-print("\n11.12. Специальные последовательности:")
-
-# а) числа, делящиеся на 13 или 17, начиная с 300
-arr_a = []
-num = 300
-while len(arr_a) < 20:
-    if num % 13 == 0 or num % 17 == 0:
-        arr_a.append(num)
-    num += 1
-print("а) 20 чисел от 300, делящихся на 13 или 17:", arr_a)
-
-# б) первые 30 простых чисел
-def is_prime(n):
-    if n < 2:
-        return False
-    for i in range(2, int(n**0.5) + 1):
-        if n % i == 0:
-            return False
-    return True
-
-arr_b = []
-num = 2
-while len(arr_b) < 30:
-    if is_prime(num):
-        arr_b.append(num)
-    num += 1
-print("б) Первые 30 простых чисел:", arr_b)
-
-# 11.13. Вывод элемента по индексу
-print("\n11.13. Вывод элемента по индексу:")
-arr = [10, 20, 30, 40, 50]
-index = 2  # например, хотим элемент с индексом 2
-print(f"Массив: {arr}")
-print(f"Элемент с индексом {index}: {arr[index]}")
-
-# 11.14. Вывод массива в обратном порядке
-print("\n11.14. Вывод массива в обратном порядке:")
-arr = [1, 2, 3, 4, 5]
-print(f"Исходный массив: {arr}")
-print("В обратном порядке:", end=" ")
-for i in range(len(arr)-1, -1, -1):
-    print(arr[i], end=" ")
-print()
-
-print("\n=== 11.15-11.23. ОБРАБОТКА ЭЛЕМЕНТОВ МАССИВА ===")
-
-# 11.15. Квадратный корень и среднее арифметическое
-print("11.15. Квадратный корень и среднее арифметическое:")
-arr = [4, 9, 16, 25, 36]
-
-# а) квадратный корень из любого элемента
-index = 2  # например, из элемента с индексом 2
-sqrt_val = arr[index] ** 0.5
-print(f"а) Квадратный корень из arr[{index}]={arr[index]}: {sqrt_val:.2f}")
-
-# б) среднее арифметическое двух любых элементов
-i, j = 1, 3  # например, элементы с индексами 1 и 3
-avg = (arr[i] + arr[j]) / 2
-print(f"б) Среднее арифметическое arr[{i}] и arr[{j}]: {avg}")
-
-# 11.16. Проверка элементов массива
-print("\n11.16. Проверка элементов массива:")
-arr = [3, -5, 8, -2, 10, 7]
-
-# а) является ли s-й элемент положительным
-s = 2  # 3-й элемент (индекс 2)
-is_positive = arr[s] > 0
-print(f"а) Элемент arr[{s}]={arr[s]} положительный? {is_positive}")
-
-# б) является ли k-й элемент четным
-k = 4  # 5-й элемент (индекс 4)
-is_even = arr[k] % 2 == 0
-print(f"б) Элемент arr[{k}]={arr[k]} четный? {is_even}")
-
-# в) какой элемент больше: k-й или s-й
-if arr[k] > arr[s]:
-    print(f"в) arr[{k}]={arr[k]} > arr[{s}]={arr[s]}")
-elif arr[s] > arr[k]:
-    print(f"в) arr[{s}]={arr[s]} > arr[{k}]={arr[k]}")
-else:
-    print(f"в) arr[{s}]={arr[s]} = arr[{k}]={arr[k]}")
-
-# 11.17. Изменение всех элементов массива
-print("\n11.17. Изменение всех элементов:")
-arr = [1, 2, 3, 4, 5]
-print(f"Исходный массив: {arr}")
-
-# а) увеличить в 2 раза
-arr_a = [x * 2 for x in arr]
-print("а) Увеличен в 2 раза:", arr_a)
-
-# б) уменьшить на число А
-A = 3
-arr_b = [x - A for x in arr]
-print(f"б) Уменьшен на {A}:", arr_b)
-
-# в) разделить на первый элемент
-first = arr[0]
-arr_c = [x / first for x in arr]
-print(f"в) Разделен на первый элемент ({first}):", arr_c)
-
-# 11.18. Другие операции с элементами
-print("\n11.18. Другие операции:")
-arr = [10, 20, 30, 40, 50]
-print(f"Исходный массив: {arr}")
-
-# а) уменьшить на 20
-arr_a = [x - 20 for x in arr]
-print("а) Уменьшен на 20:", arr_a)
-
-# б) умножить на последний элемент
-last = arr[-1]
-arr_b = [x * last for x in arr]
-print(f"б) Умножен на последний элемент ({last}):", arr_b)
-
-# в) увеличить на число B
-B = 5
-arr_c = [x + B for x in arr]
-print(f"в) Увеличен на {B}:", arr_c)
-
-# 11.19. Различные суммы и средние
-print("\n11.19. Суммы и средние значения:")
-arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-print(f"Массив: {arr}")
-
-# а) сумма всех элементов
-total_sum = sum(arr)
-print(f"а) Сумма всех элементов: {total_sum}")
-
-# б) произведение всех элементов
-product = 1
-for x in arr:
-    product *= x
-print(f"б) Произведение всех элементов: {product}")
-
-# в) сумма квадратов всех элементов
-sum_squares = sum(x * x for x in arr)
-print(f"в) Сумма квадратов: {sum_squares}")
-
-# г) сумма первых шести элементов
-sum_first_six = sum(arr[:6])
-print(f"г) Сумма первых шести элементов: {sum_first_six}")
-
-# д) сумма элементов с k1-го по k2-й
-k1, k2 = 2, 5  # например, с 3-го по 6-й (индексы 2-5)
-sum_range = sum(arr[k1-1:k2])  # k1-1 потому что люди считают с 1
-print(f"д) Сумма элементов с {k1}-го по {k2}-й: {sum_range}")
-
-# е) среднее арифметическое всех элементов
-avg_all = total_sum / len(arr)
-print(f"е) Среднее арифметическое всех: {avg_all:.2f}")
-
-# ж) среднее арифметическое с s1-го по s2-й
-s1, s2 = 3, 8  # например, с 3-го по 8-й
-slice_arr = arr[s1-1:s2]
-avg_slice = sum(slice_arr) / len(slice_arr)
-print(f"ж) Среднее элементов с {s1}-го по {s2}-й: {avg_slice:.2f}")
-
-# 11.20. Знакопеременная сумма
-print("\n11.20. Знакопеременная сумма:")
-arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-
-sign_sum = 0
-for i in range(len(arr)):
-    if i % 2 == 0:  # четные индексы (нечетные позиции) со знаком +
-        sign_sum += arr[i]
-    else:  # нечетные индексы (четные позиции) со знаком -
-        sign_sum -= arr[i]
-
-print(f"Массив: {arr}")
-print(f"Знакопеременная сумма a1 - a2 + a3 - a4 + ...: {sign_sum}")
-
-# 11.21. Осадки в январе
-print("\n11.21. Осадки в январе:")
-# 31 день в январе, осадки в мм
-osadki = [random.randint(0, 10) for _ in range(31)]
-total_osadki = sum(osadki)
-print(f"Осадки за 31 день: {osadki[:10]}...")  # показываем первые 10
-print(f"Всего осадков в январе: {total_osadki} мм")
-
-# 11.22. Стоимость предметов
-print("\n11.22. Стоимость предметов:")
-# 12 предметов, стоимость в рублях
-stoimost = [random.randint(100, 1000) for _ in range(12)]
-total_stoimost = sum(stoimost)
-print(f"Стоимость 12 предметов: {stoimost}")
-print(f"Общая стоимость: {total_stoimost} руб.")
-
-# 11.23. Сопротивление цепи
-print("\n11.23. Сопротивление цепи:")
-# 20 элементов, сопротивление в Омах
-soprotivlenie = [random.randint(1, 100) for _ in range(20)]
-total_soprotivlenie = sum(soprotivlenie)
-print(f"Сопротивление 20 элементов: {soprotivlenie[:5]}...")  # первые 5
-print(f"Общее сопротивление цепи (последовательное): {total_soprotivlenie} Ом")
-def task_11_25():
-    print("\n=== 11.25 Осадки в июне по декадам ===")
-    
-    # В июне 30 дней
-    n = 30
-    print("В массиве хранятся сведения об осадках за каждый день июня (30 дней)")
-    
-    # Создаем массив осадков (в мм)
-    precipitation = create_random_array(n, 0, 20)
-    
-    print_array(precipitation, "Осадки за каждый день июня")
-    
-    # Разбиваем на декады
-    decade1 = precipitation[:10]    # 1-10 июня
-    decade2 = precipitation[10:20]  # 11-20 июня
-    decade3 = precipitation[20:]    # 21-30 июня
-    
-    total1 = sum(decade1)
-    total2 = sum(decade2)
-    total3 = sum(decade3)
-    
-    print("Общее количество осадков по декадам:")
-    print(f"  1-я декада (1-10 июня): {total1} мм")
-    print(f"  2-я декада (11-20 июня): {total2} мм")
-    print(f"  3-я декада (21-30 июня): {total3} мм")
-    print(f"  Всего за месяц: {sum(precipitation)} мм")
-
-def task_11_26():
-    print("\n=== 11.26 Среднедневные осадки в феврале ===")
-    
-    # В феврале обычно 28 дней (не високосный год)
-    n = 28
-    print("В массиве хранятся сведения об осадках за каждый день февраля (28 дней)")
-    
-    precipitation = create_random_array(n, 0, 15)
-    
-    print_array(precipitation, "Осадки за каждый день февраля")
-    
-    total = sum(precipitation)
-    average = total / n
-    
-    print(f"Общее количество осадков: {total} мм")
-    print(f"Среднедневное количество осадков: {average:.1f} мм")
-
-def task_11_27():
-    print("\n=== 11.27 Средние осадки по декадам сентября ===")
-    
-    # В сентябре 30 дней
-    n = 30
-    print("В массиве хранятся сведения об осадках за каждый день сентября (30 дней)")
-    
-    precipitation = create_random_array(n, 0, 25)
-    
-    print_array(precipitation, "Осадки за каждый день сентября")
-    
-    # Разбиваем на декады
-    decade1 = precipitation[:10]
-    decade2 = precipitation[10:20]
-    decade3 = precipitation[20:]
-    
-    avg1 = sum(decade1) / len(decade1)
-    avg2 = sum(decade2) / len(decade2)
-    avg3 = sum(decade3) / len(decade3)
-    
-    print("Среднее количество осадков по декадам:")
-    print(f"  1-я декада (1-10 сентября): {avg1:.1f} мм в день")
-    print(f"  2-я декада (11-20 сентября): {avg2:.1f} мм в день")
-    print(f"  3-я декада (21-30 сентября): {avg3:.1f} мм в день")
-
-def task_11_28():
-    print("\n=== 11.28 Проверка: сумма элементов массива неотрицательна? ===")
-    
-    n = 10
-    print(f"Создаем массив из {n} целых чисел (от -50 до 50)")
-    
-    arr = create_random_array(n, -50, 50)
-    
-    print_array(arr, "Исходный массив")
-    
-    total = sum(arr)
-    
-    print(f"Сумма элементов массива: {total}")
-    
-    if total >= 0:
-        print("Верно: сумма элементов массива есть неотрицательное число")
-    else:
-        print("Неверно: сумма элементов массива отрицательна")
-
-def task_11_29():
-    print("\n=== 11.29 Проверки для массива целых чисел ===")
-    
-    n = 10
-    print(f"Создаем массив из {n} целых чисел")
-    
-    arr = create_random_array(n, 0, 100)
-    
-    print_array(arr, "Исходный массив")
-    
-    # а) Сумма четная?
-    total = sum(arr)
-    is_even = total % 2 == 0
-    
-    print(f"а) Сумма элементов: {total}")
-    print(f"   Верно ли, что сумма четна? {'Да' if is_even else 'Нет'}")
-    
-    # б) Сумма квадратов - пятизначное число?
-    sum_squares = sum(x*x for x in arr)
-    is_five_digit = 10000 <= sum_squares <= 99999
-    
-    print(f"б) Сумма квадратов элементов: {sum_squares}")
-    print(f"   Верно ли, что сумма квадратов - пятизначное число? {'Да' if is_five_digit else 'Нет'}")
-
-def task_11_30():
-    print("\n=== 11.30 Численность учеников в школе ===")
-    
-    n = 42  # 42 класса
-    print(f"В массиве хранится информация о численности учеников в каждом из {n} классов")
-    
-    # Численность от 20 до 35 учеников в классе
-    students = create_random_array(n, 20, 35)
-    
-    print_array(students, "Численность учеников по классам")
-    
-    total = sum(students)
-    is_four_digit = 1000 <= total <= 9999
-    
-    print(f"Общее число учеников в школе: {total}")
-    print(f"Верно ли, что общее число учеников - четырехзначное? {'Да' if is_four_digit else 'Нет'}")
-
-def task_11_31():
-    print("\n=== 11.31 Количество книг в библиотеке ===")
-    
-    n = 35  # 35 разделов
-    print(f"В массиве хранится информация о количестве книг в каждом из {n} разделов библиотеки")
-    
-    # Количество книг от 1000 до 5000 в разделе
-    books = create_random_array(n, 1000, 5000)
-    
-    # Выводим не все, а только первые и последние несколько
-    print("Количество книг по разделам (первые 5 и последние 5):")
-    for i in range(5):
-        print(f"  Раздел {i+1}: {books[i]}")
-    print("  ...")
-    for i in range(n-5, n):
-        print(f"  Раздел {i+1}: {books[i]}")
-    print()
-    
-    total = sum(books)
-    is_six_digit = 100000 <= total <= 999999
-    
-    print(f"Общее число книг в библиотеке: {total}")
-    print(f"Верно ли, что общее число книг - шестизначное? {'Да' if is_six_digit else 'Нет'}")
-
-def task_11_32():
-    print("\n=== 11.32 Проверка грузоподъемности автомобиля ===")
-    
-    n = 30  # 30 предметов
-    print(f"В массиве хранится информация о массе каждого из {n} предметов")
-    
-    # Масса предметов от 10 до 100 кг
-    weights = create_random_array(n, 10, 100)
-    
-    print_array(weights, "Масса предметов (кг)")
-    
-    # Грузоподъемность автомобиля (кг)
-    capacity = 1500
-    
-    total_weight = sum(weights)
-    
-    print(f"Грузоподъемность автомобиля: {capacity} кг")
-    print(f"Общая масса всех предметов: {total_weight} кг")
-    
-    if total_weight <= capacity:
-        print("✓ Не превышает: общая масса всех предметов не превышает грузоподъемность")
-    else:
-        print("✗ Превышает: общая масса превышает грузоподъемность")
-        print(f"  Перегруз: {total_weight - capacity} кг")
-
-def task_11_33():
-    print("\n=== 11.33 Спортсмен-десятиборец ===")
-    
-    n = 10  # 10 видов спорта
-    print("В массиве хранятся баллы спортсмена-десятиборца по 10 видам спорта")
-    
-    # Баллы от 600 до 1000 за вид спорта
-    scores = create_random_array(n, 600, 1000)
-    
-    print_array(scores, "Баллы по видам спорта")
-    
-    # Порог для выхода в следующий этап
-    threshold = 7500
-    
-    total_score = sum(scores)
-    
-    print(f"Общая сумма баллов: {total_score}")
-    print(f"Порог для выхода в следующий этап: {threshold}")
-    
-    if total_score > threshold:
-        print("✓ Вышел в следующий этап соревнований")
-    else:
-        print("✗ Не вышел в следующий этап соревнований")
-        print(f"  Не хватило: {threshold - total_score} баллов")
-
-def task_11_34():
-    print("\n=== 11.34 Анализ осадков в июне ===")
-    
-    n = 30  # 30 дней в июне
-    print("В массиве хранятся сведения об осадках за каждый день июня")
-    
-    precipitation = create_random_array(n, 0, 20)
-    
-    print_array(precipitation, "Осадки за каждый день июня")
-    
-    # а) Сравнение первой и второй половины
-    first_half = precipitation[:15]
-    second_half = precipitation[15:]
-    
-    total_first = sum(first_half)
-    total_second = sum(second_half)
-    
-    print("а) Сравнение первой и второй половины июня:")
-    print(f"  Первая половина (1-15 июня): {total_first} мм")
-    print(f"  Вторая половина (16-30 июня): {total_second} мм")
-    
-    if total_first > total_second:
-        print("  Больше осадков выпало в первую половину")
-    elif total_second > total_first:
-        print("  Больше осадков выпало во вторую половину")
-    else:
-        print("  Осадков выпало поровну в обе половины")
-    
-    # б) Сравнение декад
-    decade1 = precipitation[:10]
-    decade2 = precipitation[10:20]
-    decade3 = precipitation[20:]
-    
-    total_dec1 = sum(decade1)
-    total_dec2 = sum(decade2)
-    total_dec3 = sum(decade3)
-    
-    print("\nб) Сравнение декад:")
-    print(f"  1-я декада (1-10 июня): {total_dec1} мм")
-    print(f"  2-я декада (11-20 июня): {total_dec2} мм")
-    print(f"  3-я декада (21-30 июня): {total_dec3} мм")
-    
-    max_dec = max(total_dec1, total_dec2, total_dec3)
-    
-    if max_dec == total_dec1:
-        print("  Больше всего осадков выпало в первую декаду")
-    elif max_dec == total_dec2:
-        print("  Больше всего осадков выпало во вторую декаду")
-    else:
-        print("  Больше всего осадков выпало в третью декаду")
-
-def task_11_35():
-    print("\n=== 11.35 Фигурное катание: сравнение видов программ ===")
-    
-    n = 18  # 18 оценок
-    print("Оценки спортсмена по фигурному катанию:")
-    print("  Элементы 1-6: обязательная программа")
-    print("  Элементы 7-12: короткая программа")
-    print("  Элементы 13-18: произвольная программа")
-    
-    # Оценки от 4.0 до 6.0 с одним знаком после запятой
-    scores = [round(random.uniform(4.0, 6.0), 1) for _ in range(n)]
-    
-    print_array(scores, "Оценки спортсмена")
-    
-    # Разделяем по видам программ
-    mandatory = scores[:6]
-    short = scores[6:12]
-    free = scores[12:]
-    
-    # Суммируем оценки
-    sum_mandatory = sum(mandatory)
-    sum_short = sum(short)
-    sum_free = sum(free)
-    
-    # Средние оценки
-    avg_mandatory = sum_mandatory / 6
-    avg_short = sum_short / 6
-    avg_free = sum_free / 6
-    
-    print("Результаты по видам программ:")
-    print(f"  Обязательная программа: сумма = {sum_mandatory:.1f}, среднее = {avg_mandatory:.2f}")
-    print(f"  Короткая программа: сумма = {sum_short:.1f}, среднее = {avg_short:.2f}")
-    print(f"  Произвольная программа: сумма = {sum_free:.1f}, среднее = {avg_free:.2f}")
-    
-    # Определяем лучший результат
-    max_sum = max(sum_mandatory, sum_short, sum_free)
-    
-    if max_sum == sum_mandatory:
-        print("\n✓ Лучший результат показан в обязательной программе")
-    elif max_sum == sum_short:
-        print("\n✓ Лучший результат показан в короткой программе")
-    else:
-        print("\n✓ Лучший результат показан в произвольной программе")
-
-def task_11_36():
-    print("\n=== 11.36 Выбор элементов массива ===")
-    
-    n = 15
-    print(f"Создаем массив из {n} целых чисел (от -50 до 150)")
-    
-    arr = create_random_array(n, -50, 150)
-    
-    print_array(arr, "Исходный массив")
-    
-    # а) Все неотрицательные элементы
-    non_negative = [x for x in arr if x >= 0]
-    print("а) Все неотрицательные элементы:")
-    if non_negative:
-        for i, val in enumerate(non_negative, 1):
-            print(f"  {val}", end="  ")
-            if i % 5 == 0:
-                print()
-        if len(non_negative) % 5 != 0:
-            print()
-    else:
-        print("  Нет неотрицательных элементов")
-    
-    # б) Все элементы, не превышающие 100
-    less_100 = [x for x in arr if x <= 100]
-    print("\nб) Все элементы, не превышающие 100:")
-    if less_100:
-        for i, val in enumerate(less_100, 1):
-            print(f"  {val}", end="  ")
-            if i % 5 == 0:
-                print()
-        if len(less_100) % 5 != 0:
-            print()
-    else:
-        print("  Нет элементов, не превышающих 100")
-
-def task_11_37():
-    print("\n=== 11.37 Работа с массивом целых чисел ===")
-    
-    n = 20
-    print(f"Создаем массив из {n} целых чисел (от 0 до 200)")
-    
-    arr = create_random_array(n, 0, 200)
-    
-    print_array(arr, "Исходный массив")
-    
-    # а) Все четные элементы
-    even_numbers = [x for x in arr if x % 2 == 0]
-    print("а) Все четные элементы:")
-    if even_numbers:
-        for i, val in enumerate(even_numbers, 1):
-            print(f"  {val}", end="  ")
-            if i % 5 == 0:
-                print()
-        if len(even_numbers) % 5 != 0:
-            print()
-        print(f"  Всего: {len(even_numbers)} четных элементов")
-    else:
-        print("  Нет четных элементов")
-    
-    # б) Все элементы, оканчивающиеся нулем
-    ending_with_zero = [x for x in arr if x % 10 == 0]
-    print("\nб) Все элементы, оканчивающиеся нулем:")
-    if ending_with_zero:
-        for i, val in enumerate(ending_with_zero, 1):
-            print(f"  {val}", end="  ")
-            if i % 5 == 0:
-                print()
-        if len(ending_with_zero) % 5 != 0:
-            print()
-        print(f"  Всего: {len(ending_with_zero)} элементов, оканчивающихся нулем")
-    else:
-        print("  Нет элементов, оканчивающихся нулем")
-
-def task_11_38():
-    print("\n=== 11.38 Поиск двузначных и трехзначных чисел ===")
-    
-    n = 25
-    print(f"Создаем массив из {n} натуральных чисел (от 1 до 999)")
-    
-    arr = create_random_array(n, 1, 999)
-    
-    print_array(arr, "Исходный массив")
-    
-    # а) Все двузначные числа (10-99)
-    two_digit = [x for x in arr if 10 <= x <= 99]
-    print("а) Все двузначные числа:")
-    if two_digit:
-        for i, val in enumerate(two_digit, 1):
-            print(f"  {val}", end="  ")
-            if i % 5 == 0:
-                print()
-        if len(two_digit) % 5 != 0:
-            print()
-        print(f"  Всего: {len(two_digit)} двузначных чисел")
-    else:
-        print("  Нет двузначных чисел")
-    
-    # б) Все трехзначные числа (100-999)
-    three_digit = [x for x in arr if 100 <= x <= 999]
-    print("\nб) Все трехзначные числа:")
-    if three_digit:
-        for i, val in enumerate(three_digit, 1):
-            print(f"  {val}", end="  ")
-            if i % 5 == 0:
-                print()
-        if len(three_digit) % 5 != 0:
-            print()
-        print(f"  Всего: {len(three_digit)} трехзначных чисел")
-    else:
-        print("  Нет трехзначных чисел")
-
-def task_11_39():
-    print("\n=== 11.39 Выбор элементов с определенными индексами ===")
-    
-    n = 20
-    print(f"Создаем массив из {n} целых чисел")
-    
-    arr = create_random_array(n, 1, 100)
-    
-    print_array(arr, "Исходный массив")
-    
-    # а) Второй, четвертый и т.д. элементы (четные индексы, начиная с 1)
-    even_indices = [arr[i] for i in range(1, n, 2)]  # Индексы: 1, 3, 5, ... (0-based)
-    print("а) Элементы с четными номерами (2, 4, 6, ...):")
-    for i, val in enumerate(even_indices, 1):
-        print(f"  Элемент {i*2}: {val}")
-    
-    # б) Третий, шестой и т.д. элементы (индексы кратные 3)
-    multiples_of_three = [arr[i] for i in range(2, n, 3)]  # Индексы: 2, 5, 8, ...
-    print("\nб) Каждый третий элемент (3, 6, 9, ...):")
-    for i, val in enumerate(multiples_of_three, 1):
-        print(f"  Элемент {i*3}: {val}")
-
-def task_11_40():
-    print("\n=== 11.40 Разделение элементов по знаку ===")
-    
-    n = 15
-    print(f"Создаем массив из {n} целых чисел (от -50 до 50)")
-    
-    arr = create_random_array(n, -50, 50)
-    
-    print_array(arr, "Исходный массив")
-    
-    # Разделяем на неотрицательные и отрицательные
-    non_negative = [x for x in arr if x >= 0]
-    negative = [x for x in arr if x < 0]
-    
-    print("Сначала неотрицательные элементы:")
-    if non_negative:
-        for val in non_negative:
-            print(f"  {val}", end="  ")
-        print()
-    else:
-        print("  Нет неотрицательных элементов")
-    
-    print("\nЗатем отрицательные элементы:")
-    if negative:
-        for val in negative:
-            print(f"  {val}", end="  ")
-        print()
-    else:
-        print("  Нет отрицательных элементов")
-
-def task_11_41():
-    print("\n=== 11.41 Разделение элементов на четные и нечетные ===")
-    
-    n = 20
-    print(f"Создаем массив из {n} целых чисел")
-    
-    arr = create_random_array(n, 1, 100)
-    
-    print_array(arr, "Исходный массив")
-    
-    # Разделяем на четные и нечетные
-    even_numbers = [x for x in arr if x % 2 == 0]
-    odd_numbers = [x for x in arr if x % 2 != 0]
-    
-    print("Сначала четные элементы:")
-    if even_numbers:
-        for val in even_numbers:
-            print(f"  {val}", end="  ")
-        print()
-        print(f"  Всего: {len(even_numbers)} четных чисел")
-    else:
-        print("  Нет четных элементов")
-    
-    print("\nЗатем нечетные элементы:")
-    if odd_numbers:
-        for val in odd_numbers:
-            print(f"  {val}", end="  ")
-        print()
-        print(f"  Всего: {len(odd_numbers)} нечетных чисел")
-    else:
-        print("  Нет нечетных элементов")
-
-def task_11_42():
-    print("\n=== 11.42 Поиск элементов, оканчивающихся нулем ===")
-    
-    n = 20
-    print(f"Создаем массив из {n} целых чисел")
-    
-    # Увеличиваем вероятность чисел, оканчивающихся на 0
-    arr = []
-    for _ in range(n):
-        if random.random() < 0.3:  # 30% вероятность числа, оканчивающегося на 0
-            arr.append(random.randint(1, 20) * 10)
-        else:
-            arr.append(random.randint(1, 200))
-    
-    print_array(arr, "Исходный массив")
-    
-    # Находим номера элементов, оканчивающихся на 0
-    indices = [i+1 for i, x in enumerate(arr) if x % 10 == 0]
-    values = [x for x in arr if x % 10 == 0]
-    
-    print("Элементы, оканчивающиеся цифрой 0:")
-    if indices:
-        print("  Номера элементов:", indices)
-        print("  Значения элементов:", values)
-    else:
-        print("  Нет элементов, оканчивающихся цифрой 0")
-
-def task_11_43():
-    print("\n=== 11.43 Дни без осадков в январе ===")
-    
-    n = 31  # 31 день в январе
-    print("В массиве хранятся сведения об осадках за каждый день января")
-    
-    # Создаем массив с некоторыми нулевыми значениями
-    precipitation = []
-    for _ in range(n):
-        if random.random() < 0.4:  # 40% вероятность дня без осадков
-            precipitation.append(0)
-        else:
-            precipitation.append(random.randint(1, 15))
-    
-    print_array(precipitation, "Осадки за каждый день января (мм)")
-    
-    # Находим дни без осадков
-    no_precip_days = [i+1 for i, p in enumerate(precipitation) if p == 0]
-    
-    print("Дни, в которые осадков не было:")
-    if no_precip_days:
-        print("  Числа месяца:", no_precip_days)
-        print(f"  Всего дней без осадков: {len(no_precip_days)}")
-    else:
-        print("  В январе каждый день были осадки")
-
-def task_11_44():
-    print("\n=== 11.44 Футбольные команды с малым количеством побед ===")
-    
-    n = 20  # 20 команд
-    print(f"В массиве хранится информация о количестве побед {n} футбольных команд")
-    
-    # Количество побед от 0 до 10
-    wins = create_random_array(n, 0, 10)
-    
-    print_array(wins, "Количество побед по командам")
-    
-    # Находим команды с меньше чем 3 победами
-    teams_with_few_wins = [i+1 for i, w in enumerate(wins) if w < 3]
-    teams_wins_values = [w for w in wins if w < 3]
-    
-    print("Команды, имеющие меньше трех побед:")
-    if teams_with_few_wins:
-        print("  Номера команд:", teams_with_few_wins)
-        print("  Количество побед у этих команд:", teams_wins_values)
-        print(f"  Всего таких команд: {len(teams_with_few_wins)}")
-    else:
-        print("  Нет команд с меньше чем 3 победами")
-
-def task_11_45():
-    print("\n=== 11.45 Вывод элементов по четности позиций ===")
-    
-    n = 15
-    print(f"Создаем массив из {n} целых чисел")
-    
-    arr = create_random_array(n, 1, 100)
-    
-    print_array(arr, "Исходный массив")
-    
-    # Элементы на четных позициях (2, 4, 6, ...)
-    even_positions = [arr[i] for i in range(1, n, 2)]  # Индексы: 1, 3, 5, ...
-    
-    # Элементы на нечетных позициях (1, 3, 5, ...)
-    odd_positions = [arr[i] for i in range(0, n, 2)]   # Индексы: 0, 2, 4, ...
-    
-    print("Сначала элементы на четных местах (2, 4, 6, ...):")
-    if even_positions:
-        for i, val in enumerate(even_positions, 1):
-            print(f"  Позиция {i*2}: {val}")
-    else:
-        print("  Нет элементов на четных позициях")
-    
-    print("\nЗатем элементы на нечетных местах (1, 3, 5, ...):")
-    if odd_positions:
-        for i, val in enumerate(odd_positions, 1):
-            print(f"  Позиция {i*2-1}: {val}")
-    else:
-        print("  Нет элементов на нечетных позициях")
-
-def task_11_46():
-    print("\n=== 11.46 Изменение элементов массива вещественных чисел ===")
-    
-    n = 12
-    print(f"Создаем массив из {n} вещественных чисел")
-    
-    arr = create_float_array(n, -10.0, 20.0)
-    
-    print_array([round(x, 2) for x in arr], "Исходный массив")
-    
-    # а) Каждый отрицательный элемент заменить его абсолютной величиной
-    arr_a = arr.copy()
-    for i in range(n):
-        if arr_a[i] < 0:
-            arr_a[i] = abs(arr_a[i])
-    
-    print("а) После замены отрицательных элементов их абсолютными величинами:")
-    for i, val in enumerate(arr_a, 1):
-        print(f"  [{i:2}] = {val:.2f}")
-    
-    # б) Все элементы с нечетными номерами заменить их квадратным корнем
-    arr_b = arr.copy()
-    for i in range(0, n, 2):  # Индексы: 0, 2, 4, ... (нечетные номера в 1-based)
-        if arr_b[i] >= 0:  # Корень из отрицательного числа - комплексный
-            arr_b[i] = math.sqrt(arr_b[i])
-    
-    print("\nб) После замены элементов с нечетными номерами их квадратными корнями:")
-    for i, val in enumerate(arr_b, 1):
-        print(f"  [{i:2}] = {val:.2f}")
-
-def task_11_47():
-    print("\n=== 11.47 Изменение элементов массива вещественных чисел (продолжение) ===")
-    
-    n = 12
-    print(f"Создаем массив из {n} вещественных чисел")
-    
-    arr = create_float_array(n, 0.0, 20.0)
-    
-    print_array([round(x, 2) for x in arr], "Исходный массив")
-    
-    # а) Каждый элемент, больший 10, заменить его квадратным корнем
-    arr_a = arr.copy()
-    for i in range(n):
-        if arr_a[i] > 10:
-            arr_a[i] = math.sqrt(arr_a[i])
-    
-    print("а) После замены элементов >10 их квадратными корнями:")
-    for i, val in enumerate(arr_a, 1):
-        print(f"  [{i:2}] = {val:.2f}")
-    
-    # б) Все элементы с четными номерами заменить их абсолютной величиной
-    arr_b = arr.copy()
-    for i in range(1, n, 2):  # Индексы: 1, 3, 5, ... (четные номера в 1-based)
-        arr_b[i] = abs(arr_b[i])
-    
-    print("\nб) После замены элементов с четными номерами их абсолютными величинами:")
-    for i, val in enumerate(arr_b, 1):
-        print(f"  [{i:2}] = {val:.2f}")
-# 11.48
-arr = [1.5, -2.3, 4.7, -1.2, 3.8, 0.5]
-k1 = 2
-k2 = 1
-
-# а)
-for i in range(len(arr)):
-    if arr[i] > 0:
-        arr[i] -= arr[k1]
-    else:
-        arr[i] -= arr[k2]
-
-# б)
-for i in range(len(arr)):
-    if i % 2 == 0:  # четные индексы (0,2,4...)
-        arr[i] -= 1
-    else:           # нечетные индексы (1,3,5...)
-        arr[i] += 1
-
-# 11.49
-arr = [1.5, -2.3, 4.7, -1.2, 3.8]
-m1 = 0
-m2 = 2
-
-# а)
-for i in range(len(arr)):
-    if arr[i] < 0:
-        arr[i] += arr[m1]
-    else:
-        arr[i] += arr[m2]
-
-# б)
-for i in range(len(arr)):
-    if i % 2 == 0:  # четные индексы
-        arr[i] *= 2
-    else:           # нечетные индексы
-        arr[i] -= 1
-
-# 11.50
-arr = [1.5, -2.3, 0, 4.7, -1.2]
-k1 = 1
-n = 2.5
-a = 1.0
-b = 0.5
-
-# а)
-for i in range(len(arr)):
-    if arr[i] > 0:
-        arr[i] -= arr[k1]
-    elif arr[i] < 0:
-        arr[i] -= n
-    # нулевые остаются без изменений
-
-# б) (исходный массив заново)
-arr = [1.5, -2.3, 0, 4.7, -1.2]
-for i in range(len(arr)):
-    if arr[i] == 0:
-        arr[i] += n
-    elif arr[i] > 0:
-        arr[i] -= a
-    else:  # arr[i] < 0
-        arr[i] += b
-
-# 11.52
-arr = [14, 23, 4, 34, 7, 24]
-
-# а)
-for i in range(len(arr)):
-    if arr[i] % 10 == 4:
-        arr[i] //= 2  # для целых чисел
-
-# б)
-arr = [14, 23, 4, 34, 7, 24]  # восстанавливаем
-for i in range(len(arr)):
-    if arr[i] % 2 == 0:
-        arr[i] = arr[i] ** 2
-    else:
-        arr[i] *= 2
-
-# в)
-arr = [14, 23, 4, 34, 7, 24]
-a = 3
-b = 2
-for i in range(len(arr)):
-    if arr[i] % 2 == 0:  # четные элементы
-        arr[i] += a
-    if i % 2 == 0:        # элементы с четными индексами
-        arr[i] -= b
-
-# 11.53
-arr = [10, 23, 20, 34, 7, 30]
-
-# а)
-for i in range(len(arr)):
-    if arr[i] % 10 == 0:
-        arr[i] = 0
-
-# б)
-arr = [10, 23, 20, 34, 7, 30]
-for i in range(len(arr)):
-    if arr[i] % 2 == 0:
-        arr[i] //= 2
-    else:
-        arr[i] *= 2
-
-# в)
-arr = [10, 23, 20, 34, 7, 30]
-m = 2
-n = 3
-for i in range(len(arr)):
-    if arr[i] % 2 != 0:  # нечетные элементы
-        arr[i] -= m
-    if i % 2 != 0:        # элементы с нечетными индексами
-        arr[i] += n
-# 11.54
-arr = [15, 25, 10, 30, 5, 35]
-
-# а)
-s = 0
-for x in arr:
-    if x <= 20:
-        s += x
-
-# б)
-a = 20
-s = 0
-for x in arr:
-    if x > a:
-        s += x
-
-# 11.55
-arr = [15, 23, 10, 30, 5, 35]
-
-# а)
-s = 0
-for x in arr:
-    if x % 2 != 0:
-        s += x
-
-# б)
-k = 5
-s = 0
-for x in arr:
-    if x % k == 0:
-        s += x
-
-# в)
-a = 3
-b = 5
-s = 0
-for x in arr:
-    if x % a == 0 or x % b == 0:
-        s += x
-
-# 11.56
-arr = [1, 2, 3, 4, 5, 6, 7, 8]
-s = 0
-for i in range(1, len(arr), 2):  # индексы 1,3,5...
-    s += arr[i]
-
-# 11.57
-feb = [3, 2, 0, 4, 1, 5, 0, 2, 3, 4, 1, 0, 2, 3, 4,
-       0, 1, 2, 3, 0, 4, 2, 1, 0, 3, 2, 1, 4]  # 28 дней
-s = 0
-for i in range(1, len(feb), 2):  # четные числа (индексы 1,3,5...)
-    s += feb[i]
-
-# 11.58
-year = [45, 40, 38, 42, 35, 30, 25, 28, 32, 40, 45, 50]  # 12 месяцев
-months = [2, 5, 8, 11]  # март, июнь, сентябрь, декабрь (индексы 2,5,8,11)
-s = 0
-for m in months:
-    s += year[m]
-
-# 11.59
-arr = [1.5, -2.3, 4.7, -1.2, 3.8, -0.5]
-sp = 0  # сумма положительных
-sn = 0  # сумма отрицательных
-for x in arr:
-    if x > 0:
-        sp += x
-    elif x < 0:
-        sn += x
-if sn != 0:
-    r = sp / abs(sn)  # результат
-
-# 11.60
-arr = [25, 30, 15, 40, 10, 35, 20]
-
-# а)
-s = 0
-for x in arr:
-    if x > 20:
-        s += x
-res = s > 100  # True или False
-
-# б)
-s = 0
-for x in arr:
-    if x < 50:
-        s += x
-res = s % 2 == 0  # True или False
-
-# 11.62
-houses = [10, 15, 12, 20, 18, 25, 14, 30]  # жильцов в каждом доме
-even = 0  # четная сторона
-odd = 0   # нечетная сторона
-for i in range(len(houses)):
-    if (i + 1) % 2 == 0:  # i+1 - номер дома
-        even += houses[i]
-    else:
-        odd += houses[i]
-if even > odd:
-    side = "четная"
-elif odd > even:
-    side = "нечетная"
-else:
-    side = "одинаково"
-
-# 11.63
-arr = [1.5, -2.3, 0, 4.7, -1.2, 3.8]
-cnt = 0
-for x in arr:
-    if x >= 0:
-        cnt += 1
-
-# 11.64
-arr = [15, 23, 10, 15, 30, 15]
-
-# а)
-last = arr[-1]
-cnt = 0
-for x in arr:
-    if x != last:
-        cnt += 1
-
-# б)
-a = 5
-cnt = 0
-for x in arr:
-    if x % a == 0:
-        cnt += 1
-
-# 11.65
-feb = [3, 0, 0, 4, 1, 0, 0, 2, 3, 4, 0, 0, 2, 3, 4,
-       0, 1, 2, 3, 0, 4, 2, 1, 0, 3, 2, 1, 4]
-cnt = 0
-for x in feb:
-    if x == 0:
-        cnt += 1
-
-# 11.66
-marks = [3, 4, 2, 5, 3, 2, 4, 3, 5, 2, 3, 4, 5, 2, 3,
-         4, 5, 3, 2, 4, 3, 5, 2, 3, 4]  # 25 оценок
-cnt = 0
-for m in marks:
-    if m < 3:
-        cnt += 1
-
-# 11.68
-heights = [150, 160, 165, 155, 170, 158, 162, 168, 152, 159,
-           163, 167, 161, 164, 166, 169, 157, 171, 153, 156, 172, 154]  # 22 ученика
-r = 160
-cnt = 0
-for h in heights:
-    if h <= r:
-        cnt += 1
-
-# 11.69
-arr = [15, 23, 10, 30, 5, 35, 20, 25, 12, 18]
-a = 10
-b = 25
-cnt = 0
-for x in arr:
-    if a <= x <= b:
-        cnt += 1
-
-# 11.70
-games = [3, 1, 3, 0, 1, 3, 3, 0, 1, 3, 1, 0, 3, 3, 1, 0, 1, 3, 3, 0]  # 20 игр
-wins = 0
-draws = 0
-for g in games:
-    if g == 3:
-        wins += 1
-    elif g == 1:
-        draws += 1
-total = wins + draws
-
 # 11.103
+print("11.103")
 arr = [10, -4, 12, 56, -4, -89, 7, 23, -15]
 sign_changes = 0
 if len(arr) > 1:
@@ -1270,6 +12,7 @@ if len(arr) > 1:
             prev_sign = curr_sign
 
 # 11.104
+print("11.104")
 arr = [1, 2, 3, 3, 3, 4, 5, 5, 6, 7, 7, 7, 7, 8, 9, 9, 10, 10, 10, 10]
 equal_seq_cnt = 0
 i = 0
@@ -1277,17 +20,17 @@ while i < len(arr):
     j = i
     while j < len(arr) and arr[j] == arr[i]:
         j += 1
-    if j - i > 1:  # если подряд идущих одинаковых больше 1
+    if j - i > 1:
         equal_seq_cnt += (j - i)
     i = j
 
-# Количество различных чисел
-unique_cnt = 1  # первый элемент уже учтен
+unique_cnt = 1
 for i in range(1, len(arr)):
     if arr[i] != arr[i-1]:
         unique_cnt += 1
 
 # 11.105
+print("11.105")
 arr = [1, 1, 2, 2, 2, 3, 4, 5, 5, 5, 6, 6, 7, 7, 7, 8, 8, 9, 9, 9, 10, 10, 11, 12, 12, 13, 14, 14, 15, 15]
 unique_cnt = 1
 for i in range(1, len(arr)):
@@ -1295,44 +38,40 @@ for i in range(1, len(arr)):
         unique_cnt += 1
 
 # 11.106
+print("11.106")
 arr = [1, 3, 5, 2, 7, 9, 11, 4, 13, 15, 17, 6, 19, 21, 23]
 max_len = 0
 curr_len = 0
 for x in arr:
-    if x % 2 != 0:  # нечетное
+    if x % 2 != 0:
         curr_len += 1
         if curr_len > max_len:
             max_len = curr_len
-    else:  # четное - прерывает последовательность
+    else:
         curr_len = 0
 
 # 11.107
+print("11.107")
 arr = [15, 5, 25, 8, 30, 12, 18, 7, 22]
 
-# а) максимальный элемент
 max_val = arr[0]
 for x in arr:
     if x > max_val:
         max_val = x
 
-# б) минимальный элемент
 min_val = arr[0]
 for x in arr:
     if x < min_val:
         min_val = x
 
-# в) на сколько максимальный больше минимального
 diff = max_val - min_val
 
-# г) индекс максимального элемента
 max_idx = 0
 for i in range(1, len(arr)):
     if arr[i] > arr[max_idx]:
         max_idx = i
 
-# д) индекс минимального и максимального элементов
 min_idx = 0
-max_idx = 0
 for i in range(1, len(arr)):
     if arr[i] > arr[max_idx]:
         max_idx = i
@@ -1340,34 +79,39 @@ for i in range(1, len(arr)):
         min_idx = i
 
 # 11.108
-pages = [200, 350, 120, 450, 300, 280, 400, 150, 320, 380]  # 10 книг для примера
+print("11.108")
+pages = [200, 350, 120, 450, 300, 280, 400, 150, 320, 380]
 max_pages = pages[0]
 for p in pages:
     if p > max_pages:
         max_pages = p
 
 # 11.109
-prices = [10000, 15000, 20000, 12000, 25000, 18000, 30000]  # 7 марок для примера
+print("11.109")
+prices = [10000, 15000, 20000, 12000, 25000, 18000, 30000]
 max_price = prices[0]
 for p in prices:
     if p > max_price:
         max_price = p
 
 # 11.110
-candy_prices = [50, 40, 60, 30, 70, 35, 45, 55, 25, 65]  # 10 видов для примера
+print("11.110")
+candy_prices = [50, 40, 60, 30, 70, 35, 45, 55, 25, 65]
 min_price = candy_prices[0]
 for p in candy_prices:
     if p < min_price:
         min_price = p
 
 # 11.111
-results = [120, 115, 125, 118, 122, 130, 117, 121, 119, 123]  # время в минутах
-best_time = results[0]  # наименьшее время - победитель
+print("11.111")
+results = [120, 115, 125, 118, 122, 130, 117, 121, 119, 123]
+best_time = results[0]
 for t in results:
     if t < best_time:
         best_time = t
 
 # 11.112
+print("11.112")
 heights = [165, 172, 168, 175, 180, 169, 158, 182, 170, 166]
 max_h = heights[0]
 min_h = heights[0]
@@ -1379,27 +123,25 @@ for h in heights:
 height_diff = max_h - min_h
 
 # 11.113
+print("11.113")
 birth_years = [1990, 1985, 1995, 1980, 1992, 1988, 1998, 1975, 1993, 1987]
-oldest = birth_years[0]  # самый старший - с наименьшим годом
-youngest = birth_years[0]  # самый молодой - с наибольшим годом
+oldest = birth_years[0]
+youngest = birth_years[0]
 for y in birth_years:
-    if y < oldest:  # чем меньше год, тем старше
+    if y < oldest:
         oldest = y
-    if y > youngest:  # чем больше год, тем моложе
+    if y > youngest:
         youngest = y
-age_diff = youngest - oldest  # разница в годах рождения
+age_diff = youngest - oldest
 
 # 11.114
+print("11.114")
 scores = [5.8, 6.0, 5.5, 5.9, 6.1, 5.7, 5.8, 6.0]
-
-# Удаляем одну максимальную и одну минимальную оценку
 max_score = max(scores)
 min_score = min(scores)
 
-# Флаги для удаления только по одной оценке каждого типа
 max_removed = False
 min_removed = False
-
 total = 0
 count = 0
 for s in scores:
@@ -1415,54 +157,48 @@ if count > 0:
     final_score = total / count
 
 # 11.115
+print("11.115")
 speeds = [180, 200, 190, 210, 200, 220, 210, 230, 220, 200]
 max_speed = speeds[0]
-
-# Находим максимальную скорость
 for s in speeds:
     if s > max_speed:
         max_speed = s
 
-# а) индекс первого самого быстрого
 first_idx = 0
 for i in range(len(speeds)):
     if speeds[i] == max_speed:
         first_idx = i
         break
 
-# б) индекс последнего самого быстрого
 last_idx = 0
 for i in range(len(speeds)):
     if speeds[i] == max_speed:
         last_idx = i
 
 # 11.116
+print("11.116")
 july_rain = [5, 8, 3, 10, 2, 7, 10, 4, 9, 6, 3,
              8, 5, 7, 4, 6, 9, 2, 8, 5, 7, 10, 4, 6, 8, 5, 7, 9, 3, 6, 4]
 max_rain = july_rain[0]
-
-# Находим максимальное количество осадков
 for r in july_rain:
     if r > max_rain:
         max_rain = r
 
-# а) дата первого самого дождливого дня
 first_day = 0
 for i in range(len(july_rain)):
     if july_rain[i] == max_rain:
-        first_day = i + 1  # +1 т.к. дни с 1 июля
+        first_day = i + 1
         break
 
-# б) дата последнего самого дождливого дня
 last_day = 0
 for i in range(len(july_rain)):
     if july_rain[i] == max_rain:
         last_day = i + 1
 
 # 11.119
+print("11.119")
 arr = [15, 5, 25, 8, 30, 12, 30, 7, 5, 22, 5, 30]
 
-# а) количество максимальных элементов
 max_val = arr[0]
 max_count = 1
 for i in range(1, len(arr)):
@@ -1472,7 +208,6 @@ for i in range(1, len(arr)):
     elif arr[i] == max_val:
         max_count += 1
 
-# б) количество минимальных элементов
 min_val = arr[0]
 min_count = 1
 for i in range(1, len(arr)):
@@ -1483,6 +218,7 @@ for i in range(1, len(arr)):
         min_count += 1
 
 # 11.120
+print("11.120")
 heights = [165, 172, 180, 168, 175, 180, 169, 158, 182, 170, 180, 166]
 max_h = heights[0]
 max_count = 1
@@ -1494,6 +230,7 @@ for i in range(1, len(heights)):
         max_count += 1
 
 # 11.121
+print("11.121")
 oct_rain = [5, 8, 10, 2, 7, 10, 4, 9, 6, 3, 8, 5, 7, 10, 4]
 max_rain = oct_rain[0]
 max_count = 1
@@ -1505,6 +242,7 @@ for i in range(1, len(oct_rain)):
         max_count += 1
 
 # 11.122
+print("11.122")
 book_prices = [100, 50, 80, 120, 50, 90, 150, 50, 70, 100]
 min_price = book_prices[0]
 min_count = 1
@@ -1516,6 +254,7 @@ for i in range(1, len(book_prices)):
         min_count += 1
 
 # 11.123
+print("11.123")
 july_temp = [22, 24, 23, 25, 22, 26, 24, 22, 25, 23, 27, 22, 24, 26, 23]
 min_temp = july_temp[0]
 min_count = 1
@@ -1527,9 +266,9 @@ for i in range(1, len(july_temp)):
         min_count += 1
 
 # 11.124
+print("11.124")
 arr = [15, 5, 25, 8, 30, 12, 30, 7, 5, 22, 5, 30]
 
-# а) номера всех элементов с минимальным значением
 min_val = arr[0]
 min_indices = [0]
 for i in range(1, len(arr)):
@@ -1539,7 +278,6 @@ for i in range(1, len(arr)):
     elif arr[i] == min_val:
         min_indices.append(i)
 
-# б) номера всех элементов с максимальным значением
 max_val = arr[0]
 max_indices = [0]
 for i in range(1, len(arr)):
@@ -1550,6 +288,7 @@ for i in range(1, len(arr)):
         max_indices.append(i)
 
 # 11.125
+print("11.125")
 arr = [15.5, 5.2, 25.8, 8.1, 30.4, 12.7, 18.3, 7.9, 22.6]
 
 max_val = arr[0]
@@ -1560,13 +299,11 @@ for x in arr:
     if x < min_val:
         min_val = x
 
-# а) верно ли, что максимальный превышает минимальный не более чем на 25
 res_a = (max_val - min_val) <= 25
-
-# б) верно ли, что минимальный меньше максимального более чем в 2 раза
 res_b = min_val * 2 < max_val
 
 # 11.126
+print("11.126")
 weights = [65, 80, 75, 90, 60, 85, 95, 70, 55, 100]
 max_w = weights[0]
 min_w = weights[0]
@@ -1578,6 +315,7 @@ for w in weights:
 res = max_w > min_w * 2
 
 # 11.127
+print("11.127")
 class_sizes = [25, 30, 28, 32, 27, 35, 29, 31, 26, 33]
 max_size = class_sizes[0]
 min_size = class_sizes[0]
@@ -1589,6 +327,7 @@ for s in class_sizes:
 res = max_size - min_size == 10
 
 # 11.128
+print("11.128")
 arr = [15, 5, 25, 8, 30, 12, 18, 7, 22]
 max_val = arr[0]
 min_val = arr[0]
@@ -1609,6 +348,7 @@ else:
     result = "максимальное встретилось раньше"
 
 # 11.129
+print("11.129")
 ages = [25, 30, 35, 20, 40, 28, 22, 45, 32, 27]
 oldest_age = ages[0]
 youngest_age = ages[0]
@@ -1616,10 +356,10 @@ oldest_first_idx = 0
 youngest_first_idx = 0
 
 for i in range(len(ages)):
-    if ages[i] < oldest_age:  # чем меньше возраст, тем старше
+    if ages[i] < oldest_age:
         oldest_age = ages[i]
         oldest_first_idx = i
-    if ages[i] > youngest_age:  # чем больше возраст, тем моложе
+    if ages[i] > youngest_age:
         youngest_age = ages[i]
         youngest_first_idx = i
 
@@ -1629,6 +369,7 @@ else:
     result = "самый молодой встретился раньше"
 
 # 11.130
+print("11.130")
 scores = [1, 0, 3, 1, 0, 3, 1, 3, 0, 1]
 win_first_idx = -1
 loss_first_idx = -1
@@ -1647,14 +388,13 @@ else:
     result = "одновременно или не было одного из событий"
 
 # 11.131
-wind_directions = [1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8]  # пример данных
-# Считаем частоту каждого направления
-freq = [0] * 9  # индексы 1-8 соответствуют направлениям
+print("11.131")
+wind_directions = [1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8]
+freq = [0] * 9
 for w in wind_directions:
     if 1 <= w <= 8:
         freq[w] += 1
 
-# Находим направление с минимальной частотой
 min_freq = freq[1]
 min_direction = 1
 for i in range(2, 9):
@@ -1662,25 +402,10 @@ for i in range(2, 9):
         min_freq = freq[i]
         min_direction = i
 
-# Определяем, как должен быть расположен жилой комплекс
-# (жилой комплекс нужно расположить с той стороны, откуда ветер дует реже всего)
-direction_names = {
-    1: "север",
-    2: "юг", 
-    3: "восток",
-    4: "запад",
-    5: "северо-запад",
-    6: "северо-восток",
-    7: "юго-запад",
-    8: "юго-восток"
-}
-
-recommendation = f"Расположить жилой комплекс {direction_names[min_direction]}нее комбината"
-
 # 11.132
+print("11.132")
 arr = [15, 5, 25, 8, 30, 12, 30, 7, 22]
 
-# а) максимальный и второй максимальный (без учета первого максимума)
 max1 = arr[0]
 max2 = arr[1]
 if max2 > max1:
@@ -1693,7 +418,6 @@ for i in range(2, len(arr)):
     elif arr[i] > max2 and arr[i] != max1:
         max2 = arr[i]
 
-# б) минимальный и второй минимальный (без учета первого минимума)
 min1 = arr[0]
 min2 = arr[1]
 if min2 < min1:
@@ -1706,7 +430,6 @@ for i in range(2, len(arr)):
     elif arr[i] < min2 and arr[i] != min1:
         min2 = arr[i]
 
-# в) номера максимального и второго максимального
 max1 = arr[0]
 max2 = arr[1]
 max1_idx = 0
@@ -1725,7 +448,6 @@ for i in range(2, len(arr)):
         max2 = arr[i]
         max2_idx = i
 
-# г) номера минимального и второго минимального
 min1 = arr[0]
 min2 = arr[1]
 min1_idx = 0
@@ -1745,6 +467,7 @@ for i in range(2, len(arr)):
         min2_idx = i
 
 # 11.133
+print("11.133")
 speeds = [180, 200, 190, 210, 200, 220, 210, 230, 220, 200]
 fastest1 = speeds[0]
 fastest2 = speeds[1]
@@ -1759,6 +482,7 @@ for i in range(2, len(speeds)):
         fastest2 = speeds[i]
 
 # 11.134
+print("11.134")
 prices = [100, 150, 200, 120, 250, 180, 300, 220, 170, 280]
 price1 = prices[0]
 price2 = prices[1]
@@ -1773,8 +497,8 @@ for i in range(2, len(prices)):
         price2 = prices[i]
 
 # 11.135
-results = [10.5, 11.2, 10.8, 11.5, 10.3, 11.0, 10.9, 11.3, 10.7, 11.1]  # время в секундах
-# Чем меньше время - тем лучше результат
+print("11.135")
+results = [10.5, 11.2, 10.8, 11.5, 10.3, 11.0, 10.9, 11.3, 10.7, 11.1]
 best1 = results[0]
 best2 = results[1]
 if best2 < best1:
@@ -1788,8 +512,8 @@ for i in range(2, len(results)):
         best2 = results[i]
 
 # 11.136
+print("11.136")
 birth_years = [1990, 1985, 1995, 1980, 1992, 1988, 1998, 1975, 1993, 1987]
-# Чем меньше год - тем старше человек
 oldest1 = birth_years[0]
 oldest2 = birth_years[1]
 if oldest2 < oldest1:
@@ -1803,6 +527,7 @@ for i in range(2, len(birth_years)):
         oldest2 = birth_years[i]
 
 # 11.137
+print("11.137")
 points = [25, 30, 28, 32, 27, 35, 29, 31, 26, 33]
 first = points[0]
 second = points[1]
@@ -1817,6 +542,7 @@ for i in range(2, len(points)):
         second = points[i]
 
 # 11.138
+print("11.138")
 july_temp = [22, 24, 23, 25, 22, 26, 24, 27, 25, 23, 28, 26, 24, 27, 25]
 hot1 = july_temp[0]
 hot2 = july_temp[1]
@@ -1830,13 +556,12 @@ for i in range(2, len(july_temp)):
     elif july_temp[i] > hot2:
         hot2 = july_temp[i]
 
-# Находим даты (индексы + 1)
 date1 = july_temp.index(hot1) + 1
 date2 = july_temp.index(hot2) + 1
 
 # 11.139
+print("11.139")
 residents = [10, 8, 12, 6, 9, 7, 11, 5, 13, 8, 10, 6, 9, 7, 11]
-# Ищем два этажа с наименьшим количеством жителей (чем меньше - тем лучше)
 few1 = residents[0]
 few2 = residents[1]
 few1_idx = 0
@@ -1856,10 +581,11 @@ for i in range(2, len(residents)):
         few2_idx = i
 
 # 11.140
+print("11.140")
 feb_temp = [-5, -3, -7, -2, -8, -4, -6, -1, -9, -3]
 cold1 = feb_temp[0]
 cold2 = feb_temp[1]
-if cold2 < cold1:  # чем меньше температура - тем холоднее
+if cold2 < cold1:
     cold1, cold2 = cold2, cold1
 
 for i in range(2, len(feb_temp)):
@@ -1870,14 +596,16 @@ for i in range(2, len(feb_temp)):
         cold2 = feb_temp[i]
 
 # 11.141
+print("11.141")
 results = [10.5, 11.2, 10.8, 11.5, 10.3, 11.0, 10.9, 11.3, 10.7, 11.1]
-# Ищем 4 лучших результата (наименьшее время)
-# Просто сортируем и берем первые 4
 sorted_results = sorted(results)
 best_four = sorted_results[:4]
-total_time = sum(best_four)
+total_time = 0
+for t in best_four:
+    total_time += t
 
 # 11.142
+print("11.142")
 arr = [15, 5, 25, -8, 30, -12, 18, -7, 22]
 max_abs = abs(arr[0])
 max_abs_idx = 0
@@ -1886,31 +614,28 @@ for i in range(1, len(arr)):
         max_abs = abs(arr[i])
         max_abs_idx = i
 
-# Меняем знак у максимального по модулю элемента
 arr[max_abs_idx] = -arr[max_abs_idx]
 
 # 11.143
+print("11.143")
 arr = [15, 5, 25, 8, 30, 12, 18, 7, 22]
-# Сравниваем и меняем соседние элементы
 for i in range(len(arr) - 1):
     if arr[i+1] < arr[i]:
         arr[i], arr[i+1] = arr[i+1], arr[i]
 
-last_element = arr[-1]  # Число в последнем элементе после всех обменов
+last_element = arr[-1]
 
 # 11.144
+print("11.144")
 arr = [15, 5, 25, 8, 30, 12, 18, 7, 22]
 
-# а) поменять местами второй и пятый элементы
 arr[1], arr[4] = arr[4], arr[1]
 
-# б) поменять местами m-й и n-й элементы
-m = 2  # например
-n = 6  # например
+m = 2
+n = 6
 arr[m], arr[n] = arr[n], arr[m]
 
-# в) поменять местами третий и максимальный элементы
-arr = [15, 5, 25, 8, 30, 12, 30, 7, 22]  # восстановим массив
+arr = [15, 5, 25, 8, 30, 12, 30, 7, 22]
 max_val = arr[0]
 max_idx = 0
 for i in range(1, len(arr)):
@@ -1920,70 +645,63 @@ for i in range(1, len(arr)):
 
 arr[2], arr[max_idx] = arr[max_idx], arr[2]
 
-# г) поменять местами первый и минимальный элементы (последний минимальный)
-arr = [15, 5, 25, 8, 30, 5, 18, 7, 5]  # несколько одинаковых минимумов
+arr = [15, 5, 25, 8, 30, 5, 18, 7, 5]
 min_val = arr[0]
 min_idx = 0
 for i in range(1, len(arr)):
-    if arr[i] <= min_val:  # <= чтобы найти последний минимум
+    if arr[i] <= min_val:
         min_val = arr[i]
         min_idx = i
 
 arr[0], arr[min_idx] = arr[min_idx], arr[0]
 
 # 11.145
-arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]  # четное количество элементов
+print("11.145")
+arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 n = len(arr)
 
-# а) поменять местами половины
 mid = n // 2
 for i in range(mid):
     arr[i], arr[mid + i] = arr[mid + i], arr[i]
 
-# б) первый со вторым, третий с четвертым и т.д.
-arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]  # восстановим
+arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 for i in range(0, n, 2):
     arr[i], arr[i+1] = arr[i+1], arr[i]
 
-# в) первый с последним, второй с предпоследним и т.д.
-arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]  # восстановим
+arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 for i in range(n // 2):
     arr[i], arr[n-1-i] = arr[n-1-i], arr[i]
 
 # 11.146
-arr = list(range(1, 21))  # [1, 2, 3, ..., 20]
-# Сохраняем первые и последние три элемента
+print("11.146")
+arr = list(range(1, 21))
 first_three = arr[:3]
 last_three = arr[-3:]
-# Заменяем
 arr[:3] = last_three
 arr[-3:] = first_three
 
 # 11.147
-arr = list(range(1, 16))  # [1, 2, 3, ..., 15]
+print("11.147")
+arr = list(range(1, 16))
 
-# а) перевернуть элементы между 2-м и 10-м (индексы 1 и 9)
-start = 2  # индекс третьего элемента
-end = 9    # индекс девятого элемента
+start = 2
+end = 9
 while start < end:
     arr[start], arr[end] = arr[end], arr[start]
     start += 1
     end -= 1
 
-# б) перевернуть элементы между k-м и s-м
-arr = list(range(1, 16))  # восстановим
-k = 3  # например
-s = 10 # например
-start = k  # k-й элемент имеет индекс k-1, следующий - индекс k
-end = s-2  # s-й элемент имеет индекс s-1, предыдущий - s-2
+arr = list(range(1, 16))
+k = 3
+s = 10
+start = k
+end = s-2
 while start < end:
     arr[start], arr[end] = arr[end], arr[start]
     start += 1
     end -= 1
 
-# в) перевернуть элементы между максимальным и минимальным
 arr = [15, 5, 25, 8, 30, 12, 18, 7, 22, 3, 28, 14, 20, 9, 17]
-# Находим индексы максимума и минимума
 max_idx = 0
 min_idx = 0
 for i in range(1, len(arr)):
@@ -1992,92 +710,83 @@ for i in range(1, len(arr)):
     if arr[i] < arr[min_idx]:
         min_idx = i
 
-# Определяем начало и конец диапазона
 start = min(max_idx, min_idx)
 end = max(max_idx, min_idx)
-
-# Переворачиваем элементы между ними включительно
 while start < end:
     arr[start], arr[end] = arr[end], arr[start]
     start += 1
     end -= 1
 
 # 11.148
+print("11.148")
 arr = [15, -5, 25, 8, -30, 12, 18, -7, 22]
-# Находим первый отрицательный
 first_neg_idx = -1
 for i in range(len(arr)):
     if arr[i] < 0:
         first_neg_idx = i
         break
 
-# Находим последний положительный
 last_pos_idx = -1
 for i in range(len(arr)-1, -1, -1):
     if arr[i] > 0:
         last_pos_idx = i
         break
 
-# Меняем местами, если оба найдены
 if first_neg_idx != -1 and last_pos_idx != -1:
     arr[first_neg_idx], arr[last_pos_idx] = arr[last_pos_idx], arr[first_neg_idx]
 
 # 11.149
+print("11.149")
 arr = [15, 5, 25, 8, 30, 12, 18, 7, 22]
 
-# а) удалить третий элемент (индекс 2)
 del_idx = 2
 for i in range(del_idx, len(arr)-1):
     arr[i] = arr[i+1]
 arr[-1] = 0
 
-# б) удалить k-й элемент
-arr = [15, 5, 25, 8, 30, 12, 18, 7, 22]  # восстановим
-k = 4  # например
-del_idx = k-1  # k-й элемент имеет индекс k-1
+arr = [15, 5, 25, 8, 30, 12, 18, 7, 22]
+k = 4
+del_idx = k-1
 for i in range(del_idx, len(arr)-1):
     arr[i] = arr[i+1]
 arr[-1] = 0
 
 # 11.150
+print("11.150")
 prices = [100, 150, 200, 120, 250, 180, 300, 220, 170, 280]
-n = 3  # например, прекращаем продавать 3-й товар
+n = 3
 del_idx = n-1
 for i in range(del_idx, len(prices)-1):
     prices[i] = prices[i+1]
 prices[-1] = 0
 
 # 11.151
+print("11.151")
 arr = [15, 5, 25, 8, 30, 12, 18, 7, 22]
 
-# а) удалить максимальный элемент
-# Находим индекс максимума
 max_idx = 0
 for i in range(1, len(arr)):
     if arr[i] > arr[max_idx]:
         max_idx = i
 
-# Удаляем
 for i in range(max_idx, len(arr)-1):
     arr[i] = arr[i+1]
 arr[-1] = 0
 
-# б) удалить минимальный элемент
-arr = [15, 5, 25, 8, 30, 12, 18, 7, 22]  # восстановим
+arr = [15, 5, 25, 8, 30, 12, 18, 7, 22]
 min_idx = 0
 for i in range(1, len(arr)):
     if arr[i] < arr[min_idx]:
         min_idx = i
 
-# Удаляем
 for i in range(min_idx, len(arr)-1):
     arr[i] = arr[i+1]
 arr[-1] = 0
 
 # 11.153
+print("11.153")
 arr = [15, -5, 25, 8, -30, 12, 18, -7, 22]
 
-# а) удалить первый отрицательный элемент
 neg_idx = -1
 for i in range(len(arr)):
     if arr[i] < 0:
@@ -2089,12 +798,11 @@ if neg_idx != -1:
         arr[i] = arr[i+1]
     arr[-1] = 0
 
-# б) удалить последний четный элемент
-arr = [15, 5, 25, 8, 30, 12, 18, 7, 22]  # восстановим
+arr = [15, 5, 25, 8, 30, 12, 18, 7, 22]
 even_idx = -1
 for i in range(len(arr)):
     if arr[i] % 2 == 0:
-        even_idx = i  # перезаписываем, так находим последний
+        even_idx = i
 
 if even_idx != -1:
     for i in range(even_idx, len(arr)-1):
@@ -2102,9 +810,9 @@ if even_idx != -1:
     arr[-1] = 0
 
 # 11.154
+print("11.154")
 arr = [15, 5, 25, 8, 30, 12, 18, 7, 22]
 
-# Находим индексы максимума и минимума
 max_idx = 0
 min_idx = 0
 for i in range(1, len(arr)):
@@ -2113,48 +821,39 @@ for i in range(1, len(arr)):
     if arr[i] < arr[min_idx]:
         min_idx = i
 
-# Удаляем максимальный (сначала тот, который имеет больший индекс)
 if max_idx > min_idx:
-    # Удаляем максимум
     for i in range(max_idx, len(arr)-1):
         arr[i] = arr[i+1]
     arr[-1] = 0
-    # Корректируем индекс минимума, если нужно
     if min_idx > max_idx:
         min_idx -= 1
-    # Удаляем минимум
     for i in range(min_idx, len(arr)-2):
         arr[i] = arr[i+1]
     arr[-2] = 0
 else:
-    # Удаляем минимум
     for i in range(min_idx, len(arr)-1):
         arr[i] = arr[i+1]
     arr[-1] = 0
-    # Корректируем индекс максимума
     if max_idx > min_idx:
         max_idx -= 1
-    # Удаляем максимум
     for i in range(max_idx, len(arr)-2):
         arr[i] = arr[i+1]
     arr[-2] = 0
 
 # 11.156
+print("11.156")
 arr = [15, -5, 25, 8, -30, 12, 18, -7, 22, -3, 28, 14, -2]
 
-# а) удалить все отрицательные элементы
 write_idx = 0
 for i in range(len(arr)):
     if arr[i] >= 0:
         arr[write_idx] = arr[i]
         write_idx += 1
 
-# Заполняем оставшиеся позиции нулями
 for i in range(write_idx, len(arr)):
     arr[i] = 0
 
-# б) удалить все элементы, большие n
-arr = [15, 5, 25, 8, 30, 12, 18, 7, 22, 3, 28, 14, 2]  # восстановим
+arr = [15, 5, 25, 8, 30, 12, 18, 7, 22, 3, 28, 14, 2]
 n = 20
 write_idx = 0
 for i in range(len(arr)):
@@ -2165,35 +864,30 @@ for i in range(len(arr)):
 for i in range(write_idx, len(arr)):
     arr[i] = 0
 
-# в) удалить элементы с n1-го по n2-й
-arr = list(range(1, 16))  # [1, 2, 3, ..., 15]
+arr = list(range(1, 16))
 n1 = 3
 n2 = 8
-# Элементы с индексами n1-1 по n2-1
 del_count = n2 - n1 + 1
 for i in range(n2, len(arr)):
     arr[i-del_count] = arr[i]
 
-# Заполняем нулями
 for i in range(len(arr)-del_count, len(arr)):
     arr[i] = 0
 
 # 11.157
+print("11.157")
 arr = [15, 4, 25, 8, 30, 12, 18, 6, 22, 10, 28, 14, 20, 9, 17]
 
-# а) удалить все четные элементы, стоящие на нечетных местах
 write_idx = 0
 for i in range(len(arr)):
-    # i - индекс (начинается с 0), значит i+1 - номер позиции
-    if not ((i+1) % 2 != 0 and arr[i] % 2 == 0):  # НЕ (нечетная позиция И четный элемент)
+    if not ((i+1) % 2 != 0 and arr[i] % 2 == 0):
         arr[write_idx] = arr[i]
         write_idx += 1
 
 for i in range(write_idx, len(arr)):
     arr[i] = 0
 
-# б) удалить все элементы, кратные 3 или 5
-arr = [15, 4, 25, 8, 30, 12, 18, 6, 22, 10, 28, 14, 20, 9, 17]  # восстановим
+arr = [15, 4, 25, 8, 30, 12, 18, 6, 22, 10, 28, 14, 20, 9, 17]
 write_idx = 0
 for i in range(len(arr)):
     if not (arr[i] % 3 == 0 or arr[i] % 5 == 0):
@@ -2204,14 +898,13 @@ for i in range(write_idx, len(arr)):
     arr[i] = 0
 
 # 11.158
+print("11.158")
 arr = [15, 5, 25, 8, 15, 30, 5, 12, 25, 18, 7, 22, 8, 30, 15]
-# Используем дополнительный список для уникальных элементов
 unique = []
 for x in arr:
     if x not in unique:
         unique.append(x)
 
-# Копируем обратно в исходный массив
 for i in range(len(arr)):
     if i < len(unique):
         arr[i] = unique[i]
@@ -2219,30 +912,24 @@ for i in range(len(arr)):
         arr[i] = 0
 
 # 11.159
+print("11.159")
 arr = [15, 5, 25, 8, 30, 12, 18, 7, 22]
 
-# а) вставить число 10 после второго элемента
-# Создаем новый массив на 1 элемент больше
 new_arr = [0] * (len(arr) + 1)
-k = 2  # после второго элемента (индекс 1)
-
-# Копируем элементы до позиции вставки
+k = 2
 for i in range(k + 1):
     new_arr[i] = arr[i]
 
-# Вставляем новый элемент
 new_arr[k + 1] = 10
 
-# Копируем оставшиеся элементы
 for i in range(k + 1, len(arr)):
     new_arr[i + 1] = arr[i]
 
 arr = new_arr
 
-# б) вставить число 100 после m-го элемента
-arr = [15, 5, 25, 8, 30, 12, 18, 7, 22]  # восстановим
+arr = [15, 5, 25, 8, 30, 12, 18, 7, 22]
 new_arr = [0] * (len(arr) + 1)
-m = 4  # например, после 4-го элемента (индекс 3)
+m = 4
 insert_value = 100
 
 for i in range(m + 1):
@@ -2254,10 +941,10 @@ for i in range(m + 1, len(arr)):
     new_arr[i + 1] = arr[i]
 
 arr = new_arr
-# 11.160
-arr = [15, -5, 25, 8, -30, 12, 18, -7, 22]
 
-# а) вставить число 100 после первого отрицательного элемента
+# 11.160
+print("11.160")
+arr = [15, -5, 25, 8, -30, 12, 18, -7, 22]
 insert_value = 100
 new_arr = [0] * (len(arr) + 1)
 found = False
@@ -2271,16 +958,13 @@ for i in range(len(arr)):
         j += 1
         found = True
 
-# Если отрицательных не было, добавляем в конец
 if not found:
     new_arr[-1] = insert_value
 
-# б) вставить число 200 перед последним четным элементом
-arr = [15, -5, 25, 8, -30, 12, 18, -7, 22]  # восстановим
+arr = [15, -5, 25, 8, -30, 12, 18, -7, 22]
 insert_value = 200
 new_arr = [0] * (len(arr) + 1)
 
-# Находим индекс последнего четного элемента
 last_even_idx = -1
 for i in range(len(arr)):
     if arr[i] % 2 == 0:
@@ -2295,49 +979,40 @@ if last_even_idx != -1:
         new_arr[j] = arr[i]
         j += 1
 else:
-    # Если четных элементов нет, вставляем в начало
     new_arr[0] = insert_value
     for i in range(len(arr)):
         new_arr[i+1] = arr[i]
 
 # 11.161
-# Предположим, что массивы отсортированы по алфавиту названий вершин
+print("11.161")
 mountains = ['Аннапурна', 'Дхаулагири', 'Канченджанга', 'Лхоцзе', 'Макалу', 
              'Манаслу', 'Нанга Парбат', 'Эверест']
 heights = [8091, 8167, 8586, 8516, 8485, 8163, 8126, 8848]
 
-# Новая вершина "Чогори" (К2) с высотой 8611
 new_mountain = 'Чогори'
 new_height = 8611
+insert_pos = 7
 
-# Определяем позицию для вставки (по алфавиту)
-# Для простоты примера зададим позицию вручную
-insert_pos = 7  # например, после "Нанга Парбат"
-
-# Создаем новые массивы
 new_mountains = [0] * (len(mountains) + 1)
 new_heights = [0] * (len(heights) + 1)
 
-# Копируем элементы до позиции вставки
 for i in range(insert_pos):
     new_mountains[i] = mountains[i]
     new_heights[i] = heights[i]
 
-# Вставляем новый элемент
 new_mountains[insert_pos] = new_mountain
 new_heights[insert_pos] = new_height
 
-# Копируем оставшиеся элементы
 for i in range(insert_pos, len(mountains)):
     new_mountains[i+1] = mountains[i]
     new_heights[i+1] = heights[i]
 
 # 11.162
+print("11.162")
 heights = [185, 182, 180, 178, 177, 175, 174, 173, 172, 170, 169, 168, 167, 165, 163]
 
-# 1) Известен порядковый номер нового ученика
 new_height1 = 176
-position1 = 4  # например, на 4-е место (индекс 3)
+position1 = 4
 
 new_heights1 = [0] * (len(heights) + 1)
 for i in range(position1 - 1):
@@ -2346,16 +1021,13 @@ new_heights1[position1 - 1] = new_height1
 for i in range(position1 - 1, len(heights)):
     new_heights1[i+1] = heights[i]
 
-# 2) Известен рост нового ученика (массив отсортирован по убыванию)
 new_height2 = 176
 new_heights2 = [0] * (len(heights) + 1)
 
-# Находим позицию для вставки
 insert_idx = 0
 while insert_idx < len(heights) and heights[insert_idx] > new_height2:
     insert_idx += 1
 
-# Вставляем на найденную позицию
 for i in range(insert_idx):
     new_heights2[i] = heights[i]
 new_heights2[insert_idx] = new_height2
@@ -2363,19 +1035,17 @@ for i in range(insert_idx, len(heights)):
     new_heights2[i+1] = heights[i]
 
 # 11.164
+print("11.164")
 arr = [15, -5, 25, 8, -30, 12, 18, -7, 22, 10, -3, 28, 14, -2]
 
-# а) вставить число 0 перед всеми элементами, кратными a=5
 insert_value_a = 0
 a = 5
 count_multiples = 0
 
-# Считаем, сколько элементов кратны a
 for x in arr:
     if x % a == 0:
         count_multiples += 1
 
-# Максимальный размер исходного массива: len(arr) + count_multiples
 new_arr_a = [0] * (len(arr) + count_multiples)
 j = 0
 
@@ -2386,7 +1056,6 @@ for i in range(len(arr)):
     new_arr_a[j] = arr[i]
     j += 1
 
-# б) вставить число 100 после всех отрицательных элементов
 insert_value_b = 100
 count_negative = 0
 
@@ -2394,7 +1063,6 @@ for x in arr:
     if x < 0:
         count_negative += 1
 
-# Максимальный размер исходного массива: len(arr) + count_negative
 new_arr_b = [0] * (len(arr) + count_negative)
 j = 0
 
@@ -2406,6 +1074,7 @@ for i in range(len(arr)):
         j += 1
 
 # 11.165
+print("11.165")
 arr = [15, 5, 25, 8, 30, 12, 18, 7, 22, 3, 28, 14, 2]
 n = 20
 m = 10
@@ -2418,12 +1087,10 @@ for x in arr:
     if x < m:
         count_less_m += 1
 
-# Максимальный размер исходного массива: len(arr) + count_greater_n + count_less_m
 new_arr = [0] * (len(arr) + count_greater_n + count_less_m)
 j = 0
 
 for i in range(len(arr)):
-    # Вставляем n перед элементами, большими n
     if arr[i] > n:
         new_arr[j] = n
         j += 1
@@ -2431,75 +1098,66 @@ for i in range(len(arr)):
     new_arr[j] = arr[i]
     j += 1
     
-    # Вставляем m после элементов, меньших m
     if arr[i] < m:
         new_arr[j] = m
         j += 1
 
 # 11.166
+print("11.166")
 heights = [185, 182, 180, 178, 177, 175, 174, 173, 172, 170, 
            169, 168, 167, 165, 163, 162, 161, 160, 159, 158, 
            157, 156, 155, 154, 153]
 
-# 1) Известны порядковые номера новых учеников
-new_heights1 = [176, 165]  # роста новых учеников
-positions = [4, 15]  # порядковые номера (начинаются с 1)
+new_heights1 = [176, 165]
+positions = [4, 15]
 
-# Сортируем позиции по убыванию для правильной вставки
 positions.sort(reverse=True)
 new_arr1 = heights.copy()
 
 for pos, height in zip(positions, new_heights1[::-1]):
     new_arr1.insert(pos - 1, height)
 
-# 2) Известны значения роста новых учеников (массив отсортирован по убыванию)
 new_heights2 = [176, 165]
 new_arr2 = heights.copy()
 
 for height in new_heights2:
-    # Находим позицию для вставки
     insert_idx = 0
     while insert_idx < len(new_arr2) and new_arr2[insert_idx] > height:
         insert_idx += 1
     new_arr2.insert(insert_idx, height)
 
 # 11.167
+print("11.167")
 arr = [15, 25, 8, 30, 5, 12, 18, 7, 52, 10, 35, 14, 2]
-a = 999  # число для вставки
+a = 999
 count_fives = 0
 
-# Проверяем, содержит ли число цифру 5
-def has_digit_five(num):
-    num_str = str(abs(num))
-    return '5' in num_str
-
-# Считаем, сколько элементов содержат цифру 5
 for x in arr:
-    if has_digit_five(x):
+    num_str = str(abs(x))
+    if '5' in num_str:
         count_fives += 1
 
-# Максимальный размер исходного массива: len(arr) + count_fives
 new_arr = [0] * (len(arr) + count_fives)
 j = 0
 
 for i in range(len(arr)):
     new_arr[j] = arr[i]
     j += 1
-    if has_digit_five(arr[i]):
+    num_str = str(abs(arr[i]))
+    if '5' in num_str:
         new_arr[j] = a
         j += 1
 
 # 11.168
+print("11.168")
 arr = [15, -5, -3, 8, 12, -7, -2, 22, 25, -10]
-n = 0  # число для вставки
+n = 0
 
-# Считаем, сколько пар соседних элементов имеют одинаковый знак
 count_pairs = 0
 for i in range(len(arr) - 1):
     if (arr[i] > 0 and arr[i+1] > 0) or (arr[i] < 0 and arr[i+1] < 0):
         count_pairs += 1
 
-# Максимальный размер исходного массива: len(arr) + count_pairs
 new_arr = [0] * (len(arr) + count_pairs)
 j = 0
 
@@ -2507,7 +1165,6 @@ new_arr[j] = arr[0]
 j += 1
 
 for i in range(1, len(arr)):
-    # Проверяем, имеют ли текущий и предыдущий элементы одинаковый знак
     if (arr[i-1] > 0 and arr[i] > 0) or (arr[i-1] < 0 and arr[i] < 0):
         new_arr[j] = n
         j += 1
@@ -2516,74 +1173,65 @@ for i in range(1, len(arr)):
     j += 1
 
 # 11.169
+print("11.169")
 arr = [15, 5, 25, 8, 30, 12, 18, 7, 22]
 first = arr[0]
 
-# Сдвигаем все элементы влево на 1 позицию
 for i in range(len(arr) - 1):
     arr[i] = arr[i+1]
 
-# Помещаем первый элемент в конец
 arr[-1] = first
 
 # 11.170
+print("11.170")
 arr = [15, 5, 25, 8, 30, 12, 18, 7, 22]
-k = 4  # например, на место 4-го элемента
+k = 4
 
 if 1 < k <= len(arr):
     first = arr[0]
-    # Сдвигаем элементы с 1-го по (k-1)-й влево
     for i in range(k-1):
         arr[i] = arr[i+1]
-    # Помещаем первый элемент на k-ю позицию
     arr[k-1] = first
 
 # 11.172
-results = [120, 118, 122, 115, 125, 119, 121, 117, 123, 116]  # время в секундах
-# Массив должен быть упорядочен по ухудшению результата (увеличению времени)
-# Если первый элемент не самый худший, нужно упорядочить
+print("11.172")
+results = [120, 118, 122, 115, 125, 119, 121, 117, 123, 116]
 
-# Находим правильную позицию для первого элемента
 first = results[0]
 i = 1
 while i < len(results) and results[i] < first:
     i += 1
 
-# Сдвигаем элементы влево
 for j in range(i-1):
     results[j] = results[j+1]
 
-# Вставляем первый элемент на найденную позицию
 results[i-1] = first
 
 # 11.173
+print("11.173")
 arr = [15, 5, 25, 8, 30, 12, 18, 7, 22]
 last = arr[-1]
 
-# Сдвигаем все элементы вправо на 1 позицию
 for i in range(len(arr)-1, 0, -1):
     arr[i] = arr[i-1]
 
-# Помещаем последний элемент в начало
 arr[0] = last
 
 # 11.174
+print("11.174")
 arr = [15, 5, 25, 8, 30, 12, 18, 7, 22]
-k = 3  # например, на место 3-го элемента
+k = 3
 last = arr[-1]
 
 if 1 <= k < len(arr):
-    # Сдвигаем элементы с k-го по предпоследний вправо
     for i in range(len(arr)-1, k-1, -1):
         arr[i] = arr[i-1]
-    # Помещаем последний элемент на k-ю позицию
     arr[k-1] = last
 
 # 11.176
+print("11.176")
 populations = [100, 150, 200, 250, 300, 350, 400, 450, 500, 550,
-               120, 600, 650, 700, 750, 800, 850, 900, 950, 1000]  # в тысячах
-# Массив должен быть упорядочен по возрастанию
-# Если последний элемент нарушает порядок, нужно упорядочить
+               120, 600, 650, 700, 750, 800, 850, 900, 950, 1000]
 
 last = populations[-1]
 i = len(populations) - 2
@@ -2594,24 +1242,22 @@ while i >= 0 and populations[i] > last:
 populations[i+1] = last
 
 # 11.178
-m = list(range(1, 29))  # [1, 2, 3, ..., 28]
-k = 5  # например, перенести первые 5 элементов в конец
+print("11.178")
+m = list(range(1, 29))
+k = 5
 
-# Сохраняем первые k элементов
 first_k = m[:k]
 
-# Сдвигаем оставшиеся элементы влево
 for i in range(len(m) - k):
     m[i] = m[i + k]
 
-# Помещаем первые k элементов в конец
 for i in range(k):
     m[len(m) - k + i] = first_k[i]
 
 # 11.180
+print("11.180")
 arr = [15, 5, 25, 8, 5, 30, 12, 18, 7, 5, 22]
 
-# а) номер первого элемента, равного 5
 first_idx = -1
 i = 0
 while i < len(arr) and first_idx == -1:
@@ -2619,7 +1265,6 @@ while i < len(arr) and first_idx == -1:
         first_idx = i
     i += 1
 
-# б) номер последнего элемента, равного 5
 last_idx = -1
 i = len(arr) - 1
 while i >= 0 and last_idx == -1:
@@ -2628,9 +1273,9 @@ while i >= 0 and last_idx == -1:
     i -= 1
 
 # 11.182
+print("11.182")
 arr = [15, 5, 0, 25, 8, 0, 30, 12, 0, 18, 7, 22]
 
-# а) все элементы, кроме первого нулевого
 first_zero_idx = -1
 i = 0
 while i < len(arr) and first_zero_idx == -1:
@@ -2644,7 +1289,6 @@ if first_zero_idx != -1:
         if i != first_zero_idx:
             elements_except_first_zero.append(arr[i])
 
-# б) все элементы, кроме последнего нулевого
 last_zero_idx = -1
 i = len(arr) - 1
 while i >= 0 and last_zero_idx == -1:
@@ -2659,16 +1303,15 @@ if last_zero_idx != -1:
             elements_except_last_zero.append(arr[i])
 
 # 11.183
-arr = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]  # упорядочен по возрастанию
+print("11.183")
+arr = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 a = 55
 
-# а) все элементы массива, меньшие a
 i = 0
 while i < len(arr) and arr[i] < a:
     print(arr[i])
     i += 1
 
-# б) найти два элемента, между которыми находится a
 i = 0
 while i < len(arr) - 1 and not (arr[i] < a < arr[i+1]):
     i += 1
@@ -2679,7 +1322,6 @@ if i < len(arr) - 1:
     right_idx = i + 1
     right_val = arr[i+1]
 
-# в) найти элемент, ближайший к a
 closest_idx = 0
 min_diff = abs(arr[0] - a)
 
@@ -2692,54 +1334,52 @@ for i in range(1, len(arr)):
 closest_val = arr[closest_idx]
 
 # 11.184
+print("11.184")
 heights = [185, 182, 180, 178, 177, 175, 174, 173, 172, 170, 169, 168, 167, 165, 163]
 new_height = 176
 
-# Находим место в перечне (массив упорядочен по убыванию)
 position = 1
 while position <= len(heights) and heights[position-1] > new_height:
     position += 1
 
 # 11.185
+print("11.185")
 points = [65, 60, 58, 55, 53, 50, 48, 45, 43, 40, 38, 35, 33, 30, 28, 25, 23, 20, 18, 15]
 n = 45
 
-# Находим место команды (массив упорядочен по убыванию)
 place = 1
 while place <= len(points) and points[place-1] != n:
     place += 1
 
 # 11.186
+print("11.186")
 arr = [5, 5, 5, 8, 12, 15, 18, 22, 25]
 
-# Определяем количество одинаковых элементов в начале
 count = 1
 while count < len(arr) and arr[count] == arr[0]:
     count += 1
 
-# Выводим элементы, следующие за последним одинаковым
 if count < len(arr):
     following_elements = arr[count:]
 
 # 11.187
+print("11.187")
 grades = [5, 5, 5, 5, 5, 5, 4, 4, 4, 3, 3, 3, 2, 2, 2, 2, 3, 4, 4, 5, 4, 3, 2, 4]
 
-# Считаем количество пятерок в начале
 count_fives = 0
 while count_fives < len(grades) and grades[count_fives] == 5:
     count_fives += 1
 
 # 11.188
+print("11.188")
 arr = [15, 5, 25, 8, 30, 12, 18, 7, 22]
 
-# а) все элементы, предшествующие первому элементу со значением n=25
 n = 25
 i = 0
 while i < len(arr) and arr[i] != n:
     print(arr[i])
     i += 1
 
-# б) все элементы, следующие за последним элементом, оканчивающимся на 7
 i = len(arr) - 1
 while i >= 0 and arr[i] % 10 != 7:
     i -= 1
@@ -2749,9 +1389,9 @@ if i >= 0:
         print(arr[j])
 
 # 11.190
+print("11.190")
 arr = [15, 5, 25, 8, 15, 30, 5, 12, 25, 18, 7, 22, 8, 30, 15]
 
-# Создаем множество уникальных элементов
 unique_elements = set()
 for x in arr:
     unique_elements.add(x)
@@ -2759,15 +1399,16 @@ for x in arr:
 count_unique = len(unique_elements)
 
 # 11.191
+print("11.191")
 n = 22424
 digits = str(n)
 unique_digits = set(digits)
 count_unique_digits = len(unique_digits)
 
 # 11.192
+print("11.192")
 arr = [15, 5, 25, 8, 30, 12, 18, 7, 22, 5, 28, 14, 20, 9, 17]
 
-# Находим элементы, которые встречаются ровно два раза
 counts = {}
 for x in arr:
     if x in counts:
@@ -2775,7 +1416,6 @@ for x in arr:
     else:
         counts[x] = 1
 
-# Ищем элемент, который встречается ровно два раза
 duplicate_value = None
 for value, count in counts.items():
     if count == 2:
@@ -2783,9 +1423,9 @@ for value, count in counts.items():
         break
 
 # 11.195
+print("11.195")
 arr = [15, 5, 25, 8, 30, 12, 18, 7, 22]
 
-# а) номер первого нечетного элемента
 first_odd_idx = -1
 for i in range(len(arr)):
     if arr[i] % 2 != 0:
@@ -2795,7 +1435,6 @@ for i in range(len(arr)):
 if first_odd_idx == -1:
     print("Нет нечетных элементов")
 
-# б) номер первого элемента, кратного 13
 first_multiple_idx = -1
 for i in range(len(arr)):
     if arr[i] % 13 == 0:
@@ -2806,9 +1445,9 @@ if first_multiple_idx == -1:
     print("Нет элементов, кратных 13")
 
 # 11.196
+print("11.196")
 arr = [15.5, 5.2, -25.8, 8.1, 30.4, -12.7, 18.3, 7.9, -22.6]
 
-# Проверяем, есть ли отрицательные числа
 has_negative = False
 for x in arr:
     if x < 0:
@@ -2816,7 +1455,6 @@ for x in arr:
         break
 
 if has_negative:
-    # а) номер первого отрицательного и все следующие элементы
     first_neg_idx = -1
     for i in range(len(arr)):
         if arr[i] < 0:
@@ -2826,7 +1464,6 @@ if has_negative:
     if first_neg_idx != -1:
         following_elements = arr[first_neg_idx+1:]
     
-    # б) номер последнего отрицательного и все элементы слева от него
     last_neg_idx = -1
     for i in range(len(arr)-1, -1, -1):
         if arr[i] < 0:
@@ -2837,6 +1474,7 @@ if has_negative:
         left_elements = arr[:last_neg_idx]
 
 # 11.197
+print("11.197")
 grades = [5, 4, 3, 2, 5, 4, 3, 5, 4, 2, 5, 3, 4, 5, 4, 3, 2, 4, 5, 3, 4, 5, 3, 2, 4, 3, 5, 4]
 
 has_twos = False
@@ -2846,6 +1484,7 @@ for grade in grades:
         break
 
 # 11.198
+print("11.198")
 powers = [150, 180, 120, 200, 170, 190, 160, 210, 140, 130,
           220, 180, 200, 160, 190, 170, 210, 150, 230, 140,
           180, 200, 160, 190, 170, 210, 150, 220, 180, 200]
@@ -2857,7 +1496,8 @@ for power in powers:
         break
 
 # 11.199
-arr = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10]  # упорядочен по убыванию
+print("11.199")
+arr = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10]
 a = 65
 
 first_smaller_idx = -1
@@ -2870,7 +1510,8 @@ if first_smaller_idx == -1:
     print("Нет элементов, меньших заданного числа")
 
 # 11.200
-arr = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]  # упорядочен по возрастанию
+print("11.200")
+arr = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 n = 55
 
 first_greater_idx = -1
@@ -2885,6 +1526,7 @@ else:
     print("Нет элементов, больших заданного числа")
 
 # 11.202
+print("11.202")
 arr = [15, 5, 5, 8, 30, 12, 18, 18, 22, 3, 3, 28, 14, 2]
 
 has_adjacent_pair = False
@@ -2897,6 +1539,7 @@ for i in range(len(arr) - 1):
         break
 
 # 11.204
+print("11.204")
 arr = [15, 5, 25, 7, 9, 30, 11, 13, 18, 21, 23, 8, 3, 5]
 
 has_adjacent_odd_pair = False
@@ -2909,6 +1552,7 @@ for i in range(len(arr) - 1):
         break
 
 # 11.207
+print("11.207")
 arr = [15, 25, 5, 8, 30, 12, 18, 22, 7, 28, 14, 20]
 
 has_triplet = False
@@ -2921,6 +1565,7 @@ for i in range(1, len(arr) - 1):
         break
 
 # 11.209
+print("11.209")
 arr = [10, 20, 30, 40, 35, 50, 60, 70, 80, 90]
 
 is_sorted = True
@@ -2929,10 +1574,11 @@ first_violation_idx = -1
 for i in range(len(arr) - 1):
     if arr[i] > arr[i+1]:
         is_sorted = False
-        first_violation_idx = i + 1  # индекс элемента, который нарушает порядок
+        first_violation_idx = i + 1
         break
 
 # 11.214
+print("11.214")
 july_sales = [15000, 18000, 12000, 20000, 17000, 19000, 16000, 
               21000, 14000, 13000, 22000, 18000, 20000, 16000, 
               19000, 17000, 21000, 15000, 23000, 14000, 18000, 
@@ -2943,52 +1589,68 @@ august_sales = [16000, 19000, 13000, 21000, 18000, 20000, 17000,
                 20000, 18000, 22000, 16000, 24000, 15000, 19000,
                 21000, 17000, 20000, 18000, 22000, 16000, 23000, 19000, 21000, 17000]
 
-total_sales = sum(july_sales) + sum(august_sales)
+total_sales = 0
+for x in july_sales:
+    total_sales += x
+for x in august_sales:
+    total_sales += x
 
 # 11.215
+print("11.215")
 champ1_goals = [3, 2, 1, 4, 2, 3, 1, 2, 3, 4, 2, 1, 3, 2, 4, 1, 2, 3, 2, 1, 4, 3, 2, 1, 3, 2]
 champ2_goals = [2, 3, 1, 2, 4, 3, 2, 1, 3, 2, 4, 1, 2, 3, 2, 1, 4, 3, 2, 1, 3, 2, 4, 1, 2, 3]
 
-total_goals = sum(champ1_goals) + sum(champ2_goals)
+total_goals = 0
+for x in champ1_goals:
+    total_goals += x
+for x in champ2_goals:
+    total_goals += x
 
 # 11.216
+print("11.216")
 areas = [1200, 1500, 800, 2000, 1700, 1900, 1600, 2100, 1400, 1300,
          2200, 1800, 2000, 1600, 1900, 1700, 2100, 1500, 2300, 1400]
 
 harvests = [4800, 6750, 3200, 9000, 7650, 8550, 7200, 9450, 6300, 5850,
             9900, 8100, 9000, 7200, 8550, 7650, 9450, 6750, 10350, 6300]
 
-# Способ 1: без дополнительного массива
 district_yields = []
 for i in range(len(areas)):
-    yield_per_hectare = harvests[i] / areas[i] if areas[i] > 0 else 0
+    if areas[i] > 0:
+        yield_per_hectare = harvests[i] / areas[i]
+    else:
+        yield_per_hectare = 0
     district_yields.append(yield_per_hectare)
 
-total_area = sum(areas)
-total_harvest = sum(harvests)
-overall_yield = total_harvest / total_area if total_area > 0 else 0
+total_area = 0
+for x in areas:
+    total_area += x
 
-# Способ 2: с дополнительным массивом
-yields_array = [0] * len(areas)
-for i in range(len(areas)):
-    yields_array[i] = harvests[i] / areas[i] if areas[i] > 0 else 0
+total_harvest = 0
+for x in harvests:
+    total_harvest += x
+
+if total_area > 0:
+    overall_yield = total_harvest / total_area
+else:
+    overall_yield = 0
 
 # 11.218
+print("11.218")
 lengths = [10, 12, 8, 15, 9, 11, 7, 14, 13, 10, 16, 9]
 widths = [5, 6, 4, 7, 5, 6, 4, 8, 7, 5, 9, 6]
 heights = [3, 4, 2, 5, 3, 4, 2, 6, 5, 3, 7, 4]
 
-# Способ 1: без дополнительного массива
 for i in range(len(lengths)):
     volume = lengths[i] * widths[i] * heights[i]
-    print(f"Объем параллелепипеда {i+1}: {volume}")
+    print(volume)
 
-# Способ 2: с дополнительным массивом
 volumes = [0] * len(lengths)
 for i in range(len(lengths)):
     volumes[i] = lengths[i] * widths[i] * heights[i]
 
 # 11.219
+print("11.219")
 powers = [150, 180, 120, 200, 170, 190, 160, 210, 140, 130,
           220, 180, 200, 160, 190, 170, 210, 150, 230, 140,
           180, 200, 160, 190, 170, 210, 150, 220, 180, 200]
@@ -2999,21 +1661,20 @@ prices = [15000, 18000, 12000, 20000, 17000, 19000, 16000, 21000, 14000, 13000,
 
 for i in range(len(powers)):
     if powers[i] <= 80:
-        print(f"Автомобиль {i+1}: мощность {powers[i]} л.с., цена {prices[i]} руб.")
+        print(powers[i], prices[i])
 
 # 11.221
+print("11.221")
 goals_scored = [85, 78, 92, 88, 95, 82, 90, 87, 93, 80, 91, 89, 84, 96, 83]
 goals_conceded = [78, 82, 85, 90, 88, 79, 86, 84, 89, 81, 87, 83, 80, 92, 85]
 
-# Способ 1: без дополнительного массива
 for i in range(len(goals_scored)):
     if goals_scored[i] > goals_conceded[i]:
         result = "выигрыш"
     else:
         result = "проигрыш"
-    print(f"Игра {i+1}: {result} ({goals_scored[i]}:{goals_conceded[i]})")
+    print(result)
 
-# Способ 2: с дополнительным массивом
 results = [''] * len(goals_scored)
 for i in range(len(goals_scored)):
     if goals_scored[i] > goals_conceded[i]:
@@ -3022,10 +1683,10 @@ for i in range(len(goals_scored)):
         results[i] = "проигрыш"
 
 # 11.223
+print("11.223")
 goals_scored = [3, 2, 1, 4, 2, 3, 1, 2, 3, 4, 2, 1, 3, 2, 4, 1, 2, 3, 2, 1]
 goals_conceded = [2, 3, 1, 2, 4, 3, 2, 1, 3, 2, 4, 1, 2, 3, 2, 1, 4, 3, 2, 1]
 
-# а) словесный результат каждой игры
 for i in range(len(goals_scored)):
     if goals_scored[i] > goals_conceded[i]:
         result = "выигрыш"
@@ -3033,15 +1694,13 @@ for i in range(len(goals_scored)):
         result = "ничья"
     else:
         result = "проигрыш"
-    print(f"Игра {i+1}: {result}")
+    print(result)
 
-# б) количество выигрышей
 wins = 0
 for i in range(len(goals_scored)):
     if goals_scored[i] > goals_conceded[i]:
         wins += 1
 
-# в) количество выигрышей и проигрышей
 wins = 0
 losses = 0
 for i in range(len(goals_scored)):
@@ -3050,7 +1709,6 @@ for i in range(len(goals_scored)):
     elif goals_scored[i] < goals_conceded[i]:
         losses += 1
 
-# г) количество выигрышей, ничьих и проигрышей
 wins = 0
 draws = 0
 losses = 0
@@ -3062,13 +1720,11 @@ for i in range(len(goals_scored)):
     else:
         losses += 1
 
-# д) игры с разностью мячей >= 3
 big_wins = 0
 for i in range(len(goals_scored)):
     if abs(goals_scored[i] - goals_conceded[i]) >= 3:
         big_wins += 1
 
-# е) общее число очков
 total_points = 0
 for i in range(len(goals_scored)):
     if goals_scored[i] > goals_conceded[i]:
@@ -3077,13 +1733,14 @@ for i in range(len(goals_scored)):
         total_points += 1
 
 # 11.225
+print("11.225")
 populations = [144, 8, 67, 10, 126, 83, 65, 46, 38, 21, 
                17, 125, 11, 9, 27, 34, 23, 51, 14, 19, 
-               7, 5, 12, 25, 16, 13, 6, 4]  # в миллионах
+               7, 5, 12, 25, 16, 13, 6, 4]
 
 areas = [17, 8, 10, 1, 1, 1, 2, 1, 0, 8, 
          4, 3, 2, 1, 2, 2, 3, 9, 1, 3, 
-         1, 0, 2, 2, 1, 1, 1, 0]  # в млн кв. км
+         1, 0, 2, 2, 1, 1, 1, 0]
 
 total_population = 0
 for i in range(len(areas)):
@@ -3091,6 +1748,7 @@ for i in range(len(areas)):
         total_population += populations[i]
 
 # 11.227
+print("11.227")
 precipitation = [5, 8, 3, 10, 2, 7, 4, 9, 6, 3, 
                  8, 5, 7, 4, 6, 9, 2, 8, 5, 7, 
                  3, 10, 4, 6, 8, 5, 7, 9, 3, 6, 4]
@@ -3109,6 +1767,7 @@ for i in range(len(precipitation)):
         snow += precipitation[i]
 
 # 11.229
+print("11.229")
 jan_precipitation = [5, 8, 3, 10, 2, 7, 4, 9, 6, 3, 
                      8, 5, 7, 4, 6, 9, 2, 8, 5, 7, 
                      3, 10, 4, 6, 8, 5, 7, 9, 3, 6, 4]
@@ -3117,8 +1776,13 @@ mar_precipitation = [6, 9, 4, 11, 3, 8, 5, 10, 7, 4,
                      9, 6, 8, 5, 7, 10, 3, 9, 6, 8, 
                      4, 11, 5, 7, 9, 6, 8, 10, 4, 7, 5]
 
-jan_total = sum(jan_precipitation)
-mar_total = sum(mar_precipitation)
+jan_total = 0
+for x in jan_precipitation:
+    jan_total += x
+
+mar_total = 0
+for x in mar_precipitation:
+    mar_total += x
 
 if jan_total > mar_total:
     result = "В январе выпало больше осадков"
@@ -3128,34 +1792,36 @@ else:
     result = "Осадков выпало одинаково"
 
 # 11.231
+print("11.231")
 masses = [10, 15, 8, 12, 20, 18, 25, 22, 30, 28,
-          35, 32, 40, 38, 45, 42, 50, 48, 55, 52]  # в кг
+          35, 32, 40, 38, 45, 42, 50, 48, 55, 52]
 
 volumes = [5000, 7500, 4000, 6000, 10000, 9000, 12500, 11000, 15000, 14000,
-           17500, 16000, 20000, 19000, 22500, 21000, 25000, 24000, 27500, 26000]  # в см³
+           17500, 16000, 20000, 19000, 22500, 21000, 25000, 24000, 27500, 26000]
 
-# Способ 1: без дополнительного массива
 max_density = 0
 for i in range(len(masses)):
-    density = masses[i] * 1000 / volumes[i]  # переводим кг в г для плотности в г/см³
+    density = masses[i] * 1000 / volumes[i]
     if density > max_density:
         max_density = density
 
-# Способ 2: с дополнительным массивом
 densities = [0] * len(masses)
 for i in range(len(masses)):
     densities[i] = masses[i] * 1000 / volumes[i]
 
-max_density = max(densities)
+max_density = 0
+for d in densities:
+    if d > max_density:
+        max_density = d
 
 # 11.233
+print("11.233")
 lengths = [10, 12, 8, 15, 9, 11, 7, 14, 13, 10, 16, 9, 17, 11, 13]
 widths = [5, 6, 4, 7, 5, 6, 4, 8, 7, 5, 9, 6, 8, 5, 7]
 heights = [3, 4, 2, 5, 3, 4, 2, 6, 5, 3, 7, 4, 6, 3, 5]
 
-# Способ 1: без дополнительного массива
 max_volume = 0
-min_volume = float('inf')
+min_volume = 1000000
 max_volume_idx = 0
 min_volume_idx = 0
 
@@ -3168,40 +1834,47 @@ for i in range(len(lengths)):
         min_volume = volume
         min_volume_idx = i
 
-# Способ 2: с дополнительным массива
 volumes = [0] * len(lengths)
 for i in range(len(lengths)):
     volumes[i] = lengths[i] * widths[i] * heights[i]
 
-max_volume = max(volumes)
-min_volume = min(volumes)
-max_volume_idx = volumes.index(max_volume)
-min_volume_idx = volumes.index(min_volume)
+max_volume = volumes[0]
+min_volume = volumes[0]
+max_volume_idx = 0
+min_volume_idx = 0
+for i in range(1, len(volumes)):
+    if volumes[i] > max_volume:
+        max_volume = volumes[i]
+        max_volume_idx = i
+    if volumes[i] < min_volume:
+        min_volume = volumes[i]
+        min_volume_idx = i
 
 # 11.235
+print("11.235")
 arr = [15, 5, 25, 8, 30, 12, 18, 7, 22]
 
-# а) копирование в том же порядке
 arr_copy_same = [0] * len(arr)
 for i in range(len(arr)):
     arr_copy_same[i] = arr[i]
 
-# б) копирование в обратном порядке
 arr_copy_reverse = [0] * len(arr)
 for i in range(len(arr)):
     arr_copy_reverse[i] = arr[len(arr) - 1 - i]
 
 # 11.236
+print("11.236")
 a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 b = [0] * len(a)
 
 for i in range(len(a)):
-    if (i + 1) % 2 == 0:  # i+1 т.к. индексы начинаются с 0
+    if (i + 1) % 2 == 0:
         b[i] = a[i] ** 2
     else:
         b[i] = 2 * a[i]
 
 # 11.239
+print("11.239")
 a = [15, 4, 25, 8, 30, 12, 18, 7, 22, 10]
 b = [0] * len(a)
 
@@ -3212,15 +1885,14 @@ for i in range(len(a)):
         b[i] = a[i]
 
 # 11.241
+print("11.241")
 arr = [15, 5, 25, 8, 30, 12, 18, 7, 22]
 
-# а) на тех же местах
 arr_copy1 = [0] * len(arr)
 for i in range(len(arr)):
-    if (i + 1) % 2 == 0:  # четные позиции (2, 4, 6...)
+    if (i + 1) % 2 == 0:
         arr_copy1[i] = arr[i]
 
-# б) подряд с начала массива
 arr_copy2 = [0] * len(arr)
 j = 0
 for i in range(len(arr)):
@@ -3229,25 +1901,26 @@ for i in range(len(arr)):
         j += 1
 
 # 11.243
-arr = list(range(1, 21))  # [1, 2, 3, ..., 20]
+print("11.243")
+arr = list(range(1, 21))
 
-arr_even = [0] * 10  # элементы с четными индексами (0, 2, 4...)
-arr_odd = [0] * 10   # элементы с нечетными индексами (1, 3, 5...)
+arr_even = [0] * 10
+arr_odd = [0] * 10
 
 j_even = 0
 j_odd = 0
 for i in range(len(arr)):
-    if i % 2 == 0:  # четные индексы
+    if i % 2 == 0:
         arr_even[j_even] = arr[i]
         j_even += 1
-    else:  # нечетные индексы
+    else:
         arr_odd[j_odd] = arr[i]
         j_odd += 1
 
 # 11.244
+print("11.244")
 arr = [15, -5, 25, 8, -30, 12, 18, -7, 22, -3]
 
-# Считаем количество положительных и остальных
 pos_count = 0
 other_count = 0
 for x in arr:
@@ -3256,7 +1929,6 @@ for x in arr:
     else:
         other_count += 1
 
-# а) на тех же местах
 arr_pos = [0] * len(arr)
 arr_other = [0] * len(arr)
 
@@ -3266,7 +1938,6 @@ for i in range(len(arr)):
     else:
         arr_other[i] = arr[i]
 
-# б) подряд с начала массива
 arr_pos_compact = [0] * pos_count
 arr_other_compact = [0] * other_count
 
@@ -3281,25 +1952,27 @@ for i in range(len(arr)):
         j_other += 1
 
 # 11.246
+print("11.246")
 arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 arr2 = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
 
-# а) сумма элементов
 sum_arr = [0] * len(arr1)
 for i in range(len(arr1)):
     sum_arr[i] = arr1[i] + arr2[i]
 
-# б) произведение элементов
 prod_arr = [0] * len(arr1)
 for i in range(len(arr1)):
     prod_arr[i] = arr1[i] * arr2[i]
 
-# в) максимальный из элементов
 max_arr = [0] * len(arr1)
 for i in range(len(arr1)):
-    max_arr[i] = max(arr1[i], arr2[i])
+    if arr1[i] > arr2[i]:
+        max_arr[i] = arr1[i]
+    else:
+        max_arr[i] = arr2[i]
 
 # 11.247
+print("11.247")
 arr1 = [1, -2, 3, -4, 5, -6, 7, -8, 9, -10]
 arr2 = [10, -9, 8, -7, 6, -5, 4, -3, 2, -1]
 
